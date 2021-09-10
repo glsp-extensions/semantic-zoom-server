@@ -16,52 +16,50 @@
  */
 package org.eclipse.glsp.graph.impl;
 
-import org.eclipse.emf.common.notify.NotificationChain;
+import java.util.Collection;
 
-import org.eclipse.emf.common.util.EMap;
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EcoreEMap;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import org.eclipse.glsp.graph.GArgumentable;
+import org.eclipse.glsp.graph.GLevelOfDetail;
+import org.eclipse.glsp.graph.GLevelOfDetailRule;
 import org.eclipse.glsp.graph.GraphPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>GArgumentable</b></em>'.
+ * An implementation of the model object '<em><b>GLevel Of Detail</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.glsp.graph.impl.GArgumentableImpl#getArgs <em>Args</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.impl.GLevelOfDetailImpl#getLevelOfDetailRules <em>Level Of Detail Rules</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GArgumentableImpl extends MinimalEObjectImpl.Container implements GArgumentable {
+public class GLevelOfDetailImpl extends MinimalEObjectImpl.Container implements GLevelOfDetail {
    /**
-    * The cached value of the '{@link #getArgs() <em>Args</em>}' map.
+    * The cached value of the '{@link #getLevelOfDetailRules() <em>Level Of Detail Rules</em>}' reference list.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @see #getArgs()
+    * @see #getLevelOfDetailRules()
     * @generated
     * @ordered
     */
-   protected EMap<String, Object> args;
+   protected EList<GLevelOfDetailRule> levelOfDetailRules;
 
    /**
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
     */
-   public GArgumentableImpl() {
+   public GLevelOfDetailImpl() {
       super();
    }
 
@@ -72,7 +70,7 @@ public class GArgumentableImpl extends MinimalEObjectImpl.Container implements G
     */
    @Override
    protected EClass eStaticClass() {
-      return GraphPackage.Literals.GARGUMENTABLE;
+      return GraphPackage.Literals.GLEVEL_OF_DETAIL;
    }
 
    /**
@@ -81,26 +79,12 @@ public class GArgumentableImpl extends MinimalEObjectImpl.Container implements G
     * @generated
     */
    @Override
-   public EMap<String, Object> getArgs() {
-      if (args == null) {
-         args = new EcoreEMap<String, Object>(GraphPackage.Literals.STRING_TO_OBJECT_MAP_ENTRY,
-            StringToObjectMapEntryImpl.class, this, GraphPackage.GARGUMENTABLE__ARGS);
+   public EList<GLevelOfDetailRule> getLevelOfDetailRules() {
+      if (levelOfDetailRules == null) {
+         levelOfDetailRules = new EObjectResolvingEList<GLevelOfDetailRule>(GLevelOfDetailRule.class, this,
+            GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES);
       }
-      return args;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-      switch (featureID) {
-         case GraphPackage.GARGUMENTABLE__ARGS:
-            return ((InternalEList<?>) getArgs()).basicRemove(otherEnd, msgs);
-      }
-      return super.eInverseRemove(otherEnd, featureID, msgs);
+      return levelOfDetailRules;
    }
 
    /**
@@ -111,11 +95,8 @@ public class GArgumentableImpl extends MinimalEObjectImpl.Container implements G
    @Override
    public Object eGet(int featureID, boolean resolve, boolean coreType) {
       switch (featureID) {
-         case GraphPackage.GARGUMENTABLE__ARGS:
-            if (coreType)
-               return getArgs();
-            else
-               return getArgs().map();
+         case GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES:
+            return getLevelOfDetailRules();
       }
       return super.eGet(featureID, resolve, coreType);
    }
@@ -125,11 +106,13 @@ public class GArgumentableImpl extends MinimalEObjectImpl.Container implements G
     * <!-- end-user-doc -->
     * @generated
     */
+   @SuppressWarnings("unchecked")
    @Override
    public void eSet(int featureID, Object newValue) {
       switch (featureID) {
-         case GraphPackage.GARGUMENTABLE__ARGS:
-            ((EStructuralFeature.Setting) getArgs()).set(newValue);
+         case GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES:
+            getLevelOfDetailRules().clear();
+            getLevelOfDetailRules().addAll((Collection<? extends GLevelOfDetailRule>) newValue);
             return;
       }
       super.eSet(featureID, newValue);
@@ -143,8 +126,8 @@ public class GArgumentableImpl extends MinimalEObjectImpl.Container implements G
    @Override
    public void eUnset(int featureID) {
       switch (featureID) {
-         case GraphPackage.GARGUMENTABLE__ARGS:
-            getArgs().clear();
+         case GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES:
+            getLevelOfDetailRules().clear();
             return;
       }
       super.eUnset(featureID);
@@ -158,10 +141,10 @@ public class GArgumentableImpl extends MinimalEObjectImpl.Container implements G
    @Override
    public boolean eIsSet(int featureID) {
       switch (featureID) {
-         case GraphPackage.GARGUMENTABLE__ARGS:
-            return args != null && !args.isEmpty();
+         case GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES:
+            return levelOfDetailRules != null && !levelOfDetailRules.isEmpty();
       }
       return super.eIsSet(featureID);
    }
 
-} //GArgumentableImpl
+} //GLevelOfDetailImpl

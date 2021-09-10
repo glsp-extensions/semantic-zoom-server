@@ -33,6 +33,7 @@ import org.eclipse.glsp.graph.GBoundsAware;
 import org.eclipse.glsp.graph.GButton;
 import org.eclipse.glsp.graph.GCompartment;
 import org.eclipse.glsp.graph.GDimension;
+import org.eclipse.glsp.graph.GDiscreteLevelOfDetail;
 import org.eclipse.glsp.graph.GEdge;
 import org.eclipse.glsp.graph.GEdgeLayoutable;
 import org.eclipse.glsp.graph.GEdgePlacement;
@@ -42,6 +43,11 @@ import org.eclipse.glsp.graph.GIssue;
 import org.eclipse.glsp.graph.GIssueMarker;
 import org.eclipse.glsp.graph.GLabel;
 import org.eclipse.glsp.graph.GLayouting;
+import org.eclipse.glsp.graph.GLevelOfDetail;
+import org.eclipse.glsp.graph.GLevelOfDetailRule;
+import org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger;
+import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete;
+import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble;
 import org.eclipse.glsp.graph.GModelElement;
 import org.eclipse.glsp.graph.GModelRoot;
 import org.eclipse.glsp.graph.GNode;
@@ -50,6 +56,7 @@ import org.eclipse.glsp.graph.GPort;
 import org.eclipse.glsp.graph.GPreRenderedElement;
 import org.eclipse.glsp.graph.GSeverity;
 import org.eclipse.glsp.graph.GShapeElement;
+import org.eclipse.glsp.graph.GVisibilityRule;
 import org.eclipse.glsp.graph.GraphFactory;
 import org.eclipse.glsp.graph.GraphPackage;
 
@@ -233,7 +240,56 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
     * <!-- end-user-doc -->
     * @generated
     */
+   private EClass gLevelOfDetailEClass = null;
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   private EClass gLevelOfDetailRuleEClass = null;
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   private EClass gLevelOfDetailRuleTriggerEClass = null;
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   private EClass gLevelOfDetailRuleTriggerDoubleEClass = null;
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   private EClass gLevelOfDetailRuleTriggerDiscreteEClass = null;
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   private EClass gVisibilityRuleEClass = null;
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
    private EEnum gSeverityEEnum = null;
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   private EEnum gDiscreteLevelOfDetailEEnum = null;
 
    /**
     * Creates an instance of the model <b>Package</b>, registered with
@@ -877,7 +933,133 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
     * @generated
     */
    @Override
+   public EClass getGLevelOfDetail() { return gLevelOfDetailEClass; }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EReference getGLevelOfDetail_LevelOfDetailRules() {
+      return (EReference) gLevelOfDetailEClass.getEStructuralFeatures().get(0);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EClass getGLevelOfDetailRule() { return gLevelOfDetailRuleEClass; }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EReference getGLevelOfDetailRule_Trigger() {
+      return (EReference) gLevelOfDetailRuleEClass.getEStructuralFeatures().get(0);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EClass getGLevelOfDetailRuleTrigger() { return gLevelOfDetailRuleTriggerEClass; }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EAttribute getGLevelOfDetailRuleTrigger_Type() {
+      return (EAttribute) gLevelOfDetailRuleTriggerEClass.getEStructuralFeatures().get(0);
+   }
+
+   /**
+   	 * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+   	 * @generated
+   	 */
+   @Override
+   public EClass getGLevelOfDetailRuleTriggerDouble() { return gLevelOfDetailRuleTriggerDoubleEClass; }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EAttribute getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelFrom() {
+      return (EAttribute) gLevelOfDetailRuleTriggerDoubleEClass.getEStructuralFeatures().get(0);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EAttribute getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelTo() {
+      return (EAttribute) gLevelOfDetailRuleTriggerDoubleEClass.getEStructuralFeatures().get(1);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EClass getGLevelOfDetailRuleTriggerDiscrete() { return gLevelOfDetailRuleTriggerDiscreteEClass; }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EAttribute getGLevelOfDetailRuleTriggerDiscrete_TriggerDiscreteLevel() {
+      return (EAttribute) gLevelOfDetailRuleTriggerDiscreteEClass.getEStructuralFeatures().get(0);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EClass getGVisibilityRule() { return gVisibilityRuleEClass; }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EAttribute getGVisibilityRule_SetVisibility() {
+      return (EAttribute) gVisibilityRuleEClass.getEStructuralFeatures().get(0);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
    public EEnum getGSeverity() { return gSeverityEEnum; }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EEnum getGDiscreteLevelOfDetail() { return gDiscreteLevelOfDetailEEnum; }
 
    /**
     * <!-- begin-user-doc -->
@@ -998,8 +1180,31 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
       createEAttribute(stringToObjectMapEntryEClass, STRING_TO_OBJECT_MAP_ENTRY__KEY);
       createEAttribute(stringToObjectMapEntryEClass, STRING_TO_OBJECT_MAP_ENTRY__VALUE);
 
+      gLevelOfDetailEClass = createEClass(GLEVEL_OF_DETAIL);
+      createEReference(gLevelOfDetailEClass, GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES);
+
+      gLevelOfDetailRuleEClass = createEClass(GLEVEL_OF_DETAIL_RULE);
+      createEReference(gLevelOfDetailRuleEClass, GLEVEL_OF_DETAIL_RULE__TRIGGER);
+
+      gLevelOfDetailRuleTriggerEClass = createEClass(GLEVEL_OF_DETAIL_RULE_TRIGGER);
+      createEAttribute(gLevelOfDetailRuleTriggerEClass, GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE);
+
+      gLevelOfDetailRuleTriggerDoubleEClass = createEClass(GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE);
+      createEAttribute(gLevelOfDetailRuleTriggerDoubleEClass,
+         GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_FROM);
+      createEAttribute(gLevelOfDetailRuleTriggerDoubleEClass,
+         GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_TO);
+
+      gLevelOfDetailRuleTriggerDiscreteEClass = createEClass(GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE);
+      createEAttribute(gLevelOfDetailRuleTriggerDiscreteEClass,
+         GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TRIGGER_DISCRETE_LEVEL);
+
+      gVisibilityRuleEClass = createEClass(GVISIBILITY_RULE);
+      createEAttribute(gVisibilityRuleEClass, GVISIBILITY_RULE__SET_VISIBILITY);
+
       // Create enums
       gSeverityEEnum = createEEnum(GSEVERITY);
+      gDiscreteLevelOfDetailEEnum = createEEnum(GDISCRETE_LEVEL_OF_DETAIL);
    }
 
    /**
@@ -1046,11 +1251,15 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
       gLabelEClass.getESuperTypes().add(this.getGAlignable());
       gLabelEClass.getESuperTypes().add(this.getGEdgeLayoutable());
       gLabelEClass.getESuperTypes().add(this.getGShapeElement());
+      gLabelEClass.getESuperTypes().add(this.getGLevelOfDetail());
       gIssueMarkerEClass.getESuperTypes().add(this.getGShapeElement());
       gPortEClass.getESuperTypes().add(this.getGShapeElement());
       gButtonEClass.getESuperTypes().add(this.getGShapeElement());
       gHtmlRootEClass.getESuperTypes().add(this.getGModelRoot());
       gPreRenderedElementEClass.getESuperTypes().add(this.getGModelElement());
+      gLevelOfDetailRuleTriggerDoubleEClass.getESuperTypes().add(this.getGLevelOfDetailRuleTrigger());
+      gLevelOfDetailRuleTriggerDiscreteEClass.getESuperTypes().add(this.getGLevelOfDetailRuleTrigger());
+      gVisibilityRuleEClass.getESuperTypes().add(this.getGLevelOfDetailRule());
 
       // Initialize classes, features, and operations; add parameters
       initEClass(gModelElementEClass, GModelElement.class, "GModelElement", IS_ABSTRACT, IS_INTERFACE,
@@ -1221,11 +1430,55 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
          Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
          IS_ORDERED);
 
+      initEClass(gLevelOfDetailEClass, GLevelOfDetail.class, "GLevelOfDetail", !IS_ABSTRACT, !IS_INTERFACE,
+         IS_GENERATED_INSTANCE_CLASS);
+      initEReference(getGLevelOfDetail_LevelOfDetailRules(), this.getGLevelOfDetailRule(), null, "levelOfDetailRules",
+         null, 0, -1, GLevelOfDetail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+         IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+      initEClass(gLevelOfDetailRuleEClass, GLevelOfDetailRule.class, "GLevelOfDetailRule", IS_ABSTRACT, IS_INTERFACE,
+         IS_GENERATED_INSTANCE_CLASS);
+      initEReference(getGLevelOfDetailRule_Trigger(), this.getGLevelOfDetailRuleTrigger(), null, "trigger", null, 1, 1,
+         GLevelOfDetailRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+      initEClass(gLevelOfDetailRuleTriggerEClass, GLevelOfDetailRuleTrigger.class, "GLevelOfDetailRuleTrigger",
+         IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+      initEAttribute(getGLevelOfDetailRuleTrigger_Type(), ecorePackage.getEString(), "type", null, 0, 1,
+         GLevelOfDetailRuleTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+         !IS_DERIVED, IS_ORDERED);
+
+      initEClass(gLevelOfDetailRuleTriggerDoubleEClass, GLevelOfDetailRuleTriggerDouble.class,
+         "GLevelOfDetailRuleTriggerDouble", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+      initEAttribute(getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelFrom(), ecorePackage.getEDouble(),
+         "triggerContinuousLevelFrom", null, 1, 1, GLevelOfDetailRuleTriggerDouble.class, !IS_TRANSIENT, !IS_VOLATILE,
+         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+      initEAttribute(getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelTo(), ecorePackage.getEDouble(),
+         "triggerContinuousLevelTo", null, 1, 1, GLevelOfDetailRuleTriggerDouble.class, !IS_TRANSIENT, !IS_VOLATILE,
+         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+      initEClass(gLevelOfDetailRuleTriggerDiscreteEClass, GLevelOfDetailRuleTriggerDiscrete.class,
+         "GLevelOfDetailRuleTriggerDiscrete", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+      initEAttribute(getGLevelOfDetailRuleTriggerDiscrete_TriggerDiscreteLevel(), this.getGDiscreteLevelOfDetail(),
+         "triggerDiscreteLevel", null, 1, 1, GLevelOfDetailRuleTriggerDiscrete.class, !IS_TRANSIENT, !IS_VOLATILE,
+         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+      initEClass(gVisibilityRuleEClass, GVisibilityRule.class, "GVisibilityRule", !IS_ABSTRACT, !IS_INTERFACE,
+         IS_GENERATED_INSTANCE_CLASS);
+      initEAttribute(getGVisibilityRule_SetVisibility(), ecorePackage.getEBoolean(), "setVisibility", null, 1, 1,
+         GVisibilityRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+         !IS_DERIVED, IS_ORDERED);
+
       // Initialize enums and add enum literals
       initEEnum(gSeverityEEnum, GSeverity.class, "GSeverity");
       addEEnumLiteral(gSeverityEEnum, GSeverity.ERROR);
       addEEnumLiteral(gSeverityEEnum, GSeverity.WARNING);
       addEEnumLiteral(gSeverityEEnum, GSeverity.INFO);
+
+      initEEnum(gDiscreteLevelOfDetailEEnum, GDiscreteLevelOfDetail.class, "GDiscreteLevelOfDetail");
+      addEEnumLiteral(gDiscreteLevelOfDetailEEnum, GDiscreteLevelOfDetail.OVERVIEW);
+      addEEnumLiteral(gDiscreteLevelOfDetailEEnum, GDiscreteLevelOfDetail.INTERMEDIATE);
+      addEEnumLiteral(gDiscreteLevelOfDetailEEnum, GDiscreteLevelOfDetail.DETAIL);
 
       // Create resource
       createResource(eNS_URI);

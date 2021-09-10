@@ -1108,13 +1108,22 @@ public interface GraphPackage extends EPackage {
    int GLABEL__SIZE = GALIGNABLE_FEATURE_COUNT + 9;
 
    /**
+    * The feature id for the '<em><b>Level Of Detail Rules</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLABEL__LEVEL_OF_DETAIL_RULES = GALIGNABLE_FEATURE_COUNT + 10;
+
+   /**
     * The feature id for the '<em><b>Text</b></em>' attribute.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int GLABEL__TEXT = GALIGNABLE_FEATURE_COUNT + 10;
+   int GLABEL__TEXT = GALIGNABLE_FEATURE_COUNT + 11;
 
    /**
     * The number of structural features of the '<em>GLabel</em>' class.
@@ -1123,7 +1132,7 @@ public interface GraphPackage extends EPackage {
     * @generated
     * @ordered
     */
-   int GLABEL_FEATURE_COUNT = GALIGNABLE_FEATURE_COUNT + 11;
+   int GLABEL_FEATURE_COUNT = GALIGNABLE_FEATURE_COUNT + 12;
 
    /**
     * The number of operations of the '<em>GLabel</em>' class.
@@ -2139,6 +2148,266 @@ public interface GraphPackage extends EPackage {
    int STRING_TO_OBJECT_MAP_ENTRY_OPERATION_COUNT = 0;
 
    /**
+    * The meta object id for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailImpl <em>GLevel Of Detail</em>}' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.eclipse.glsp.graph.impl.GLevelOfDetailImpl
+    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetail()
+    * @generated
+    */
+   int GLEVEL_OF_DETAIL = 24;
+
+   /**
+    * The feature id for the '<em><b>Level Of Detail Rules</b></em>' reference list.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES = 0;
+
+   /**
+    * The number of structural features of the '<em>GLevel Of Detail</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_FEATURE_COUNT = 1;
+
+   /**
+    * The number of operations of the '<em>GLevel Of Detail</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_OPERATION_COUNT = 0;
+
+   /**
+    * The meta object id for the '{@link org.eclipse.glsp.graph.GLevelOfDetailRule <em>GLevel Of Detail Rule</em>}' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRule
+    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRule()
+    * @generated
+    */
+   int GLEVEL_OF_DETAIL_RULE = 25;
+
+   /**
+    * The feature id for the '<em><b>Trigger</b></em>' reference.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_RULE__TRIGGER = 0;
+
+   /**
+    * The number of structural features of the '<em>GLevel Of Detail Rule</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT = 1;
+
+   /**
+    * The number of operations of the '<em>GLevel Of Detail Rule</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_RULE_OPERATION_COUNT = 0;
+
+   /**
+    * The meta object id for the '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger <em>GLevel Of Detail Rule Trigger</em>}' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger
+    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRuleTrigger()
+    * @generated
+    */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER = 26;
+
+   /**
+    * The feature id for the '<em><b>Type</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE = 0;
+
+   /**
+   	 * The number of structural features of the '<em>GLevel Of Detail Rule Trigger</em>' class.
+   	 * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+   	 * @generated
+   	 * @ordered
+   	 */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_FEATURE_COUNT = 1;
+
+   /**
+    * The number of operations of the '<em>GLevel Of Detail Rule Trigger</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_OPERATION_COUNT = 0;
+
+   /**
+    * The meta object id for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDoubleImpl <em>GLevel Of Detail Rule Trigger Double</em>}' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @see org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDoubleImpl
+    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRuleTriggerDouble()
+    * @generated
+    */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE = 27;
+
+   /**
+    * The feature id for the '<em><b>Type</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TYPE = GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE;
+
+   /**
+   	 * The feature id for the '<em><b>Trigger Continuous Level From</b></em>' attribute.
+   	 * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+   	 * @generated
+   	 * @ordered
+   	 */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_FROM = GLEVEL_OF_DETAIL_RULE_TRIGGER_FEATURE_COUNT
+      + 0;
+
+   /**
+    * The feature id for the '<em><b>Trigger Continuous Level To</b></em>' attribute.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_TO = GLEVEL_OF_DETAIL_RULE_TRIGGER_FEATURE_COUNT
+      + 1;
+
+   /**
+    * The number of structural features of the '<em>GLevel Of Detail Rule Trigger Double</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE_FEATURE_COUNT = GLEVEL_OF_DETAIL_RULE_TRIGGER_FEATURE_COUNT + 2;
+
+   /**
+    * The number of operations of the '<em>GLevel Of Detail Rule Trigger Double</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE_OPERATION_COUNT = GLEVEL_OF_DETAIL_RULE_TRIGGER_OPERATION_COUNT + 0;
+
+   /**
+    * The meta object id for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDiscreteImpl <em>GLevel Of Detail Rule Trigger Discrete</em>}' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @see org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDiscreteImpl
+    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRuleTriggerDiscrete()
+    * @generated
+    */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE = 28;
+
+   /**
+    * The feature id for the '<em><b>Type</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TYPE = GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE;
+
+   /**
+   	 * The feature id for the '<em><b>Trigger Discrete Level</b></em>' attribute.
+   	 * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+   	 * @generated
+   	 * @ordered
+   	 */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TRIGGER_DISCRETE_LEVEL = GLEVEL_OF_DETAIL_RULE_TRIGGER_FEATURE_COUNT + 0;
+
+   /**
+    * The number of structural features of the '<em>GLevel Of Detail Rule Trigger Discrete</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE_FEATURE_COUNT = GLEVEL_OF_DETAIL_RULE_TRIGGER_FEATURE_COUNT + 1;
+
+   /**
+    * The number of operations of the '<em>GLevel Of Detail Rule Trigger Discrete</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE_OPERATION_COUNT = GLEVEL_OF_DETAIL_RULE_TRIGGER_OPERATION_COUNT + 0;
+
+   /**
+    * The meta object id for the '{@link org.eclipse.glsp.graph.impl.GVisibilityRuleImpl <em>GVisibility Rule</em>}' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @see org.eclipse.glsp.graph.impl.GVisibilityRuleImpl
+    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGVisibilityRule()
+    * @generated
+    */
+   int GVISIBILITY_RULE = 29;
+
+   /**
+    * The feature id for the '<em><b>Trigger</b></em>' reference.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GVISIBILITY_RULE__TRIGGER = GLEVEL_OF_DETAIL_RULE__TRIGGER;
+
+   /**
+    * The feature id for the '<em><b>Set Visibility</b></em>' attribute.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GVISIBILITY_RULE__SET_VISIBILITY = GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT + 0;
+
+   /**
+    * The number of structural features of the '<em>GVisibility Rule</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GVISIBILITY_RULE_FEATURE_COUNT = GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT + 1;
+
+   /**
+    * The number of operations of the '<em>GVisibility Rule</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GVISIBILITY_RULE_OPERATION_COUNT = GLEVEL_OF_DETAIL_RULE_OPERATION_COUNT + 0;
+
+   /**
     * The meta object id for the '{@link org.eclipse.glsp.graph.GSeverity <em>GSeverity</em>}' enum.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -2146,7 +2415,17 @@ public interface GraphPackage extends EPackage {
     * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGSeverity()
     * @generated
     */
-   int GSEVERITY = 24;
+   int GSEVERITY = 30;
+
+   /**
+    * The meta object id for the '{@link org.eclipse.glsp.graph.GDiscreteLevelOfDetail <em>GDiscrete Level Of Detail</em>}' enum.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.eclipse.glsp.graph.GDiscreteLevelOfDetail
+    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGDiscreteLevelOfDetail()
+    * @generated
+    */
+   int GDISCRETE_LEVEL_OF_DETAIL = 31;
 
    /**
     * Returns the meta object for class '{@link org.eclipse.glsp.graph.GModelElement <em>GModel Element</em>}'.
@@ -2864,6 +3143,143 @@ public interface GraphPackage extends EPackage {
    EAttribute getStringToObjectMapEntry_Value();
 
    /**
+    * Returns the meta object for class '{@link org.eclipse.glsp.graph.GLevelOfDetail <em>GLevel Of Detail</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for class '<em>GLevel Of Detail</em>'.
+    * @see org.eclipse.glsp.graph.GLevelOfDetail
+    * @generated
+    */
+   EClass getGLevelOfDetail();
+
+   /**
+    * Returns the meta object for the reference list '{@link org.eclipse.glsp.graph.GLevelOfDetail#getLevelOfDetailRules <em>Level Of Detail Rules</em>}'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return the meta object for the reference list '<em>Level Of Detail Rules</em>'.
+    * @see org.eclipse.glsp.graph.GLevelOfDetail#getLevelOfDetailRules()
+    * @see #getGLevelOfDetail()
+    * @generated
+    */
+   EReference getGLevelOfDetail_LevelOfDetailRules();
+
+   /**
+    * Returns the meta object for class '{@link org.eclipse.glsp.graph.GLevelOfDetailRule <em>GLevel Of Detail Rule</em>}'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return the meta object for class '<em>GLevel Of Detail Rule</em>'.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRule
+    * @generated
+    */
+   EClass getGLevelOfDetailRule();
+
+   /**
+    * Returns the meta object for the reference '{@link org.eclipse.glsp.graph.GLevelOfDetailRule#getTrigger <em>Trigger</em>}'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return the meta object for the reference '<em>Trigger</em>'.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRule#getTrigger()
+    * @see #getGLevelOfDetailRule()
+    * @generated
+    */
+   EReference getGLevelOfDetailRule_Trigger();
+
+   /**
+    * Returns the meta object for class '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger <em>GLevel Of Detail Rule Trigger</em>}'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return the meta object for class '<em>GLevel Of Detail Rule Trigger</em>'.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger
+    * @generated
+    */
+   EClass getGLevelOfDetailRuleTrigger();
+
+   /**
+    * Returns the meta object for the attribute '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger#getType <em>Type</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Type</em>'.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger#getType()
+    * @see #getGLevelOfDetailRuleTrigger()
+    * @generated
+    */
+   EAttribute getGLevelOfDetailRuleTrigger_Type();
+
+   /**
+   	 * Returns the meta object for class '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble <em>GLevel Of Detail Rule Trigger Double</em>}'.
+   	 * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+   	 * @return the meta object for class '<em>GLevel Of Detail Rule Trigger Double</em>'.
+   	 * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble
+   	 * @generated
+   	 */
+   EClass getGLevelOfDetailRuleTriggerDouble();
+
+   /**
+    * Returns the meta object for the attribute '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble#getTriggerContinuousLevelFrom <em>Trigger Continuous Level From</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Trigger Continuous Level From</em>'.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble#getTriggerContinuousLevelFrom()
+    * @see #getGLevelOfDetailRuleTriggerDouble()
+    * @generated
+    */
+   EAttribute getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelFrom();
+
+   /**
+    * Returns the meta object for the attribute '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble#getTriggerContinuousLevelTo <em>Trigger Continuous Level To</em>}'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Trigger Continuous Level To</em>'.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble#getTriggerContinuousLevelTo()
+    * @see #getGLevelOfDetailRuleTriggerDouble()
+    * @generated
+    */
+   EAttribute getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelTo();
+
+   /**
+    * Returns the meta object for class '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete <em>GLevel Of Detail Rule Trigger Discrete</em>}'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return the meta object for class '<em>GLevel Of Detail Rule Trigger Discrete</em>'.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete
+    * @generated
+    */
+   EClass getGLevelOfDetailRuleTriggerDiscrete();
+
+   /**
+    * Returns the meta object for the attribute '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete#getTriggerDiscreteLevel <em>Trigger Discrete Level</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Trigger Discrete Level</em>'.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete#getTriggerDiscreteLevel()
+    * @see #getGLevelOfDetailRuleTriggerDiscrete()
+    * @generated
+    */
+   EAttribute getGLevelOfDetailRuleTriggerDiscrete_TriggerDiscreteLevel();
+
+   /**
+    * Returns the meta object for class '{@link org.eclipse.glsp.graph.GVisibilityRule <em>GVisibility Rule</em>}'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return the meta object for class '<em>GVisibility Rule</em>'.
+    * @see org.eclipse.glsp.graph.GVisibilityRule
+    * @generated
+    */
+   EClass getGVisibilityRule();
+
+   /**
+    * Returns the meta object for the attribute '{@link org.eclipse.glsp.graph.GVisibilityRule#isSetVisibility <em>Set Visibility</em>}'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Set Visibility</em>'.
+    * @see org.eclipse.glsp.graph.GVisibilityRule#isSetVisibility()
+    * @see #getGVisibilityRule()
+    * @generated
+    */
+   EAttribute getGVisibilityRule_SetVisibility();
+
+   /**
     * Returns the meta object for enum '{@link org.eclipse.glsp.graph.GSeverity <em>GSeverity</em>}'.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -2872,6 +3288,16 @@ public interface GraphPackage extends EPackage {
     * @generated
     */
    EEnum getGSeverity();
+
+   /**
+    * Returns the meta object for enum '{@link org.eclipse.glsp.graph.GDiscreteLevelOfDetail <em>GDiscrete Level Of Detail</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for enum '<em>GDiscrete Level Of Detail</em>'.
+    * @see org.eclipse.glsp.graph.GDiscreteLevelOfDetail
+    * @generated
+    */
+   EEnum getGDiscreteLevelOfDetail();
 
    /**
     * Returns the factory that creates the instances of the model.
@@ -3481,6 +3907,125 @@ public interface GraphPackage extends EPackage {
       EAttribute STRING_TO_OBJECT_MAP_ENTRY__VALUE = eINSTANCE.getStringToObjectMapEntry_Value();
 
       /**
+       * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailImpl <em>GLevel Of Detail</em>}' class.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @see org.eclipse.glsp.graph.impl.GLevelOfDetailImpl
+       * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetail()
+       * @generated
+       */
+      EClass GLEVEL_OF_DETAIL = eINSTANCE.getGLevelOfDetail();
+
+      /**
+       * The meta object literal for the '<em><b>Level Of Detail Rules</b></em>' reference list feature.
+       * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+       * @generated
+       */
+      EReference GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES = eINSTANCE.getGLevelOfDetail_LevelOfDetailRules();
+
+      /**
+       * The meta object literal for the '{@link org.eclipse.glsp.graph.GLevelOfDetailRule <em>GLevel Of Detail Rule</em>}' class.
+       * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+       * @see org.eclipse.glsp.graph.GLevelOfDetailRule
+       * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRule()
+       * @generated
+       */
+      EClass GLEVEL_OF_DETAIL_RULE = eINSTANCE.getGLevelOfDetailRule();
+
+      /**
+       * The meta object literal for the '<em><b>Trigger</b></em>' reference feature.
+       * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+       * @generated
+       */
+      EReference GLEVEL_OF_DETAIL_RULE__TRIGGER = eINSTANCE.getGLevelOfDetailRule_Trigger();
+
+      /**
+       * The meta object literal for the '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger <em>GLevel Of Detail Rule Trigger</em>}' class.
+       * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+       * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger
+       * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRuleTrigger()
+       * @generated
+       */
+      EClass GLEVEL_OF_DETAIL_RULE_TRIGGER = eINSTANCE.getGLevelOfDetailRuleTrigger();
+
+      /**
+       * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EAttribute GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE = eINSTANCE.getGLevelOfDetailRuleTrigger_Type();
+
+      /**
+      	 * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDoubleImpl <em>GLevel Of Detail Rule Trigger Double</em>}' class.
+      	 * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+      	 * @see org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDoubleImpl
+      	 * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRuleTriggerDouble()
+      	 * @generated
+      	 */
+      EClass GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE = eINSTANCE.getGLevelOfDetailRuleTriggerDouble();
+
+      /**
+       * The meta object literal for the '<em><b>Trigger Continuous Level From</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EAttribute GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_FROM = eINSTANCE
+         .getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelFrom();
+
+      /**
+       * The meta object literal for the '<em><b>Trigger Continuous Level To</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+       * @generated
+       */
+      EAttribute GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_TO = eINSTANCE
+         .getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelTo();
+
+      /**
+       * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDiscreteImpl <em>GLevel Of Detail Rule Trigger Discrete</em>}' class.
+       * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+       * @see org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDiscreteImpl
+       * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRuleTriggerDiscrete()
+       * @generated
+       */
+      EClass GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE = eINSTANCE.getGLevelOfDetailRuleTriggerDiscrete();
+
+      /**
+       * The meta object literal for the '<em><b>Trigger Discrete Level</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EAttribute GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TRIGGER_DISCRETE_LEVEL = eINSTANCE
+         .getGLevelOfDetailRuleTriggerDiscrete_TriggerDiscreteLevel();
+
+      /**
+       * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.GVisibilityRuleImpl <em>GVisibility Rule</em>}' class.
+       * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+       * @see org.eclipse.glsp.graph.impl.GVisibilityRuleImpl
+       * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGVisibilityRule()
+       * @generated
+       */
+      EClass GVISIBILITY_RULE = eINSTANCE.getGVisibilityRule();
+
+      /**
+       * The meta object literal for the '<em><b>Set Visibility</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+       * @generated
+       */
+      EAttribute GVISIBILITY_RULE__SET_VISIBILITY = eINSTANCE.getGVisibilityRule_SetVisibility();
+
+      /**
        * The meta object literal for the '{@link org.eclipse.glsp.graph.GSeverity <em>GSeverity</em>}' enum.
        * <!-- begin-user-doc -->
        * <!-- end-user-doc -->
@@ -3489,6 +4034,16 @@ public interface GraphPackage extends EPackage {
        * @generated
        */
       EEnum GSEVERITY = eINSTANCE.getGSeverity();
+
+      /**
+       * The meta object literal for the '{@link org.eclipse.glsp.graph.GDiscreteLevelOfDetail <em>GDiscrete Level Of Detail</em>}' enum.
+       * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+       * @see org.eclipse.glsp.graph.GDiscreteLevelOfDetail
+       * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGDiscreteLevelOfDetail()
+       * @generated
+       */
+      EEnum GDISCRETE_LEVEL_OF_DETAIL = eINSTANCE.getGDiscreteLevelOfDetail();
 
    }
 

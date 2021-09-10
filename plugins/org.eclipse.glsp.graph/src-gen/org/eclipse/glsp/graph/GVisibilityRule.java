@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2019 EclipseSource and others.
+ * Copyright (c) 2019-2021 EclipseSource and others.
  * 
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0 which is available at
@@ -18,41 +18,41 @@ package org.eclipse.glsp.graph;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>GLabel</b></em>'.
+ * A representation of the model object '<em><b>GVisibility Rule</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.glsp.graph.GLabel#getText <em>Text</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.GVisibilityRule#isSetVisibility <em>Set Visibility</em>}</li>
  * </ul>
  *
- * @see org.eclipse.glsp.graph.GraphPackage#getGLabel()
+ * @see org.eclipse.glsp.graph.GraphPackage#getGVisibilityRule()
  * @model
  * @generated
  */
-public interface GLabel extends GAlignable, GEdgeLayoutable, GShapeElement, GLevelOfDetail {
+public interface GVisibilityRule extends GLevelOfDetailRule {
    /**
-    * Returns the value of the '<em><b>Text</b></em>' attribute.
+    * Returns the value of the '<em><b>Set Visibility</b></em>' attribute.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @return the value of the '<em>Text</em>' attribute.
-    * @see #setText(String)
-    * @see org.eclipse.glsp.graph.GraphPackage#getGLabel_Text()
+    * @return the value of the '<em>Set Visibility</em>' attribute.
+    * @see #setSetVisibility(boolean)
+    * @see org.eclipse.glsp.graph.GraphPackage#getGVisibilityRule_SetVisibility()
     * @model required="true"
     * @generated
     */
-   String getText();
+   boolean isSetVisibility();
 
    /**
-    * Sets the value of the '{@link org.eclipse.glsp.graph.GLabel#getText <em>Text</em>}' attribute.
+    * Sets the value of the '{@link org.eclipse.glsp.graph.GVisibilityRule#isSetVisibility <em>Set Visibility</em>}' attribute.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @param value the new value of the '<em>Text</em>' attribute.
-    * @see #getText()
+    * @param value the new value of the '<em>Set Visibility</em>' attribute.
+    * @see #isSetVisibility()
     * @generated
     */
-   void setText(String value);
+   void setSetVisibility(boolean value);
 
-} // GLabel
+} // GVisibilityRule

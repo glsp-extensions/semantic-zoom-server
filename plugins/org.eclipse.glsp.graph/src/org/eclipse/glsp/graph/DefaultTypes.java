@@ -49,6 +49,10 @@ public final class DefaultTypes {
    public static final String SHAPE_PRE_RENDERED = "shape-pre-rendered";
    public static final String SVG = "svg";
 
+   // level of detail
+   public static final String LEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS = "lod:rule-trigger-continuous";
+   public static final String LEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE = "lod:rule-trigger-discrete";
+
    public static Map<String, EClass> getDefaultTypeMappings() {
       Map<String, EClass> mapping = new HashMap<>();
       mapping.put(GRAPH, GraphPackage.Literals.GGRAPH);

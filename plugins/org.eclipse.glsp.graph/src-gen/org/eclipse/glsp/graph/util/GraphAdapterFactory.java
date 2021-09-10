@@ -203,6 +203,36 @@ public class GraphAdapterFactory extends AdapterFactoryImpl {
       }
 
       @Override
+      public Adapter caseGLevelOfDetail(GLevelOfDetail object) {
+         return createGLevelOfDetailAdapter();
+      }
+
+      @Override
+      public Adapter caseGLevelOfDetailRule(GLevelOfDetailRule object) {
+         return createGLevelOfDetailRuleAdapter();
+      }
+
+      @Override
+      public Adapter caseGLevelOfDetailRuleTrigger(GLevelOfDetailRuleTrigger object) {
+         return createGLevelOfDetailRuleTriggerAdapter();
+      }
+
+      @Override
+      public Adapter caseGLevelOfDetailRuleTriggerDouble(GLevelOfDetailRuleTriggerDouble object) {
+         return createGLevelOfDetailRuleTriggerDoubleAdapter();
+      }
+
+      @Override
+      public Adapter caseGLevelOfDetailRuleTriggerDiscrete(GLevelOfDetailRuleTriggerDiscrete object) {
+         return createGLevelOfDetailRuleTriggerDiscreteAdapter();
+      }
+
+      @Override
+      public Adapter caseGVisibilityRule(GVisibilityRule object) {
+         return createGVisibilityRuleAdapter();
+      }
+
+      @Override
       public Adapter defaultCase(EObject object) {
          return createEObjectAdapter();
       }
@@ -554,6 +584,90 @@ public class GraphAdapterFactory extends AdapterFactoryImpl {
     * @generated
     */
    public Adapter createStringToObjectMapEntryAdapter() {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.eclipse.glsp.graph.GLevelOfDetail <em>GLevel Of Detail</em>}'.
+    * <!-- begin-user-doc -->
+    * This default implementation returns null so that we can easily ignore cases;
+    * it's useful to ignore a case when inheritance will catch all the cases anyway.
+    * <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.eclipse.glsp.graph.GLevelOfDetail
+    * @generated
+    */
+   public Adapter createGLevelOfDetailAdapter() {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.eclipse.glsp.graph.GLevelOfDetailRule <em>GLevel Of Detail Rule</em>}'.
+    * <!-- begin-user-doc -->
+   	 * This default implementation returns null so that we can easily ignore cases;
+   	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   	 * <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRule
+    * @generated
+    */
+   public Adapter createGLevelOfDetailRuleAdapter() {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger <em>GLevel Of Detail Rule Trigger</em>}'.
+    * <!-- begin-user-doc -->
+   	 * This default implementation returns null so that we can easily ignore cases;
+   	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   	 * <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger
+    * @generated
+    */
+   public Adapter createGLevelOfDetailRuleTriggerAdapter() {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble <em>GLevel Of Detail Rule Trigger Double</em>}'.
+    * <!-- begin-user-doc -->
+   	 * This default implementation returns null so that we can easily ignore cases;
+   	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   	 * <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble
+    * @generated
+    */
+   public Adapter createGLevelOfDetailRuleTriggerDoubleAdapter() {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete <em>GLevel Of Detail Rule Trigger Discrete</em>}'.
+    * <!-- begin-user-doc -->
+   	 * This default implementation returns null so that we can easily ignore cases;
+   	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   	 * <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete
+    * @generated
+    */
+   public Adapter createGLevelOfDetailRuleTriggerDiscreteAdapter() {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.eclipse.glsp.graph.GVisibilityRule <em>GVisibility Rule</em>}'.
+    * <!-- begin-user-doc -->
+   	 * This default implementation returns null so that we can easily ignore cases;
+   	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   	 * <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.eclipse.glsp.graph.GVisibilityRule
+    * @generated
+    */
+   public Adapter createGVisibilityRuleAdapter() {
       return null;
    }
 

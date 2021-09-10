@@ -21,6 +21,7 @@ import org.eclipse.glsp.example.workflow.wfgraph.TaskNode;
 import org.eclipse.glsp.example.workflow.wfgraph.WeightedEdge;
 import org.eclipse.glsp.example.workflow.wfgraph.WfgraphFactory;
 import org.eclipse.glsp.graph.GCompartment;
+import org.eclipse.glsp.graph.GDiscreteLevelOfDetail;
 import org.eclipse.glsp.graph.GLabel;
 import org.eclipse.glsp.graph.builder.AbstractGCompartmentBuilder;
 import org.eclipse.glsp.graph.builder.AbstractGEdgeBuilder;
@@ -28,6 +29,9 @@ import org.eclipse.glsp.graph.builder.AbstractGNodeBuilder;
 import org.eclipse.glsp.graph.builder.impl.GCompartmentBuilder;
 import org.eclipse.glsp.graph.builder.impl.GLabelBuilder;
 import org.eclipse.glsp.graph.builder.impl.GLayoutOptions;
+import org.eclipse.glsp.graph.builder.impl.GLevelOfDetailRuleTriggerContinuousBuilder;
+import org.eclipse.glsp.graph.builder.impl.GLevelOfDetailRuleTriggerDiscreteBuilder;
+import org.eclipse.glsp.graph.builder.impl.GVisibilityRuleBuilder;
 import org.eclipse.glsp.graph.util.GConstants;
 import org.eclipse.glsp.graph.util.GConstants.HAlign;
 
@@ -149,10 +153,29 @@ public final class WorkflowBuilder {
       }
 
       private GLabel createCompartmentIconLabel(final TaskNode taskNode) {
-         return new GLabelBuilder(ModelTypes.LABEL_ICON) //
+         GLabel icon = new GLabelBuilder(ModelTypes.LABEL_ICON) //
             .id(taskNode.getId() + "_ticon") //
             .text("" + taskNode.getTaskType().toUpperCase().charAt(0)) //
+            .addLevelOfDetailRule(
+               new GVisibilityRuleBuilder()
+                  .setLevelOfDetailRuleTrigger(
+                     new GLevelOfDetailRuleTriggerDiscreteBuilder()
+                        .setDiscreteLevelOfDetail(GDiscreteLevelOfDetail.OVERVIEW)
+                        .build())
+                  .setSetVisibility(false)
+                  .build())
+            .addLevelOfDetailRule(
+               new GVisibilityRuleBuilder()
+                  .setLevelOfDetailRuleTrigger(
+                     new GLevelOfDetailRuleTriggerContinuousBuilder()
+                        .setFrom(1)
+                        .setTo(2)
+                        .build())
+                  .setSetVisibility(false)
+                  .build())
             .build();
+
+         return icon;
       }
 
    }

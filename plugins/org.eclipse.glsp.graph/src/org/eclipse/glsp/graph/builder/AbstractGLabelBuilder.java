@@ -15,8 +15,12 @@
  ********************************************************************************/
 package org.eclipse.glsp.graph.builder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.glsp.graph.GEdgePlacement;
 import org.eclipse.glsp.graph.GLabel;
+import org.eclipse.glsp.graph.GLevelOfDetailRule;
 import org.eclipse.glsp.graph.GPoint;
 import org.eclipse.glsp.graph.util.GraphUtil;
 
@@ -25,36 +29,48 @@ public abstract class AbstractGLabelBuilder<T extends GLabel, E extends Abstract
    protected GPoint alignment;
    protected GEdgePlacement edgePlacement;
    protected String text;
+   protected List<GLevelOfDetailRule> rules = new ArrayList<>();
 
-   public AbstractGLabelBuilder(String type) {
+   public AbstractGLabelBuilder(final String type) {
       super(type);
    }
 
-   public E alignment(GPoint alignment) {
+   public E alignment(final GPoint alignment) {
       this.alignment = alignment;
       return self();
    }
 
-   public E alignment(double x, double y) {
+   public E alignment(final double x, final double y) {
       return alignment(GraphUtil.point(x, y));
    }
 
-   public E edgePlacement(GEdgePlacement edgePlacement) {
+   public E edgePlacement(final GEdgePlacement edgePlacement) {
       this.edgePlacement = edgePlacement;
       return self();
    }
 
-   public E text(String text) {
+   public E text(final String text) {
       this.text = text;
       return self();
    }
 
+   public E addLevelOfDetailRule(final GLevelOfDetailRule rule) {
+      this.rules.add(rule);
+      return self();
+   }
+
+   public E addLevelOfDetailRules(final List<GLevelOfDetailRule> rules) {
+      this.rules.addAll(rules);
+      return self();
+   }
+
    @Override
-   public void setProperties(T label) {
+   public void setProperties(final T label) {
       super.setProperties(label);
       label.setAlignment(alignment);
       label.setEdgePlacement(edgePlacement);
       label.setText(text);
+      label.getLevelOfDetailRules().addAll(this.rules);
    }
 
 }

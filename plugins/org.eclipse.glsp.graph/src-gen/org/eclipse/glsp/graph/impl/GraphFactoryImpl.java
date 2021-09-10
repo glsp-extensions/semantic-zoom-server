@@ -110,6 +110,14 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
             return createGPreRenderedElement();
          case GraphPackage.STRING_TO_OBJECT_MAP_ENTRY:
             return (EObject) createStringToObjectMapEntry();
+         case GraphPackage.GLEVEL_OF_DETAIL:
+            return createGLevelOfDetail();
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE:
+            return createGLevelOfDetailRuleTriggerDouble();
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE:
+            return createGLevelOfDetailRuleTriggerDiscrete();
+         case GraphPackage.GVISIBILITY_RULE:
+            return createGVisibilityRule();
          default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
       }
@@ -125,6 +133,8 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
       switch (eDataType.getClassifierID()) {
          case GraphPackage.GSEVERITY:
             return createGSeverityFromString(eDataType, initialValue);
+         case GraphPackage.GDISCRETE_LEVEL_OF_DETAIL:
+            return createGDiscreteLevelOfDetailFromString(eDataType, initialValue);
          default:
             throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
       }
@@ -140,6 +150,8 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
       switch (eDataType.getClassifierID()) {
          case GraphPackage.GSEVERITY:
             return convertGSeverityToString(eDataType, instanceValue);
+         case GraphPackage.GDISCRETE_LEVEL_OF_DETAIL:
+            return convertGDiscreteLevelOfDetailToString(eDataType, instanceValue);
          default:
             throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
       }
@@ -358,6 +370,50 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
     * <!-- end-user-doc -->
     * @generated
     */
+   @Override
+   public GLevelOfDetail createGLevelOfDetail() {
+      GLevelOfDetailImpl gLevelOfDetail = new GLevelOfDetailImpl();
+      return gLevelOfDetail;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public GLevelOfDetailRuleTriggerDouble createGLevelOfDetailRuleTriggerDouble() {
+      GLevelOfDetailRuleTriggerDoubleImpl gLevelOfDetailRuleTriggerDouble = new GLevelOfDetailRuleTriggerDoubleImpl();
+      return gLevelOfDetailRuleTriggerDouble;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public GLevelOfDetailRuleTriggerDiscrete createGLevelOfDetailRuleTriggerDiscrete() {
+      GLevelOfDetailRuleTriggerDiscreteImpl gLevelOfDetailRuleTriggerDiscrete = new GLevelOfDetailRuleTriggerDiscreteImpl();
+      return gLevelOfDetailRuleTriggerDiscrete;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public GVisibilityRule createGVisibilityRule() {
+      GVisibilityRuleImpl gVisibilityRule = new GVisibilityRuleImpl();
+      return gVisibilityRule;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
    public GSeverity createGSeverityFromString(EDataType eDataType, String initialValue) {
       GSeverity result = GSeverity.get(initialValue);
       if (result == null)
@@ -372,6 +428,28 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
     * @generated
     */
    public String convertGSeverityToString(EDataType eDataType, Object instanceValue) {
+      return instanceValue == null ? null : instanceValue.toString();
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public GDiscreteLevelOfDetail createGDiscreteLevelOfDetailFromString(EDataType eDataType, String initialValue) {
+      GDiscreteLevelOfDetail result = GDiscreteLevelOfDetail.get(initialValue);
+      if (result == null)
+         throw new IllegalArgumentException(
+            "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+      return result;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   public String convertGDiscreteLevelOfDetailToString(EDataType eDataType, Object instanceValue) {
       return instanceValue == null ? null : instanceValue.toString();
    }
 

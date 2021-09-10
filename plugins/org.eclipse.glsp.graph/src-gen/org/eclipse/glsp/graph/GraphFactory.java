@@ -198,6 +198,42 @@ public interface GraphFactory extends EFactory {
    GPreRenderedElement createGPreRenderedElement();
 
    /**
+    * Returns a new object of class '<em>GLevel Of Detail</em>'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return a new object of class '<em>GLevel Of Detail</em>'.
+    * @generated
+    */
+   GLevelOfDetail createGLevelOfDetail();
+
+   /**
+    * Returns a new object of class '<em>GLevel Of Detail Rule Trigger Double</em>'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return a new object of class '<em>GLevel Of Detail Rule Trigger Double</em>'.
+    * @generated
+    */
+   GLevelOfDetailRuleTriggerDouble createGLevelOfDetailRuleTriggerDouble();
+
+   /**
+    * Returns a new object of class '<em>GLevel Of Detail Rule Trigger Discrete</em>'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return a new object of class '<em>GLevel Of Detail Rule Trigger Discrete</em>'.
+    * @generated
+    */
+   GLevelOfDetailRuleTriggerDiscrete createGLevelOfDetailRuleTriggerDiscrete();
+
+   /**
+    * Returns a new object of class '<em>GVisibility Rule</em>'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return a new object of class '<em>GVisibility Rule</em>'.
+    * @generated
+    */
+   GVisibilityRule createGVisibilityRule();
+
+   /**
     * Returns the package supported by this factory.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->

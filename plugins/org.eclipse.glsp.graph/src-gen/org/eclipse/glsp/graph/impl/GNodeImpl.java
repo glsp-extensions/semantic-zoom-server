@@ -636,7 +636,8 @@ public class GNodeImpl extends GArgumentableImpl implements GNode {
          case GraphPackage.GNODE__LAYOUT_OPTIONS:
             if (coreType)
                return getLayoutOptions();
-            return getLayoutOptions().map();
+            else
+               return getLayoutOptions().map();
       }
       return super.eGet(featureID, resolve, coreType);
    }

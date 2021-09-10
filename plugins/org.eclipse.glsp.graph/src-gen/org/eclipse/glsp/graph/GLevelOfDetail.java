@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2019 EclipseSource and others.
+ * Copyright (c) 2019-2021 EclipseSource and others.
  * 
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0 which is available at
@@ -16,43 +16,37 @@
  */
 package org.eclipse.glsp.graph;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>GLabel</b></em>'.
+ * A representation of the model object '<em><b>GLevel Of Detail</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.glsp.graph.GLabel#getText <em>Text</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.GLevelOfDetail#getLevelOfDetailRules <em>Level Of Detail Rules</em>}</li>
  * </ul>
  *
- * @see org.eclipse.glsp.graph.GraphPackage#getGLabel()
+ * @see org.eclipse.glsp.graph.GraphPackage#getGLevelOfDetail()
  * @model
  * @generated
  */
-public interface GLabel extends GAlignable, GEdgeLayoutable, GShapeElement, GLevelOfDetail {
+public interface GLevelOfDetail extends EObject {
    /**
-    * Returns the value of the '<em><b>Text</b></em>' attribute.
+    * Returns the value of the '<em><b>Level Of Detail Rules</b></em>' reference list.
+    * The list contents are of type {@link org.eclipse.glsp.graph.GLevelOfDetailRule}.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @return the value of the '<em>Text</em>' attribute.
-    * @see #setText(String)
-    * @see org.eclipse.glsp.graph.GraphPackage#getGLabel_Text()
-    * @model required="true"
+    * @return the value of the '<em>Level Of Detail Rules</em>' reference list.
+    * @see org.eclipse.glsp.graph.GraphPackage#getGLevelOfDetail_LevelOfDetailRules()
+    * @model
     * @generated
     */
-   String getText();
+   EList<GLevelOfDetailRule> getLevelOfDetailRules();
 
-   /**
-    * Sets the value of the '{@link org.eclipse.glsp.graph.GLabel#getText <em>Text</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @param value the new value of the '<em>Text</em>' attribute.
-    * @see #getText()
-    * @generated
-    */
-   void setText(String value);
-
-} // GLabel
+} // GLevelOfDetail

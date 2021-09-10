@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2019 EclipseSource and others.
+ * Copyright (c) 2019-2021 EclipseSource and others.
  * 
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0 which is available at
@@ -16,43 +16,45 @@
  */
 package org.eclipse.glsp.graph;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>GLabel</b></em>'.
+ * A representation of the model object '<em><b>GLevel Of Detail Rule</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.glsp.graph.GLabel#getText <em>Text</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.GLevelOfDetailRule#getTrigger <em>Trigger</em>}</li>
  * </ul>
  *
- * @see org.eclipse.glsp.graph.GraphPackage#getGLabel()
- * @model
+ * @see org.eclipse.glsp.graph.GraphPackage#getGLevelOfDetailRule()
+ * @model interface="true" abstract="true"
  * @generated
  */
-public interface GLabel extends GAlignable, GEdgeLayoutable, GShapeElement, GLevelOfDetail {
+public interface GLevelOfDetailRule extends EObject {
    /**
-    * Returns the value of the '<em><b>Text</b></em>' attribute.
+    * Returns the value of the '<em><b>Trigger</b></em>' reference.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @return the value of the '<em>Text</em>' attribute.
-    * @see #setText(String)
-    * @see org.eclipse.glsp.graph.GraphPackage#getGLabel_Text()
+    * @return the value of the '<em>Trigger</em>' reference.
+    * @see #setTrigger(GLevelOfDetailRuleTrigger)
+    * @see org.eclipse.glsp.graph.GraphPackage#getGLevelOfDetailRule_Trigger()
     * @model required="true"
     * @generated
     */
-   String getText();
+   GLevelOfDetailRuleTrigger getTrigger();
 
    /**
-    * Sets the value of the '{@link org.eclipse.glsp.graph.GLabel#getText <em>Text</em>}' attribute.
+    * Sets the value of the '{@link org.eclipse.glsp.graph.GLevelOfDetailRule#getTrigger <em>Trigger</em>}' reference.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @param value the new value of the '<em>Text</em>' attribute.
-    * @see #getText()
+    * @param value the new value of the '<em>Trigger</em>' reference.
+    * @see #getTrigger()
     * @generated
     */
-   void setText(String value);
+   void setTrigger(GLevelOfDetailRuleTrigger value);
 
-} // GLabel
+} // GLevelOfDetailRule
