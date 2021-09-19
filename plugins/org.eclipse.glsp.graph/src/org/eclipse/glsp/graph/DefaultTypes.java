@@ -52,6 +52,8 @@ public final class DefaultTypes {
    // level of detail
    public static final String LEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS = "lod:rule-trigger-continuous";
    public static final String LEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE = "lod:rule-trigger-discrete";
+   public static final String LEVEL_OF_DETAIL_RULE_VISIBILITY = "lod:rule-visibility";
+   public static final String LEVEL_OF_DETAIL_RULE_CSSSTYLE = "lod:rule-cssstyle";
 
    public static Map<String, EClass> getDefaultTypeMappings() {
       Map<String, EClass> mapping = new HashMap<>();

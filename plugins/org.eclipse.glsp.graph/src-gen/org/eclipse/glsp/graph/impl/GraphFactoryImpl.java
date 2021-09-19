@@ -118,6 +118,8 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
             return createGLevelOfDetailRuleTriggerDiscrete();
          case GraphPackage.GVISIBILITY_RULE:
             return createGVisibilityRule();
+         case GraphPackage.GCSS_STYLE_RULE:
+            return createGCssStyleRule();
          default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
       }
@@ -407,6 +409,17 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
    public GVisibilityRule createGVisibilityRule() {
       GVisibilityRuleImpl gVisibilityRule = new GVisibilityRuleImpl();
       return gVisibilityRule;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public GCssStyleRule createGCssStyleRule() {
+      GCssStyleRuleImpl gCssStyleRule = new GCssStyleRuleImpl();
+      return gCssStyleRule;
    }
 
    /**

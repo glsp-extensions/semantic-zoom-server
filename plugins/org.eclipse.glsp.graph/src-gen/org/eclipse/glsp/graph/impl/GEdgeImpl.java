@@ -28,9 +28,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.glsp.graph.GEdge;
+import org.eclipse.glsp.graph.GLevelOfDetail;
+import org.eclipse.glsp.graph.GLevelOfDetailRule;
 import org.eclipse.glsp.graph.GModelElement;
 import org.eclipse.glsp.graph.GModelIndex;
 import org.eclipse.glsp.graph.GPoint;
@@ -44,6 +47,7 @@ import org.eclipse.glsp.graph.GraphPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.eclipse.glsp.graph.impl.GEdgeImpl#getLevelOfDetailRules <em>Level Of Detail Rules</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GEdgeImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GEdgeImpl#getCssClasses <em>Css Classes</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GEdgeImpl#getChildren <em>Children</em>}</li>
@@ -61,6 +65,16 @@ import org.eclipse.glsp.graph.GraphPackage;
  * @generated
  */
 public class GEdgeImpl extends GArgumentableImpl implements GEdge {
+   /**
+    * The cached value of the '{@link #getLevelOfDetailRules() <em>Level Of Detail Rules</em>}' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getLevelOfDetailRules()
+    * @generated
+    * @ordered
+    */
+   protected EList<GLevelOfDetailRule> levelOfDetailRules;
+
    /**
     * The default value of the '{@link #getId() <em>Id</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -228,6 +242,20 @@ public class GEdgeImpl extends GArgumentableImpl implements GEdge {
    @Override
    protected EClass eStaticClass() {
       return GraphPackage.Literals.GEDGE;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EList<GLevelOfDetailRule> getLevelOfDetailRules() {
+      if (levelOfDetailRules == null) {
+         levelOfDetailRules = new EObjectResolvingEList<GLevelOfDetailRule>(GLevelOfDetailRule.class, this,
+            GraphPackage.GEDGE__LEVEL_OF_DETAIL_RULES);
+      }
+      return levelOfDetailRules;
    }
 
    /**
@@ -579,6 +607,8 @@ public class GEdgeImpl extends GArgumentableImpl implements GEdge {
    @Override
    public Object eGet(int featureID, boolean resolve, boolean coreType) {
       switch (featureID) {
+         case GraphPackage.GEDGE__LEVEL_OF_DETAIL_RULES:
+            return getLevelOfDetailRules();
          case GraphPackage.GEDGE__ID:
             return getId();
          case GraphPackage.GEDGE__CSS_CLASSES:
@@ -620,6 +650,10 @@ public class GEdgeImpl extends GArgumentableImpl implements GEdge {
    @Override
    public void eSet(int featureID, Object newValue) {
       switch (featureID) {
+         case GraphPackage.GEDGE__LEVEL_OF_DETAIL_RULES:
+            getLevelOfDetailRules().clear();
+            getLevelOfDetailRules().addAll((Collection<? extends GLevelOfDetailRule>) newValue);
+            return;
          case GraphPackage.GEDGE__ID:
             setId((String) newValue);
             return;
@@ -671,6 +705,9 @@ public class GEdgeImpl extends GArgumentableImpl implements GEdge {
    @Override
    public void eUnset(int featureID) {
       switch (featureID) {
+         case GraphPackage.GEDGE__LEVEL_OF_DETAIL_RULES:
+            getLevelOfDetailRules().clear();
+            return;
          case GraphPackage.GEDGE__ID:
             setId(ID_EDEFAULT);
             return;
@@ -719,6 +756,8 @@ public class GEdgeImpl extends GArgumentableImpl implements GEdge {
    @Override
    public boolean eIsSet(int featureID) {
       switch (featureID) {
+         case GraphPackage.GEDGE__LEVEL_OF_DETAIL_RULES:
+            return levelOfDetailRules != null && !levelOfDetailRules.isEmpty();
          case GraphPackage.GEDGE__ID:
             return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
          case GraphPackage.GEDGE__CSS_CLASSES:
@@ -745,6 +784,42 @@ public class GEdgeImpl extends GArgumentableImpl implements GEdge {
             return ROUTER_KIND_EDEFAULT == null ? routerKind != null : !ROUTER_KIND_EDEFAULT.equals(routerKind);
       }
       return super.eIsSet(featureID);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+      if (baseClass == GLevelOfDetail.class) {
+         switch (derivedFeatureID) {
+            case GraphPackage.GEDGE__LEVEL_OF_DETAIL_RULES:
+               return GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES;
+            default:
+               return -1;
+         }
+      }
+      return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+      if (baseClass == GLevelOfDetail.class) {
+         switch (baseFeatureID) {
+            case GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES:
+               return GraphPackage.GEDGE__LEVEL_OF_DETAIL_RULES;
+            default:
+               return -1;
+         }
+      }
+      return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
    }
 
    /**

@@ -60,6 +60,7 @@ import org.eclipse.glsp.graph.GraphPackage;
  * <ul>
  *   <li>{@link org.eclipse.glsp.graph.impl.GLabelImpl#getEdgePlacement <em>Edge Placement</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GLabelImpl#getArgs <em>Args</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.impl.GLabelImpl#getLevelOfDetailRules <em>Level Of Detail Rules</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GLabelImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GLabelImpl#getCssClasses <em>Css Classes</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GLabelImpl#getChildren <em>Children</em>}</li>
@@ -68,7 +69,6 @@ import org.eclipse.glsp.graph.GraphPackage;
  *   <li>{@link org.eclipse.glsp.graph.impl.GLabelImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GLabelImpl#getPosition <em>Position</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GLabelImpl#getSize <em>Size</em>}</li>
- *   <li>{@link org.eclipse.glsp.graph.impl.GLabelImpl#getLevelOfDetailRules <em>Level Of Detail Rules</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GLabelImpl#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -94,6 +94,16 @@ public class GLabelImpl extends GAlignableImpl implements GLabel {
     * @ordered
     */
    protected EMap<String, Object> args;
+
+   /**
+    * The cached value of the '{@link #getLevelOfDetailRules() <em>Level Of Detail Rules</em>}' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getLevelOfDetailRules()
+    * @generated
+    * @ordered
+    */
+   protected EList<GLevelOfDetailRule> levelOfDetailRules;
 
    /**
     * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -194,16 +204,6 @@ public class GLabelImpl extends GAlignableImpl implements GLabel {
     * @ordered
     */
    protected GDimension size;
-
-   /**
-    * The cached value of the '{@link #getLevelOfDetailRules() <em>Level Of Detail Rules</em>}' reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #getLevelOfDetailRules()
-    * @generated
-    * @ordered
-    */
-   protected EList<GLevelOfDetailRule> levelOfDetailRules;
 
    /**
     * The default value of the '{@link #getText() <em>Text</em>}' attribute.
@@ -651,6 +651,8 @@ public class GLabelImpl extends GAlignableImpl implements GLabel {
                return getArgs();
             else
                return getArgs().map();
+         case GraphPackage.GLABEL__LEVEL_OF_DETAIL_RULES:
+            return getLevelOfDetailRules();
          case GraphPackage.GLABEL__ID:
             return getId();
          case GraphPackage.GLABEL__CSS_CLASSES:
@@ -667,8 +669,6 @@ public class GLabelImpl extends GAlignableImpl implements GLabel {
             return getPosition();
          case GraphPackage.GLABEL__SIZE:
             return getSize();
-         case GraphPackage.GLABEL__LEVEL_OF_DETAIL_RULES:
-            return getLevelOfDetailRules();
          case GraphPackage.GLABEL__TEXT:
             return getText();
       }
@@ -689,6 +689,10 @@ public class GLabelImpl extends GAlignableImpl implements GLabel {
             return;
          case GraphPackage.GLABEL__ARGS:
             ((EStructuralFeature.Setting) getArgs()).set(newValue);
+            return;
+         case GraphPackage.GLABEL__LEVEL_OF_DETAIL_RULES:
+            getLevelOfDetailRules().clear();
+            getLevelOfDetailRules().addAll((Collection<? extends GLevelOfDetailRule>) newValue);
             return;
          case GraphPackage.GLABEL__ID:
             setId((String) newValue);
@@ -716,10 +720,6 @@ public class GLabelImpl extends GAlignableImpl implements GLabel {
          case GraphPackage.GLABEL__SIZE:
             setSize((GDimension) newValue);
             return;
-         case GraphPackage.GLABEL__LEVEL_OF_DETAIL_RULES:
-            getLevelOfDetailRules().clear();
-            getLevelOfDetailRules().addAll((Collection<? extends GLevelOfDetailRule>) newValue);
-            return;
          case GraphPackage.GLABEL__TEXT:
             setText((String) newValue);
             return;
@@ -740,6 +740,9 @@ public class GLabelImpl extends GAlignableImpl implements GLabel {
             return;
          case GraphPackage.GLABEL__ARGS:
             getArgs().clear();
+            return;
+         case GraphPackage.GLABEL__LEVEL_OF_DETAIL_RULES:
+            getLevelOfDetailRules().clear();
             return;
          case GraphPackage.GLABEL__ID:
             setId(ID_EDEFAULT);
@@ -765,9 +768,6 @@ public class GLabelImpl extends GAlignableImpl implements GLabel {
          case GraphPackage.GLABEL__SIZE:
             setSize((GDimension) null);
             return;
-         case GraphPackage.GLABEL__LEVEL_OF_DETAIL_RULES:
-            getLevelOfDetailRules().clear();
-            return;
          case GraphPackage.GLABEL__TEXT:
             setText(TEXT_EDEFAULT);
             return;
@@ -787,6 +787,8 @@ public class GLabelImpl extends GAlignableImpl implements GLabel {
             return edgePlacement != null;
          case GraphPackage.GLABEL__ARGS:
             return args != null && !args.isEmpty();
+         case GraphPackage.GLABEL__LEVEL_OF_DETAIL_RULES:
+            return levelOfDetailRules != null && !levelOfDetailRules.isEmpty();
          case GraphPackage.GLABEL__ID:
             return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
          case GraphPackage.GLABEL__CSS_CLASSES:
@@ -803,8 +805,6 @@ public class GLabelImpl extends GAlignableImpl implements GLabel {
             return position != null;
          case GraphPackage.GLABEL__SIZE:
             return size != null;
-         case GraphPackage.GLABEL__LEVEL_OF_DETAIL_RULES:
-            return levelOfDetailRules != null && !levelOfDetailRules.isEmpty();
          case GraphPackage.GLABEL__TEXT:
             return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
       }
@@ -830,6 +830,14 @@ public class GLabelImpl extends GAlignableImpl implements GLabel {
          switch (derivedFeatureID) {
             case GraphPackage.GLABEL__ARGS:
                return GraphPackage.GARGUMENTABLE__ARGS;
+            default:
+               return -1;
+         }
+      }
+      if (baseClass == GLevelOfDetail.class) {
+         switch (derivedFeatureID) {
+            case GraphPackage.GLABEL__LEVEL_OF_DETAIL_RULES:
+               return GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES;
             default:
                return -1;
          }
@@ -868,14 +876,6 @@ public class GLabelImpl extends GAlignableImpl implements GLabel {
                return -1;
          }
       }
-      if (baseClass == GLevelOfDetail.class) {
-         switch (derivedFeatureID) {
-            case GraphPackage.GLABEL__LEVEL_OF_DETAIL_RULES:
-               return GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES;
-            default:
-               return -1;
-         }
-      }
       return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
    }
 
@@ -898,6 +898,14 @@ public class GLabelImpl extends GAlignableImpl implements GLabel {
          switch (baseFeatureID) {
             case GraphPackage.GARGUMENTABLE__ARGS:
                return GraphPackage.GLABEL__ARGS;
+            default:
+               return -1;
+         }
+      }
+      if (baseClass == GLevelOfDetail.class) {
+         switch (baseFeatureID) {
+            case GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES:
+               return GraphPackage.GLABEL__LEVEL_OF_DETAIL_RULES;
             default:
                return -1;
          }
@@ -932,14 +940,6 @@ public class GLabelImpl extends GAlignableImpl implements GLabel {
       }
       if (baseClass == GShapeElement.class) {
          switch (baseFeatureID) {
-            default:
-               return -1;
-         }
-      }
-      if (baseClass == GLevelOfDetail.class) {
-         switch (baseFeatureID) {
-            case GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES:
-               return GraphPackage.GLABEL__LEVEL_OF_DETAIL_RULES;
             default:
                return -1;
          }

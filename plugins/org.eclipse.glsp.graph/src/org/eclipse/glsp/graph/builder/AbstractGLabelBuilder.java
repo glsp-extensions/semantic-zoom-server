@@ -15,12 +15,8 @@
  ********************************************************************************/
 package org.eclipse.glsp.graph.builder;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.glsp.graph.GEdgePlacement;
 import org.eclipse.glsp.graph.GLabel;
-import org.eclipse.glsp.graph.GLevelOfDetailRule;
 import org.eclipse.glsp.graph.GPoint;
 import org.eclipse.glsp.graph.util.GraphUtil;
 
@@ -29,7 +25,6 @@ public abstract class AbstractGLabelBuilder<T extends GLabel, E extends Abstract
    protected GPoint alignment;
    protected GEdgePlacement edgePlacement;
    protected String text;
-   protected List<GLevelOfDetailRule> rules = new ArrayList<>();
 
    public AbstractGLabelBuilder(final String type) {
       super(type);
@@ -54,23 +49,12 @@ public abstract class AbstractGLabelBuilder<T extends GLabel, E extends Abstract
       return self();
    }
 
-   public E addLevelOfDetailRule(final GLevelOfDetailRule rule) {
-      this.rules.add(rule);
-      return self();
-   }
-
-   public E addLevelOfDetailRules(final List<GLevelOfDetailRule> rules) {
-      this.rules.addAll(rules);
-      return self();
-   }
-
    @Override
    public void setProperties(final T label) {
       super.setProperties(label);
       label.setAlignment(alignment);
       label.setEdgePlacement(edgePlacement);
       label.setText(text);
-      label.getLevelOfDetailRules().addAll(this.rules);
    }
 
 }

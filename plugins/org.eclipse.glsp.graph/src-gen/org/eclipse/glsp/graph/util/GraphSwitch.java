@@ -88,6 +88,8 @@ public class GraphSwitch<T> extends Switch<T> {
             if (result == null)
                result = caseGArgumentable(gModelElement);
             if (result == null)
+               result = caseGLevelOfDetail(gModelElement);
+            if (result == null)
                result = defaultCase(theEObject);
             return result;
          }
@@ -100,6 +102,8 @@ public class GraphSwitch<T> extends Switch<T> {
                result = caseGBoundsAware(gShapeElement);
             if (result == null)
                result = caseGArgumentable(gShapeElement);
+            if (result == null)
+               result = caseGLevelOfDetail(gShapeElement);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -116,6 +120,8 @@ public class GraphSwitch<T> extends Switch<T> {
             if (result == null)
                result = caseGArgumentable(gGraph);
             if (result == null)
+               result = caseGLevelOfDetail(gGraph);
+            if (result == null)
                result = defaultCase(theEObject);
             return result;
          }
@@ -126,6 +132,8 @@ public class GraphSwitch<T> extends Switch<T> {
                result = caseGModelElement(gModelRoot);
             if (result == null)
                result = caseGArgumentable(gModelRoot);
+            if (result == null)
+               result = caseGLevelOfDetail(gModelRoot);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -146,6 +154,8 @@ public class GraphSwitch<T> extends Switch<T> {
             if (result == null)
                result = caseGArgumentable(gNode);
             if (result == null)
+               result = caseGLevelOfDetail(gNode);
+            if (result == null)
                result = defaultCase(theEObject);
             return result;
          }
@@ -156,6 +166,8 @@ public class GraphSwitch<T> extends Switch<T> {
                result = caseGModelElement(gEdge);
             if (result == null)
                result = caseGArgumentable(gEdge);
+            if (result == null)
+               result = caseGLevelOfDetail(gEdge);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -174,6 +186,8 @@ public class GraphSwitch<T> extends Switch<T> {
             if (result == null)
                result = caseGArgumentable(gCompartment);
             if (result == null)
+               result = caseGLevelOfDetail(gCompartment);
+            if (result == null)
                result = defaultCase(theEObject);
             return result;
          }
@@ -187,13 +201,13 @@ public class GraphSwitch<T> extends Switch<T> {
             if (result == null)
                result = caseGShapeElement(gLabel);
             if (result == null)
-               result = caseGLevelOfDetail(gLabel);
-            if (result == null)
                result = caseGModelElement(gLabel);
             if (result == null)
                result = caseGBoundsAware(gLabel);
             if (result == null)
                result = caseGArgumentable(gLabel);
+            if (result == null)
+               result = caseGLevelOfDetail(gLabel);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -210,6 +224,8 @@ public class GraphSwitch<T> extends Switch<T> {
             if (result == null)
                result = caseGArgumentable(gIssueMarker);
             if (result == null)
+               result = caseGLevelOfDetail(gIssueMarker);
+            if (result == null)
                result = defaultCase(theEObject);
             return result;
          }
@@ -225,6 +241,8 @@ public class GraphSwitch<T> extends Switch<T> {
             if (result == null)
                result = caseGArgumentable(gPort);
             if (result == null)
+               result = caseGLevelOfDetail(gPort);
+            if (result == null)
                result = defaultCase(theEObject);
             return result;
          }
@@ -239,6 +257,8 @@ public class GraphSwitch<T> extends Switch<T> {
                result = caseGBoundsAware(gButton);
             if (result == null)
                result = caseGArgumentable(gButton);
+            if (result == null)
+               result = caseGLevelOfDetail(gButton);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -323,6 +343,8 @@ public class GraphSwitch<T> extends Switch<T> {
             if (result == null)
                result = caseGArgumentable(gHtmlRoot);
             if (result == null)
+               result = caseGLevelOfDetail(gHtmlRoot);
+            if (result == null)
                result = defaultCase(theEObject);
             return result;
          }
@@ -333,6 +355,8 @@ public class GraphSwitch<T> extends Switch<T> {
                result = caseGModelElement(gPreRenderedElement);
             if (result == null)
                result = caseGArgumentable(gPreRenderedElement);
+            if (result == null)
+               result = caseGLevelOfDetail(gPreRenderedElement);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -389,6 +413,15 @@ public class GraphSwitch<T> extends Switch<T> {
             T result = caseGVisibilityRule(gVisibilityRule);
             if (result == null)
                result = caseGLevelOfDetailRule(gVisibilityRule);
+            if (result == null)
+               result = defaultCase(theEObject);
+            return result;
+         }
+         case GraphPackage.GCSS_STYLE_RULE: {
+            GCssStyleRule gCssStyleRule = (GCssStyleRule) theEObject;
+            T result = caseGCssStyleRule(gCssStyleRule);
+            if (result == null)
+               result = caseGLevelOfDetailRule(gCssStyleRule);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -845,6 +878,21 @@ public class GraphSwitch<T> extends Switch<T> {
     * @generated
     */
    public T caseGVisibilityRule(GVisibilityRule object) {
+      return null;
+   }
+
+   /**
+    * Returns the result of interpreting the object as an instance of '<em>GCss Style Rule</em>'.
+    * <!-- begin-user-doc -->
+    * This implementation returns null;
+    * returning a non-null result will terminate the switch.
+    * <!-- end-user-doc -->
+    * @param object the target of the switch.
+    * @return the result of interpreting the object as an instance of '<em>GCss Style Rule</em>'.
+    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+    * @generated
+    */
+   public T caseGCssStyleRule(GCssStyleRule object) {
       return null;
    }
 

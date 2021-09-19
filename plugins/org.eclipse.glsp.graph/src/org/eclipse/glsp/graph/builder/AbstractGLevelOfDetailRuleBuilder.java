@@ -21,7 +21,12 @@ import org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger;
 public abstract class AbstractGLevelOfDetailRuleBuilder<T extends GLevelOfDetailRule, E extends AbstractGLevelOfDetailRuleBuilder<T, E>>
    extends GBuilder<T> {
 
+   protected String type;
    protected GLevelOfDetailRuleTrigger trigger;
+
+   public AbstractGLevelOfDetailRuleBuilder(final String type) {
+      this.type = type;
+   }
 
    protected abstract E self();
 
@@ -33,5 +38,6 @@ public abstract class AbstractGLevelOfDetailRuleBuilder<T extends GLevelOfDetail
    @Override
    protected void setProperties(final T element) {
       element.setTrigger(trigger);
+      element.setType(type);
    }
 }

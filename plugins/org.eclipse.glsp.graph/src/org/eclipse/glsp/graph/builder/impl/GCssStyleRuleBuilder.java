@@ -15,37 +15,40 @@
  ********************************************************************************/
 package org.eclipse.glsp.graph.builder.impl;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import org.eclipse.glsp.graph.DefaultTypes;
-import org.eclipse.glsp.graph.GVisibilityRule;
+import org.eclipse.glsp.graph.GCssStyleRule;
 import org.eclipse.glsp.graph.GraphFactory;
 import org.eclipse.glsp.graph.builder.AbstractGLevelOfDetailRuleBuilder;
 
-public class GVisibilityRuleBuilder extends AbstractGLevelOfDetailRuleBuilder<GVisibilityRule, GVisibilityRuleBuilder> {
+public class GCssStyleRuleBuilder extends AbstractGLevelOfDetailRuleBuilder<GCssStyleRule, GCssStyleRuleBuilder> {
 
-   protected boolean setVisibility;
+   protected Map<String, Object> styles = new LinkedHashMap<>();
 
-   public GVisibilityRuleBuilder() {
-      super(DefaultTypes.LEVEL_OF_DETAIL_RULE_VISIBILITY);
+   public GCssStyleRuleBuilder() {
+      super(DefaultTypes.LEVEL_OF_DETAIL_RULE_CSSSTYLE);
    }
 
-   public GVisibilityRuleBuilder setSetVisibility(final boolean setVisibility) {
-      this.setVisibility = setVisibility;
+   public GCssStyleRuleBuilder addStyle(final String style, final String value) {
+      this.styles.put(style, value);
       return this;
    }
 
    @Override
-   protected GVisibilityRuleBuilder self() {
+   protected GCssStyleRuleBuilder self() {
       return this;
    }
 
    @Override
-   protected void setProperties(final GVisibilityRule element) {
-      element.setSetVisibility(setVisibility);
+   protected void setProperties(final GCssStyleRule element) {
+      element.getStyles().putAll(this.styles);
       super.setProperties(element);
    }
 
    @Override
-   protected GVisibilityRule instantiate() {
-      return GraphFactory.eINSTANCE.createGVisibilityRule();
+   protected GCssStyleRule instantiate() {
+      return GraphFactory.eINSTANCE.createGCssStyleRule();
    }
 }

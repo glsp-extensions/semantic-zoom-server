@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -40,6 +41,8 @@ import org.eclipse.glsp.graph.GDimension;
 import org.eclipse.glsp.graph.GEdgeLayoutable;
 import org.eclipse.glsp.graph.GEdgePlacement;
 import org.eclipse.glsp.graph.GLayouting;
+import org.eclipse.glsp.graph.GLevelOfDetail;
+import org.eclipse.glsp.graph.GLevelOfDetailRule;
 import org.eclipse.glsp.graph.GModelElement;
 import org.eclipse.glsp.graph.GNode;
 import org.eclipse.glsp.graph.GPoint;
@@ -53,6 +56,7 @@ import org.eclipse.glsp.graph.GraphPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.eclipse.glsp.graph.impl.GNodeImpl#getLevelOfDetailRules <em>Level Of Detail Rules</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GNodeImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GNodeImpl#getCssClasses <em>Css Classes</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GNodeImpl#getChildren <em>Children</em>}</li>
@@ -69,6 +73,16 @@ import org.eclipse.glsp.graph.GraphPackage;
  * @generated
  */
 public class GNodeImpl extends GArgumentableImpl implements GNode {
+   /**
+    * The cached value of the '{@link #getLevelOfDetailRules() <em>Level Of Detail Rules</em>}' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getLevelOfDetailRules()
+    * @generated
+    * @ordered
+    */
+   protected EList<GLevelOfDetailRule> levelOfDetailRules;
+
    /**
     * The default value of the '{@link #getId() <em>Id</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -226,6 +240,20 @@ public class GNodeImpl extends GArgumentableImpl implements GNode {
    @Override
    protected EClass eStaticClass() {
       return GraphPackage.Literals.GNODE;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EList<GLevelOfDetailRule> getLevelOfDetailRules() {
+      if (levelOfDetailRules == null) {
+         levelOfDetailRules = new EObjectResolvingEList<GLevelOfDetailRule>(GLevelOfDetailRule.class, this,
+            GraphPackage.GNODE__LEVEL_OF_DETAIL_RULES);
+      }
+      return levelOfDetailRules;
    }
 
    /**
@@ -613,6 +641,8 @@ public class GNodeImpl extends GArgumentableImpl implements GNode {
    @Override
    public Object eGet(int featureID, boolean resolve, boolean coreType) {
       switch (featureID) {
+         case GraphPackage.GNODE__LEVEL_OF_DETAIL_RULES:
+            return getLevelOfDetailRules();
          case GraphPackage.GNODE__ID:
             return getId();
          case GraphPackage.GNODE__CSS_CLASSES:
@@ -651,6 +681,10 @@ public class GNodeImpl extends GArgumentableImpl implements GNode {
    @Override
    public void eSet(int featureID, Object newValue) {
       switch (featureID) {
+         case GraphPackage.GNODE__LEVEL_OF_DETAIL_RULES:
+            getLevelOfDetailRules().clear();
+            getLevelOfDetailRules().addAll((Collection<? extends GLevelOfDetailRule>) newValue);
+            return;
          case GraphPackage.GNODE__ID:
             setId((String) newValue);
             return;
@@ -698,6 +732,9 @@ public class GNodeImpl extends GArgumentableImpl implements GNode {
    @Override
    public void eUnset(int featureID) {
       switch (featureID) {
+         case GraphPackage.GNODE__LEVEL_OF_DETAIL_RULES:
+            getLevelOfDetailRules().clear();
+            return;
          case GraphPackage.GNODE__ID:
             setId(ID_EDEFAULT);
             return;
@@ -743,6 +780,8 @@ public class GNodeImpl extends GArgumentableImpl implements GNode {
    @Override
    public boolean eIsSet(int featureID) {
       switch (featureID) {
+         case GraphPackage.GNODE__LEVEL_OF_DETAIL_RULES:
+            return levelOfDetailRules != null && !levelOfDetailRules.isEmpty();
          case GraphPackage.GNODE__ID:
             return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
          case GraphPackage.GNODE__CSS_CLASSES:
@@ -776,6 +815,14 @@ public class GNodeImpl extends GArgumentableImpl implements GNode {
     */
    @Override
    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+      if (baseClass == GLevelOfDetail.class) {
+         switch (derivedFeatureID) {
+            case GraphPackage.GNODE__LEVEL_OF_DETAIL_RULES:
+               return GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES;
+            default:
+               return -1;
+         }
+      }
       if (baseClass == GBoundsAware.class) {
          switch (derivedFeatureID) {
             case GraphPackage.GNODE__POSITION:
@@ -814,6 +861,14 @@ public class GNodeImpl extends GArgumentableImpl implements GNode {
     */
    @Override
    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+      if (baseClass == GLevelOfDetail.class) {
+         switch (baseFeatureID) {
+            case GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES:
+               return GraphPackage.GNODE__LEVEL_OF_DETAIL_RULES;
+            default:
+               return -1;
+         }
+      }
       if (baseClass == GBoundsAware.class) {
          switch (baseFeatureID) {
             case GraphPackage.GBOUNDS_AWARE__POSITION:

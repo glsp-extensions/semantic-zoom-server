@@ -18,9 +18,10 @@
       <genEnumLiterals ecoreEnumLiteral="glsp-graph.ecore#//GSeverity/info"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="glsp-graph.ecore#//GDiscreteLevelOfDetail">
-      <genEnumLiterals ecoreEnumLiteral="glsp-graph.ecore#//GDiscreteLevelOfDetail/Overview"/>
-      <genEnumLiterals ecoreEnumLiteral="glsp-graph.ecore#//GDiscreteLevelOfDetail/Intermediate"/>
+      <genEnumLiterals ecoreEnumLiteral="glsp-graph.ecore#//GDiscreteLevelOfDetail/Detail2"/>
       <genEnumLiterals ecoreEnumLiteral="glsp-graph.ecore#//GDiscreteLevelOfDetail/Detail"/>
+      <genEnumLiterals ecoreEnumLiteral="glsp-graph.ecore#//GDiscreteLevelOfDetail/Intermediate"/>
+      <genEnumLiterals ecoreEnumLiteral="glsp-graph.ecore#//GDiscreteLevelOfDetail/Overview"/>
     </genEnums>
     <genClasses image="false" ecoreClass="glsp-graph.ecore#//GModelElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute glsp-graph.ecore#//GModelElement/id"/>
@@ -114,6 +115,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="glsp-graph.ecore#//GLevelOfDetailRule">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference glsp-graph.ecore#//GLevelOfDetailRule/trigger"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute glsp-graph.ecore#//GLevelOfDetailRule/type"/>
     </genClasses>
     <genClasses image="false" ecoreClass="glsp-graph.ecore#//GLevelOfDetailRuleTrigger">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute glsp-graph.ecore#//GLevelOfDetailRuleTrigger/type"/>
@@ -127,6 +129,9 @@
     </genClasses>
     <genClasses ecoreClass="glsp-graph.ecore#//GVisibilityRule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute glsp-graph.ecore#//GVisibilityRule/setVisibility"/>
+    </genClasses>
+    <genClasses ecoreClass="glsp-graph.ecore#//GCssStyleRule">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference glsp-graph.ecore#//GCssStyleRule/styles"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

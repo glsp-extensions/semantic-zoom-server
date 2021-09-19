@@ -234,6 +234,15 @@ public interface GraphFactory extends EFactory {
    GVisibilityRule createGVisibilityRule();
 
    /**
+    * Returns a new object of class '<em>GCss Style Rule</em>'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return a new object of class '<em>GCss Style Rule</em>'.
+    * @generated
+    */
+   GCssStyleRule createGCssStyleRule();
+
+   /**
     * Returns the package supported by this factory.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->

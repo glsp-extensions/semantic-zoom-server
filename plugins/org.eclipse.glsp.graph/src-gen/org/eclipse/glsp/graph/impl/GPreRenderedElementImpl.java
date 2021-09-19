@@ -28,9 +28,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.glsp.graph.GLevelOfDetail;
+import org.eclipse.glsp.graph.GLevelOfDetailRule;
 import org.eclipse.glsp.graph.GModelElement;
 import org.eclipse.glsp.graph.GPreRenderedElement;
 import org.eclipse.glsp.graph.GraphPackage;
@@ -43,6 +46,7 @@ import org.eclipse.glsp.graph.GraphPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.eclipse.glsp.graph.impl.GPreRenderedElementImpl#getLevelOfDetailRules <em>Level Of Detail Rules</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GPreRenderedElementImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GPreRenderedElementImpl#getCssClasses <em>Css Classes</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GPreRenderedElementImpl#getChildren <em>Children</em>}</li>
@@ -55,6 +59,16 @@ import org.eclipse.glsp.graph.GraphPackage;
  * @generated
  */
 public class GPreRenderedElementImpl extends GArgumentableImpl implements GPreRenderedElement {
+   /**
+    * The cached value of the '{@link #getLevelOfDetailRules() <em>Level Of Detail Rules</em>}' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getLevelOfDetailRules()
+    * @generated
+    * @ordered
+    */
+   protected EList<GLevelOfDetailRule> levelOfDetailRules;
+
    /**
     * The default value of the '{@link #getId() <em>Id</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -172,6 +186,20 @@ public class GPreRenderedElementImpl extends GArgumentableImpl implements GPreRe
    @Override
    protected EClass eStaticClass() {
       return GraphPackage.Literals.GPRE_RENDERED_ELEMENT;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EList<GLevelOfDetailRule> getLevelOfDetailRules() {
+      if (levelOfDetailRules == null) {
+         levelOfDetailRules = new EObjectResolvingEList<GLevelOfDetailRule>(GLevelOfDetailRule.class, this,
+            GraphPackage.GPRE_RENDERED_ELEMENT__LEVEL_OF_DETAIL_RULES);
+      }
+      return levelOfDetailRules;
    }
 
    /**
@@ -394,6 +422,8 @@ public class GPreRenderedElementImpl extends GArgumentableImpl implements GPreRe
    @Override
    public Object eGet(int featureID, boolean resolve, boolean coreType) {
       switch (featureID) {
+         case GraphPackage.GPRE_RENDERED_ELEMENT__LEVEL_OF_DETAIL_RULES:
+            return getLevelOfDetailRules();
          case GraphPackage.GPRE_RENDERED_ELEMENT__ID:
             return getId();
          case GraphPackage.GPRE_RENDERED_ELEMENT__CSS_CLASSES:
@@ -421,6 +451,10 @@ public class GPreRenderedElementImpl extends GArgumentableImpl implements GPreRe
    @Override
    public void eSet(int featureID, Object newValue) {
       switch (featureID) {
+         case GraphPackage.GPRE_RENDERED_ELEMENT__LEVEL_OF_DETAIL_RULES:
+            getLevelOfDetailRules().clear();
+            getLevelOfDetailRules().addAll((Collection<? extends GLevelOfDetailRule>) newValue);
+            return;
          case GraphPackage.GPRE_RENDERED_ELEMENT__ID:
             setId((String) newValue);
             return;
@@ -456,6 +490,9 @@ public class GPreRenderedElementImpl extends GArgumentableImpl implements GPreRe
    @Override
    public void eUnset(int featureID) {
       switch (featureID) {
+         case GraphPackage.GPRE_RENDERED_ELEMENT__LEVEL_OF_DETAIL_RULES:
+            getLevelOfDetailRules().clear();
+            return;
          case GraphPackage.GPRE_RENDERED_ELEMENT__ID:
             setId(ID_EDEFAULT);
             return;
@@ -489,6 +526,8 @@ public class GPreRenderedElementImpl extends GArgumentableImpl implements GPreRe
    @Override
    public boolean eIsSet(int featureID) {
       switch (featureID) {
+         case GraphPackage.GPRE_RENDERED_ELEMENT__LEVEL_OF_DETAIL_RULES:
+            return levelOfDetailRules != null && !levelOfDetailRules.isEmpty();
          case GraphPackage.GPRE_RENDERED_ELEMENT__ID:
             return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
          case GraphPackage.GPRE_RENDERED_ELEMENT__CSS_CLASSES:
@@ -505,6 +544,42 @@ public class GPreRenderedElementImpl extends GArgumentableImpl implements GPreRe
             return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
       }
       return super.eIsSet(featureID);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+      if (baseClass == GLevelOfDetail.class) {
+         switch (derivedFeatureID) {
+            case GraphPackage.GPRE_RENDERED_ELEMENT__LEVEL_OF_DETAIL_RULES:
+               return GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES;
+            default:
+               return -1;
+         }
+      }
+      return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+      if (baseClass == GLevelOfDetail.class) {
+         switch (baseFeatureID) {
+            case GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES:
+               return GraphPackage.GPRE_RENDERED_ELEMENT__LEVEL_OF_DETAIL_RULES;
+            default:
+               return -1;
+         }
+      }
+      return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
    }
 
    /**

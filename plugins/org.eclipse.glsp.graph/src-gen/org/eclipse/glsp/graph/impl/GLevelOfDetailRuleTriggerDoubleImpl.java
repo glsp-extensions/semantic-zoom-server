@@ -64,13 +64,13 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
    protected String type = TYPE_EDEFAULT;
 
    /**
-   	 * The default value of the '{@link #getTriggerContinuousLevelFrom() <em>Trigger Continuous Level From</em>}' attribute.
-   	 * <!-- begin-user-doc -->
+    * The default value of the '{@link #getTriggerContinuousLevelFrom() <em>Trigger Continuous Level From</em>}' attribute.
+    * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-   	 * @see #getTriggerContinuousLevelFrom()
-   	 * @generated
-   	 * @ordered
-   	 */
+    * @see #getTriggerContinuousLevelFrom()
+    * @generated
+    * @ordered
+    */
    protected static final double TRIGGER_CONTINUOUS_LEVEL_FROM_EDEFAULT = 0.0;
 
    /**
@@ -131,10 +131,10 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
    public String getType() { return type; }
 
    /**
-   	 * <!-- begin-user-doc -->
+    * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
-   	 * @generated
-   	 */
+    * @generated
+    */
    @Override
    public void setType(String newType) {
       String oldType = type;
@@ -145,10 +145,10 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
    }
 
    /**
-   	 * <!-- begin-user-doc -->
+    * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-   	 * @generated
-   	 */
+    * @generated
+    */
    @Override
    public double getTriggerContinuousLevelFrom() { return triggerContinuousLevelFrom; }
 

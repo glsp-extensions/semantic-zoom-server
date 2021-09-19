@@ -16,6 +16,8 @@
  */
 package org.eclipse.glsp.graph;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>GLevel Of Detail Rule Trigger Discrete</b></em>'.
@@ -34,28 +36,17 @@ package org.eclipse.glsp.graph;
  */
 public interface GLevelOfDetailRuleTriggerDiscrete extends GLevelOfDetailRuleTrigger {
    /**
-    * Returns the value of the '<em><b>Trigger Discrete Level</b></em>' attribute.
+    * Returns the value of the '<em><b>Trigger Discrete Level</b></em>' attribute list.
+    * The list contents are of type {@link org.eclipse.glsp.graph.GDiscreteLevelOfDetail}.
     * The literals are from the enumeration {@link org.eclipse.glsp.graph.GDiscreteLevelOfDetail}.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @return the value of the '<em>Trigger Discrete Level</em>' attribute.
+    * @return the value of the '<em>Trigger Discrete Level</em>' attribute list.
     * @see org.eclipse.glsp.graph.GDiscreteLevelOfDetail
-    * @see #setTriggerDiscreteLevel(GDiscreteLevelOfDetail)
     * @see org.eclipse.glsp.graph.GraphPackage#getGLevelOfDetailRuleTriggerDiscrete_TriggerDiscreteLevel()
     * @model required="true"
     * @generated
     */
-   GDiscreteLevelOfDetail getTriggerDiscreteLevel();
-
-   /**
-    * Sets the value of the '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete#getTriggerDiscreteLevel <em>Trigger Discrete Level</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @param value the new value of the '<em>Trigger Discrete Level</em>' attribute.
-    * @see org.eclipse.glsp.graph.GDiscreteLevelOfDetail
-    * @see #getTriggerDiscreteLevel()
-    * @generated
-    */
-   void setTriggerDiscreteLevel(GDiscreteLevelOfDetail value);
+   EList<GDiscreteLevelOfDetail> getTriggerDiscreteLevel();
 
 } // GLevelOfDetailRuleTriggerDiscrete

@@ -233,6 +233,11 @@ public class GraphAdapterFactory extends AdapterFactoryImpl {
       }
 
       @Override
+      public Adapter caseGCssStyleRule(GCssStyleRule object) {
+         return createGCssStyleRuleAdapter();
+      }
+
+      @Override
       public Adapter defaultCase(EObject object) {
          return createEObjectAdapter();
       }
@@ -668,6 +673,20 @@ public class GraphAdapterFactory extends AdapterFactoryImpl {
     * @generated
     */
    public Adapter createGVisibilityRuleAdapter() {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.eclipse.glsp.graph.GCssStyleRule <em>GCss Style Rule</em>}'.
+    * <!-- begin-user-doc -->
+    * This default implementation returns null so that we can easily ignore cases;
+    * it's useful to ignore a case when inheritance will catch all the cases anyway.
+    * <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.eclipse.glsp.graph.GCssStyleRule
+    * @generated
+    */
+   public Adapter createGCssStyleRuleAdapter() {
       return null;
    }
 

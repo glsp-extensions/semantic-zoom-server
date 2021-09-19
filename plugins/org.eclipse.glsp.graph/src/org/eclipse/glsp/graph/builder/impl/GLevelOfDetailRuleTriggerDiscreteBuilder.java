@@ -15,6 +15,9 @@
  ********************************************************************************/
 package org.eclipse.glsp.graph.builder.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.glsp.graph.DefaultTypes;
 import org.eclipse.glsp.graph.GDiscreteLevelOfDetail;
 import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete;
@@ -25,14 +28,14 @@ public class GLevelOfDetailRuleTriggerDiscreteBuilder
    extends
    AbstractLevelOfDetailRuleTriggerBuilder<GLevelOfDetailRuleTriggerDiscrete, GLevelOfDetailRuleTriggerDiscreteBuilder> {
 
-   protected GDiscreteLevelOfDetail lod;
+   protected List<GDiscreteLevelOfDetail> lod = new ArrayList<>();
 
    public GLevelOfDetailRuleTriggerDiscreteBuilder() {
       super(DefaultTypes.LEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE);
    }
 
-   public GLevelOfDetailRuleTriggerDiscreteBuilder setDiscreteLevelOfDetail(final GDiscreteLevelOfDetail lod) {
-      this.lod = lod;
+   public GLevelOfDetailRuleTriggerDiscreteBuilder addDiscreteLevelOfDetail(final GDiscreteLevelOfDetail lod) {
+      this.lod.add(lod);
       return this;
    }
 
@@ -48,7 +51,7 @@ public class GLevelOfDetailRuleTriggerDiscreteBuilder
 
    @Override
    protected void setProperties(final GLevelOfDetailRuleTriggerDiscrete element) {
-      element.setTriggerDiscreteLevel(lod);
+      element.getTriggerDiscreteLevel().addAll(lod);
       super.setProperties(element);
    }
 

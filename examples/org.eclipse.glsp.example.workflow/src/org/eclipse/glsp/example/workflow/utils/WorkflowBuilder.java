@@ -27,9 +27,9 @@ import org.eclipse.glsp.graph.builder.AbstractGCompartmentBuilder;
 import org.eclipse.glsp.graph.builder.AbstractGEdgeBuilder;
 import org.eclipse.glsp.graph.builder.AbstractGNodeBuilder;
 import org.eclipse.glsp.graph.builder.impl.GCompartmentBuilder;
+import org.eclipse.glsp.graph.builder.impl.GCssStyleRuleBuilder;
 import org.eclipse.glsp.graph.builder.impl.GLabelBuilder;
 import org.eclipse.glsp.graph.builder.impl.GLayoutOptions;
-import org.eclipse.glsp.graph.builder.impl.GLevelOfDetailRuleTriggerContinuousBuilder;
 import org.eclipse.glsp.graph.builder.impl.GLevelOfDetailRuleTriggerDiscreteBuilder;
 import org.eclipse.glsp.graph.builder.impl.GVisibilityRuleBuilder;
 import org.eclipse.glsp.graph.util.GConstants;
@@ -131,7 +131,13 @@ public final class WorkflowBuilder {
             .id(taskNode.getId() + "_header") //
             .layout(GConstants.Layout.HBOX) //
             .add(createCompartmentIcon(taskNode)) //
-            .add(createCompartmentHeader(taskNode)) //
+            .add(new GCompartmentBuilder(ModelTypes.COMP_HEADER)
+               .id(taskNode.getId() + "_header_compartment")
+               .layout(GConstants.Layout.VBOX)
+               .add(createCompartmentHeader(taskNode))
+               .add(createCompartmentDuration(taskNode))
+               .add(createCompartmentType(taskNode))
+               .build())
             .build();
       }
 
@@ -139,6 +145,87 @@ public final class WorkflowBuilder {
          return new GLabelBuilder(ModelTypes.LABEL_HEADING) //
             .id(taskNode.getId() + "_classname") //
             .text(taskNode.getName()) //
+            .addLevelOfDetailRule(
+               new GCssStyleRuleBuilder()
+                  .setLevelOfDetailRuleTrigger(
+                     new GLevelOfDetailRuleTriggerDiscreteBuilder()
+                        .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.DETAIL)
+                        .build())
+                  .addStyle("font-size", "50%")
+                  .build())
+            .addLevelOfDetailRule(
+               new GCssStyleRuleBuilder()
+                  .setLevelOfDetailRuleTrigger(
+                     new GLevelOfDetailRuleTriggerDiscreteBuilder()
+                        .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.DETAIL2)
+                        .build())
+                  .addStyle("font-size", "33%")
+                  .build())
+            .addLevelOfDetailRule(
+               new GCssStyleRuleBuilder()
+                  .setLevelOfDetailRuleTrigger(
+                     new GLevelOfDetailRuleTriggerDiscreteBuilder()
+                        .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.OVERVIEW)
+                        .build())
+                  .addStyle("font-size", "$clevel*200%")
+                  .build())
+            .build();
+      }
+
+      private GLabel createCompartmentDuration(final TaskNode taskNode) {
+         return new GLabelBuilder(ModelTypes.LABEL_TEXT) //
+            .id(taskNode.getId() + "_duration") //
+            .text("Duration: " + taskNode.getDuration()) //
+            .addLevelOfDetailRule(
+               new GVisibilityRuleBuilder()
+                  .setLevelOfDetailRuleTrigger(
+                     new GLevelOfDetailRuleTriggerDiscreteBuilder()
+                        .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.INTERMEDIATE)
+                        .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.OVERVIEW)
+                        .build())
+                  .setSetVisibility(false)
+                  .build())
+            .addLevelOfDetailRule(
+               new GCssStyleRuleBuilder()
+                  .setLevelOfDetailRuleTrigger(
+                     new GLevelOfDetailRuleTriggerDiscreteBuilder()
+                        .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.DETAIL)
+                        .build())
+                  .addStyle("font-size", "50%")
+                  .build())
+            .addLevelOfDetailRule(
+               new GCssStyleRuleBuilder()
+                  .setLevelOfDetailRuleTrigger(
+                     new GLevelOfDetailRuleTriggerDiscreteBuilder()
+                        .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.DETAIL2)
+                        .build())
+                  .addStyle("font-size", "33%")
+                  .build())
+            .build();
+      }
+
+      private GLabel createCompartmentType(final TaskNode taskNode) {
+         return new GLabelBuilder(ModelTypes.LABEL_TEXT) //
+            .id(taskNode.getId() + "_type") //
+            .text("Type: " + taskNode.getTaskType()) //
+            .addLevelOfDetailRule(
+               new GVisibilityRuleBuilder()
+                  .setLevelOfDetailRuleTrigger(
+                     new GLevelOfDetailRuleTriggerDiscreteBuilder()
+                        .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.INTERMEDIATE)
+                        .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.OVERVIEW)
+                        .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.DETAIL)
+                        .build())
+                  .setSetVisibility(false)
+                  .build())
+            .addLevelOfDetailRule(
+               new GCssStyleRuleBuilder()
+                  .setLevelOfDetailRuleTrigger(
+                     new GLevelOfDetailRuleTriggerDiscreteBuilder()
+                        .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.DETAIL2)
+                        .build())
+                  .addStyle("font-size", "33%")
+                  .build())
             .build();
       }
 
@@ -149,33 +236,22 @@ public final class WorkflowBuilder {
             .layoutOptions(new GLayoutOptions() //
                .hAlign(HAlign.CENTER) //
                .resizeContainer(false)) //
-            .add(createCompartmentIconLabel(taskNode)).build();
-      }
-
-      private GLabel createCompartmentIconLabel(final TaskNode taskNode) {
-         GLabel icon = new GLabelBuilder(ModelTypes.LABEL_ICON) //
-            .id(taskNode.getId() + "_ticon") //
-            .text("" + taskNode.getTaskType().toUpperCase().charAt(0)) //
             .addLevelOfDetailRule(
                new GVisibilityRuleBuilder()
                   .setLevelOfDetailRuleTrigger(
                      new GLevelOfDetailRuleTriggerDiscreteBuilder()
-                        .setDiscreteLevelOfDetail(GDiscreteLevelOfDetail.OVERVIEW)
+                        .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.OVERVIEW)
                         .build())
                   .setSetVisibility(false)
                   .build())
-            .addLevelOfDetailRule(
-               new GVisibilityRuleBuilder()
-                  .setLevelOfDetailRuleTrigger(
-                     new GLevelOfDetailRuleTriggerContinuousBuilder()
-                        .setFrom(1)
-                        .setTo(2)
-                        .build())
-                  .setSetVisibility(false)
-                  .build())
-            .build();
+            .add(createCompartmentIconLabel(taskNode)).build();
+      }
 
-         return icon;
+      private GLabel createCompartmentIconLabel(final TaskNode taskNode) {
+         return new GLabelBuilder(ModelTypes.LABEL_ICON) //
+            .id(taskNode.getId() + "_ticon") //
+            .text("" + taskNode.getTaskType().toUpperCase().charAt(0)) //
+            .build();
       }
 
    }

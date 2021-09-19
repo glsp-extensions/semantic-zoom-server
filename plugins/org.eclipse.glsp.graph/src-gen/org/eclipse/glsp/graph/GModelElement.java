@@ -39,7 +39,7 @@ import org.eclipse.emf.common.util.EList;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface GModelElement extends GArgumentable {
+public interface GModelElement extends GArgumentable, GLevelOfDetail {
    /**
     * Returns the value of the '<em><b>Id</b></em>' attribute.
     * <!-- begin-user-doc -->

@@ -33,56 +33,52 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum GDiscreteLevelOfDetail implements Enumerator {
    /**
-    * The '<em><b>Overview</b></em>' literal object.
+    * The '<em><b>Detail2</b></em>' literal object.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @see #OVERVIEW_VALUE
+    * @see #DETAIL2_VALUE
     * @generated
     * @ordered
     */
-   OVERVIEW(0, "Overview", "Overview"),
-
-   /**
-    * The '<em><b>Intermediate</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #INTERMEDIATE_VALUE
-    * @generated
-    * @ordered
-    */
-   INTERMEDIATE(0, "Intermediate", "Intermediate"),
-
+   DETAIL2(0, "Detail2", "Detail2"),
    /**
     * The '<em><b>Detail</b></em>' literal object.
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
     * @see #DETAIL_VALUE
     * @generated
     * @ordered
     */
-   DETAIL(0, "Detail", "Detail");
-
+   DETAIL(1, "Detail", "Detail"),
    /**
-    * The '<em><b>Overview</b></em>' literal value.
+    * The '<em><b>Intermediate</b></em>' literal object.
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #OVERVIEW
-    * @model name="Overview"
+   * <!-- end-user-doc -->
+    * @see #INTERMEDIATE_VALUE
     * @generated
     * @ordered
     */
-   public static final int OVERVIEW_VALUE = 0;
-
+   INTERMEDIATE(2, "Intermediate", "Intermediate"),
    /**
-    * The '<em><b>Intermediate</b></em>' literal value.
+    * The '<em><b>Overview</b></em>' literal object.
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #INTERMEDIATE
-    * @model name="Intermediate"
+   * <!-- end-user-doc -->
+    * @see #OVERVIEW_VALUE
     * @generated
     * @ordered
     */
-   public static final int INTERMEDIATE_VALUE = 0;
+   OVERVIEW(3, "Overview", "Overview");
+
+   /**
+    * The '<em><b>Detail2</b></em>' literal value.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #DETAIL2
+    * @model name="Detail2"
+    * @generated
+    * @ordered
+    */
+   public static final int DETAIL2_VALUE = 0;
 
    /**
     * The '<em><b>Detail</b></em>' literal value.
@@ -93,7 +89,29 @@ public enum GDiscreteLevelOfDetail implements Enumerator {
     * @generated
     * @ordered
     */
-   public static final int DETAIL_VALUE = 0;
+   public static final int DETAIL_VALUE = 1;
+
+   /**
+    * The '<em><b>Intermediate</b></em>' literal value.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #INTERMEDIATE
+    * @model name="Intermediate"
+    * @generated
+    * @ordered
+    */
+   public static final int INTERMEDIATE_VALUE = 2;
+
+   /**
+    * The '<em><b>Overview</b></em>' literal value.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #OVERVIEW
+    * @model name="Overview"
+    * @generated
+    * @ordered
+    */
+   public static final int OVERVIEW_VALUE = 3;
 
    /**
     * An array of all the '<em><b>GDiscrete Level Of Detail</b></em>' enumerators.
@@ -102,9 +120,10 @@ public enum GDiscreteLevelOfDetail implements Enumerator {
     * @generated
     */
    private static final GDiscreteLevelOfDetail[] VALUES_ARRAY = new GDiscreteLevelOfDetail[] {
-      OVERVIEW,
-      INTERMEDIATE,
+      DETAIL2,
       DETAIL,
+      INTERMEDIATE,
+      OVERVIEW,
    };
 
    /**
@@ -161,6 +180,12 @@ public enum GDiscreteLevelOfDetail implements Enumerator {
     */
    public static GDiscreteLevelOfDetail get(int value) {
       switch (value) {
+         case DETAIL2_VALUE:
+            return DETAIL2;
+         case DETAIL_VALUE:
+            return DETAIL;
+         case INTERMEDIATE_VALUE:
+            return INTERMEDIATE;
          case OVERVIEW_VALUE:
             return OVERVIEW;
       }
