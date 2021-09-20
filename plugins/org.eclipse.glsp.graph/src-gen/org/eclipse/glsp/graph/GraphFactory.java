@@ -243,6 +243,24 @@ public interface GraphFactory extends EFactory {
    GCssStyleRule createGCssStyleRule();
 
    /**
+    * Returns a new object of class '<em>GCss Class Rule</em>'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return a new object of class '<em>GCss Class Rule</em>'.
+    * @generated
+    */
+   GCssClassRule createGCssClassRule();
+
+   /**
+    * Returns a new object of class '<em>GScale Rule</em>'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return a new object of class '<em>GScale Rule</em>'.
+    * @generated
+    */
+   GScaleRule createGScaleRule();
+
+   /**
     * Returns the package supported by this factory.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->

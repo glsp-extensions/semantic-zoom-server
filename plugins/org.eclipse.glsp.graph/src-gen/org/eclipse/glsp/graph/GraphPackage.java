@@ -2589,6 +2589,134 @@ public interface GraphPackage extends EPackage {
    int GCSS_STYLE_RULE_OPERATION_COUNT = GLEVEL_OF_DETAIL_RULE_OPERATION_COUNT + 0;
 
    /**
+    * The meta object id for the '{@link org.eclipse.glsp.graph.impl.GCssClassRuleImpl <em>GCss Class Rule</em>}' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.eclipse.glsp.graph.impl.GCssClassRuleImpl
+    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGCssClassRule()
+    * @generated
+    */
+   int GCSS_CLASS_RULE = 31;
+
+   /**
+    * The feature id for the '<em><b>Trigger</b></em>' reference.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GCSS_CLASS_RULE__TRIGGER = GLEVEL_OF_DETAIL_RULE__TRIGGER;
+
+   /**
+    * The feature id for the '<em><b>Type</b></em>' attribute.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GCSS_CLASS_RULE__TYPE = GLEVEL_OF_DETAIL_RULE__TYPE;
+
+   /**
+    * The feature id for the '<em><b>Classes</b></em>' attribute list.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GCSS_CLASS_RULE__CLASSES = GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT + 0;
+
+   /**
+    * The number of structural features of the '<em>GCss Class Rule</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GCSS_CLASS_RULE_FEATURE_COUNT = GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT + 1;
+
+   /**
+    * The number of operations of the '<em>GCss Class Rule</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GCSS_CLASS_RULE_OPERATION_COUNT = GLEVEL_OF_DETAIL_RULE_OPERATION_COUNT + 0;
+
+   /**
+    * The meta object id for the '{@link org.eclipse.glsp.graph.impl.GScaleRuleImpl <em>GScale Rule</em>}' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.eclipse.glsp.graph.impl.GScaleRuleImpl
+    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGScaleRule()
+    * @generated
+    */
+   int GSCALE_RULE = 32;
+
+   /**
+    * The feature id for the '<em><b>Trigger</b></em>' reference.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSCALE_RULE__TRIGGER = GLEVEL_OF_DETAIL_RULE__TRIGGER;
+
+   /**
+    * The feature id for the '<em><b>Type</b></em>' attribute.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSCALE_RULE__TYPE = GLEVEL_OF_DETAIL_RULE__TYPE;
+
+   /**
+    * The feature id for the '<em><b>Scale</b></em>' attribute.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSCALE_RULE__SCALE = GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT + 0;
+
+   /**
+    * The feature id for the '<em><b>Multiply With CLevel</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSCALE_RULE__MULTIPLY_WITH_CLEVEL = GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT + 1;
+
+   /**
+    * The feature id for the '<em><b>Sum With CLevel</b></em>' attribute.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSCALE_RULE__SUM_WITH_CLEVEL = GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT + 2;
+
+   /**
+    * The number of structural features of the '<em>GScale Rule</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSCALE_RULE_FEATURE_COUNT = GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT + 3;
+
+   /**
+    * The number of operations of the '<em>GScale Rule</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSCALE_RULE_OPERATION_COUNT = GLEVEL_OF_DETAIL_RULE_OPERATION_COUNT + 0;
+
+   /**
     * The meta object id for the '{@link org.eclipse.glsp.graph.GSeverity <em>GSeverity</em>}' enum.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -2596,7 +2724,7 @@ public interface GraphPackage extends EPackage {
     * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGSeverity()
     * @generated
     */
-   int GSEVERITY = 31;
+   int GSEVERITY = 33;
 
    /**
     * The meta object id for the '{@link org.eclipse.glsp.graph.GDiscreteLevelOfDetail <em>GDiscrete Level Of Detail</em>}' enum.
@@ -2606,7 +2734,7 @@ public interface GraphPackage extends EPackage {
     * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGDiscreteLevelOfDetail()
     * @generated
     */
-   int GDISCRETE_LEVEL_OF_DETAIL = 32;
+   int GDISCRETE_LEVEL_OF_DETAIL = 34;
 
    /**
     * Returns the meta object for class '{@link org.eclipse.glsp.graph.GModelElement <em>GModel Element</em>}'.
@@ -3493,6 +3621,70 @@ public interface GraphPackage extends EPackage {
    EReference getGCssStyleRule_Styles();
 
    /**
+    * Returns the meta object for class '{@link org.eclipse.glsp.graph.GCssClassRule <em>GCss Class Rule</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for class '<em>GCss Class Rule</em>'.
+    * @see org.eclipse.glsp.graph.GCssClassRule
+    * @generated
+    */
+   EClass getGCssClassRule();
+
+   /**
+    * Returns the meta object for the attribute list '{@link org.eclipse.glsp.graph.GCssClassRule#getClasses <em>Classes</em>}'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return the meta object for the attribute list '<em>Classes</em>'.
+    * @see org.eclipse.glsp.graph.GCssClassRule#getClasses()
+    * @see #getGCssClassRule()
+    * @generated
+    */
+   EAttribute getGCssClassRule_Classes();
+
+   /**
+    * Returns the meta object for class '{@link org.eclipse.glsp.graph.GScaleRule <em>GScale Rule</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for class '<em>GScale Rule</em>'.
+    * @see org.eclipse.glsp.graph.GScaleRule
+    * @generated
+    */
+   EClass getGScaleRule();
+
+   /**
+    * Returns the meta object for the attribute '{@link org.eclipse.glsp.graph.GScaleRule#getScale <em>Scale</em>}'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Scale</em>'.
+    * @see org.eclipse.glsp.graph.GScaleRule#getScale()
+    * @see #getGScaleRule()
+    * @generated
+    */
+   EAttribute getGScaleRule_Scale();
+
+   /**
+    * Returns the meta object for the attribute '{@link org.eclipse.glsp.graph.GScaleRule#isMultiplyWithCLevel <em>Multiply With CLevel</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Multiply With CLevel</em>'.
+    * @see org.eclipse.glsp.graph.GScaleRule#isMultiplyWithCLevel()
+    * @see #getGScaleRule()
+    * @generated
+    */
+   EAttribute getGScaleRule_MultiplyWithCLevel();
+
+   /**
+    * Returns the meta object for the attribute '{@link org.eclipse.glsp.graph.GScaleRule#isSumWithCLevel <em>Sum With CLevel</em>}'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Sum With CLevel</em>'.
+    * @see org.eclipse.glsp.graph.GScaleRule#isSumWithCLevel()
+    * @see #getGScaleRule()
+    * @generated
+    */
+   EAttribute getGScaleRule_SumWithCLevel();
+
+   /**
     * Returns the meta object for enum '{@link org.eclipse.glsp.graph.GSeverity <em>GSeverity</em>}'.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -4263,6 +4455,58 @@ public interface GraphPackage extends EPackage {
        * @generated
        */
       EReference GCSS_STYLE_RULE__STYLES = eINSTANCE.getGCssStyleRule_Styles();
+
+      /**
+       * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.GCssClassRuleImpl <em>GCss Class Rule</em>}' class.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @see org.eclipse.glsp.graph.impl.GCssClassRuleImpl
+       * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGCssClassRule()
+       * @generated
+       */
+      EClass GCSS_CLASS_RULE = eINSTANCE.getGCssClassRule();
+
+      /**
+       * The meta object literal for the '<em><b>Classes</b></em>' attribute list feature.
+       * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+       * @generated
+       */
+      EAttribute GCSS_CLASS_RULE__CLASSES = eINSTANCE.getGCssClassRule_Classes();
+
+      /**
+       * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.GScaleRuleImpl <em>GScale Rule</em>}' class.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @see org.eclipse.glsp.graph.impl.GScaleRuleImpl
+       * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGScaleRule()
+       * @generated
+       */
+      EClass GSCALE_RULE = eINSTANCE.getGScaleRule();
+
+      /**
+       * The meta object literal for the '<em><b>Scale</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+       * @generated
+       */
+      EAttribute GSCALE_RULE__SCALE = eINSTANCE.getGScaleRule_Scale();
+
+      /**
+       * The meta object literal for the '<em><b>Multiply With CLevel</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EAttribute GSCALE_RULE__MULTIPLY_WITH_CLEVEL = eINSTANCE.getGScaleRule_MultiplyWithCLevel();
+
+      /**
+       * The meta object literal for the '<em><b>Sum With CLevel</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+       * @generated
+       */
+      EAttribute GSCALE_RULE__SUM_WITH_CLEVEL = eINSTANCE.getGScaleRule_SumWithCLevel();
 
       /**
        * The meta object literal for the '{@link org.eclipse.glsp.graph.GSeverity <em>GSeverity</em>}' enum.

@@ -238,6 +238,16 @@ public class GraphAdapterFactory extends AdapterFactoryImpl {
       }
 
       @Override
+      public Adapter caseGCssClassRule(GCssClassRule object) {
+         return createGCssClassRuleAdapter();
+      }
+
+      @Override
+      public Adapter caseGScaleRule(GScaleRule object) {
+         return createGScaleRuleAdapter();
+      }
+
+      @Override
       public Adapter defaultCase(EObject object) {
          return createEObjectAdapter();
       }
@@ -687,6 +697,34 @@ public class GraphAdapterFactory extends AdapterFactoryImpl {
     * @generated
     */
    public Adapter createGCssStyleRuleAdapter() {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.eclipse.glsp.graph.GCssClassRule <em>GCss Class Rule</em>}'.
+    * <!-- begin-user-doc -->
+    * This default implementation returns null so that we can easily ignore cases;
+    * it's useful to ignore a case when inheritance will catch all the cases anyway.
+    * <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.eclipse.glsp.graph.GCssClassRule
+    * @generated
+    */
+   public Adapter createGCssClassRuleAdapter() {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.eclipse.glsp.graph.GScaleRule <em>GScale Rule</em>}'.
+    * <!-- begin-user-doc -->
+    * This default implementation returns null so that we can easily ignore cases;
+    * it's useful to ignore a case when inheritance will catch all the cases anyway.
+    * <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.eclipse.glsp.graph.GScaleRule
+    * @generated
+    */
+   public Adapter createGScaleRuleAdapter() {
       return null;
    }
 

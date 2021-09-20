@@ -32,6 +32,7 @@ import org.eclipse.glsp.graph.GBounds;
 import org.eclipse.glsp.graph.GBoundsAware;
 import org.eclipse.glsp.graph.GButton;
 import org.eclipse.glsp.graph.GCompartment;
+import org.eclipse.glsp.graph.GCssClassRule;
 import org.eclipse.glsp.graph.GCssStyleRule;
 import org.eclipse.glsp.graph.GDimension;
 import org.eclipse.glsp.graph.GDiscreteLevelOfDetail;
@@ -55,6 +56,7 @@ import org.eclipse.glsp.graph.GNode;
 import org.eclipse.glsp.graph.GPoint;
 import org.eclipse.glsp.graph.GPort;
 import org.eclipse.glsp.graph.GPreRenderedElement;
+import org.eclipse.glsp.graph.GScaleRule;
 import org.eclipse.glsp.graph.GSeverity;
 import org.eclipse.glsp.graph.GShapeElement;
 import org.eclipse.glsp.graph.GVisibilityRule;
@@ -284,6 +286,20 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
     * @generated
     */
    private EClass gCssStyleRuleEClass = null;
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   private EClass gCssClassRuleEClass = null;
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   private EClass gScaleRuleEClass = null;
 
    /**
     * <!-- begin-user-doc -->
@@ -1087,6 +1103,60 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
     * @generated
     */
    @Override
+   public EClass getGCssClassRule() { return gCssClassRuleEClass; }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EAttribute getGCssClassRule_Classes() {
+      return (EAttribute) gCssClassRuleEClass.getEStructuralFeatures().get(0);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EClass getGScaleRule() { return gScaleRuleEClass; }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EAttribute getGScaleRule_Scale() { return (EAttribute) gScaleRuleEClass.getEStructuralFeatures().get(0); }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EAttribute getGScaleRule_MultiplyWithCLevel() {
+      return (EAttribute) gScaleRuleEClass.getEStructuralFeatures().get(1);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EAttribute getGScaleRule_SumWithCLevel() {
+      return (EAttribute) gScaleRuleEClass.getEStructuralFeatures().get(2);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
    public EEnum getGSeverity() { return gSeverityEEnum; }
 
    /**
@@ -1242,6 +1312,14 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
       gCssStyleRuleEClass = createEClass(GCSS_STYLE_RULE);
       createEReference(gCssStyleRuleEClass, GCSS_STYLE_RULE__STYLES);
 
+      gCssClassRuleEClass = createEClass(GCSS_CLASS_RULE);
+      createEAttribute(gCssClassRuleEClass, GCSS_CLASS_RULE__CLASSES);
+
+      gScaleRuleEClass = createEClass(GSCALE_RULE);
+      createEAttribute(gScaleRuleEClass, GSCALE_RULE__SCALE);
+      createEAttribute(gScaleRuleEClass, GSCALE_RULE__MULTIPLY_WITH_CLEVEL);
+      createEAttribute(gScaleRuleEClass, GSCALE_RULE__SUM_WITH_CLEVEL);
+
       // Create enums
       gSeverityEEnum = createEEnum(GSEVERITY);
       gDiscreteLevelOfDetailEEnum = createEEnum(GDISCRETE_LEVEL_OF_DETAIL);
@@ -1301,6 +1379,8 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
       gLevelOfDetailRuleTriggerDiscreteEClass.getESuperTypes().add(this.getGLevelOfDetailRuleTrigger());
       gVisibilityRuleEClass.getESuperTypes().add(this.getGLevelOfDetailRule());
       gCssStyleRuleEClass.getESuperTypes().add(this.getGLevelOfDetailRule());
+      gCssClassRuleEClass.getESuperTypes().add(this.getGLevelOfDetailRule());
+      gScaleRuleEClass.getESuperTypes().add(this.getGLevelOfDetailRule());
 
       // Initialize classes, features, and operations; add parameters
       initEClass(gModelElementEClass, GModelElement.class, "GModelElement", IS_ABSTRACT, IS_INTERFACE,
@@ -1515,9 +1595,25 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
 
       initEClass(gCssStyleRuleEClass, GCssStyleRule.class, "GCssStyleRule", !IS_ABSTRACT, !IS_INTERFACE,
          IS_GENERATED_INSTANCE_CLASS);
-      initEReference(getGCssStyleRule_Styles(), this.getStringToObjectMapEntry(), null, "styles", null, 0, -1,
+      initEReference(getGCssStyleRule_Styles(), this.getStringToObjectMapEntry(), null, "styles", null, 1, -1,
          GCssStyleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
          !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+      initEClass(gCssClassRuleEClass, GCssClassRule.class, "GCssClassRule", !IS_ABSTRACT, !IS_INTERFACE,
+         IS_GENERATED_INSTANCE_CLASS);
+      initEAttribute(getGCssClassRule_Classes(), ecorePackage.getEString(), "classes", null, 1, -1, GCssClassRule.class,
+         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+      initEClass(gScaleRuleEClass, GScaleRule.class, "GScaleRule", !IS_ABSTRACT, !IS_INTERFACE,
+         IS_GENERATED_INSTANCE_CLASS);
+      initEAttribute(getGScaleRule_Scale(), ecorePackage.getEDouble(), "scale", "1", 1, 1, GScaleRule.class,
+         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+      initEAttribute(getGScaleRule_MultiplyWithCLevel(), ecorePackage.getEBoolean(), "multiplyWithCLevel", "false", 1,
+         1, GScaleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+         !IS_DERIVED, IS_ORDERED);
+      initEAttribute(getGScaleRule_SumWithCLevel(), ecorePackage.getEBoolean(), "sumWithCLevel", "false", 1, 1,
+         GScaleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+         IS_ORDERED);
 
       // Initialize enums and add enum literals
       initEEnum(gSeverityEEnum, GSeverity.class, "GSeverity");

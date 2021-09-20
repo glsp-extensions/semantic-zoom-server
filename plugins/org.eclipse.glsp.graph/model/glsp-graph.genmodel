@@ -133,5 +133,13 @@
     <genClasses ecoreClass="glsp-graph.ecore#//GCssStyleRule">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference glsp-graph.ecore#//GCssStyleRule/styles"/>
     </genClasses>
+    <genClasses ecoreClass="glsp-graph.ecore#//GCssClassRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute glsp-graph.ecore#//GCssClassRule/classes"/>
+    </genClasses>
+    <genClasses ecoreClass="glsp-graph.ecore#//GScaleRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute glsp-graph.ecore#//GScaleRule/scale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute glsp-graph.ecore#//GScaleRule/multiplyWithCLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute glsp-graph.ecore#//GScaleRule/sumWithCLevel"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
