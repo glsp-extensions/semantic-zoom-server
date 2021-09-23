@@ -120,9 +120,9 @@
     <genClasses image="false" ecoreClass="glsp-graph.ecore#//GLevelOfDetailRuleTrigger">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute glsp-graph.ecore#//GLevelOfDetailRuleTrigger/type"/>
     </genClasses>
-    <genClasses ecoreClass="glsp-graph.ecore#//GLevelOfDetailRuleTriggerDouble">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute glsp-graph.ecore#//GLevelOfDetailRuleTriggerDouble/triggerContinuousLevelFrom"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute glsp-graph.ecore#//GLevelOfDetailRuleTriggerDouble/triggerContinuousLevelTo"/>
+    <genClasses ecoreClass="glsp-graph.ecore#//GLevelOfDetailRuleTriggerContinuous">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute glsp-graph.ecore#//GLevelOfDetailRuleTriggerContinuous/triggerContinuousLevelFrom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute glsp-graph.ecore#//GLevelOfDetailRuleTriggerContinuous/triggerContinuousLevelTo"/>
     </genClasses>
     <genClasses ecoreClass="glsp-graph.ecore#//GLevelOfDetailRuleTriggerDiscrete">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute glsp-graph.ecore#//GLevelOfDetailRuleTriggerDiscrete/triggerDiscreteLevel"/>

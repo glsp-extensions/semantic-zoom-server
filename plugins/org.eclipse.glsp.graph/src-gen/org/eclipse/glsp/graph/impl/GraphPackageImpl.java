@@ -48,8 +48,8 @@ import org.eclipse.glsp.graph.GLayouting;
 import org.eclipse.glsp.graph.GLevelOfDetail;
 import org.eclipse.glsp.graph.GLevelOfDetailRule;
 import org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger;
+import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous;
 import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete;
-import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble;
 import org.eclipse.glsp.graph.GModelElement;
 import org.eclipse.glsp.graph.GModelRoot;
 import org.eclipse.glsp.graph.GNode;
@@ -261,16 +261,16 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
 
    /**
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   private EClass gLevelOfDetailRuleTriggerDoubleEClass = null;
+   private EClass gLevelOfDetailRuleTriggerContinuousEClass = null;
 
    /**
-    * <!-- begin-user-doc -->
+   	 * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
-    * @generated
-    */
+   	 * @generated
+   	 */
    private EClass gLevelOfDetailRuleTriggerDiscreteEClass = null;
 
    /**
@@ -1017,37 +1017,37 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
 
    /**
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EClass getGLevelOfDetailRuleTriggerDouble() { return gLevelOfDetailRuleTriggerDoubleEClass; }
-
-   /**
-    * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
     */
    @Override
-   public EAttribute getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelFrom() {
-      return (EAttribute) gLevelOfDetailRuleTriggerDoubleEClass.getEStructuralFeatures().get(0);
-   }
+   public EClass getGLevelOfDetailRuleTriggerContinuous() { return gLevelOfDetailRuleTriggerContinuousEClass; }
 
    /**
-    * <!-- begin-user-doc -->
+   	 * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
-    * @generated
-    */
+   	 * @generated
+   	 */
    @Override
-   public EAttribute getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelTo() {
-      return (EAttribute) gLevelOfDetailRuleTriggerDoubleEClass.getEStructuralFeatures().get(1);
+   public EAttribute getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelFrom() {
+      return (EAttribute) gLevelOfDetailRuleTriggerContinuousEClass.getEStructuralFeatures().get(0);
    }
 
    /**
-    * <!-- begin-user-doc -->
+   	 * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
-    * @generated
-    */
+   	 * @generated
+   	 */
+   @Override
+   public EAttribute getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelTo() {
+      return (EAttribute) gLevelOfDetailRuleTriggerContinuousEClass.getEStructuralFeatures().get(1);
+   }
+
+   /**
+   	 * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+   	 * @generated
+   	 */
    @Override
    public EClass getGLevelOfDetailRuleTriggerDiscrete() { return gLevelOfDetailRuleTriggerDiscreteEClass; }
 
@@ -1296,11 +1296,11 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
       gLevelOfDetailRuleTriggerEClass = createEClass(GLEVEL_OF_DETAIL_RULE_TRIGGER);
       createEAttribute(gLevelOfDetailRuleTriggerEClass, GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE);
 
-      gLevelOfDetailRuleTriggerDoubleEClass = createEClass(GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE);
-      createEAttribute(gLevelOfDetailRuleTriggerDoubleEClass,
-         GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_FROM);
-      createEAttribute(gLevelOfDetailRuleTriggerDoubleEClass,
-         GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_TO);
+      gLevelOfDetailRuleTriggerContinuousEClass = createEClass(GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS);
+      createEAttribute(gLevelOfDetailRuleTriggerContinuousEClass,
+         GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_FROM);
+      createEAttribute(gLevelOfDetailRuleTriggerContinuousEClass,
+         GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_TO);
 
       gLevelOfDetailRuleTriggerDiscreteEClass = createEClass(GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE);
       createEAttribute(gLevelOfDetailRuleTriggerDiscreteEClass,
@@ -1375,7 +1375,7 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
       gButtonEClass.getESuperTypes().add(this.getGShapeElement());
       gHtmlRootEClass.getESuperTypes().add(this.getGModelRoot());
       gPreRenderedElementEClass.getESuperTypes().add(this.getGModelElement());
-      gLevelOfDetailRuleTriggerDoubleEClass.getESuperTypes().add(this.getGLevelOfDetailRuleTrigger());
+      gLevelOfDetailRuleTriggerContinuousEClass.getESuperTypes().add(this.getGLevelOfDetailRuleTrigger());
       gLevelOfDetailRuleTriggerDiscreteEClass.getESuperTypes().add(this.getGLevelOfDetailRuleTrigger());
       gVisibilityRuleEClass.getESuperTypes().add(this.getGLevelOfDetailRule());
       gCssStyleRuleEClass.getESuperTypes().add(this.getGLevelOfDetailRule());
@@ -1572,13 +1572,13 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
          GLevelOfDetailRuleTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
          !IS_DERIVED, IS_ORDERED);
 
-      initEClass(gLevelOfDetailRuleTriggerDoubleEClass, GLevelOfDetailRuleTriggerDouble.class,
-         "GLevelOfDetailRuleTriggerDouble", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-      initEAttribute(getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelFrom(), ecorePackage.getEDouble(),
-         "triggerContinuousLevelFrom", null, 1, 1, GLevelOfDetailRuleTriggerDouble.class, !IS_TRANSIENT, !IS_VOLATILE,
-         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-      initEAttribute(getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelTo(), ecorePackage.getEDouble(),
-         "triggerContinuousLevelTo", null, 1, 1, GLevelOfDetailRuleTriggerDouble.class, !IS_TRANSIENT, !IS_VOLATILE,
+      initEClass(gLevelOfDetailRuleTriggerContinuousEClass, GLevelOfDetailRuleTriggerContinuous.class,
+         "GLevelOfDetailRuleTriggerContinuous", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+      initEAttribute(getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelFrom(), ecorePackage.getEDouble(),
+         "triggerContinuousLevelFrom", null, 1, 1, GLevelOfDetailRuleTriggerContinuous.class, !IS_TRANSIENT,
+         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+      initEAttribute(getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelTo(), ecorePackage.getEDouble(),
+         "triggerContinuousLevelTo", null, 1, 1, GLevelOfDetailRuleTriggerContinuous.class, !IS_TRANSIENT, !IS_VOLATILE,
          IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
       initEClass(gLevelOfDetailRuleTriggerDiscreteEClass, GLevelOfDetailRuleTriggerDiscrete.class,

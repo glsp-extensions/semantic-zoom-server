@@ -23,26 +23,26 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble;
+import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous;
 import org.eclipse.glsp.graph.GraphPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>GLevel Of Detail Rule Trigger Double</b></em>'.
+ * An implementation of the model object '<em><b>GLevel Of Detail Rule Trigger Continuous</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDoubleImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDoubleImpl#getTriggerContinuousLevelFrom <em>Trigger Continuous Level From</em>}</li>
- *   <li>{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDoubleImpl#getTriggerContinuousLevelTo <em>Trigger Continuous Level To</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerContinuousImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerContinuousImpl#getTriggerContinuousLevelFrom <em>Trigger Continuous Level From</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerContinuousImpl#getTriggerContinuousLevelTo <em>Trigger Continuous Level To</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Container
-   implements GLevelOfDetailRuleTriggerDouble {
+public class GLevelOfDetailRuleTriggerContinuousImpl extends MinimalEObjectImpl.Container
+   implements GLevelOfDetailRuleTriggerContinuous {
    /**
     * The default value of the '{@link #getType() <em>Type</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -108,7 +108,7 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
     * <!-- end-user-doc -->
     * @generated
     */
-   public GLevelOfDetailRuleTriggerDoubleImpl() {
+   public GLevelOfDetailRuleTriggerContinuousImpl() {
       super();
    }
 
@@ -119,7 +119,7 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
     */
    @Override
    protected EClass eStaticClass() {
-      return GraphPackage.Literals.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE;
+      return GraphPackage.Literals.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS;
    }
 
    /**
@@ -132,7 +132,7 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
 
    /**
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -140,8 +140,8 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
       String oldType = type;
       type = newType;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TYPE,
-            oldType, type));
+         eNotify(new ENotificationImpl(this, Notification.SET,
+            GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TYPE, oldType, type));
    }
 
    /**
@@ -154,7 +154,7 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
 
    /**
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -163,13 +163,13 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
       triggerContinuousLevelFrom = newTriggerContinuousLevelFrom;
       if (eNotificationRequired())
          eNotify(new ENotificationImpl(this, Notification.SET,
-            GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_FROM,
+            GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_FROM,
             oldTriggerContinuousLevelFrom, triggerContinuousLevelFrom));
    }
 
    /**
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -177,7 +177,7 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
 
    /**
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -186,8 +186,8 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
       triggerContinuousLevelTo = newTriggerContinuousLevelTo;
       if (eNotificationRequired())
          eNotify(new ENotificationImpl(this, Notification.SET,
-            GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_TO, oldTriggerContinuousLevelTo,
-            triggerContinuousLevelTo));
+            GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_TO,
+            oldTriggerContinuousLevelTo, triggerContinuousLevelTo));
    }
 
    /**
@@ -198,11 +198,11 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
    @Override
    public Object eGet(int featureID, boolean resolve, boolean coreType) {
       switch (featureID) {
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TYPE:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TYPE:
             return getType();
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_FROM:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_FROM:
             return getTriggerContinuousLevelFrom();
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_TO:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_TO:
             return getTriggerContinuousLevelTo();
       }
       return super.eGet(featureID, resolve, coreType);
@@ -216,13 +216,13 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
    @Override
    public void eSet(int featureID, Object newValue) {
       switch (featureID) {
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TYPE:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TYPE:
             setType((String) newValue);
             return;
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_FROM:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_FROM:
             setTriggerContinuousLevelFrom((Double) newValue);
             return;
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_TO:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_TO:
             setTriggerContinuousLevelTo((Double) newValue);
             return;
       }
@@ -237,13 +237,13 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
    @Override
    public void eUnset(int featureID) {
       switch (featureID) {
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TYPE:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TYPE:
             setType(TYPE_EDEFAULT);
             return;
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_FROM:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_FROM:
             setTriggerContinuousLevelFrom(TRIGGER_CONTINUOUS_LEVEL_FROM_EDEFAULT);
             return;
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_TO:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_TO:
             setTriggerContinuousLevelTo(TRIGGER_CONTINUOUS_LEVEL_TO_EDEFAULT);
             return;
       }
@@ -258,11 +258,11 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
    @Override
    public boolean eIsSet(int featureID) {
       switch (featureID) {
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TYPE:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TYPE:
             return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_FROM:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_FROM:
             return triggerContinuousLevelFrom != TRIGGER_CONTINUOUS_LEVEL_FROM_EDEFAULT;
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_TO:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_TO:
             return triggerContinuousLevelTo != TRIGGER_CONTINUOUS_LEVEL_TO_EDEFAULT;
       }
       return super.eIsSet(featureID);
@@ -289,4 +289,4 @@ public class GLevelOfDetailRuleTriggerDoubleImpl extends MinimalEObjectImpl.Cont
       return result.toString();
    }
 
-} //GLevelOfDetailRuleTriggerDoubleImpl
+} //GLevelOfDetailRuleTriggerContinuousImpl

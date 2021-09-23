@@ -16,13 +16,13 @@
 package org.eclipse.glsp.graph.builder.impl;
 
 import org.eclipse.glsp.graph.DefaultTypes;
-import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble;
+import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous;
 import org.eclipse.glsp.graph.GraphFactory;
 import org.eclipse.glsp.graph.builder.AbstractLevelOfDetailRuleTriggerBuilder;
 
 public class GLevelOfDetailRuleTriggerContinuousBuilder
    extends
-   AbstractLevelOfDetailRuleTriggerBuilder<GLevelOfDetailRuleTriggerDouble, GLevelOfDetailRuleTriggerContinuousBuilder> {
+   AbstractLevelOfDetailRuleTriggerBuilder<GLevelOfDetailRuleTriggerContinuous, GLevelOfDetailRuleTriggerContinuousBuilder> {
 
    public GLevelOfDetailRuleTriggerContinuousBuilder() {
       super(DefaultTypes.LEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS);
@@ -47,12 +47,12 @@ public class GLevelOfDetailRuleTriggerContinuousBuilder
    }
 
    @Override
-   protected GLevelOfDetailRuleTriggerDouble instantiate() {
-      return GraphFactory.eINSTANCE.createGLevelOfDetailRuleTriggerDouble();
+   protected GLevelOfDetailRuleTriggerContinuous instantiate() {
+      return GraphFactory.eINSTANCE.createGLevelOfDetailRuleTriggerContinuous();
    }
 
    @Override
-   protected void setProperties(final GLevelOfDetailRuleTriggerDouble element) {
+   protected void setProperties(final GLevelOfDetailRuleTriggerContinuous element) {
       element.setTriggerContinuousLevelFrom(from);
       element.setTriggerContinuousLevelTo(to);
       super.setProperties(element);

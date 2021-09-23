@@ -207,21 +207,21 @@ public interface GraphFactory extends EFactory {
    GLevelOfDetail createGLevelOfDetail();
 
    /**
-    * Returns a new object of class '<em>GLevel Of Detail Rule Trigger Double</em>'.
+    * Returns a new object of class '<em>GLevel Of Detail Rule Trigger Continuous</em>'.
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @return a new object of class '<em>GLevel Of Detail Rule Trigger Double</em>'.
+    * <!-- end-user-doc -->
+    * @return a new object of class '<em>GLevel Of Detail Rule Trigger Continuous</em>'.
     * @generated
     */
-   GLevelOfDetailRuleTriggerDouble createGLevelOfDetailRuleTriggerDouble();
+   GLevelOfDetailRuleTriggerContinuous createGLevelOfDetailRuleTriggerContinuous();
 
    /**
-    * Returns a new object of class '<em>GLevel Of Detail Rule Trigger Discrete</em>'.
-    * <!-- begin-user-doc -->
+   	 * Returns a new object of class '<em>GLevel Of Detail Rule Trigger Discrete</em>'.
+   	 * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
-    * @return a new object of class '<em>GLevel Of Detail Rule Trigger Discrete</em>'.
-    * @generated
-    */
+   	 * @return a new object of class '<em>GLevel Of Detail Rule Trigger Discrete</em>'.
+   	 * @generated
+   	 */
    GLevelOfDetailRuleTriggerDiscrete createGLevelOfDetailRuleTriggerDiscrete();
 
    /**

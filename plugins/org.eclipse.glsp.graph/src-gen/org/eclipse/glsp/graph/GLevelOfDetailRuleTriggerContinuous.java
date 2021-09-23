@@ -18,36 +18,36 @@ package org.eclipse.glsp.graph;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>GLevel Of Detail Rule Trigger Double</b></em>'.
+ * A representation of the model object '<em><b>GLevel Of Detail Rule Trigger Continuous</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble#getTriggerContinuousLevelFrom <em>Trigger Continuous Level From</em>}</li>
- *   <li>{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble#getTriggerContinuousLevelTo <em>Trigger Continuous Level To</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous#getTriggerContinuousLevelFrom <em>Trigger Continuous Level From</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous#getTriggerContinuousLevelTo <em>Trigger Continuous Level To</em>}</li>
  * </ul>
  *
- * @see org.eclipse.glsp.graph.GraphPackage#getGLevelOfDetailRuleTriggerDouble()
+ * @see org.eclipse.glsp.graph.GraphPackage#getGLevelOfDetailRuleTriggerContinuous()
  * @model
  * @generated
  */
-public interface GLevelOfDetailRuleTriggerDouble extends GLevelOfDetailRuleTrigger {
+public interface GLevelOfDetailRuleTriggerContinuous extends GLevelOfDetailRuleTrigger {
    /**
     * Returns the value of the '<em><b>Trigger Continuous Level From</b></em>' attribute.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @return the value of the '<em>Trigger Continuous Level From</em>' attribute.
     * @see #setTriggerContinuousLevelFrom(double)
-    * @see org.eclipse.glsp.graph.GraphPackage#getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelFrom()
+    * @see org.eclipse.glsp.graph.GraphPackage#getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelFrom()
     * @model required="true"
     * @generated
     */
    double getTriggerContinuousLevelFrom();
 
    /**
-    * Sets the value of the '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble#getTriggerContinuousLevelFrom <em>Trigger Continuous Level From</em>}' attribute.
+    * Sets the value of the '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous#getTriggerContinuousLevelFrom <em>Trigger Continuous Level From</em>}' attribute.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @param value the new value of the '<em>Trigger Continuous Level From</em>' attribute.
@@ -62,14 +62,14 @@ public interface GLevelOfDetailRuleTriggerDouble extends GLevelOfDetailRuleTrigg
     * <!-- end-user-doc -->
     * @return the value of the '<em>Trigger Continuous Level To</em>' attribute.
     * @see #setTriggerContinuousLevelTo(double)
-    * @see org.eclipse.glsp.graph.GraphPackage#getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelTo()
+    * @see org.eclipse.glsp.graph.GraphPackage#getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelTo()
     * @model required="true"
     * @generated
     */
    double getTriggerContinuousLevelTo();
 
    /**
-    * Sets the value of the '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble#getTriggerContinuousLevelTo <em>Trigger Continuous Level To</em>}' attribute.
+    * Sets the value of the '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous#getTriggerContinuousLevelTo <em>Trigger Continuous Level To</em>}' attribute.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @param value the new value of the '<em>Trigger Continuous Level To</em>' attribute.
@@ -78,4 +78,4 @@ public interface GLevelOfDetailRuleTriggerDouble extends GLevelOfDetailRuleTrigg
     */
    void setTriggerContinuousLevelTo(double value);
 
-} // GLevelOfDetailRuleTriggerDouble
+} // GLevelOfDetailRuleTriggerContinuous

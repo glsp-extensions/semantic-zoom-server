@@ -2376,70 +2376,70 @@ public interface GraphPackage extends EPackage {
    int GLEVEL_OF_DETAIL_RULE_TRIGGER_OPERATION_COUNT = 0;
 
    /**
-    * The meta object id for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDoubleImpl <em>GLevel Of Detail Rule Trigger Double</em>}' class.
+    * The meta object id for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerContinuousImpl <em>GLevel Of Detail Rule Trigger Continuous</em>}' class.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @see org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDoubleImpl
-    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRuleTriggerDouble()
+    * @see org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerContinuousImpl
+    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRuleTriggerContinuous()
     * @generated
     */
-   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE = 27;
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS = 27;
 
    /**
-    * The feature id for the '<em><b>Type</b></em>' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TYPE = GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE;
+   	 * The feature id for the '<em><b>Type</b></em>' attribute.
+   	 * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+   	 * @generated
+   	 * @ordered
+   	 */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TYPE = GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE;
 
    /**
-    * The feature id for the '<em><b>Trigger Continuous Level From</b></em>' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_FROM = GLEVEL_OF_DETAIL_RULE_TRIGGER_FEATURE_COUNT
+   	 * The feature id for the '<em><b>Trigger Continuous Level From</b></em>' attribute.
+   	 * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+   	 * @generated
+   	 * @ordered
+   	 */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_FROM = GLEVEL_OF_DETAIL_RULE_TRIGGER_FEATURE_COUNT
       + 0;
 
    /**
-    * The feature id for the '<em><b>Trigger Continuous Level To</b></em>' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_TO = GLEVEL_OF_DETAIL_RULE_TRIGGER_FEATURE_COUNT
+   	 * The feature id for the '<em><b>Trigger Continuous Level To</b></em>' attribute.
+   	 * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+   	 * @generated
+   	 * @ordered
+   	 */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_TO = GLEVEL_OF_DETAIL_RULE_TRIGGER_FEATURE_COUNT
       + 1;
 
    /**
-    * The number of structural features of the '<em>GLevel Of Detail Rule Trigger Double</em>' class.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE_FEATURE_COUNT = GLEVEL_OF_DETAIL_RULE_TRIGGER_FEATURE_COUNT + 2;
+   	 * The number of structural features of the '<em>GLevel Of Detail Rule Trigger Continuous</em>' class.
+   	 * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+   	 * @generated
+   	 * @ordered
+   	 */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS_FEATURE_COUNT = GLEVEL_OF_DETAIL_RULE_TRIGGER_FEATURE_COUNT + 2;
 
    /**
-    * The number of operations of the '<em>GLevel Of Detail Rule Trigger Double</em>' class.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE_OPERATION_COUNT = GLEVEL_OF_DETAIL_RULE_TRIGGER_OPERATION_COUNT + 0;
+   	 * The number of operations of the '<em>GLevel Of Detail Rule Trigger Continuous</em>' class.
+   	 * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+   	 * @generated
+   	 * @ordered
+   	 */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS_OPERATION_COUNT = GLEVEL_OF_DETAIL_RULE_TRIGGER_OPERATION_COUNT + 0;
 
    /**
-    * The meta object id for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDiscreteImpl <em>GLevel Of Detail Rule Trigger Discrete</em>}' class.
-    * <!-- begin-user-doc -->
+   	 * The meta object id for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDiscreteImpl <em>GLevel Of Detail Rule Trigger Discrete</em>}' class.
+   	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @see org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDiscreteImpl
-    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRuleTriggerDiscrete()
-    * @generated
-    */
+   	 * @see org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDiscreteImpl
+   	 * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRuleTriggerDiscrete()
+   	 * @generated
+   	 */
    int GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE = 28;
 
    /**
@@ -3526,45 +3526,45 @@ public interface GraphPackage extends EPackage {
    EAttribute getGLevelOfDetailRuleTrigger_Type();
 
    /**
-    * Returns the meta object for class '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble <em>GLevel Of Detail Rule Trigger Double</em>}'.
+    * Returns the meta object for class '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous <em>GLevel Of Detail Rule Trigger Continuous</em>}'.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @return the meta object for class '<em>GLevel Of Detail Rule Trigger Double</em>'.
-    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble
+    * @return the meta object for class '<em>GLevel Of Detail Rule Trigger Continuous</em>'.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous
     * @generated
     */
-   EClass getGLevelOfDetailRuleTriggerDouble();
+   EClass getGLevelOfDetailRuleTriggerContinuous();
 
    /**
-    * Returns the meta object for the attribute '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble#getTriggerContinuousLevelFrom <em>Trigger Continuous Level From</em>}'.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @return the meta object for the attribute '<em>Trigger Continuous Level From</em>'.
-    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble#getTriggerContinuousLevelFrom()
-    * @see #getGLevelOfDetailRuleTriggerDouble()
-    * @generated
-    */
-   EAttribute getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelFrom();
+   	 * Returns the meta object for the attribute '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous#getTriggerContinuousLevelFrom <em>Trigger Continuous Level From</em>}'.
+   	 * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+   	 * @return the meta object for the attribute '<em>Trigger Continuous Level From</em>'.
+   	 * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous#getTriggerContinuousLevelFrom()
+   	 * @see #getGLevelOfDetailRuleTriggerContinuous()
+   	 * @generated
+   	 */
+   EAttribute getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelFrom();
 
    /**
-    * Returns the meta object for the attribute '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble#getTriggerContinuousLevelTo <em>Trigger Continuous Level To</em>}'.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @return the meta object for the attribute '<em>Trigger Continuous Level To</em>'.
-    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDouble#getTriggerContinuousLevelTo()
-    * @see #getGLevelOfDetailRuleTriggerDouble()
-    * @generated
-    */
-   EAttribute getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelTo();
+   	 * Returns the meta object for the attribute '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous#getTriggerContinuousLevelTo <em>Trigger Continuous Level To</em>}'.
+   	 * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+   	 * @return the meta object for the attribute '<em>Trigger Continuous Level To</em>'.
+   	 * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous#getTriggerContinuousLevelTo()
+   	 * @see #getGLevelOfDetailRuleTriggerContinuous()
+   	 * @generated
+   	 */
+   EAttribute getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelTo();
 
    /**
-    * Returns the meta object for class '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete <em>GLevel Of Detail Rule Trigger Discrete</em>}'.
-    * <!-- begin-user-doc -->
+   	 * Returns the meta object for class '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete <em>GLevel Of Detail Rule Trigger Discrete</em>}'.
+   	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @return the meta object for class '<em>GLevel Of Detail Rule Trigger Discrete</em>'.
-    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete
-    * @generated
-    */
+   	 * @return the meta object for class '<em>GLevel Of Detail Rule Trigger Discrete</em>'.
+   	 * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete
+   	 * @generated
+   	 */
    EClass getGLevelOfDetailRuleTriggerDiscrete();
 
    /**
@@ -4374,41 +4374,41 @@ public interface GraphPackage extends EPackage {
       EAttribute GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE = eINSTANCE.getGLevelOfDetailRuleTrigger_Type();
 
       /**
-       * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDoubleImpl <em>GLevel Of Detail Rule Trigger Double</em>}' class.
+       * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerContinuousImpl <em>GLevel Of Detail Rule Trigger Continuous</em>}' class.
        * <!-- begin-user-doc -->
        * <!-- end-user-doc -->
-       * @see org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDoubleImpl
-       * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRuleTriggerDouble()
+       * @see org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerContinuousImpl
+       * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRuleTriggerContinuous()
        * @generated
        */
-      EClass GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE = eINSTANCE.getGLevelOfDetailRuleTriggerDouble();
+      EClass GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS = eINSTANCE.getGLevelOfDetailRuleTriggerContinuous();
 
       /**
-       * The meta object literal for the '<em><b>Trigger Continuous Level From</b></em>' attribute feature.
-       * <!-- begin-user-doc -->
-       * <!-- end-user-doc -->
-       * @generated
-       */
-      EAttribute GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_FROM = eINSTANCE
-         .getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelFrom();
+      	 * The meta object literal for the '<em><b>Trigger Continuous Level From</b></em>' attribute feature.
+      	 * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+      	 * @generated
+      	 */
+      EAttribute GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_FROM = eINSTANCE
+         .getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelFrom();
 
       /**
-       * The meta object literal for the '<em><b>Trigger Continuous Level To</b></em>' attribute feature.
-       * <!-- begin-user-doc -->
-       * <!-- end-user-doc -->
-       * @generated
-       */
-      EAttribute GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE__TRIGGER_CONTINUOUS_LEVEL_TO = eINSTANCE
-         .getGLevelOfDetailRuleTriggerDouble_TriggerContinuousLevelTo();
+      	 * The meta object literal for the '<em><b>Trigger Continuous Level To</b></em>' attribute feature.
+      	 * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+      	 * @generated
+      	 */
+      EAttribute GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_TO = eINSTANCE
+         .getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelTo();
 
       /**
-       * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDiscreteImpl <em>GLevel Of Detail Rule Trigger Discrete</em>}' class.
-       * <!-- begin-user-doc -->
+      	 * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDiscreteImpl <em>GLevel Of Detail Rule Trigger Discrete</em>}' class.
+      	 * <!-- begin-user-doc -->
        * <!-- end-user-doc -->
-       * @see org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDiscreteImpl
-       * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRuleTriggerDiscrete()
-       * @generated
-       */
+      	 * @see org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDiscreteImpl
+      	 * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailRuleTriggerDiscrete()
+      	 * @generated
+      	 */
       EClass GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE = eINSTANCE.getGLevelOfDetailRuleTriggerDiscrete();
 
       /**

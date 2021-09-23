@@ -390,11 +390,11 @@ public class GraphSwitch<T> extends Switch<T> {
                result = defaultCase(theEObject);
             return result;
          }
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE: {
-            GLevelOfDetailRuleTriggerDouble gLevelOfDetailRuleTriggerDouble = (GLevelOfDetailRuleTriggerDouble) theEObject;
-            T result = caseGLevelOfDetailRuleTriggerDouble(gLevelOfDetailRuleTriggerDouble);
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS: {
+            GLevelOfDetailRuleTriggerContinuous gLevelOfDetailRuleTriggerContinuous = (GLevelOfDetailRuleTriggerContinuous) theEObject;
+            T result = caseGLevelOfDetailRuleTriggerContinuous(gLevelOfDetailRuleTriggerContinuous);
             if (result == null)
-               result = caseGLevelOfDetailRuleTrigger(gLevelOfDetailRuleTriggerDouble);
+               result = caseGLevelOfDetailRuleTrigger(gLevelOfDetailRuleTriggerContinuous);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -855,31 +855,31 @@ public class GraphSwitch<T> extends Switch<T> {
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule Trigger Double</em>'.
+    * Returns the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule Trigger Continuous</em>'.
     * <!-- begin-user-doc -->
-   	 * This implementation returns null;
-   	 * returning a non-null result will terminate the switch.
-   	 * <!-- end-user-doc -->
+    * This implementation returns null;
+    * returning a non-null result will terminate the switch.
+    * <!-- end-user-doc -->
     * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule Trigger Double</em>'.
+    * @return the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule Trigger Continuous</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
     * @generated
     */
-   public T caseGLevelOfDetailRuleTriggerDouble(GLevelOfDetailRuleTriggerDouble object) {
+   public T caseGLevelOfDetailRuleTriggerContinuous(GLevelOfDetailRuleTriggerContinuous object) {
       return null;
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule Trigger Discrete</em>'.
-    * <!-- begin-user-doc -->
+   	 * Returns the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule Trigger Discrete</em>'.
+   	 * <!-- begin-user-doc -->
    	 * This implementation returns null;
    	 * returning a non-null result will terminate the switch.
    	 * <!-- end-user-doc -->
-    * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule Trigger Discrete</em>'.
-    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-    * @generated
-    */
+   	 * @param object the target of the switch.
+   	 * @return the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule Trigger Discrete</em>'.
+   	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   	 * @generated
+   	 */
    public T caseGLevelOfDetailRuleTriggerDiscrete(GLevelOfDetailRuleTriggerDiscrete object) {
       return null;
    }

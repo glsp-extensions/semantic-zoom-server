@@ -171,16 +171,16 @@ public final class WorkflowBuilder {
                         .build())
                   .addStyle("font-size", "33%")
                   .build())
-            /*
-             * .addLevelOfDetailRule(
-             * new GCssStyleRuleBuilder()
-             * .setLevelOfDetailRuleTrigger(
-             * new GLevelOfDetailRuleTriggerDiscreteBuilder()
-             * .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.OVERVIEW)
-             * .build())
-             * .addStyle("font-size", "$clevel*200%")
-             * .build())
-             */
+
+            // .addLevelOfDetailRule(
+            // new GCssStyleRuleBuilder()
+            // .setLevelOfDetailRuleTrigger(
+            // new GLevelOfDetailRuleTriggerDiscreteBuilder()
+            // .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.OVERVIEW)
+            // .build())
+            // .addStyle("font-size", "$clevel*200%")
+            // .build())
+
             .build();
       }
 

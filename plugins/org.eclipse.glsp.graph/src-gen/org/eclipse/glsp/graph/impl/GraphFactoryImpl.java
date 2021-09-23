@@ -112,8 +112,8 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
             return (EObject) createStringToObjectMapEntry();
          case GraphPackage.GLEVEL_OF_DETAIL:
             return createGLevelOfDetail();
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DOUBLE:
-            return createGLevelOfDetailRuleTriggerDouble();
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS:
+            return createGLevelOfDetailRuleTriggerContinuous();
          case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE:
             return createGLevelOfDetailRuleTriggerDiscrete();
          case GraphPackage.GVISIBILITY_RULE:
@@ -384,20 +384,20 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
 
    /**
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
-   public GLevelOfDetailRuleTriggerDouble createGLevelOfDetailRuleTriggerDouble() {
-      GLevelOfDetailRuleTriggerDoubleImpl gLevelOfDetailRuleTriggerDouble = new GLevelOfDetailRuleTriggerDoubleImpl();
-      return gLevelOfDetailRuleTriggerDouble;
+   public GLevelOfDetailRuleTriggerContinuous createGLevelOfDetailRuleTriggerContinuous() {
+      GLevelOfDetailRuleTriggerContinuousImpl gLevelOfDetailRuleTriggerContinuous = new GLevelOfDetailRuleTriggerContinuousImpl();
+      return gLevelOfDetailRuleTriggerContinuous;
    }
 
    /**
-    * <!-- begin-user-doc -->
+   	 * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
-    * @generated
-    */
+   	 * @generated
+   	 */
    @Override
    public GLevelOfDetailRuleTriggerDiscrete createGLevelOfDetailRuleTriggerDiscrete() {
       GLevelOfDetailRuleTriggerDiscreteImpl gLevelOfDetailRuleTriggerDiscrete = new GLevelOfDetailRuleTriggerDiscreteImpl();
