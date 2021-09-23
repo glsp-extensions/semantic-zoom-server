@@ -31,8 +31,8 @@ public class GScaleRuleBuilder extends AbstractGLevelOfDetailRuleBuilder<GScaleR
       super(DefaultTypes.LEVEL_OF_DETAIL_RULE_SCALE);
    }
 
-   public GScaleRuleBuilder scale(final double scale) {
-      this.scale = scale;
+   public GScaleRuleBuilder scale(final double d) {
+      this.scale = d;
       return this;
    }
 

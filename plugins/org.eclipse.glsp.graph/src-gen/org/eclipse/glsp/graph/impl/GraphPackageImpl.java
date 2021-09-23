@@ -267,10 +267,10 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
    private EClass gLevelOfDetailRuleTriggerContinuousEClass = null;
 
    /**
-   	 * <!-- begin-user-doc -->
+    * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
-   	 * @generated
-   	 */
+    * @generated
+    */
    private EClass gLevelOfDetailRuleTriggerDiscreteEClass = null;
 
    /**
@@ -1024,30 +1024,30 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
    public EClass getGLevelOfDetailRuleTriggerContinuous() { return gLevelOfDetailRuleTriggerContinuousEClass; }
 
    /**
-   	 * <!-- begin-user-doc -->
+    * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
-   	 * @generated
-   	 */
+    * @generated
+    */
    @Override
    public EAttribute getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelFrom() {
       return (EAttribute) gLevelOfDetailRuleTriggerContinuousEClass.getEStructuralFeatures().get(0);
    }
 
    /**
-   	 * <!-- begin-user-doc -->
+    * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
-   	 * @generated
-   	 */
+    * @generated
+    */
    @Override
    public EAttribute getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelTo() {
       return (EAttribute) gLevelOfDetailRuleTriggerContinuousEClass.getEStructuralFeatures().get(1);
    }
 
    /**
-   	 * <!-- begin-user-doc -->
+    * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
-   	 * @generated
-   	 */
+    * @generated
+    */
    @Override
    public EClass getGLevelOfDetailRuleTriggerDiscrete() { return gLevelOfDetailRuleTriggerDiscreteEClass; }
 
@@ -1606,12 +1606,12 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
 
       initEClass(gScaleRuleEClass, GScaleRule.class, "GScaleRule", !IS_ABSTRACT, !IS_INTERFACE,
          IS_GENERATED_INSTANCE_CLASS);
-      initEAttribute(getGScaleRule_Scale(), ecorePackage.getEDouble(), "scale", "1", 1, 1, GScaleRule.class,
+      initEAttribute(getGScaleRule_Scale(), ecorePackage.getEDouble(), "scale", null, 1, 1, GScaleRule.class,
          !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-      initEAttribute(getGScaleRule_MultiplyWithCLevel(), ecorePackage.getEBoolean(), "multiplyWithCLevel", "false", 1,
-         1, GScaleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-         !IS_DERIVED, IS_ORDERED);
-      initEAttribute(getGScaleRule_SumWithCLevel(), ecorePackage.getEBoolean(), "sumWithCLevel", "false", 1, 1,
+      initEAttribute(getGScaleRule_MultiplyWithCLevel(), ecorePackage.getEBoolean(), "multiplyWithCLevel", null, 1, 1,
+         GScaleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+         IS_ORDERED);
+      initEAttribute(getGScaleRule_SumWithCLevel(), ecorePackage.getEBoolean(), "sumWithCLevel", null, 1, 1,
          GScaleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
          IS_ORDERED);
 

@@ -16,33 +16,31 @@
  */
 package org.eclipse.glsp.graph.impl;
 
-import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.glsp.graph.GDiscreteLevelOfDetail;
-import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete;
+
+import org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger;
 import org.eclipse.glsp.graph.GraphPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>GLevel Of Detail Rule Trigger Discrete</b></em>'.
+ * An implementation of the model object '<em><b>GLevel Of Detail Rule Trigger</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDiscreteImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerDiscreteImpl#getTriggerDiscreteLevel <em>Trigger Discrete Level</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GLevelOfDetailRuleTriggerDiscreteImpl extends MinimalEObjectImpl.Container
-   implements GLevelOfDetailRuleTriggerDiscrete {
+public abstract class GLevelOfDetailRuleTriggerImpl extends MinimalEObjectImpl.Container
+   implements GLevelOfDetailRuleTrigger {
    /**
     * The default value of the '{@link #getType() <em>Type</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -52,6 +50,7 @@ public class GLevelOfDetailRuleTriggerDiscreteImpl extends MinimalEObjectImpl.Co
     * @ordered
     */
    protected static final String TYPE_EDEFAULT = null;
+
    /**
     * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -61,22 +60,13 @@ public class GLevelOfDetailRuleTriggerDiscreteImpl extends MinimalEObjectImpl.Co
     * @ordered
     */
    protected String type = TYPE_EDEFAULT;
-   /**
-    * The cached value of the '{@link #getTriggerDiscreteLevel() <em>Trigger Discrete Level</em>}' attribute list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #getTriggerDiscreteLevel()
-    * @generated
-    * @ordered
-    */
-   protected EList<GDiscreteLevelOfDetail> triggerDiscreteLevel;
 
    /**
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
     */
-   public GLevelOfDetailRuleTriggerDiscreteImpl() {
+   public GLevelOfDetailRuleTriggerImpl() {
       super();
    }
 
@@ -87,7 +77,7 @@ public class GLevelOfDetailRuleTriggerDiscreteImpl extends MinimalEObjectImpl.Co
     */
    @Override
    protected EClass eStaticClass() {
-      return GraphPackage.Literals.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE;
+      return GraphPackage.Literals.GLEVEL_OF_DETAIL_RULE_TRIGGER;
    }
 
    /**
@@ -100,7 +90,7 @@ public class GLevelOfDetailRuleTriggerDiscreteImpl extends MinimalEObjectImpl.Co
 
    /**
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -108,22 +98,8 @@ public class GLevelOfDetailRuleTriggerDiscreteImpl extends MinimalEObjectImpl.Co
       String oldType = type;
       type = newType;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET,
-            GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TYPE, oldType, type));
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EList<GDiscreteLevelOfDetail> getTriggerDiscreteLevel() {
-      if (triggerDiscreteLevel == null) {
-         triggerDiscreteLevel = new EDataTypeUniqueEList<GDiscreteLevelOfDetail>(GDiscreteLevelOfDetail.class, this,
-            GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TRIGGER_DISCRETE_LEVEL);
-      }
-      return triggerDiscreteLevel;
+         eNotify(new ENotificationImpl(this, Notification.SET, GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE,
+            oldType, type));
    }
 
    /**
@@ -134,10 +110,8 @@ public class GLevelOfDetailRuleTriggerDiscreteImpl extends MinimalEObjectImpl.Co
    @Override
    public Object eGet(int featureID, boolean resolve, boolean coreType) {
       switch (featureID) {
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TYPE:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE:
             return getType();
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TRIGGER_DISCRETE_LEVEL:
-            return getTriggerDiscreteLevel();
       }
       return super.eGet(featureID, resolve, coreType);
    }
@@ -147,16 +121,11 @@ public class GLevelOfDetailRuleTriggerDiscreteImpl extends MinimalEObjectImpl.Co
     * <!-- end-user-doc -->
     * @generated
     */
-   @SuppressWarnings("unchecked")
    @Override
    public void eSet(int featureID, Object newValue) {
       switch (featureID) {
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TYPE:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE:
             setType((String) newValue);
-            return;
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TRIGGER_DISCRETE_LEVEL:
-            getTriggerDiscreteLevel().clear();
-            getTriggerDiscreteLevel().addAll((Collection<? extends GDiscreteLevelOfDetail>) newValue);
             return;
       }
       super.eSet(featureID, newValue);
@@ -170,11 +139,8 @@ public class GLevelOfDetailRuleTriggerDiscreteImpl extends MinimalEObjectImpl.Co
    @Override
    public void eUnset(int featureID) {
       switch (featureID) {
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TYPE:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE:
             setType(TYPE_EDEFAULT);
-            return;
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TRIGGER_DISCRETE_LEVEL:
-            getTriggerDiscreteLevel().clear();
             return;
       }
       super.eUnset(featureID);
@@ -188,10 +154,8 @@ public class GLevelOfDetailRuleTriggerDiscreteImpl extends MinimalEObjectImpl.Co
    @Override
    public boolean eIsSet(int featureID) {
       switch (featureID) {
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TYPE:
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE:
             return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TRIGGER_DISCRETE_LEVEL:
-            return triggerDiscreteLevel != null && !triggerDiscreteLevel.isEmpty();
       }
       return super.eIsSet(featureID);
    }
@@ -209,10 +173,8 @@ public class GLevelOfDetailRuleTriggerDiscreteImpl extends MinimalEObjectImpl.Co
       StringBuilder result = new StringBuilder(super.toString());
       result.append(" (type: ");
       result.append(type);
-      result.append(", triggerDiscreteLevel: ");
-      result.append(triggerDiscreteLevel);
       result.append(')');
       return result.toString();
    }
 
-} //GLevelOfDetailRuleTriggerDiscreteImpl
+} //GLevelOfDetailRuleTriggerImpl

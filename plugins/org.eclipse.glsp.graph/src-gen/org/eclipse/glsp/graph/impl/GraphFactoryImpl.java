@@ -394,10 +394,10 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
    }
 
    /**
-   	 * <!-- begin-user-doc -->
+    * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
-   	 * @generated
-   	 */
+    * @generated
+    */
    @Override
    public GLevelOfDetailRuleTriggerDiscrete createGLevelOfDetailRuleTriggerDiscrete() {
       GLevelOfDetailRuleTriggerDiscreteImpl gLevelOfDetailRuleTriggerDiscrete = new GLevelOfDetailRuleTriggerDiscreteImpl();

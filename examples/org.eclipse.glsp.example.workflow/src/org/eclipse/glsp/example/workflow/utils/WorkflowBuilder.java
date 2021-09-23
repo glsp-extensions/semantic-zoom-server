@@ -178,7 +178,7 @@ public final class WorkflowBuilder {
             // new GLevelOfDetailRuleTriggerDiscreteBuilder()
             // .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.OVERVIEW)
             // .build())
-            // .addStyle("font-size", "$clevel*200%")
+            // .addStyle("font-size", "$clevel*100%")
             // .build())
 
             .build();
@@ -254,7 +254,7 @@ public final class WorkflowBuilder {
                      new GLevelOfDetailRuleTriggerDiscreteBuilder()
                         .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.OVERVIEW)
                         .build())
-                  .setSetVisibility(true)
+                  .setSetVisibility(false)
                   .build())
             .add(createCompartmentIconLabel(taskNode)).build();
       }

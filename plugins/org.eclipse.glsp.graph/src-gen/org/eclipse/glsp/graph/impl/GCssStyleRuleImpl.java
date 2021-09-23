@@ -55,7 +55,6 @@ public class GCssStyleRuleImpl extends MinimalEObjectImpl.Container implements G
     * @ordered
     */
    protected GLevelOfDetailRuleTrigger trigger;
-
    /**
     * The default value of the '{@link #getType() <em>Type</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -65,7 +64,6 @@ public class GCssStyleRuleImpl extends MinimalEObjectImpl.Container implements G
     * @ordered
     */
    protected static final String TYPE_EDEFAULT = null;
-
    /**
     * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -75,7 +73,6 @@ public class GCssStyleRuleImpl extends MinimalEObjectImpl.Container implements G
     * @ordered
     */
    protected String type = TYPE_EDEFAULT;
-
    /**
     * The cached value of the '{@link #getStyles() <em>Styles</em>}' map.
     * <!-- begin-user-doc -->
@@ -126,7 +123,7 @@ public class GCssStyleRuleImpl extends MinimalEObjectImpl.Container implements G
 
    /**
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+   	 * <!-- end-user-doc -->
     * @generated
     */
    public GLevelOfDetailRuleTrigger basicGetTrigger() {
@@ -135,7 +132,7 @@ public class GCssStyleRuleImpl extends MinimalEObjectImpl.Container implements G
 
    /**
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+   	 * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -149,7 +146,7 @@ public class GCssStyleRuleImpl extends MinimalEObjectImpl.Container implements G
 
    /**
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+   	 * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -157,7 +154,7 @@ public class GCssStyleRuleImpl extends MinimalEObjectImpl.Container implements G
 
    /**
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+   	 * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -282,7 +279,7 @@ public class GCssStyleRuleImpl extends MinimalEObjectImpl.Container implements G
 
    /**
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+   	 * <!-- end-user-doc -->
     * @generated
     */
    @Override

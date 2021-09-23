@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous;
 import org.eclipse.glsp.graph.GraphPackage;
 
@@ -132,7 +131,7 @@ public class GLevelOfDetailRuleTriggerContinuousImpl extends MinimalEObjectImpl.
 
    /**
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+   	 * <!-- end-user-doc -->
     * @generated
     */
    @Override

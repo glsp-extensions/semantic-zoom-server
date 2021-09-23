@@ -21,10 +21,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.glsp.graph.GCssClassRule;
 import org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger;
@@ -55,7 +53,6 @@ public class GCssClassRuleImpl extends MinimalEObjectImpl.Container implements G
     * @ordered
     */
    protected GLevelOfDetailRuleTrigger trigger;
-
    /**
     * The default value of the '{@link #getType() <em>Type</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -65,7 +62,6 @@ public class GCssClassRuleImpl extends MinimalEObjectImpl.Container implements G
     * @ordered
     */
    protected static final String TYPE_EDEFAULT = null;
-
    /**
     * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -75,7 +71,6 @@ public class GCssClassRuleImpl extends MinimalEObjectImpl.Container implements G
     * @ordered
     */
    protected String type = TYPE_EDEFAULT;
-
    /**
     * The cached value of the '{@link #getClasses() <em>Classes</em>}' attribute list.
     * <!-- begin-user-doc -->
@@ -126,7 +121,7 @@ public class GCssClassRuleImpl extends MinimalEObjectImpl.Container implements G
 
    /**
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+   	 * <!-- end-user-doc -->
     * @generated
     */
    public GLevelOfDetailRuleTrigger basicGetTrigger() {
@@ -135,7 +130,7 @@ public class GCssClassRuleImpl extends MinimalEObjectImpl.Container implements G
 
    /**
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+   	 * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -149,7 +144,7 @@ public class GCssClassRuleImpl extends MinimalEObjectImpl.Container implements G
 
    /**
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+   	 * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -157,7 +152,7 @@ public class GCssClassRuleImpl extends MinimalEObjectImpl.Container implements G
 
    /**
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+   	 * <!-- end-user-doc -->
     * @generated
     */
    @Override

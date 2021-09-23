@@ -20,10 +20,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger;
 import org.eclipse.glsp.graph.GScaleRule;
 import org.eclipse.glsp.graph.GraphPackage;
@@ -84,7 +82,7 @@ public class GScaleRuleImpl extends MinimalEObjectImpl.Container implements GSca
     * @generated
     * @ordered
     */
-   protected static final double SCALE_EDEFAULT = 1.0;
+   protected static final double SCALE_EDEFAULT = 0.0;
 
    /**
     * The cached value of the '{@link #getScale() <em>Scale</em>}' attribute.
@@ -176,7 +174,7 @@ public class GScaleRuleImpl extends MinimalEObjectImpl.Container implements GSca
 
    /**
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+   	 * <!-- end-user-doc -->
     * @generated
     */
    public GLevelOfDetailRuleTrigger basicGetTrigger() {
@@ -185,7 +183,7 @@ public class GScaleRuleImpl extends MinimalEObjectImpl.Container implements GSca
 
    /**
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+   	 * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -198,7 +196,7 @@ public class GScaleRuleImpl extends MinimalEObjectImpl.Container implements GSca
 
    /**
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+   	 * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -206,7 +204,7 @@ public class GScaleRuleImpl extends MinimalEObjectImpl.Container implements GSca
 
    /**
     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+   	 * <!-- end-user-doc -->
     * @generated
     */
    @Override

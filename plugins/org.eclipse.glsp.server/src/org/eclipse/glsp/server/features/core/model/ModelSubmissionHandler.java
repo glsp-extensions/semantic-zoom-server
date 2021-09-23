@@ -103,11 +103,18 @@ public class ModelSubmissionHandler {
       }
       Action modelAction = gModel.getRevision() == 0 ? new SetModelAction(gModel)
          : new UpdateModelAction(gModel, diagramConfiguration.animatedUpdate());
+
       synchronized (modelLock) {
          List<Action> result = new ArrayList<>();
          result.add(modelAction);
          if (!diagramConfiguration.needsClientLayout()) {
             result.add(new SetDirtyStateAction(modelState.isDirty(), reason));
+         }
+         // not the most ideal solution: set revision to 1 so that future computedBoundsActions result in an updateModel
+         // instead of a setModel. This is important because the client resets the stage when a setModel is received
+         // This would initially happen every time the level of detail is changed
+         if (gModel.getRevision() == 0) {
+            gModel.setRevision(1);
          }
          return result;
       }

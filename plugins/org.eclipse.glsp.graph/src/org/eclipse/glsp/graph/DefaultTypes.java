@@ -73,6 +73,16 @@ public final class DefaultTypes {
       mapping.put(NODE_CIRCLE, GraphPackage.Literals.GNODE);
       mapping.put(NODE_RECTANGLE, GraphPackage.Literals.GNODE);
       mapping.put(NODE_DIAMOND, GraphPackage.Literals.GNODE);
+
+      mapping.put(LEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS,
+         GraphPackage.Literals.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS);
+      mapping.put(LEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE, GraphPackage.Literals.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE);
+
+      mapping.put(LEVEL_OF_DETAIL_RULE_VISIBILITY, GraphPackage.Literals.GVISIBILITY_RULE);
+      mapping.put(LEVEL_OF_DETAIL_RULE_CSSSTYLE, GraphPackage.Literals.GCSS_STYLE_RULE);
+      mapping.put(LEVEL_OF_DETAIL_RULE_CSSCLASS, GraphPackage.Literals.GCSS_CLASS_RULE);
+      mapping.put(LEVEL_OF_DETAIL_RULE_SCALE, GraphPackage.Literals.GSCALE_RULE);
+
       return mapping;
    }
 }

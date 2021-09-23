@@ -37,13 +37,12 @@ package org.eclipse.glsp.graph;
 public interface GScaleRule extends GLevelOfDetailRule {
    /**
     * Returns the value of the '<em><b>Scale</b></em>' attribute.
-    * The default value is <code>"1"</code>.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @return the value of the '<em>Scale</em>' attribute.
     * @see #setScale(double)
     * @see org.eclipse.glsp.graph.GraphPackage#getGScaleRule_Scale()
-    * @model default="1" required="true"
+    * @model required="true"
     * @generated
     */
    double getScale();
@@ -60,13 +59,12 @@ public interface GScaleRule extends GLevelOfDetailRule {
 
    /**
     * Returns the value of the '<em><b>Multiply With CLevel</b></em>' attribute.
-    * The default value is <code>"false"</code>.
     * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
     * @return the value of the '<em>Multiply With CLevel</em>' attribute.
     * @see #setMultiplyWithCLevel(boolean)
     * @see org.eclipse.glsp.graph.GraphPackage#getGScaleRule_MultiplyWithCLevel()
-    * @model default="false" required="true"
+    * @model required="true"
     * @generated
     */
    boolean isMultiplyWithCLevel();
@@ -83,13 +81,12 @@ public interface GScaleRule extends GLevelOfDetailRule {
 
    /**
     * Returns the value of the '<em><b>Sum With CLevel</b></em>' attribute.
-    * The default value is <code>"false"</code>.
     * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
     * @return the value of the '<em>Sum With CLevel</em>' attribute.
     * @see #setSumWithCLevel(boolean)
     * @see org.eclipse.glsp.graph.GraphPackage#getGScaleRule_SumWithCLevel()
-    * @model default="false" required="true"
+    * @model required="true"
     * @generated
     */
    boolean isSumWithCLevel();
