@@ -22,6 +22,7 @@ public abstract class AbstractGLevelOfDetailRuleBuilder<T extends GLevelOfDetail
    extends GBuilder<T> {
 
    protected String type;
+   protected boolean handledByServer = false;
    protected GLevelOfDetailRuleTrigger trigger;
 
    public AbstractGLevelOfDetailRuleBuilder(final String type) {
@@ -35,9 +36,15 @@ public abstract class AbstractGLevelOfDetailRuleBuilder<T extends GLevelOfDetail
       return self();
    }
 
+   public E setHandledByServer(final boolean handledByServer) {
+      this.handledByServer = handledByServer;
+      return self();
+   }
+
    @Override
    protected void setProperties(final T element) {
       element.setTrigger(trigger);
       element.setType(type);
+      element.setHandledByServer(handledByServer);
    }
 }

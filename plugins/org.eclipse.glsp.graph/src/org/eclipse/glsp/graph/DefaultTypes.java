@@ -56,6 +56,7 @@ public final class DefaultTypes {
    public static final String LEVEL_OF_DETAIL_RULE_CSSSTYLE = "lod:rule-cssstyle";
    public static final String LEVEL_OF_DETAIL_RULE_CSSCLASS = "lod:rule-cssclass";
    public static final String LEVEL_OF_DETAIL_RULE_SCALE = "lod:rule-scale";
+   public static final String LEVEL_OF_DETAIL_RULE_LAYOUT = "lod:rule-layout";
 
    public static Map<String, EClass> getDefaultTypeMappings() {
       Map<String, EClass> mapping = new HashMap<>();
@@ -82,6 +83,7 @@ public final class DefaultTypes {
       mapping.put(LEVEL_OF_DETAIL_RULE_CSSSTYLE, GraphPackage.Literals.GCSS_STYLE_RULE);
       mapping.put(LEVEL_OF_DETAIL_RULE_CSSCLASS, GraphPackage.Literals.GCSS_CLASS_RULE);
       mapping.put(LEVEL_OF_DETAIL_RULE_SCALE, GraphPackage.Literals.GSCALE_RULE);
+      mapping.put(LEVEL_OF_DETAIL_RULE_LAYOUT, GraphPackage.Literals.GLAYOUT_RULE);
 
       return mapping;
    }

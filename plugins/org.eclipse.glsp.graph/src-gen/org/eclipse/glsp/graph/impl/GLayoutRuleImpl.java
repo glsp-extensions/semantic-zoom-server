@@ -17,32 +17,43 @@
 package org.eclipse.glsp.graph.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EMap;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EcoreEMap;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.eclipse.glsp.graph.GLayoutRule;
+import org.eclipse.glsp.graph.GLayouting;
 import org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger;
-import org.eclipse.glsp.graph.GVisibilityRule;
 import org.eclipse.glsp.graph.GraphPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>GVisibility Rule</b></em>'.
+ * An implementation of the model object '<em><b>GLayout Rule</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.glsp.graph.impl.GVisibilityRuleImpl#getTrigger <em>Trigger</em>}</li>
- *   <li>{@link org.eclipse.glsp.graph.impl.GVisibilityRuleImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.glsp.graph.impl.GVisibilityRuleImpl#isHandledByServer <em>Handled By Server</em>}</li>
- *   <li>{@link org.eclipse.glsp.graph.impl.GVisibilityRuleImpl#isSetVisibility <em>Set Visibility</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.impl.GLayoutRuleImpl#getTrigger <em>Trigger</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.impl.GLayoutRuleImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.impl.GLayoutRuleImpl#isHandledByServer <em>Handled By Server</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.impl.GLayoutRuleImpl#getLayout <em>Layout</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.impl.GLayoutRuleImpl#getLayoutOptions <em>Layout Options</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements GVisibilityRule {
+public class GLayoutRuleImpl extends MinimalEObjectImpl.Container implements GLayoutRule {
    /**
     * The cached value of the '{@link #getTrigger() <em>Trigger</em>}' reference.
     * <!-- begin-user-doc -->
@@ -86,7 +97,7 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
    /**
     * The cached value of the '{@link #isHandledByServer() <em>Handled By Server</em>}' attribute.
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @see #isHandledByServer()
     * @generated
     * @ordered
@@ -94,31 +105,41 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
    protected boolean handledByServer = HANDLED_BY_SERVER_EDEFAULT;
 
    /**
-    * The default value of the '{@link #isSetVisibility() <em>Set Visibility</em>}' attribute.
+    * The default value of the '{@link #getLayout() <em>Layout</em>}' attribute.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @see #isSetVisibility()
+    * @see #getLayout()
     * @generated
     * @ordered
     */
-   protected static final boolean SET_VISIBILITY_EDEFAULT = false;
+   protected static final String LAYOUT_EDEFAULT = null;
 
    /**
-    * The cached value of the '{@link #isSetVisibility() <em>Set Visibility</em>}' attribute.
+    * The cached value of the '{@link #getLayout() <em>Layout</em>}' attribute.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @see #isSetVisibility()
+    * @see #getLayout()
     * @generated
     * @ordered
     */
-   protected boolean setVisibility = SET_VISIBILITY_EDEFAULT;
+   protected String layout = LAYOUT_EDEFAULT;
+
+   /**
+    * The cached value of the '{@link #getLayoutOptions() <em>Layout Options</em>}' map.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getLayoutOptions()
+    * @generated
+    * @ordered
+    */
+   protected EMap<String, Object> layoutOptions;
 
    /**
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
     */
-   public GVisibilityRuleImpl() {
+   public GLayoutRuleImpl() {
       super();
    }
 
@@ -129,7 +150,7 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
     */
    @Override
    protected EClass eStaticClass() {
-      return GraphPackage.Literals.GVISIBILITY_RULE;
+      return GraphPackage.Literals.GLAYOUT_RULE;
    }
 
    /**
@@ -144,8 +165,8 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
          trigger = (GLevelOfDetailRuleTrigger) eResolveProxy(oldTrigger);
          if (trigger != oldTrigger) {
             if (eNotificationRequired())
-               eNotify(new ENotificationImpl(this, Notification.RESOLVE, GraphPackage.GVISIBILITY_RULE__TRIGGER,
-                  oldTrigger, trigger));
+               eNotify(new ENotificationImpl(this, Notification.RESOLVE, GraphPackage.GLAYOUT_RULE__TRIGGER, oldTrigger,
+                  trigger));
          }
       }
       return trigger;
@@ -153,7 +174,7 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
 
    /**
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public GLevelOfDetailRuleTrigger basicGetTrigger() {
@@ -162,7 +183,7 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
 
    /**
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -171,12 +192,12 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
       trigger = newTrigger;
       if (eNotificationRequired())
          eNotify(
-            new ENotificationImpl(this, Notification.SET, GraphPackage.GVISIBILITY_RULE__TRIGGER, oldTrigger, trigger));
+            new ENotificationImpl(this, Notification.SET, GraphPackage.GLAYOUT_RULE__TRIGGER, oldTrigger, trigger));
    }
 
    /**
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -184,7 +205,7 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
 
    /**
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -192,7 +213,7 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
       String oldType = type;
       type = newType;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, GraphPackage.GVISIBILITY_RULE__TYPE, oldType, type));
+         eNotify(new ENotificationImpl(this, Notification.SET, GraphPackage.GLAYOUT_RULE__TYPE, oldType, type));
    }
 
    /**
@@ -205,7 +226,7 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
 
    /**
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -213,7 +234,7 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
       boolean oldHandledByServer = handledByServer;
       handledByServer = newHandledByServer;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, GraphPackage.GVISIBILITY_RULE__HANDLED_BY_SERVER,
+         eNotify(new ENotificationImpl(this, Notification.SET, GraphPackage.GLAYOUT_RULE__HANDLED_BY_SERVER,
             oldHandledByServer, handledByServer));
    }
 
@@ -223,7 +244,7 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
     * @generated
     */
    @Override
-   public boolean isSetVisibility() { return setVisibility; }
+   public String getLayout() { return layout; }
 
    /**
     * <!-- begin-user-doc -->
@@ -231,12 +252,39 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
     * @generated
     */
    @Override
-   public void setSetVisibility(boolean newSetVisibility) {
-      boolean oldSetVisibility = setVisibility;
-      setVisibility = newSetVisibility;
+   public void setLayout(String newLayout) {
+      String oldLayout = layout;
+      layout = newLayout;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, GraphPackage.GVISIBILITY_RULE__SET_VISIBILITY,
-            oldSetVisibility, setVisibility));
+         eNotify(new ENotificationImpl(this, Notification.SET, GraphPackage.GLAYOUT_RULE__LAYOUT, oldLayout, layout));
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EMap<String, Object> getLayoutOptions() {
+      if (layoutOptions == null) {
+         layoutOptions = new EcoreEMap<String, Object>(GraphPackage.Literals.STRING_TO_OBJECT_MAP_ENTRY,
+            StringToObjectMapEntryImpl.class, this, GraphPackage.GLAYOUT_RULE__LAYOUT_OPTIONS);
+      }
+      return layoutOptions;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+      switch (featureID) {
+         case GraphPackage.GLAYOUT_RULE__LAYOUT_OPTIONS:
+            return ((InternalEList<?>) getLayoutOptions()).basicRemove(otherEnd, msgs);
+      }
+      return super.eInverseRemove(otherEnd, featureID, msgs);
    }
 
    /**
@@ -247,16 +295,21 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
    @Override
    public Object eGet(int featureID, boolean resolve, boolean coreType) {
       switch (featureID) {
-         case GraphPackage.GVISIBILITY_RULE__TRIGGER:
+         case GraphPackage.GLAYOUT_RULE__TRIGGER:
             if (resolve)
                return getTrigger();
             return basicGetTrigger();
-         case GraphPackage.GVISIBILITY_RULE__TYPE:
+         case GraphPackage.GLAYOUT_RULE__TYPE:
             return getType();
-         case GraphPackage.GVISIBILITY_RULE__HANDLED_BY_SERVER:
+         case GraphPackage.GLAYOUT_RULE__HANDLED_BY_SERVER:
             return isHandledByServer();
-         case GraphPackage.GVISIBILITY_RULE__SET_VISIBILITY:
-            return isSetVisibility();
+         case GraphPackage.GLAYOUT_RULE__LAYOUT:
+            return getLayout();
+         case GraphPackage.GLAYOUT_RULE__LAYOUT_OPTIONS:
+            if (coreType)
+               return getLayoutOptions();
+            else
+               return getLayoutOptions().map();
       }
       return super.eGet(featureID, resolve, coreType);
    }
@@ -269,17 +322,20 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
    @Override
    public void eSet(int featureID, Object newValue) {
       switch (featureID) {
-         case GraphPackage.GVISIBILITY_RULE__TRIGGER:
+         case GraphPackage.GLAYOUT_RULE__TRIGGER:
             setTrigger((GLevelOfDetailRuleTrigger) newValue);
             return;
-         case GraphPackage.GVISIBILITY_RULE__TYPE:
+         case GraphPackage.GLAYOUT_RULE__TYPE:
             setType((String) newValue);
             return;
-         case GraphPackage.GVISIBILITY_RULE__HANDLED_BY_SERVER:
+         case GraphPackage.GLAYOUT_RULE__HANDLED_BY_SERVER:
             setHandledByServer((Boolean) newValue);
             return;
-         case GraphPackage.GVISIBILITY_RULE__SET_VISIBILITY:
-            setSetVisibility((Boolean) newValue);
+         case GraphPackage.GLAYOUT_RULE__LAYOUT:
+            setLayout((String) newValue);
+            return;
+         case GraphPackage.GLAYOUT_RULE__LAYOUT_OPTIONS:
+            ((EStructuralFeature.Setting) getLayoutOptions()).set(newValue);
             return;
       }
       super.eSet(featureID, newValue);
@@ -293,17 +349,20 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
    @Override
    public void eUnset(int featureID) {
       switch (featureID) {
-         case GraphPackage.GVISIBILITY_RULE__TRIGGER:
+         case GraphPackage.GLAYOUT_RULE__TRIGGER:
             setTrigger((GLevelOfDetailRuleTrigger) null);
             return;
-         case GraphPackage.GVISIBILITY_RULE__TYPE:
+         case GraphPackage.GLAYOUT_RULE__TYPE:
             setType(TYPE_EDEFAULT);
             return;
-         case GraphPackage.GVISIBILITY_RULE__HANDLED_BY_SERVER:
+         case GraphPackage.GLAYOUT_RULE__HANDLED_BY_SERVER:
             setHandledByServer(HANDLED_BY_SERVER_EDEFAULT);
             return;
-         case GraphPackage.GVISIBILITY_RULE__SET_VISIBILITY:
-            setSetVisibility(SET_VISIBILITY_EDEFAULT);
+         case GraphPackage.GLAYOUT_RULE__LAYOUT:
+            setLayout(LAYOUT_EDEFAULT);
+            return;
+         case GraphPackage.GLAYOUT_RULE__LAYOUT_OPTIONS:
+            getLayoutOptions().clear();
             return;
       }
       super.eUnset(featureID);
@@ -317,16 +376,58 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
    @Override
    public boolean eIsSet(int featureID) {
       switch (featureID) {
-         case GraphPackage.GVISIBILITY_RULE__TRIGGER:
+         case GraphPackage.GLAYOUT_RULE__TRIGGER:
             return trigger != null;
-         case GraphPackage.GVISIBILITY_RULE__TYPE:
+         case GraphPackage.GLAYOUT_RULE__TYPE:
             return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-         case GraphPackage.GVISIBILITY_RULE__HANDLED_BY_SERVER:
+         case GraphPackage.GLAYOUT_RULE__HANDLED_BY_SERVER:
             return handledByServer != HANDLED_BY_SERVER_EDEFAULT;
-         case GraphPackage.GVISIBILITY_RULE__SET_VISIBILITY:
-            return setVisibility != SET_VISIBILITY_EDEFAULT;
+         case GraphPackage.GLAYOUT_RULE__LAYOUT:
+            return LAYOUT_EDEFAULT == null ? layout != null : !LAYOUT_EDEFAULT.equals(layout);
+         case GraphPackage.GLAYOUT_RULE__LAYOUT_OPTIONS:
+            return layoutOptions != null && !layoutOptions.isEmpty();
       }
       return super.eIsSet(featureID);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+      if (baseClass == GLayouting.class) {
+         switch (derivedFeatureID) {
+            case GraphPackage.GLAYOUT_RULE__LAYOUT:
+               return GraphPackage.GLAYOUTING__LAYOUT;
+            case GraphPackage.GLAYOUT_RULE__LAYOUT_OPTIONS:
+               return GraphPackage.GLAYOUTING__LAYOUT_OPTIONS;
+            default:
+               return -1;
+         }
+      }
+      return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+      if (baseClass == GLayouting.class) {
+         switch (baseFeatureID) {
+            case GraphPackage.GLAYOUTING__LAYOUT:
+               return GraphPackage.GLAYOUT_RULE__LAYOUT;
+            case GraphPackage.GLAYOUTING__LAYOUT_OPTIONS:
+               return GraphPackage.GLAYOUT_RULE__LAYOUT_OPTIONS;
+            default:
+               return -1;
+         }
+      }
+      return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
    }
 
    /**
@@ -344,10 +445,10 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
       result.append(type);
       result.append(", handledByServer: ");
       result.append(handledByServer);
-      result.append(", setVisibility: ");
-      result.append(setVisibility);
+      result.append(", layout: ");
+      result.append(layout);
       result.append(')');
       return result.toString();
    }
 
-} //GVisibilityRuleImpl
+} //GLayoutRuleImpl

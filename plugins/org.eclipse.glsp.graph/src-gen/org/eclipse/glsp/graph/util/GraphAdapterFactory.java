@@ -248,6 +248,11 @@ public class GraphAdapterFactory extends AdapterFactoryImpl {
       }
 
       @Override
+      public Adapter caseGLayoutRule(GLayoutRule object) {
+         return createGLayoutRuleAdapter();
+      }
+
+      @Override
       public Adapter defaultCase(EObject object) {
          return createEObjectAdapter();
       }
@@ -725,6 +730,20 @@ public class GraphAdapterFactory extends AdapterFactoryImpl {
     * @generated
     */
    public Adapter createGScaleRuleAdapter() {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.eclipse.glsp.graph.GLayoutRule <em>GLayout Rule</em>}'.
+    * <!-- begin-user-doc -->
+    * This default implementation returns null so that we can easily ignore cases;
+    * it's useful to ignore a case when inheritance will catch all the cases anyway.
+    * <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.eclipse.glsp.graph.GLayoutRule
+    * @generated
+    */
+   public Adapter createGLayoutRuleAdapter() {
       return null;
    }
 

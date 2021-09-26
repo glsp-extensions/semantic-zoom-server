@@ -66,7 +66,8 @@ public class ModelSubmissionHandler {
       boolean needsClientLayout = diagramConfiguration.needsClientLayout();
       if (needsClientLayout) {
          synchronized (modelLock) {
-            return Arrays.asList(new RequestBoundsAction(modelState.getRoot()),
+            return Arrays.asList(
+               new RequestBoundsAction(modelState.getRoot()),
                new SetDirtyStateAction(modelState.isDirty(), reason));
          }
       }

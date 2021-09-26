@@ -261,6 +261,15 @@ public interface GraphFactory extends EFactory {
    GScaleRule createGScaleRule();
 
    /**
+    * Returns a new object of class '<em>GLayout Rule</em>'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return a new object of class '<em>GLayout Rule</em>'.
+    * @generated
+    */
+   GLayoutRule createGLayoutRule();
+
+   /**
     * Returns the package supported by this factory.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->

@@ -36,6 +36,7 @@ import org.eclipse.glsp.graph.GraphPackage;
  * <ul>
  *   <li>{@link org.eclipse.glsp.graph.impl.GScaleRuleImpl#getTrigger <em>Trigger</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GScaleRuleImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.eclipse.glsp.graph.impl.GScaleRuleImpl#isHandledByServer <em>Handled By Server</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GScaleRuleImpl#getScale <em>Scale</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GScaleRuleImpl#isMultiplyWithCLevel <em>Multiply With CLevel</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GScaleRuleImpl#isSumWithCLevel <em>Sum With CLevel</em>}</li>
@@ -73,6 +74,26 @@ public class GScaleRuleImpl extends MinimalEObjectImpl.Container implements GSca
     * @ordered
     */
    protected String type = TYPE_EDEFAULT;
+
+   /**
+    * The default value of the '{@link #isHandledByServer() <em>Handled By Server</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #isHandledByServer()
+    * @generated
+    * @ordered
+    */
+   protected static final boolean HANDLED_BY_SERVER_EDEFAULT = false;
+
+   /**
+    * The cached value of the '{@link #isHandledByServer() <em>Handled By Server</em>}' attribute.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @see #isHandledByServer()
+    * @generated
+    * @ordered
+    */
+   protected boolean handledByServer = HANDLED_BY_SERVER_EDEFAULT;
 
    /**
     * The default value of the '{@link #getScale() <em>Scale</em>}' attribute.
@@ -221,6 +242,28 @@ public class GScaleRuleImpl extends MinimalEObjectImpl.Container implements GSca
     * @generated
     */
    @Override
+   public boolean isHandledByServer() { return handledByServer; }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public void setHandledByServer(boolean newHandledByServer) {
+      boolean oldHandledByServer = handledByServer;
+      handledByServer = newHandledByServer;
+      if (eNotificationRequired())
+         eNotify(new ENotificationImpl(this, Notification.SET, GraphPackage.GSCALE_RULE__HANDLED_BY_SERVER,
+            oldHandledByServer, handledByServer));
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
    public double getScale() { return scale; }
 
    /**
@@ -294,6 +337,8 @@ public class GScaleRuleImpl extends MinimalEObjectImpl.Container implements GSca
             return basicGetTrigger();
          case GraphPackage.GSCALE_RULE__TYPE:
             return getType();
+         case GraphPackage.GSCALE_RULE__HANDLED_BY_SERVER:
+            return isHandledByServer();
          case GraphPackage.GSCALE_RULE__SCALE:
             return getScale();
          case GraphPackage.GSCALE_RULE__MULTIPLY_WITH_CLEVEL:
@@ -317,6 +362,9 @@ public class GScaleRuleImpl extends MinimalEObjectImpl.Container implements GSca
             return;
          case GraphPackage.GSCALE_RULE__TYPE:
             setType((String) newValue);
+            return;
+         case GraphPackage.GSCALE_RULE__HANDLED_BY_SERVER:
+            setHandledByServer((Boolean) newValue);
             return;
          case GraphPackage.GSCALE_RULE__SCALE:
             setScale((Double) newValue);
@@ -345,6 +393,9 @@ public class GScaleRuleImpl extends MinimalEObjectImpl.Container implements GSca
          case GraphPackage.GSCALE_RULE__TYPE:
             setType(TYPE_EDEFAULT);
             return;
+         case GraphPackage.GSCALE_RULE__HANDLED_BY_SERVER:
+            setHandledByServer(HANDLED_BY_SERVER_EDEFAULT);
+            return;
          case GraphPackage.GSCALE_RULE__SCALE:
             setScale(SCALE_EDEFAULT);
             return;
@@ -370,6 +421,8 @@ public class GScaleRuleImpl extends MinimalEObjectImpl.Container implements GSca
             return trigger != null;
          case GraphPackage.GSCALE_RULE__TYPE:
             return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+         case GraphPackage.GSCALE_RULE__HANDLED_BY_SERVER:
+            return handledByServer != HANDLED_BY_SERVER_EDEFAULT;
          case GraphPackage.GSCALE_RULE__SCALE:
             return scale != SCALE_EDEFAULT;
          case GraphPackage.GSCALE_RULE__MULTIPLY_WITH_CLEVEL:
@@ -393,6 +446,8 @@ public class GScaleRuleImpl extends MinimalEObjectImpl.Container implements GSca
       StringBuilder result = new StringBuilder(super.toString());
       result.append(" (type: ");
       result.append(type);
+      result.append(", handledByServer: ");
+      result.append(handledByServer);
       result.append(", scale: ");
       result.append(scale);
       result.append(", multiplyWithCLevel: ");

@@ -135,7 +135,9 @@
       interface="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" lowerBound="1"
         eType="#//GLevelOfDetailRuleTrigger"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="handledByServer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="GDiscreteLevelOfDetail">
     <eLiterals name="Detail2"/>
@@ -177,4 +179,5 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sumWithCLevel" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GLayoutRule" eSuperTypes="#//GLevelOfDetailRule #//GLayouting"/>
 </ecore:EPackage>
