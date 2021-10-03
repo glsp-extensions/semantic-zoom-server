@@ -22,11 +22,11 @@ import org.eclipse.glsp.graph.DefaultTypes;
 import org.eclipse.glsp.graph.GDiscreteLevelOfDetail;
 import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete;
 import org.eclipse.glsp.graph.GraphFactory;
-import org.eclipse.glsp.graph.builder.AbstractLevelOfDetailRuleTriggerBuilder;
+import org.eclipse.glsp.graph.builder.AbstractGLevelOfDetailRuleTriggerBuilder;
 
 public class GLevelOfDetailRuleTriggerDiscreteBuilder
    extends
-   AbstractLevelOfDetailRuleTriggerBuilder<GLevelOfDetailRuleTriggerDiscrete, GLevelOfDetailRuleTriggerDiscreteBuilder> {
+   AbstractGLevelOfDetailRuleTriggerBuilder<GLevelOfDetailRuleTriggerDiscrete, GLevelOfDetailRuleTriggerDiscreteBuilder> {
 
    protected List<GDiscreteLevelOfDetail> lod = new ArrayList<>();
 

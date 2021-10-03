@@ -253,6 +253,16 @@ public class GraphAdapterFactory extends AdapterFactoryImpl {
       }
 
       @Override
+      public Adapter caseGLevelOfDetailServerRule(GLevelOfDetailServerRule object) {
+         return createGLevelOfDetailServerRuleAdapter();
+      }
+
+      @Override
+      public Adapter caseGLevelOfDetailClientRule(GLevelOfDetailClientRule object) {
+         return createGLevelOfDetailClientRuleAdapter();
+      }
+
+      @Override
       public Adapter defaultCase(EObject object) {
          return createEObjectAdapter();
       }
@@ -744,6 +754,34 @@ public class GraphAdapterFactory extends AdapterFactoryImpl {
     * @generated
     */
    public Adapter createGLayoutRuleAdapter() {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.eclipse.glsp.graph.GLevelOfDetailServerRule <em>GLevel Of Detail Server Rule</em>}'.
+    * <!-- begin-user-doc -->
+    * This default implementation returns null so that we can easily ignore cases;
+    * it's useful to ignore a case when inheritance will catch all the cases anyway.
+    * <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailServerRule
+    * @generated
+    */
+   public Adapter createGLevelOfDetailServerRuleAdapter() {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.eclipse.glsp.graph.GLevelOfDetailClientRule <em>GLevel Of Detail Client Rule</em>}'.
+    * <!-- begin-user-doc -->
+   	 * This default implementation returns null so that we can easily ignore cases;
+   	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   	 * <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailClientRule
+    * @generated
+    */
+   public Adapter createGLevelOfDetailClientRuleAdapter() {
       return null;
    }
 

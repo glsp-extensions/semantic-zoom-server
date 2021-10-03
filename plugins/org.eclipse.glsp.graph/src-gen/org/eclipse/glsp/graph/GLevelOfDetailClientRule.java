@@ -18,12 +18,12 @@ package org.eclipse.glsp.graph;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>GLayout Rule</b></em>'.
+ * A representation of the model object '<em><b>GLevel Of Detail Client Rule</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.eclipse.glsp.graph.GraphPackage#getGLayoutRule()
- * @model
+ * @see org.eclipse.glsp.graph.GraphPackage#getGLevelOfDetailClientRule()
+ * @model interface="true" abstract="true"
  * @generated
  */
-public interface GLayoutRule extends GLayouting, GLevelOfDetailServerRule, GLevelOfDetailClientRule {} // GLayoutRule
+public interface GLevelOfDetailClientRule extends GLevelOfDetailRule {} // GLevelOfDetailClientRule

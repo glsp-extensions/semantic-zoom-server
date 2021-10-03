@@ -1,22 +1,24 @@
 /**
  * Copyright (c) 2019-2021 EclipseSource and others.
- * 
+ *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0 which is available at
  * https://www.eclipse.org/legal/epl-2.0.
- * 
+ *
  * This Source Code may also be made available under the following Secondary
  * Licenses when the conditions for such availability set forth in the Eclipse
  * Public License v. 2.0 are satisfied: GNU General Public License, version 2
  * with the GNU Classpath Exception which is available at
  * https://www.gnu.org/software/classpath/license.html.
- * 
+ *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  * ********************************************************************************
  */
 package org.eclipse.glsp.graph.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -100,7 +102,7 @@ public class GLevelOfDetailRuleTriggerDiscreteImpl extends MinimalEObjectImpl.Co
 
    /**
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -124,6 +126,28 @@ public class GLevelOfDetailRuleTriggerDiscreteImpl extends MinimalEObjectImpl.Co
             GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TRIGGER_DISCRETE_LEVEL);
       }
       return triggerDiscreteLevel;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    *
+    * @generated NOT
+    */
+   @Override
+   public boolean isTriggered(final double continuousLevelOfDetail) {
+      // TODO: save in ecore model and read from there
+      GDiscreteLevelOfDetail level;
+      if (continuousLevelOfDetail >= 1.25) {
+         level = GDiscreteLevelOfDetail.OVERVIEW;
+      } else if (continuousLevelOfDetail >= 0.5) {
+         level = GDiscreteLevelOfDetail.INTERMEDIATE;
+      } else if (continuousLevelOfDetail >= 0.25) {
+         level = GDiscreteLevelOfDetail.DETAIL;
+      } else {
+         level = GDiscreteLevelOfDetail.DETAIL2;
+      }
+      return this.getTriggerDiscreteLevel().contains(level);
    }
 
    /**
@@ -202,6 +226,20 @@ public class GLevelOfDetailRuleTriggerDiscreteImpl extends MinimalEObjectImpl.Co
     * @generated
     */
    @Override
+   public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+      switch (operationID) {
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE___IS_TRIGGERED__DOUBLE:
+            return isTriggered((Double) arguments.get(0));
+      }
+      return super.eInvoke(operationID, arguments);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
    public String toString() {
       if (eIsProxy())
          return super.toString();
@@ -215,4 +253,4 @@ public class GLevelOfDetailRuleTriggerDiscreteImpl extends MinimalEObjectImpl.Co
       return result.toString();
    }
 
-} //GLevelOfDetailRuleTriggerDiscreteImpl
+} // GLevelOfDetailRuleTriggerDiscreteImpl

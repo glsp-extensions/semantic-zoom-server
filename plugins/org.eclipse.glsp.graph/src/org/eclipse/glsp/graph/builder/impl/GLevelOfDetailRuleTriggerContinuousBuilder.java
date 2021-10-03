@@ -18,11 +18,11 @@ package org.eclipse.glsp.graph.builder.impl;
 import org.eclipse.glsp.graph.DefaultTypes;
 import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous;
 import org.eclipse.glsp.graph.GraphFactory;
-import org.eclipse.glsp.graph.builder.AbstractLevelOfDetailRuleTriggerBuilder;
+import org.eclipse.glsp.graph.builder.AbstractGLevelOfDetailRuleTriggerBuilder;
 
 public class GLevelOfDetailRuleTriggerContinuousBuilder
    extends
-   AbstractLevelOfDetailRuleTriggerBuilder<GLevelOfDetailRuleTriggerContinuous, GLevelOfDetailRuleTriggerContinuousBuilder> {
+   AbstractGLevelOfDetailRuleTriggerBuilder<GLevelOfDetailRuleTriggerContinuous, GLevelOfDetailRuleTriggerContinuousBuilder> {
 
    public GLevelOfDetailRuleTriggerContinuousBuilder() {
       super(DefaultTypes.LEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS);

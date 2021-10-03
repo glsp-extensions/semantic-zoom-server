@@ -20,9 +20,9 @@ import java.util.Map;
 import org.eclipse.glsp.graph.DefaultTypes;
 import org.eclipse.glsp.graph.GLayoutRule;
 import org.eclipse.glsp.graph.GraphFactory;
-import org.eclipse.glsp.graph.builder.AbstractGLevelOfDetailRuleBuilder;
+import org.eclipse.glsp.graph.builder.AbstractGLevelOfDetailServerRuleBuilder;
 
-public class GLayoutRuleBuilder extends AbstractGLevelOfDetailRuleBuilder<GLayoutRule, GLayoutRuleBuilder> {
+public class GLayoutRuleBuilder extends AbstractGLevelOfDetailServerRuleBuilder<GLayoutRule, GLayoutRuleBuilder> {
 
    protected String layout;
    protected Map<String, Object> layoutOptions;

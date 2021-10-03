@@ -22,6 +22,7 @@ import org.eclipse.glsp.server.actions.ActionDispatcher;
 import org.eclipse.glsp.server.actions.BasicActionHandler;
 import org.eclipse.glsp.server.features.modelsourcewatcher.ModelSourceWatcher;
 import org.eclipse.glsp.server.model.GModelState;
+import org.eclipse.glsp.server.utils.LevelOfDetailUtil;
 import org.eclipse.glsp.server.utils.ServerMessageUtil;
 import org.eclipse.glsp.server.utils.ServerStatusUtil;
 
@@ -43,13 +44,21 @@ public class RequestModelActionHandler extends BasicActionHandler<RequestModelAc
 
    @Override
    public List<Action> executeAction(final RequestModelAction action, final GModelState modelState) {
-      modelState.setClientOptions(action.getOptions());
+      if (action.getOptions().containsKey("sourceUri") || modelState.getRoot() == null) {
+         modelState.setClientOptions(action.getOptions());
 
-      notifyStartLoading(modelState);
-      sourceModelLoader.loadSourceModel(action, modelState);
-      notifyFinishedLoading(modelState);
+         notifyStartLoading(modelState);
+         sourceModelLoader.loadSourceModel(action, modelState);
+         notifyFinishedLoading(modelState);
 
-      modelSourceWatcher.startWatching(modelState);
+         modelSourceWatcher.startWatching(modelState);
+      }
+
+      double continuousLevelOfDetail = 1;
+      if (action.getOptions().containsKey("levelOfDetail")) {
+         continuousLevelOfDetail = Double.parseDouble(action.getOptions().get("levelOfDetail"));
+      }
+      LevelOfDetailUtil.applyLevelOfDetailRules(modelState.getRoot(), continuousLevelOfDetail);
 
       return modelSubmissionHandler.submitModel(modelState);
    }

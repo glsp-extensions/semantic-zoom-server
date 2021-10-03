@@ -15,29 +15,24 @@
  ********************************************************************************/
 package org.eclipse.glsp.graph.builder;
 
-import org.eclipse.glsp.graph.GLevelOfDetailRule;
-import org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger;
+import org.eclipse.glsp.graph.GLevelOfDetailServerRule;
 
-public abstract class AbstractGLevelOfDetailRuleBuilder<T extends GLevelOfDetailRule, E extends AbstractGLevelOfDetailRuleBuilder<T, E>>
-   extends GBuilder<T> {
+public abstract class AbstractGLevelOfDetailServerRuleBuilder<T extends GLevelOfDetailServerRule, E extends AbstractGLevelOfDetailServerRuleBuilder<T, E>>
+   extends AbstractGLevelOfDetailRuleBuilder<T, E> {
+   protected boolean handleAlways = false;
 
-   protected String type;
-   protected GLevelOfDetailRuleTrigger trigger;
-
-   public AbstractGLevelOfDetailRuleBuilder(final String type) {
-      this.type = type;
+   public AbstractGLevelOfDetailServerRuleBuilder(final String type) {
+      super(type);
    }
 
-   protected abstract E self();
-
-   public E setLevelOfDetailRuleTrigger(final GLevelOfDetailRuleTrigger trigger) {
-      this.trigger = trigger;
+   public E setHandleAlways(final boolean handleAlways) {
+      this.handleAlways = handleAlways;
       return self();
    }
 
    @Override
    protected void setProperties(final T element) {
-      element.setTrigger(trigger);
-      element.setType(type);
+      super.setProperties(element);
+      element.setHandleAlways(this.handleAlways);
    }
 }

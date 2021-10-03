@@ -1,25 +1,26 @@
 /**
  * Copyright (c) 2019-2021 EclipseSource and others.
- * 
+ *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0 which is available at
  * https://www.eclipse.org/legal/epl-2.0.
- * 
+ *
  * This Source Code may also be made available under the following Secondary
  * Licenses when the conditions for such availability set forth in the Eclipse
  * Public License v. 2.0 are satisfied: GNU General Public License, version 2
  * with the GNU Classpath Exception which is available at
  * https://www.gnu.org/software/classpath/license.html.
- * 
+ *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  * ********************************************************************************
  */
 package org.eclipse.glsp.graph.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous;
@@ -131,7 +132,7 @@ public class GLevelOfDetailRuleTriggerContinuousImpl extends MinimalEObjectImpl.
 
    /**
     * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -187,6 +188,18 @@ public class GLevelOfDetailRuleTriggerContinuousImpl extends MinimalEObjectImpl.
          eNotify(new ENotificationImpl(this, Notification.SET,
             GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_TO,
             oldTriggerContinuousLevelTo, triggerContinuousLevelTo));
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    *
+    * @generated NOT
+    */
+   @Override
+   public boolean isTriggered(final double continuousLevelOfDetail) {
+      return continuousLevelOfDetail >= this.triggerContinuousLevelFrom
+         && continuousLevelOfDetail <= this.triggerContinuousLevelTo;
    }
 
    /**
@@ -273,6 +286,20 @@ public class GLevelOfDetailRuleTriggerContinuousImpl extends MinimalEObjectImpl.
     * @generated
     */
    @Override
+   public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+      switch (operationID) {
+         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS___IS_TRIGGERED__DOUBLE:
+            return isTriggered((Double) arguments.get(0));
+      }
+      return super.eInvoke(operationID, arguments);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
    public String toString() {
       if (eIsProxy())
          return super.toString();
@@ -288,4 +315,4 @@ public class GLevelOfDetailRuleTriggerContinuousImpl extends MinimalEObjectImpl.
       return result.toString();
    }
 
-} //GLevelOfDetailRuleTriggerContinuousImpl
+} // GLevelOfDetailRuleTriggerContinuousImpl

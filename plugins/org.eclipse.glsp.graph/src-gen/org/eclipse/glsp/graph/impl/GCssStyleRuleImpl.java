@@ -40,7 +40,6 @@ import org.eclipse.glsp.graph.GraphPackage;
  * <ul>
  *   <li>{@link org.eclipse.glsp.graph.impl.GCssStyleRuleImpl#getTrigger <em>Trigger</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GCssStyleRuleImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.glsp.graph.impl.GCssStyleRuleImpl#isHandledByServer <em>Handled By Server</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GCssStyleRuleImpl#getStyles <em>Styles</em>}</li>
  * </ul>
  *
@@ -74,24 +73,6 @@ public class GCssStyleRuleImpl extends MinimalEObjectImpl.Container implements G
     * @ordered
     */
    protected String type = TYPE_EDEFAULT;
-   /**
-    * The default value of the '{@link #isHandledByServer() <em>Handled By Server</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #isHandledByServer()
-    * @generated
-    * @ordered
-    */
-   protected static final boolean HANDLED_BY_SERVER_EDEFAULT = false;
-   /**
-    * The cached value of the '{@link #isHandledByServer() <em>Handled By Server</em>}' attribute.
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @see #isHandledByServer()
-    * @generated
-    * @ordered
-    */
-   protected boolean handledByServer = HANDLED_BY_SERVER_EDEFAULT;
    /**
     * The cached value of the '{@link #getStyles() <em>Styles</em>}' map.
     * <!-- begin-user-doc -->
@@ -190,28 +171,6 @@ public class GCssStyleRuleImpl extends MinimalEObjectImpl.Container implements G
     * @generated
     */
    @Override
-   public boolean isHandledByServer() { return handledByServer; }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public void setHandledByServer(boolean newHandledByServer) {
-      boolean oldHandledByServer = handledByServer;
-      handledByServer = newHandledByServer;
-      if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, GraphPackage.GCSS_STYLE_RULE__HANDLED_BY_SERVER,
-            oldHandledByServer, handledByServer));
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
    public EMap<String, Object> getStyles() {
       if (styles == null) {
          styles = new EcoreEMap<String, Object>(GraphPackage.Literals.STRING_TO_OBJECT_MAP_ENTRY,
@@ -248,8 +207,6 @@ public class GCssStyleRuleImpl extends MinimalEObjectImpl.Container implements G
             return basicGetTrigger();
          case GraphPackage.GCSS_STYLE_RULE__TYPE:
             return getType();
-         case GraphPackage.GCSS_STYLE_RULE__HANDLED_BY_SERVER:
-            return isHandledByServer();
          case GraphPackage.GCSS_STYLE_RULE__STYLES:
             if (coreType)
                return getStyles();
@@ -274,9 +231,6 @@ public class GCssStyleRuleImpl extends MinimalEObjectImpl.Container implements G
          case GraphPackage.GCSS_STYLE_RULE__TYPE:
             setType((String) newValue);
             return;
-         case GraphPackage.GCSS_STYLE_RULE__HANDLED_BY_SERVER:
-            setHandledByServer((Boolean) newValue);
-            return;
          case GraphPackage.GCSS_STYLE_RULE__STYLES:
             ((EStructuralFeature.Setting) getStyles()).set(newValue);
             return;
@@ -298,9 +252,6 @@ public class GCssStyleRuleImpl extends MinimalEObjectImpl.Container implements G
          case GraphPackage.GCSS_STYLE_RULE__TYPE:
             setType(TYPE_EDEFAULT);
             return;
-         case GraphPackage.GCSS_STYLE_RULE__HANDLED_BY_SERVER:
-            setHandledByServer(HANDLED_BY_SERVER_EDEFAULT);
-            return;
          case GraphPackage.GCSS_STYLE_RULE__STYLES:
             getStyles().clear();
             return;
@@ -320,8 +271,6 @@ public class GCssStyleRuleImpl extends MinimalEObjectImpl.Container implements G
             return trigger != null;
          case GraphPackage.GCSS_STYLE_RULE__TYPE:
             return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-         case GraphPackage.GCSS_STYLE_RULE__HANDLED_BY_SERVER:
-            return handledByServer != HANDLED_BY_SERVER_EDEFAULT;
          case GraphPackage.GCSS_STYLE_RULE__STYLES:
             return styles != null && !styles.isEmpty();
       }
@@ -341,8 +290,6 @@ public class GCssStyleRuleImpl extends MinimalEObjectImpl.Container implements G
       StringBuilder result = new StringBuilder(super.toString());
       result.append(" (type: ");
       result.append(type);
-      result.append(", handledByServer: ");
-      result.append(handledByServer);
       result.append(')');
       return result.toString();
    }

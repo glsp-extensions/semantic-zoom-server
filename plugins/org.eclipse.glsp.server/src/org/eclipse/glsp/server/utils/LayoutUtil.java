@@ -55,16 +55,7 @@ public final class LayoutUtil {
                bae.setPosition(GraphUtil.copy(b.getNewPosition()));
             }
             if (b.getNewSize() != null) {
-               bae.setSize(b.getNewSize());
-               // if (bae.getSize() != null) {
-               // if (b.getNewSize().getWidth() > bae.getSize().getWidth()) {
-               // bae.setSize(b.getNewSize());
-               // } else {
-               // bae.setSize(GraphUtil.dimension(bae.getSize().getWidth(), b.getNewSize().getHeight()));
-               // }
-               // } else {
-               // bae.setSize(GraphUtil.copy(b.getNewSize()));
-               // }
+               bae.setSize(GraphUtil.copy(b.getNewSize()));
             }
          }
       }

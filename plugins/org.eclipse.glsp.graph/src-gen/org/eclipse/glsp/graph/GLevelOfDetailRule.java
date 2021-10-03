@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.eclipse.glsp.graph.GLevelOfDetailRule#getTrigger <em>Trigger</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.GLevelOfDetailRule#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.glsp.graph.GLevelOfDetailRule#isHandledByServer <em>Handled By Server</em>}</li>
  * </ul>
  *
  * @see org.eclipse.glsp.graph.GraphPackage#getGLevelOfDetailRule()
@@ -80,27 +79,5 @@ public interface GLevelOfDetailRule extends EObject {
     * @generated
     */
    void setType(String value);
-
-   /**
-    * Returns the value of the '<em><b>Handled By Server</b></em>' attribute.
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @return the value of the '<em>Handled By Server</em>' attribute.
-    * @see #setHandledByServer(boolean)
-    * @see org.eclipse.glsp.graph.GraphPackage#getGLevelOfDetailRule_HandledByServer()
-    * @model required="true"
-    * @generated
-    */
-   boolean isHandledByServer();
-
-   /**
-    * Sets the value of the '{@link org.eclipse.glsp.graph.GLevelOfDetailRule#isHandledByServer <em>Handled By Server</em>}' attribute.
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @param value the new value of the '<em>Handled By Server</em>' attribute.
-    * @see #isHandledByServer()
-    * @generated
-    */
-   void setHandledByServer(boolean value);
 
 } // GLevelOfDetailRule

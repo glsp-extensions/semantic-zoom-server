@@ -33,7 +33,6 @@ import org.eclipse.glsp.graph.builder.impl.GLayoutOptions;
 import org.eclipse.glsp.graph.builder.impl.GLayoutRuleBuilder;
 import org.eclipse.glsp.graph.builder.impl.GLevelOfDetailRuleTriggerContinuousBuilder;
 import org.eclipse.glsp.graph.builder.impl.GLevelOfDetailRuleTriggerDiscreteBuilder;
-import org.eclipse.glsp.graph.builder.impl.GScaleRuleBuilder;
 import org.eclipse.glsp.graph.builder.impl.GVisibilityRuleBuilder;
 import org.eclipse.glsp.graph.util.GConstants;
 import org.eclipse.glsp.graph.util.GConstants.HAlign;
@@ -130,6 +129,18 @@ public final class WorkflowBuilder {
          // .scale(1)
          // .multiplyWithCLevel(true)
          // .build());
+         // this.addLevelOfDetailRule(
+         // new GLayoutRuleBuilder()
+         // .setLevelOfDetailRuleTrigger(
+         // new GLevelOfDetailRuleTriggerDiscreteBuilder()
+         // .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.OVERVIEW)
+         // .build())
+         // .layoutOptions(new GLayoutOptions()
+         // .paddingBottom(5D)
+         // .paddingTop(5D)
+         // .paddingLeft(10D)
+         // .paddingRight(15D))
+         // .build());
          this.addLevelOfDetailRule(
             new GLayoutRuleBuilder()
                .setLevelOfDetailRuleTrigger(
@@ -137,10 +148,8 @@ public final class WorkflowBuilder {
                      .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.OVERVIEW)
                      .build())
                .layoutOptions(new GLayoutOptions()
-                  .paddingBottom(5D)
-                  .paddingTop(5D)
-                  .paddingLeft(10D)
-                  .paddingRight(15D))
+                  .paddingBottom(3D)
+                  .paddingTop(3D))
                .build());
          super.setProperties(taskNode);
          taskNode.setName(name);
@@ -162,25 +171,25 @@ public final class WorkflowBuilder {
                .add(createCompartmentDuration(taskNode))
                .add(createCompartmentType(taskNode))
                .build())
-            .addLevelOfDetailRule(
-               new GScaleRuleBuilder()
-                  .setLevelOfDetailRuleTrigger(
-                     new GLevelOfDetailRuleTriggerContinuousBuilder()
-                        .setFrom(1.0001)
-                        .setTo(1.4)
-                        .build())
-                  .scale(1)
-                  .multiplyWithCLevel(true)
-                  .build())
-            .addLevelOfDetailRule(
-               new GScaleRuleBuilder()
-                  .setLevelOfDetailRuleTrigger(
-                     new GLevelOfDetailRuleTriggerContinuousBuilder()
-                        .setFrom(1.4001)
-                        .setTo(999999)
-                        .build())
-                  .scale(1.4)
-                  .build())
+            // .addLevelOfDetailRule(
+            // new GScaleRuleBuilder()
+            // .setLevelOfDetailRuleTrigger(
+            // new GLevelOfDetailRuleTriggerContinuousBuilder()
+            // .setFrom(1.0001)
+            // .setTo(1.4)
+            // .build())
+            // .scale(1)
+            // .multiplyWithCLevel(true)
+            // .build())
+            // .addLevelOfDetailRule(
+            // new GScaleRuleBuilder()
+            // .setLevelOfDetailRuleTrigger(
+            // new GLevelOfDetailRuleTriggerContinuousBuilder()
+            // .setFrom(1.4001)
+            // .setTo(999999)
+            // .build())
+            // .scale(1.4)
+            // .build())
             .build();
       }
 
@@ -204,15 +213,14 @@ public final class WorkflowBuilder {
                         .build())
                   .addStyle("font-size", "33%")
                   .build())
-
-            // .addLevelOfDetailRule(
-            // new GCssStyleRuleBuilder()
-            // .setLevelOfDetailRuleTrigger(
-            // new GLevelOfDetailRuleTriggerDiscreteBuilder()
-            // .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.OVERVIEW)
-            // .build())
-            // .addStyle("font-size", "150%")
-            // .build())
+            .addLevelOfDetailRule(
+               new GCssStyleRuleBuilder()
+                  .setLevelOfDetailRuleTrigger(
+                     new GLevelOfDetailRuleTriggerDiscreteBuilder()
+                        .addDiscreteLevelOfDetail(GDiscreteLevelOfDetail.OVERVIEW)
+                        .build())
+                  .addStyle("font-size", "150%")
+                  .build())
 
             .build();
       }
@@ -303,6 +311,7 @@ public final class WorkflowBuilder {
                   .layoutOptions(
                      new GLayoutOptions()
                         .resizeContainer(true))
+                  .setHandleAlways(true)
                   .build())
             .add(createCompartmentIconLabel(taskNode)).build();
       }

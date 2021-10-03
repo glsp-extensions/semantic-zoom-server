@@ -17,12 +17,12 @@ package org.eclipse.glsp.graph.builder;
 
 import org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger;
 
-public abstract class AbstractLevelOfDetailRuleTriggerBuilder<T extends GLevelOfDetailRuleTrigger, E extends AbstractLevelOfDetailRuleTriggerBuilder<T, E>>
+public abstract class AbstractGLevelOfDetailRuleTriggerBuilder<T extends GLevelOfDetailRuleTrigger, E extends AbstractGLevelOfDetailRuleTriggerBuilder<T, E>>
    extends GBuilder<T> {
 
    protected String type;
 
-   public AbstractLevelOfDetailRuleTriggerBuilder(final String type) {
+   public AbstractGLevelOfDetailRuleTriggerBuilder(final String type) {
       this.type = type;
    }
 

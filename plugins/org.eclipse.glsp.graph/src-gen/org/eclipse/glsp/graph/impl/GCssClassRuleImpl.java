@@ -38,7 +38,6 @@ import org.eclipse.glsp.graph.GraphPackage;
  * <ul>
  *   <li>{@link org.eclipse.glsp.graph.impl.GCssClassRuleImpl#getTrigger <em>Trigger</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GCssClassRuleImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.glsp.graph.impl.GCssClassRuleImpl#isHandledByServer <em>Handled By Server</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GCssClassRuleImpl#getClasses <em>Classes</em>}</li>
  * </ul>
  *
@@ -72,24 +71,6 @@ public class GCssClassRuleImpl extends MinimalEObjectImpl.Container implements G
     * @ordered
     */
    protected String type = TYPE_EDEFAULT;
-   /**
-    * The default value of the '{@link #isHandledByServer() <em>Handled By Server</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #isHandledByServer()
-    * @generated
-    * @ordered
-    */
-   protected static final boolean HANDLED_BY_SERVER_EDEFAULT = false;
-   /**
-    * The cached value of the '{@link #isHandledByServer() <em>Handled By Server</em>}' attribute.
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @see #isHandledByServer()
-    * @generated
-    * @ordered
-    */
-   protected boolean handledByServer = HANDLED_BY_SERVER_EDEFAULT;
    /**
     * The cached value of the '{@link #getClasses() <em>Classes</em>}' attribute list.
     * <!-- begin-user-doc -->
@@ -188,28 +169,6 @@ public class GCssClassRuleImpl extends MinimalEObjectImpl.Container implements G
     * @generated
     */
    @Override
-   public boolean isHandledByServer() { return handledByServer; }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public void setHandledByServer(boolean newHandledByServer) {
-      boolean oldHandledByServer = handledByServer;
-      handledByServer = newHandledByServer;
-      if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, GraphPackage.GCSS_CLASS_RULE__HANDLED_BY_SERVER,
-            oldHandledByServer, handledByServer));
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
    public EList<String> getClasses() {
       if (classes == null) {
          classes = new EDataTypeUniqueEList<String>(String.class, this, GraphPackage.GCSS_CLASS_RULE__CLASSES);
@@ -231,8 +190,6 @@ public class GCssClassRuleImpl extends MinimalEObjectImpl.Container implements G
             return basicGetTrigger();
          case GraphPackage.GCSS_CLASS_RULE__TYPE:
             return getType();
-         case GraphPackage.GCSS_CLASS_RULE__HANDLED_BY_SERVER:
-            return isHandledByServer();
          case GraphPackage.GCSS_CLASS_RULE__CLASSES:
             return getClasses();
       }
@@ -253,9 +210,6 @@ public class GCssClassRuleImpl extends MinimalEObjectImpl.Container implements G
             return;
          case GraphPackage.GCSS_CLASS_RULE__TYPE:
             setType((String) newValue);
-            return;
-         case GraphPackage.GCSS_CLASS_RULE__HANDLED_BY_SERVER:
-            setHandledByServer((Boolean) newValue);
             return;
          case GraphPackage.GCSS_CLASS_RULE__CLASSES:
             getClasses().clear();
@@ -279,9 +233,6 @@ public class GCssClassRuleImpl extends MinimalEObjectImpl.Container implements G
          case GraphPackage.GCSS_CLASS_RULE__TYPE:
             setType(TYPE_EDEFAULT);
             return;
-         case GraphPackage.GCSS_CLASS_RULE__HANDLED_BY_SERVER:
-            setHandledByServer(HANDLED_BY_SERVER_EDEFAULT);
-            return;
          case GraphPackage.GCSS_CLASS_RULE__CLASSES:
             getClasses().clear();
             return;
@@ -301,8 +252,6 @@ public class GCssClassRuleImpl extends MinimalEObjectImpl.Container implements G
             return trigger != null;
          case GraphPackage.GCSS_CLASS_RULE__TYPE:
             return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-         case GraphPackage.GCSS_CLASS_RULE__HANDLED_BY_SERVER:
-            return handledByServer != HANDLED_BY_SERVER_EDEFAULT;
          case GraphPackage.GCSS_CLASS_RULE__CLASSES:
             return classes != null && !classes.isEmpty();
       }
@@ -322,8 +271,6 @@ public class GCssClassRuleImpl extends MinimalEObjectImpl.Container implements G
       StringBuilder result = new StringBuilder(super.toString());
       result.append(" (type: ");
       result.append(type);
-      result.append(", handledByServer: ");
-      result.append(handledByServer);
       result.append(", classes: ");
       result.append(classes);
       result.append(')');

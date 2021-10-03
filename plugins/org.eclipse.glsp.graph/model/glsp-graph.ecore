@@ -136,8 +136,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" lowerBound="1"
         eType="#//GLevelOfDetailRuleTrigger"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="handledByServer" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="GDiscreteLevelOfDetail">
     <eLiterals name="Detail2"/>
@@ -147,6 +145,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GLevelOfDetailRuleTrigger" abstract="true"
       interface="true">
+    <eOperations name="isTriggered" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="continuousLevelOfDetail" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GLevelOfDetailRuleTriggerContinuous"
@@ -179,5 +180,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sumWithCLevel" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GLayoutRule" eSuperTypes="#//GLevelOfDetailRule #//GLayouting"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GLayoutRule" eSuperTypes="#//GLayouting #//GLevelOfDetailServerRule #//GLevelOfDetailClientRule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GLevelOfDetailServerRule" abstract="true"
+      interface="true" eSuperTypes="#//GLevelOfDetailRule">
+    <eOperations name="handle" lowerBound="1" eType="#//GModelElement">
+      <eParameters name="element" lowerBound="1" eType="#//GModelElement"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="handleAlways" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GLevelOfDetailClientRule" abstract="true"
+      interface="true" eSuperTypes="#//GLevelOfDetailRule"/>
 </ecore:EPackage>

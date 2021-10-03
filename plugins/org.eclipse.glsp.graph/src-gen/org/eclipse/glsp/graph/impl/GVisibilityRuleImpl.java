@@ -17,7 +17,6 @@
 package org.eclipse.glsp.graph.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -36,7 +35,6 @@ import org.eclipse.glsp.graph.GraphPackage;
  * <ul>
  *   <li>{@link org.eclipse.glsp.graph.impl.GVisibilityRuleImpl#getTrigger <em>Trigger</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GVisibilityRuleImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.glsp.graph.impl.GVisibilityRuleImpl#isHandledByServer <em>Handled By Server</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GVisibilityRuleImpl#isSetVisibility <em>Set Visibility</em>}</li>
  * </ul>
  *
@@ -72,26 +70,6 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
     * @ordered
     */
    protected String type = TYPE_EDEFAULT;
-
-   /**
-    * The default value of the '{@link #isHandledByServer() <em>Handled By Server</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #isHandledByServer()
-    * @generated
-    * @ordered
-    */
-   protected static final boolean HANDLED_BY_SERVER_EDEFAULT = false;
-
-   /**
-    * The cached value of the '{@link #isHandledByServer() <em>Handled By Server</em>}' attribute.
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @see #isHandledByServer()
-    * @generated
-    * @ordered
-    */
-   protected boolean handledByServer = HANDLED_BY_SERVER_EDEFAULT;
 
    /**
     * The default value of the '{@link #isSetVisibility() <em>Set Visibility</em>}' attribute.
@@ -201,28 +179,6 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
     * @generated
     */
    @Override
-   public boolean isHandledByServer() { return handledByServer; }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public void setHandledByServer(boolean newHandledByServer) {
-      boolean oldHandledByServer = handledByServer;
-      handledByServer = newHandledByServer;
-      if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, GraphPackage.GVISIBILITY_RULE__HANDLED_BY_SERVER,
-            oldHandledByServer, handledByServer));
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
    public boolean isSetVisibility() { return setVisibility; }
 
    /**
@@ -253,8 +209,6 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
             return basicGetTrigger();
          case GraphPackage.GVISIBILITY_RULE__TYPE:
             return getType();
-         case GraphPackage.GVISIBILITY_RULE__HANDLED_BY_SERVER:
-            return isHandledByServer();
          case GraphPackage.GVISIBILITY_RULE__SET_VISIBILITY:
             return isSetVisibility();
       }
@@ -274,9 +228,6 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
             return;
          case GraphPackage.GVISIBILITY_RULE__TYPE:
             setType((String) newValue);
-            return;
-         case GraphPackage.GVISIBILITY_RULE__HANDLED_BY_SERVER:
-            setHandledByServer((Boolean) newValue);
             return;
          case GraphPackage.GVISIBILITY_RULE__SET_VISIBILITY:
             setSetVisibility((Boolean) newValue);
@@ -299,9 +250,6 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
          case GraphPackage.GVISIBILITY_RULE__TYPE:
             setType(TYPE_EDEFAULT);
             return;
-         case GraphPackage.GVISIBILITY_RULE__HANDLED_BY_SERVER:
-            setHandledByServer(HANDLED_BY_SERVER_EDEFAULT);
-            return;
          case GraphPackage.GVISIBILITY_RULE__SET_VISIBILITY:
             setSetVisibility(SET_VISIBILITY_EDEFAULT);
             return;
@@ -321,8 +269,6 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
             return trigger != null;
          case GraphPackage.GVISIBILITY_RULE__TYPE:
             return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-         case GraphPackage.GVISIBILITY_RULE__HANDLED_BY_SERVER:
-            return handledByServer != HANDLED_BY_SERVER_EDEFAULT;
          case GraphPackage.GVISIBILITY_RULE__SET_VISIBILITY:
             return setVisibility != SET_VISIBILITY_EDEFAULT;
       }
@@ -342,8 +288,6 @@ public class GVisibilityRuleImpl extends MinimalEObjectImpl.Container implements
       StringBuilder result = new StringBuilder(super.toString());
       result.append(" (type: ");
       result.append(type);
-      result.append(", handledByServer: ");
-      result.append(handledByServer);
       result.append(", setVisibility: ");
       result.append(setVisibility);
       result.append(')');

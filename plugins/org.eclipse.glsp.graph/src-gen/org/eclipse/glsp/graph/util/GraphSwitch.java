@@ -448,9 +448,31 @@ public class GraphSwitch<T> extends Switch<T> {
             GLayoutRule gLayoutRule = (GLayoutRule) theEObject;
             T result = caseGLayoutRule(gLayoutRule);
             if (result == null)
+               result = caseGLayouting(gLayoutRule);
+            if (result == null)
+               result = caseGLevelOfDetailServerRule(gLayoutRule);
+            if (result == null)
+               result = caseGLevelOfDetailClientRule(gLayoutRule);
+            if (result == null)
                result = caseGLevelOfDetailRule(gLayoutRule);
             if (result == null)
-               result = caseGLayouting(gLayoutRule);
+               result = defaultCase(theEObject);
+            return result;
+         }
+         case GraphPackage.GLEVEL_OF_DETAIL_SERVER_RULE: {
+            GLevelOfDetailServerRule gLevelOfDetailServerRule = (GLevelOfDetailServerRule) theEObject;
+            T result = caseGLevelOfDetailServerRule(gLevelOfDetailServerRule);
+            if (result == null)
+               result = caseGLevelOfDetailRule(gLevelOfDetailServerRule);
+            if (result == null)
+               result = defaultCase(theEObject);
+            return result;
+         }
+         case GraphPackage.GLEVEL_OF_DETAIL_CLIENT_RULE: {
+            GLevelOfDetailClientRule gLevelOfDetailClientRule = (GLevelOfDetailClientRule) theEObject;
+            T result = caseGLevelOfDetailClientRule(gLevelOfDetailClientRule);
+            if (result == null)
+               result = caseGLevelOfDetailRule(gLevelOfDetailClientRule);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -967,6 +989,36 @@ public class GraphSwitch<T> extends Switch<T> {
     * @generated
     */
    public T caseGLayoutRule(GLayoutRule object) {
+      return null;
+   }
+
+   /**
+    * Returns the result of interpreting the object as an instance of '<em>GLevel Of Detail Server Rule</em>'.
+    * <!-- begin-user-doc -->
+    * This implementation returns null;
+    * returning a non-null result will terminate the switch.
+    * <!-- end-user-doc -->
+    * @param object the target of the switch.
+    * @return the result of interpreting the object as an instance of '<em>GLevel Of Detail Server Rule</em>'.
+    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+    * @generated
+    */
+   public T caseGLevelOfDetailServerRule(GLevelOfDetailServerRule object) {
+      return null;
+   }
+
+   /**
+    * Returns the result of interpreting the object as an instance of '<em>GLevel Of Detail Client Rule</em>'.
+    * <!-- begin-user-doc -->
+   	 * This implementation returns null;
+   	 * returning a non-null result will terminate the switch.
+   	 * <!-- end-user-doc -->
+    * @param object the target of the switch.
+    * @return the result of interpreting the object as an instance of '<em>GLevel Of Detail Client Rule</em>'.
+    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+    * @generated
+    */
+   public T caseGLevelOfDetailClientRule(GLevelOfDetailClientRule object) {
       return null;
    }
 

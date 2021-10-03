@@ -19,6 +19,7 @@ package org.eclipse.glsp.graph;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -2321,22 +2322,13 @@ public interface GraphPackage extends EPackage {
    int GLEVEL_OF_DETAIL_RULE__TYPE = 1;
 
    /**
-    * The feature id for the '<em><b>Handled By Server</b></em>' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GLEVEL_OF_DETAIL_RULE__HANDLED_BY_SERVER = 2;
-
-   /**
     * The number of structural features of the '<em>GLevel Of Detail Rule</em>' class.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT = 3;
+   int GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT = 2;
 
    /**
     * The number of operations of the '<em>GLevel Of Detail Rule</em>' class.
@@ -2376,13 +2368,22 @@ public interface GraphPackage extends EPackage {
    int GLEVEL_OF_DETAIL_RULE_TRIGGER_FEATURE_COUNT = 1;
 
    /**
+    * The operation id for the '<em>Is Triggered</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER___IS_TRIGGERED__DOUBLE = 0;
+
+   /**
     * The number of operations of the '<em>GLevel Of Detail Rule Trigger</em>' class.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int GLEVEL_OF_DETAIL_RULE_TRIGGER_OPERATION_COUNT = 0;
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_OPERATION_COUNT = 1;
 
    /**
     * The meta object id for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerContinuousImpl <em>GLevel Of Detail Rule Trigger Continuous</em>}' class.
@@ -2433,6 +2434,15 @@ public interface GraphPackage extends EPackage {
    int GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS_FEATURE_COUNT = GLEVEL_OF_DETAIL_RULE_TRIGGER_FEATURE_COUNT + 2;
 
    /**
+    * The operation id for the '<em>Is Triggered</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS___IS_TRIGGERED__DOUBLE = GLEVEL_OF_DETAIL_RULE_TRIGGER___IS_TRIGGERED__DOUBLE;
+
+   /**
     * The number of operations of the '<em>GLevel Of Detail Rule Trigger Continuous</em>' class.
     * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
@@ -2479,6 +2489,15 @@ public interface GraphPackage extends EPackage {
    int GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE_FEATURE_COUNT = GLEVEL_OF_DETAIL_RULE_TRIGGER_FEATURE_COUNT + 1;
 
    /**
+    * The operation id for the '<em>Is Triggered</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE___IS_TRIGGERED__DOUBLE = GLEVEL_OF_DETAIL_RULE_TRIGGER___IS_TRIGGERED__DOUBLE;
+
+   /**
     * The number of operations of the '<em>GLevel Of Detail Rule Trigger Discrete</em>' class.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -2514,15 +2533,6 @@ public interface GraphPackage extends EPackage {
     * @ordered
     */
    int GVISIBILITY_RULE__TYPE = GLEVEL_OF_DETAIL_RULE__TYPE;
-
-   /**
-    * The feature id for the '<em><b>Handled By Server</b></em>' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GVISIBILITY_RULE__HANDLED_BY_SERVER = GLEVEL_OF_DETAIL_RULE__HANDLED_BY_SERVER;
 
    /**
     * The feature id for the '<em><b>Set Visibility</b></em>' attribute.
@@ -2580,15 +2590,6 @@ public interface GraphPackage extends EPackage {
    int GCSS_STYLE_RULE__TYPE = GLEVEL_OF_DETAIL_RULE__TYPE;
 
    /**
-    * The feature id for the '<em><b>Handled By Server</b></em>' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GCSS_STYLE_RULE__HANDLED_BY_SERVER = GLEVEL_OF_DETAIL_RULE__HANDLED_BY_SERVER;
-
-   /**
     * The feature id for the '<em><b>Styles</b></em>' map.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -2642,15 +2643,6 @@ public interface GraphPackage extends EPackage {
     * @ordered
     */
    int GCSS_CLASS_RULE__TYPE = GLEVEL_OF_DETAIL_RULE__TYPE;
-
-   /**
-    * The feature id for the '<em><b>Handled By Server</b></em>' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GCSS_CLASS_RULE__HANDLED_BY_SERVER = GLEVEL_OF_DETAIL_RULE__HANDLED_BY_SERVER;
 
    /**
     * The feature id for the '<em><b>Classes</b></em>' attribute list.
@@ -2708,15 +2700,6 @@ public interface GraphPackage extends EPackage {
    int GSCALE_RULE__TYPE = GLEVEL_OF_DETAIL_RULE__TYPE;
 
    /**
-    * The feature id for the '<em><b>Handled By Server</b></em>' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GSCALE_RULE__HANDLED_BY_SERVER = GLEVEL_OF_DETAIL_RULE__HANDLED_BY_SERVER;
-
-   /**
     * The feature id for the '<em><b>Scale</b></em>' attribute.
     * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
@@ -2772,40 +2755,13 @@ public interface GraphPackage extends EPackage {
    int GLAYOUT_RULE = 33;
 
    /**
-    * The feature id for the '<em><b>Trigger</b></em>' reference.
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GLAYOUT_RULE__TRIGGER = GLEVEL_OF_DETAIL_RULE__TRIGGER;
-
-   /**
-    * The feature id for the '<em><b>Type</b></em>' attribute.
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GLAYOUT_RULE__TYPE = GLEVEL_OF_DETAIL_RULE__TYPE;
-
-   /**
-    * The feature id for the '<em><b>Handled By Server</b></em>' attribute.
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GLAYOUT_RULE__HANDLED_BY_SERVER = GLEVEL_OF_DETAIL_RULE__HANDLED_BY_SERVER;
-
-   /**
     * The feature id for the '<em><b>Layout</b></em>' attribute.
     * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int GLAYOUT_RULE__LAYOUT = GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT + 0;
+   int GLAYOUT_RULE__LAYOUT = GLAYOUTING__LAYOUT;
 
    /**
     * The feature id for the '<em><b>Layout Options</b></em>' map.
@@ -2814,16 +2770,52 @@ public interface GraphPackage extends EPackage {
     * @generated
     * @ordered
     */
-   int GLAYOUT_RULE__LAYOUT_OPTIONS = GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT + 1;
+   int GLAYOUT_RULE__LAYOUT_OPTIONS = GLAYOUTING__LAYOUT_OPTIONS;
 
    /**
-    * The number of structural features of the '<em>GLayout Rule</em>' class.
+    * The feature id for the '<em><b>Trigger</b></em>' reference.
     * <!-- begin-user-doc -->
    	 * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int GLAYOUT_RULE_FEATURE_COUNT = GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT + 2;
+   int GLAYOUT_RULE__TRIGGER = GLAYOUTING_FEATURE_COUNT + 0;
+
+   /**
+    * The feature id for the '<em><b>Type</b></em>' attribute.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLAYOUT_RULE__TYPE = GLAYOUTING_FEATURE_COUNT + 1;
+
+   /**
+    * The feature id for the '<em><b>Handle Always</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLAYOUT_RULE__HANDLE_ALWAYS = GLAYOUTING_FEATURE_COUNT + 2;
+
+   /**
+   	 * The number of structural features of the '<em>GLayout Rule</em>' class.
+   	 * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+   	 * @generated
+   	 * @ordered
+   	 */
+   int GLAYOUT_RULE_FEATURE_COUNT = GLAYOUTING_FEATURE_COUNT + 3;
+
+   /**
+    * The operation id for the '<em>Handle</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLAYOUT_RULE___HANDLE__GMODELELEMENT = GLAYOUTING_OPERATION_COUNT + 0;
 
    /**
     * The number of operations of the '<em>GLayout Rule</em>' class.
@@ -2832,7 +2824,117 @@ public interface GraphPackage extends EPackage {
     * @generated
     * @ordered
     */
-   int GLAYOUT_RULE_OPERATION_COUNT = GLEVEL_OF_DETAIL_RULE_OPERATION_COUNT + 0;
+   int GLAYOUT_RULE_OPERATION_COUNT = GLAYOUTING_OPERATION_COUNT + 1;
+
+   /**
+    * The meta object id for the '{@link org.eclipse.glsp.graph.GLevelOfDetailServerRule <em>GLevel Of Detail Server Rule</em>}' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.eclipse.glsp.graph.GLevelOfDetailServerRule
+    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailServerRule()
+    * @generated
+    */
+   int GLEVEL_OF_DETAIL_SERVER_RULE = 34;
+
+   /**
+    * The feature id for the '<em><b>Trigger</b></em>' reference.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_SERVER_RULE__TRIGGER = GLEVEL_OF_DETAIL_RULE__TRIGGER;
+
+   /**
+    * The feature id for the '<em><b>Type</b></em>' attribute.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_SERVER_RULE__TYPE = GLEVEL_OF_DETAIL_RULE__TYPE;
+
+   /**
+    * The feature id for the '<em><b>Handle Always</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_SERVER_RULE__HANDLE_ALWAYS = GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT + 0;
+
+   /**
+   	 * The number of structural features of the '<em>GLevel Of Detail Server Rule</em>' class.
+   	 * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+   	 * @generated
+   	 * @ordered
+   	 */
+   int GLEVEL_OF_DETAIL_SERVER_RULE_FEATURE_COUNT = GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT + 1;
+
+   /**
+    * The operation id for the '<em>Handle</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_SERVER_RULE___HANDLE__GMODELELEMENT = GLEVEL_OF_DETAIL_RULE_OPERATION_COUNT + 0;
+
+   /**
+    * The number of operations of the '<em>GLevel Of Detail Server Rule</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_SERVER_RULE_OPERATION_COUNT = GLEVEL_OF_DETAIL_RULE_OPERATION_COUNT + 1;
+
+   /**
+    * The meta object id for the '{@link org.eclipse.glsp.graph.GLevelOfDetailClientRule <em>GLevel Of Detail Client Rule</em>}' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @see org.eclipse.glsp.graph.GLevelOfDetailClientRule
+    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailClientRule()
+    * @generated
+    */
+   int GLEVEL_OF_DETAIL_CLIENT_RULE = 35;
+
+   /**
+    * The feature id for the '<em><b>Trigger</b></em>' reference.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_CLIENT_RULE__TRIGGER = GLEVEL_OF_DETAIL_RULE__TRIGGER;
+
+   /**
+    * The feature id for the '<em><b>Type</b></em>' attribute.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_CLIENT_RULE__TYPE = GLEVEL_OF_DETAIL_RULE__TYPE;
+
+   /**
+    * The number of structural features of the '<em>GLevel Of Detail Client Rule</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_CLIENT_RULE_FEATURE_COUNT = GLEVEL_OF_DETAIL_RULE_FEATURE_COUNT + 0;
+
+   /**
+    * The number of operations of the '<em>GLevel Of Detail Client Rule</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLEVEL_OF_DETAIL_CLIENT_RULE_OPERATION_COUNT = GLEVEL_OF_DETAIL_RULE_OPERATION_COUNT + 0;
 
    /**
     * The meta object id for the '{@link org.eclipse.glsp.graph.GSeverity <em>GSeverity</em>}' enum.
@@ -2842,7 +2944,7 @@ public interface GraphPackage extends EPackage {
     * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGSeverity()
     * @generated
     */
-   int GSEVERITY = 34;
+   int GSEVERITY = 36;
 
    /**
     * The meta object id for the '{@link org.eclipse.glsp.graph.GDiscreteLevelOfDetail <em>GDiscrete Level Of Detail</em>}' enum.
@@ -2852,7 +2954,7 @@ public interface GraphPackage extends EPackage {
     * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGDiscreteLevelOfDetail()
     * @generated
     */
-   int GDISCRETE_LEVEL_OF_DETAIL = 35;
+   int GDISCRETE_LEVEL_OF_DETAIL = 37;
 
    /**
     * Returns the meta object for class '{@link org.eclipse.glsp.graph.GModelElement <em>GModel Element</em>}'.
@@ -3623,17 +3725,6 @@ public interface GraphPackage extends EPackage {
    EAttribute getGLevelOfDetailRule_Type();
 
    /**
-    * Returns the meta object for the attribute '{@link org.eclipse.glsp.graph.GLevelOfDetailRule#isHandledByServer <em>Handled By Server</em>}'.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @return the meta object for the attribute '<em>Handled By Server</em>'.
-    * @see org.eclipse.glsp.graph.GLevelOfDetailRule#isHandledByServer()
-    * @see #getGLevelOfDetailRule()
-    * @generated
-    */
-   EAttribute getGLevelOfDetailRule_HandledByServer();
-
-   /**
     * Returns the meta object for class '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger <em>GLevel Of Detail Rule Trigger</em>}'.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -3653,6 +3744,16 @@ public interface GraphPackage extends EPackage {
     * @generated
     */
    EAttribute getGLevelOfDetailRuleTrigger_Type();
+
+   /**
+    * Returns the meta object for the '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger#isTriggered(double) <em>Is Triggered</em>}' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the '<em>Is Triggered</em>' operation.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger#isTriggered(double)
+    * @generated
+    */
+   EOperation getGLevelOfDetailRuleTrigger__IsTriggered__double();
 
    /**
     * Returns the meta object for class '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous <em>GLevel Of Detail Rule Trigger Continuous</em>}'.
@@ -3822,6 +3923,47 @@ public interface GraphPackage extends EPackage {
     * @generated
     */
    EClass getGLayoutRule();
+
+   /**
+    * Returns the meta object for class '{@link org.eclipse.glsp.graph.GLevelOfDetailServerRule <em>GLevel Of Detail Server Rule</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for class '<em>GLevel Of Detail Server Rule</em>'.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailServerRule
+    * @generated
+    */
+   EClass getGLevelOfDetailServerRule();
+
+   /**
+    * Returns the meta object for the attribute '{@link org.eclipse.glsp.graph.GLevelOfDetailServerRule#isHandleAlways <em>Handle Always</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Handle Always</em>'.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailServerRule#isHandleAlways()
+    * @see #getGLevelOfDetailServerRule()
+    * @generated
+    */
+   EAttribute getGLevelOfDetailServerRule_HandleAlways();
+
+   /**
+   	 * Returns the meta object for the '{@link org.eclipse.glsp.graph.GLevelOfDetailServerRule#handle(org.eclipse.glsp.graph.GModelElement) <em>Handle</em>}' operation.
+   	 * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+   	 * @return the meta object for the '<em>Handle</em>' operation.
+   	 * @see org.eclipse.glsp.graph.GLevelOfDetailServerRule#handle(org.eclipse.glsp.graph.GModelElement)
+   	 * @generated
+   	 */
+   EOperation getGLevelOfDetailServerRule__Handle__GModelElement();
+
+   /**
+    * Returns the meta object for class '{@link org.eclipse.glsp.graph.GLevelOfDetailClientRule <em>GLevel Of Detail Client Rule</em>}'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return the meta object for class '<em>GLevel Of Detail Client Rule</em>'.
+    * @see org.eclipse.glsp.graph.GLevelOfDetailClientRule
+    * @generated
+    */
+   EClass getGLevelOfDetailClientRule();
 
    /**
     * Returns the meta object for enum '{@link org.eclipse.glsp.graph.GSeverity <em>GSeverity</em>}'.
@@ -4495,14 +4637,6 @@ public interface GraphPackage extends EPackage {
       EAttribute GLEVEL_OF_DETAIL_RULE__TYPE = eINSTANCE.getGLevelOfDetailRule_Type();
 
       /**
-       * The meta object literal for the '<em><b>Handled By Server</b></em>' attribute feature.
-       * <!-- begin-user-doc -->
-       * <!-- end-user-doc -->
-       * @generated
-       */
-      EAttribute GLEVEL_OF_DETAIL_RULE__HANDLED_BY_SERVER = eINSTANCE.getGLevelOfDetailRule_HandledByServer();
-
-      /**
        * The meta object literal for the '{@link org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger <em>GLevel Of Detail Rule Trigger</em>}' class.
        * <!-- begin-user-doc -->
        * <!-- end-user-doc -->
@@ -4519,6 +4653,15 @@ public interface GraphPackage extends EPackage {
        * @generated
        */
       EAttribute GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE = eINSTANCE.getGLevelOfDetailRuleTrigger_Type();
+
+      /**
+       * The meta object literal for the '<em><b>Is Triggered</b></em>' operation.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EOperation GLEVEL_OF_DETAIL_RULE_TRIGGER___IS_TRIGGERED__DOUBLE = eINSTANCE
+         .getGLevelOfDetailRuleTrigger__IsTriggered__double();
 
       /**
        * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.GLevelOfDetailRuleTriggerContinuousImpl <em>GLevel Of Detail Rule Trigger Continuous</em>}' class.
@@ -4664,6 +4807,43 @@ public interface GraphPackage extends EPackage {
        * @generated
        */
       EClass GLAYOUT_RULE = eINSTANCE.getGLayoutRule();
+
+      /**
+       * The meta object literal for the '{@link org.eclipse.glsp.graph.GLevelOfDetailServerRule <em>GLevel Of Detail Server Rule</em>}' class.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @see org.eclipse.glsp.graph.GLevelOfDetailServerRule
+       * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailServerRule()
+       * @generated
+       */
+      EClass GLEVEL_OF_DETAIL_SERVER_RULE = eINSTANCE.getGLevelOfDetailServerRule();
+
+      /**
+       * The meta object literal for the '<em><b>Handle Always</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EAttribute GLEVEL_OF_DETAIL_SERVER_RULE__HANDLE_ALWAYS = eINSTANCE.getGLevelOfDetailServerRule_HandleAlways();
+
+      /**
+      	 * The meta object literal for the '<em><b>Handle</b></em>' operation.
+      	 * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+      	 * @generated
+      	 */
+      EOperation GLEVEL_OF_DETAIL_SERVER_RULE___HANDLE__GMODELELEMENT = eINSTANCE
+         .getGLevelOfDetailServerRule__Handle__GModelElement();
+
+      /**
+       * The meta object literal for the '{@link org.eclipse.glsp.graph.GLevelOfDetailClientRule <em>GLevel Of Detail Client Rule</em>}' class.
+       * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+       * @see org.eclipse.glsp.graph.GLevelOfDetailClientRule
+       * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLevelOfDetailClientRule()
+       * @generated
+       */
+      EClass GLEVEL_OF_DETAIL_CLIENT_RULE = eINSTANCE.getGLevelOfDetailClientRule();
 
       /**
        * The meta object literal for the '{@link org.eclipse.glsp.graph.GSeverity <em>GSeverity</em>}' enum.
