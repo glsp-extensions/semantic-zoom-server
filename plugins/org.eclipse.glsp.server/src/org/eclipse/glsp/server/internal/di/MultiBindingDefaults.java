@@ -37,6 +37,8 @@ import org.eclipse.glsp.server.actions.TriggerEdgeCreationAction;
 import org.eclipse.glsp.server.actions.TriggerNodeCreationAction;
 import org.eclipse.glsp.server.diagram.RequestTypeHintsActionHandler;
 import org.eclipse.glsp.server.diagram.SetTypeHintsAction;
+import org.eclipse.glsp.server.feature.levelofdetail.RequestDiscreteLevelOfDetailActionHandler;
+import org.eclipse.glsp.server.feature.levelofdetail.SetDiscreteLevelOfDetailAction;
 import org.eclipse.glsp.server.features.clipboard.RequestClipboardDataActionHandler;
 import org.eclipse.glsp.server.features.clipboard.SetClipboardDataAction;
 import org.eclipse.glsp.server.features.contextactions.RequestContextActionsHandler;
@@ -95,7 +97,8 @@ public final class MultiBindingDefaults {
       RequestContextActionsHandler.class,
       RequestEditValidationHandler.class,
       RequestMarkersHandler.class,
-      SetEditModeActionHandler.class);
+      SetEditModeActionHandler.class,
+      RequestDiscreteLevelOfDetailActionHandler.class);
 
    public static final List<Class<? extends Action>> DEFAULT_CLIENT_ACTIONS = Lists.newArrayList(
       CenterAction.class,
@@ -126,7 +129,8 @@ public final class MultiBindingDefaults {
       ServerStatusAction.class,
       TriggerNodeCreationAction.class,
       TriggerEdgeCreationAction.class,
-      UpdateModelAction.class);
+      UpdateModelAction.class,
+      SetDiscreteLevelOfDetailAction.class);
 
    public static final List<Class<? extends OperationHandler>> DEFAULT_OPERATION_HANDLERS = Lists.newArrayList(
       ApplyLabelEditOperationHandler.class,
