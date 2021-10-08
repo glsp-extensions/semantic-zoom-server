@@ -16,6 +16,7 @@
 package org.eclipse.glsp.server.features.core.model;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.eclipse.glsp.server.actions.Action;
 import org.eclipse.glsp.server.actions.ActionDispatcher;
@@ -37,7 +38,7 @@ public class RequestModelActionHandler extends BasicActionHandler<RequestModelAc
    protected ActionDispatcher actionDispatcher;
 
    @Inject
-   protected ModelSourceWatcher modelSourceWatcher;
+   protected Optional<ModelSourceWatcher> modelSourceWatcher;
 
    @Inject
    protected ModelSubmissionHandler modelSubmissionHandler;
@@ -51,7 +52,7 @@ public class RequestModelActionHandler extends BasicActionHandler<RequestModelAc
          sourceModelLoader.loadSourceModel(action, modelState);
          notifyFinishedLoading(modelState);
 
-         modelSourceWatcher.startWatching(modelState);
+         modelSourceWatcher.ifPresent(watcher -> watcher.startWatching(modelState));
       }
 
       double continuousLevelOfDetail = 1;
@@ -64,13 +65,13 @@ public class RequestModelActionHandler extends BasicActionHandler<RequestModelAc
    }
 
    protected void notifyStartLoading(final GModelState modelState) {
-      actionDispatcher.dispatch(modelState.getClientId(), ServerStatusUtil.info("Model loading in progress!"));
-      actionDispatcher.dispatch(modelState.getClientId(), ServerMessageUtil.info("Model loading in progress!"));
+      actionDispatcher.dispatch(ServerStatusUtil.info("Model loading in progress!"));
+      actionDispatcher.dispatch(ServerMessageUtil.info("Model loading in progress!"));
    }
 
    protected void notifyFinishedLoading(final GModelState modelState) {
-      actionDispatcher.dispatch(modelState.getClientId(), ServerStatusUtil.clear());
-      actionDispatcher.dispatch(modelState.getClientId(), ServerMessageUtil.clear());
+      actionDispatcher.dispatch(ServerStatusUtil.clear());
+      actionDispatcher.dispatch(ServerMessageUtil.clear());
    }
 
 }

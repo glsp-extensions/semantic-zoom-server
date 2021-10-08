@@ -20,7 +20,7 @@ import java.util.List;
 
 import org.eclipse.glsp.server.actions.Action;
 import org.eclipse.glsp.server.actions.BasicActionHandler;
-import org.eclipse.glsp.server.jsonrpc.GraphGsonConfiguratorFactory;
+import org.eclipse.glsp.server.gson.GraphGsonConfigurationFactory;
 import org.eclipse.glsp.server.model.GModelState;
 
 import com.google.gson.Gson;
@@ -34,8 +34,8 @@ public class RequestDiscreteLevelOfDetailActionHandler extends BasicActionHandle
    protected final Gson gson;
 
    @Inject
-   public RequestDiscreteLevelOfDetailActionHandler(final GraphGsonConfiguratorFactory gsonFactory) {
-      GsonBuilder builder = gsonFactory.configureGson();
+   public RequestDiscreteLevelOfDetailActionHandler(final GraphGsonConfigurationFactory gsonConfigurator) {
+      GsonBuilder builder = gsonConfigurator.configureGson();
       gson = builder.create();
    }
 
