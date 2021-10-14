@@ -17,6 +17,7 @@ package org.eclipse.glsp.server.registry;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.glsp.server.internal.registry.MapMultiRegistry;
 
@@ -43,4 +44,6 @@ public interface MultiRegistry<K, V> {
    List<V> get(K key);
 
    List<V> getAll();
+
+   Set<K> keys();
 }

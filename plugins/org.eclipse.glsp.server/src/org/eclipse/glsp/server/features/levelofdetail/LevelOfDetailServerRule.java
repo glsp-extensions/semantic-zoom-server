@@ -13,15 +13,15 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-package org.eclipse.glsp.server.feature.levelofdetail;
+package org.eclipse.glsp.server.features.levelofdetail;
 
-import org.eclipse.glsp.server.actions.RequestAction;
+import org.eclipse.glsp.graph.GModelElement;
 
-public class RequestDiscreteLevelOfDetailAction extends RequestAction<SetDiscreteLevelOfDetailAction> {
+public interface LevelOfDetailServerRule extends LevelOfDetailRuleInterface {
 
-   public static final String ID = "requestDiscreteLevelOfDetail";
+   boolean handleAlways();
 
-   public RequestDiscreteLevelOfDetailAction() {
-      super(ID);
-   }
+   boolean sendToClient();
+
+   GModelElement handle(GModelElement element);
 }

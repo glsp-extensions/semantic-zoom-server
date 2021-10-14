@@ -88,8 +88,6 @@ public class GraphSwitch<T> extends Switch<T> {
             if (result == null)
                result = caseGArgumentable(gModelElement);
             if (result == null)
-               result = caseGLevelOfDetail(gModelElement);
-            if (result == null)
                result = defaultCase(theEObject);
             return result;
          }
@@ -102,8 +100,6 @@ public class GraphSwitch<T> extends Switch<T> {
                result = caseGBoundsAware(gShapeElement);
             if (result == null)
                result = caseGArgumentable(gShapeElement);
-            if (result == null)
-               result = caseGLevelOfDetail(gShapeElement);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -120,8 +116,6 @@ public class GraphSwitch<T> extends Switch<T> {
             if (result == null)
                result = caseGArgumentable(gGraph);
             if (result == null)
-               result = caseGLevelOfDetail(gGraph);
-            if (result == null)
                result = defaultCase(theEObject);
             return result;
          }
@@ -132,8 +126,6 @@ public class GraphSwitch<T> extends Switch<T> {
                result = caseGModelElement(gModelRoot);
             if (result == null)
                result = caseGArgumentable(gModelRoot);
-            if (result == null)
-               result = caseGLevelOfDetail(gModelRoot);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -154,8 +146,6 @@ public class GraphSwitch<T> extends Switch<T> {
             if (result == null)
                result = caseGArgumentable(gNode);
             if (result == null)
-               result = caseGLevelOfDetail(gNode);
-            if (result == null)
                result = defaultCase(theEObject);
             return result;
          }
@@ -166,8 +156,6 @@ public class GraphSwitch<T> extends Switch<T> {
                result = caseGModelElement(gEdge);
             if (result == null)
                result = caseGArgumentable(gEdge);
-            if (result == null)
-               result = caseGLevelOfDetail(gEdge);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -185,8 +173,6 @@ public class GraphSwitch<T> extends Switch<T> {
                result = caseGBoundsAware(gCompartment);
             if (result == null)
                result = caseGArgumentable(gCompartment);
-            if (result == null)
-               result = caseGLevelOfDetail(gCompartment);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -207,8 +193,6 @@ public class GraphSwitch<T> extends Switch<T> {
             if (result == null)
                result = caseGArgumentable(gLabel);
             if (result == null)
-               result = caseGLevelOfDetail(gLabel);
-            if (result == null)
                result = defaultCase(theEObject);
             return result;
          }
@@ -223,8 +207,6 @@ public class GraphSwitch<T> extends Switch<T> {
                result = caseGBoundsAware(gIssueMarker);
             if (result == null)
                result = caseGArgumentable(gIssueMarker);
-            if (result == null)
-               result = caseGLevelOfDetail(gIssueMarker);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -241,8 +223,6 @@ public class GraphSwitch<T> extends Switch<T> {
             if (result == null)
                result = caseGArgumentable(gPort);
             if (result == null)
-               result = caseGLevelOfDetail(gPort);
-            if (result == null)
                result = defaultCase(theEObject);
             return result;
          }
@@ -257,8 +237,6 @@ public class GraphSwitch<T> extends Switch<T> {
                result = caseGBoundsAware(gButton);
             if (result == null)
                result = caseGArgumentable(gButton);
-            if (result == null)
-               result = caseGLevelOfDetail(gButton);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -343,8 +321,6 @@ public class GraphSwitch<T> extends Switch<T> {
             if (result == null)
                result = caseGArgumentable(gHtmlRoot);
             if (result == null)
-               result = caseGLevelOfDetail(gHtmlRoot);
-            if (result == null)
                result = defaultCase(theEObject);
             return result;
          }
@@ -356,8 +332,6 @@ public class GraphSwitch<T> extends Switch<T> {
             if (result == null)
                result = caseGArgumentable(gPreRenderedElement);
             if (result == null)
-               result = caseGLevelOfDetail(gPreRenderedElement);
-            if (result == null)
                result = defaultCase(theEObject);
             return result;
          }
@@ -365,114 +339,6 @@ public class GraphSwitch<T> extends Switch<T> {
             @SuppressWarnings("unchecked")
             Map.Entry<String, Object> stringToObjectMapEntry = (Map.Entry<String, Object>) theEObject;
             T result = caseStringToObjectMapEntry(stringToObjectMapEntry);
-            if (result == null)
-               result = defaultCase(theEObject);
-            return result;
-         }
-         case GraphPackage.GLEVEL_OF_DETAIL: {
-            GLevelOfDetail gLevelOfDetail = (GLevelOfDetail) theEObject;
-            T result = caseGLevelOfDetail(gLevelOfDetail);
-            if (result == null)
-               result = defaultCase(theEObject);
-            return result;
-         }
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE: {
-            GLevelOfDetailRule gLevelOfDetailRule = (GLevelOfDetailRule) theEObject;
-            T result = caseGLevelOfDetailRule(gLevelOfDetailRule);
-            if (result == null)
-               result = defaultCase(theEObject);
-            return result;
-         }
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER: {
-            GLevelOfDetailRuleTrigger gLevelOfDetailRuleTrigger = (GLevelOfDetailRuleTrigger) theEObject;
-            T result = caseGLevelOfDetailRuleTrigger(gLevelOfDetailRuleTrigger);
-            if (result == null)
-               result = defaultCase(theEObject);
-            return result;
-         }
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS: {
-            GLevelOfDetailRuleTriggerContinuous gLevelOfDetailRuleTriggerContinuous = (GLevelOfDetailRuleTriggerContinuous) theEObject;
-            T result = caseGLevelOfDetailRuleTriggerContinuous(gLevelOfDetailRuleTriggerContinuous);
-            if (result == null)
-               result = caseGLevelOfDetailRuleTrigger(gLevelOfDetailRuleTriggerContinuous);
-            if (result == null)
-               result = defaultCase(theEObject);
-            return result;
-         }
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE: {
-            GLevelOfDetailRuleTriggerDiscrete gLevelOfDetailRuleTriggerDiscrete = (GLevelOfDetailRuleTriggerDiscrete) theEObject;
-            T result = caseGLevelOfDetailRuleTriggerDiscrete(gLevelOfDetailRuleTriggerDiscrete);
-            if (result == null)
-               result = caseGLevelOfDetailRuleTrigger(gLevelOfDetailRuleTriggerDiscrete);
-            if (result == null)
-               result = defaultCase(theEObject);
-            return result;
-         }
-         case GraphPackage.GVISIBILITY_RULE: {
-            GVisibilityRule gVisibilityRule = (GVisibilityRule) theEObject;
-            T result = caseGVisibilityRule(gVisibilityRule);
-            if (result == null)
-               result = caseGLevelOfDetailRule(gVisibilityRule);
-            if (result == null)
-               result = defaultCase(theEObject);
-            return result;
-         }
-         case GraphPackage.GCSS_STYLE_RULE: {
-            GCssStyleRule gCssStyleRule = (GCssStyleRule) theEObject;
-            T result = caseGCssStyleRule(gCssStyleRule);
-            if (result == null)
-               result = caseGLevelOfDetailRule(gCssStyleRule);
-            if (result == null)
-               result = defaultCase(theEObject);
-            return result;
-         }
-         case GraphPackage.GCSS_CLASS_RULE: {
-            GCssClassRule gCssClassRule = (GCssClassRule) theEObject;
-            T result = caseGCssClassRule(gCssClassRule);
-            if (result == null)
-               result = caseGLevelOfDetailRule(gCssClassRule);
-            if (result == null)
-               result = defaultCase(theEObject);
-            return result;
-         }
-         case GraphPackage.GSCALE_RULE: {
-            GScaleRule gScaleRule = (GScaleRule) theEObject;
-            T result = caseGScaleRule(gScaleRule);
-            if (result == null)
-               result = caseGLevelOfDetailRule(gScaleRule);
-            if (result == null)
-               result = defaultCase(theEObject);
-            return result;
-         }
-         case GraphPackage.GLAYOUT_RULE: {
-            GLayoutRule gLayoutRule = (GLayoutRule) theEObject;
-            T result = caseGLayoutRule(gLayoutRule);
-            if (result == null)
-               result = caseGLayouting(gLayoutRule);
-            if (result == null)
-               result = caseGLevelOfDetailServerRule(gLayoutRule);
-            if (result == null)
-               result = caseGLevelOfDetailClientRule(gLayoutRule);
-            if (result == null)
-               result = caseGLevelOfDetailRule(gLayoutRule);
-            if (result == null)
-               result = defaultCase(theEObject);
-            return result;
-         }
-         case GraphPackage.GLEVEL_OF_DETAIL_SERVER_RULE: {
-            GLevelOfDetailServerRule gLevelOfDetailServerRule = (GLevelOfDetailServerRule) theEObject;
-            T result = caseGLevelOfDetailServerRule(gLevelOfDetailServerRule);
-            if (result == null)
-               result = caseGLevelOfDetailRule(gLevelOfDetailServerRule);
-            if (result == null)
-               result = defaultCase(theEObject);
-            return result;
-         }
-         case GraphPackage.GLEVEL_OF_DETAIL_CLIENT_RULE: {
-            GLevelOfDetailClientRule gLevelOfDetailClientRule = (GLevelOfDetailClientRule) theEObject;
-            T result = caseGLevelOfDetailClientRule(gLevelOfDetailClientRule);
-            if (result == null)
-               result = caseGLevelOfDetailRule(gLevelOfDetailClientRule);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -839,186 +705,6 @@ public class GraphSwitch<T> extends Switch<T> {
     * @generated
     */
    public T caseStringToObjectMapEntry(Map.Entry<String, Object> object) {
-      return null;
-   }
-
-   /**
-    * Returns the result of interpreting the object as an instance of '<em>GLevel Of Detail</em>'.
-    * <!-- begin-user-doc -->
-    * This implementation returns null;
-    * returning a non-null result will terminate the switch.
-    * <!-- end-user-doc -->
-    * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>GLevel Of Detail</em>'.
-    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-    * @generated
-    */
-   public T caseGLevelOfDetail(GLevelOfDetail object) {
-      return null;
-   }
-
-   /**
-    * Returns the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule</em>'.
-    * <!-- begin-user-doc -->
-   	 * This implementation returns null;
-   	 * returning a non-null result will terminate the switch.
-   	 * <!-- end-user-doc -->
-    * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule</em>'.
-    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-    * @generated
-    */
-   public T caseGLevelOfDetailRule(GLevelOfDetailRule object) {
-      return null;
-   }
-
-   /**
-    * Returns the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule Trigger</em>'.
-    * <!-- begin-user-doc -->
-   	 * This implementation returns null;
-   	 * returning a non-null result will terminate the switch.
-   	 * <!-- end-user-doc -->
-    * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule Trigger</em>'.
-    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-    * @generated
-    */
-   public T caseGLevelOfDetailRuleTrigger(GLevelOfDetailRuleTrigger object) {
-      return null;
-   }
-
-   /**
-    * Returns the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule Trigger Continuous</em>'.
-    * <!-- begin-user-doc -->
-    * This implementation returns null;
-    * returning a non-null result will terminate the switch.
-    * <!-- end-user-doc -->
-    * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule Trigger Continuous</em>'.
-    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-    * @generated
-    */
-   public T caseGLevelOfDetailRuleTriggerContinuous(GLevelOfDetailRuleTriggerContinuous object) {
-      return null;
-   }
-
-   /**
-    * Returns the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule Trigger Discrete</em>'.
-    * <!-- begin-user-doc -->
-   	 * This implementation returns null;
-   	 * returning a non-null result will terminate the switch.
-   	 * <!-- end-user-doc -->
-    * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>GLevel Of Detail Rule Trigger Discrete</em>'.
-    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-    * @generated
-    */
-   public T caseGLevelOfDetailRuleTriggerDiscrete(GLevelOfDetailRuleTriggerDiscrete object) {
-      return null;
-   }
-
-   /**
-    * Returns the result of interpreting the object as an instance of '<em>GVisibility Rule</em>'.
-    * <!-- begin-user-doc -->
-   	 * This implementation returns null;
-   	 * returning a non-null result will terminate the switch.
-   	 * <!-- end-user-doc -->
-    * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>GVisibility Rule</em>'.
-    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-    * @generated
-    */
-   public T caseGVisibilityRule(GVisibilityRule object) {
-      return null;
-   }
-
-   /**
-    * Returns the result of interpreting the object as an instance of '<em>GCss Style Rule</em>'.
-    * <!-- begin-user-doc -->
-    * This implementation returns null;
-    * returning a non-null result will terminate the switch.
-    * <!-- end-user-doc -->
-    * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>GCss Style Rule</em>'.
-    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-    * @generated
-    */
-   public T caseGCssStyleRule(GCssStyleRule object) {
-      return null;
-   }
-
-   /**
-    * Returns the result of interpreting the object as an instance of '<em>GCss Class Rule</em>'.
-    * <!-- begin-user-doc -->
-    * This implementation returns null;
-    * returning a non-null result will terminate the switch.
-    * <!-- end-user-doc -->
-    * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>GCss Class Rule</em>'.
-    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-    * @generated
-    */
-   public T caseGCssClassRule(GCssClassRule object) {
-      return null;
-   }
-
-   /**
-    * Returns the result of interpreting the object as an instance of '<em>GScale Rule</em>'.
-    * <!-- begin-user-doc -->
-    * This implementation returns null;
-    * returning a non-null result will terminate the switch.
-    * <!-- end-user-doc -->
-    * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>GScale Rule</em>'.
-    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-    * @generated
-    */
-   public T caseGScaleRule(GScaleRule object) {
-      return null;
-   }
-
-   /**
-    * Returns the result of interpreting the object as an instance of '<em>GLayout Rule</em>'.
-    * <!-- begin-user-doc -->
-    * This implementation returns null;
-    * returning a non-null result will terminate the switch.
-    * <!-- end-user-doc -->
-    * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>GLayout Rule</em>'.
-    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-    * @generated
-    */
-   public T caseGLayoutRule(GLayoutRule object) {
-      return null;
-   }
-
-   /**
-    * Returns the result of interpreting the object as an instance of '<em>GLevel Of Detail Server Rule</em>'.
-    * <!-- begin-user-doc -->
-    * This implementation returns null;
-    * returning a non-null result will terminate the switch.
-    * <!-- end-user-doc -->
-    * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>GLevel Of Detail Server Rule</em>'.
-    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-    * @generated
-    */
-   public T caseGLevelOfDetailServerRule(GLevelOfDetailServerRule object) {
-      return null;
-   }
-
-   /**
-    * Returns the result of interpreting the object as an instance of '<em>GLevel Of Detail Client Rule</em>'.
-    * <!-- begin-user-doc -->
-   	 * This implementation returns null;
-   	 * returning a non-null result will terminate the switch.
-   	 * <!-- end-user-doc -->
-    * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>GLevel Of Detail Client Rule</em>'.
-    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-    * @generated
-    */
-   public T caseGLevelOfDetailClientRule(GLevelOfDetailClientRule object) {
       return null;
    }
 

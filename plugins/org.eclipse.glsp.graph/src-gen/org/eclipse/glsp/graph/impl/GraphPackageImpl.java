@@ -21,7 +21,6 @@ import java.util.Map;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -33,10 +32,7 @@ import org.eclipse.glsp.graph.GBounds;
 import org.eclipse.glsp.graph.GBoundsAware;
 import org.eclipse.glsp.graph.GButton;
 import org.eclipse.glsp.graph.GCompartment;
-import org.eclipse.glsp.graph.GCssClassRule;
-import org.eclipse.glsp.graph.GCssStyleRule;
 import org.eclipse.glsp.graph.GDimension;
-import org.eclipse.glsp.graph.GDiscreteLevelOfDetail;
 import org.eclipse.glsp.graph.GEdge;
 import org.eclipse.glsp.graph.GEdgeLayoutable;
 import org.eclipse.glsp.graph.GEdgePlacement;
@@ -45,25 +41,15 @@ import org.eclipse.glsp.graph.GHtmlRoot;
 import org.eclipse.glsp.graph.GIssue;
 import org.eclipse.glsp.graph.GIssueMarker;
 import org.eclipse.glsp.graph.GLabel;
-import org.eclipse.glsp.graph.GLayoutRule;
 import org.eclipse.glsp.graph.GLayouting;
-import org.eclipse.glsp.graph.GLevelOfDetail;
-import org.eclipse.glsp.graph.GLevelOfDetailClientRule;
-import org.eclipse.glsp.graph.GLevelOfDetailRule;
-import org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger;
-import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerContinuous;
-import org.eclipse.glsp.graph.GLevelOfDetailRuleTriggerDiscrete;
-import org.eclipse.glsp.graph.GLevelOfDetailServerRule;
 import org.eclipse.glsp.graph.GModelElement;
 import org.eclipse.glsp.graph.GModelRoot;
 import org.eclipse.glsp.graph.GNode;
 import org.eclipse.glsp.graph.GPoint;
 import org.eclipse.glsp.graph.GPort;
 import org.eclipse.glsp.graph.GPreRenderedElement;
-import org.eclipse.glsp.graph.GScaleRule;
 import org.eclipse.glsp.graph.GSeverity;
 import org.eclipse.glsp.graph.GShapeElement;
-import org.eclipse.glsp.graph.GVisibilityRule;
 import org.eclipse.glsp.graph.GraphFactory;
 import org.eclipse.glsp.graph.GraphPackage;
 
@@ -247,98 +233,7 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
     * <!-- end-user-doc -->
     * @generated
     */
-   private EClass gLevelOfDetailEClass = null;
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   private EClass gLevelOfDetailRuleEClass = null;
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   private EClass gLevelOfDetailRuleTriggerEClass = null;
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   private EClass gLevelOfDetailRuleTriggerContinuousEClass = null;
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   private EClass gLevelOfDetailRuleTriggerDiscreteEClass = null;
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   private EClass gVisibilityRuleEClass = null;
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   private EClass gCssStyleRuleEClass = null;
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   private EClass gCssClassRuleEClass = null;
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   private EClass gScaleRuleEClass = null;
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   private EClass gLayoutRuleEClass = null;
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   private EClass gLevelOfDetailServerRuleEClass = null;
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   private EClass gLevelOfDetailClientRuleEClass = null;
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
    private EEnum gSeverityEEnum = null;
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   private EEnum gDiscreteLevelOfDetailEEnum = null;
 
    /**
     * Creates an instance of the model <b>Package</b>, registered with
@@ -982,269 +877,7 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
     * @generated
     */
    @Override
-   public EClass getGLevelOfDetail() { return gLevelOfDetailEClass; }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EReference getGLevelOfDetail_LevelOfDetailRules() {
-      return (EReference) gLevelOfDetailEClass.getEStructuralFeatures().get(0);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EClass getGLevelOfDetailRule() { return gLevelOfDetailRuleEClass; }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EReference getGLevelOfDetailRule_Trigger() {
-      return (EReference) gLevelOfDetailRuleEClass.getEStructuralFeatures().get(0);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EAttribute getGLevelOfDetailRule_Type() {
-      return (EAttribute) gLevelOfDetailRuleEClass.getEStructuralFeatures().get(1);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EClass getGLevelOfDetailRuleTrigger() { return gLevelOfDetailRuleTriggerEClass; }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EAttribute getGLevelOfDetailRuleTrigger_Type() {
-      return (EAttribute) gLevelOfDetailRuleTriggerEClass.getEStructuralFeatures().get(0);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EOperation getGLevelOfDetailRuleTrigger__IsTriggered__double() {
-      return gLevelOfDetailRuleTriggerEClass.getEOperations().get(0);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EClass getGLevelOfDetailRuleTriggerContinuous() { return gLevelOfDetailRuleTriggerContinuousEClass; }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EAttribute getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelFrom() {
-      return (EAttribute) gLevelOfDetailRuleTriggerContinuousEClass.getEStructuralFeatures().get(0);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EAttribute getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelTo() {
-      return (EAttribute) gLevelOfDetailRuleTriggerContinuousEClass.getEStructuralFeatures().get(1);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EClass getGLevelOfDetailRuleTriggerDiscrete() { return gLevelOfDetailRuleTriggerDiscreteEClass; }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EAttribute getGLevelOfDetailRuleTriggerDiscrete_TriggerDiscreteLevel() {
-      return (EAttribute) gLevelOfDetailRuleTriggerDiscreteEClass.getEStructuralFeatures().get(0);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EClass getGVisibilityRule() { return gVisibilityRuleEClass; }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EAttribute getGVisibilityRule_SetVisibility() {
-      return (EAttribute) gVisibilityRuleEClass.getEStructuralFeatures().get(0);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EClass getGCssStyleRule() { return gCssStyleRuleEClass; }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EReference getGCssStyleRule_Styles() {
-      return (EReference) gCssStyleRuleEClass.getEStructuralFeatures().get(0);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EClass getGCssClassRule() { return gCssClassRuleEClass; }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EAttribute getGCssClassRule_Classes() {
-      return (EAttribute) gCssClassRuleEClass.getEStructuralFeatures().get(0);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EClass getGScaleRule() { return gScaleRuleEClass; }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EAttribute getGScaleRule_Scale() { return (EAttribute) gScaleRuleEClass.getEStructuralFeatures().get(0); }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EAttribute getGScaleRule_MultiplyWithCLevel() {
-      return (EAttribute) gScaleRuleEClass.getEStructuralFeatures().get(1);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EAttribute getGScaleRule_SumWithCLevel() {
-      return (EAttribute) gScaleRuleEClass.getEStructuralFeatures().get(2);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EClass getGLayoutRule() { return gLayoutRuleEClass; }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EClass getGLevelOfDetailServerRule() { return gLevelOfDetailServerRuleEClass; }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EAttribute getGLevelOfDetailServerRule_HandleAlways() {
-      return (EAttribute) gLevelOfDetailServerRuleEClass.getEStructuralFeatures().get(0);
-   }
-
-   /**
-   	 * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-   	 * @generated
-   	 */
-   @Override
-   public EOperation getGLevelOfDetailServerRule__Handle__GModelElement() {
-      return gLevelOfDetailServerRuleEClass.getEOperations().get(0);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EClass getGLevelOfDetailClientRule() { return gLevelOfDetailClientRuleEClass; }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
    public EEnum getGSeverity() { return gSeverityEEnum; }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EEnum getGDiscreteLevelOfDetail() { return gDiscreteLevelOfDetailEEnum; }
 
    /**
     * <!-- begin-user-doc -->
@@ -1365,52 +998,8 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
       createEAttribute(stringToObjectMapEntryEClass, STRING_TO_OBJECT_MAP_ENTRY__KEY);
       createEAttribute(stringToObjectMapEntryEClass, STRING_TO_OBJECT_MAP_ENTRY__VALUE);
 
-      gLevelOfDetailEClass = createEClass(GLEVEL_OF_DETAIL);
-      createEReference(gLevelOfDetailEClass, GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES);
-
-      gLevelOfDetailRuleEClass = createEClass(GLEVEL_OF_DETAIL_RULE);
-      createEReference(gLevelOfDetailRuleEClass, GLEVEL_OF_DETAIL_RULE__TRIGGER);
-      createEAttribute(gLevelOfDetailRuleEClass, GLEVEL_OF_DETAIL_RULE__TYPE);
-
-      gLevelOfDetailRuleTriggerEClass = createEClass(GLEVEL_OF_DETAIL_RULE_TRIGGER);
-      createEAttribute(gLevelOfDetailRuleTriggerEClass, GLEVEL_OF_DETAIL_RULE_TRIGGER__TYPE);
-      createEOperation(gLevelOfDetailRuleTriggerEClass, GLEVEL_OF_DETAIL_RULE_TRIGGER___IS_TRIGGERED__DOUBLE);
-
-      gLevelOfDetailRuleTriggerContinuousEClass = createEClass(GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS);
-      createEAttribute(gLevelOfDetailRuleTriggerContinuousEClass,
-         GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_FROM);
-      createEAttribute(gLevelOfDetailRuleTriggerContinuousEClass,
-         GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS__TRIGGER_CONTINUOUS_LEVEL_TO);
-
-      gLevelOfDetailRuleTriggerDiscreteEClass = createEClass(GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE);
-      createEAttribute(gLevelOfDetailRuleTriggerDiscreteEClass,
-         GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE__TRIGGER_DISCRETE_LEVEL);
-
-      gVisibilityRuleEClass = createEClass(GVISIBILITY_RULE);
-      createEAttribute(gVisibilityRuleEClass, GVISIBILITY_RULE__SET_VISIBILITY);
-
-      gCssStyleRuleEClass = createEClass(GCSS_STYLE_RULE);
-      createEReference(gCssStyleRuleEClass, GCSS_STYLE_RULE__STYLES);
-
-      gCssClassRuleEClass = createEClass(GCSS_CLASS_RULE);
-      createEAttribute(gCssClassRuleEClass, GCSS_CLASS_RULE__CLASSES);
-
-      gScaleRuleEClass = createEClass(GSCALE_RULE);
-      createEAttribute(gScaleRuleEClass, GSCALE_RULE__SCALE);
-      createEAttribute(gScaleRuleEClass, GSCALE_RULE__MULTIPLY_WITH_CLEVEL);
-      createEAttribute(gScaleRuleEClass, GSCALE_RULE__SUM_WITH_CLEVEL);
-
-      gLayoutRuleEClass = createEClass(GLAYOUT_RULE);
-
-      gLevelOfDetailServerRuleEClass = createEClass(GLEVEL_OF_DETAIL_SERVER_RULE);
-      createEAttribute(gLevelOfDetailServerRuleEClass, GLEVEL_OF_DETAIL_SERVER_RULE__HANDLE_ALWAYS);
-      createEOperation(gLevelOfDetailServerRuleEClass, GLEVEL_OF_DETAIL_SERVER_RULE___HANDLE__GMODELELEMENT);
-
-      gLevelOfDetailClientRuleEClass = createEClass(GLEVEL_OF_DETAIL_CLIENT_RULE);
-
       // Create enums
       gSeverityEEnum = createEEnum(GSEVERITY);
-      gDiscreteLevelOfDetailEEnum = createEEnum(GDISCRETE_LEVEL_OF_DETAIL);
    }
 
    /**
@@ -1443,7 +1032,6 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
 
       // Add supertypes to classes
       gModelElementEClass.getESuperTypes().add(this.getGArgumentable());
-      gModelElementEClass.getESuperTypes().add(this.getGLevelOfDetail());
       gShapeElementEClass.getESuperTypes().add(this.getGModelElement());
       gShapeElementEClass.getESuperTypes().add(this.getGBoundsAware());
       gGraphEClass.getESuperTypes().add(this.getGModelRoot());
@@ -1463,17 +1051,6 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
       gButtonEClass.getESuperTypes().add(this.getGShapeElement());
       gHtmlRootEClass.getESuperTypes().add(this.getGModelRoot());
       gPreRenderedElementEClass.getESuperTypes().add(this.getGModelElement());
-      gLevelOfDetailRuleTriggerContinuousEClass.getESuperTypes().add(this.getGLevelOfDetailRuleTrigger());
-      gLevelOfDetailRuleTriggerDiscreteEClass.getESuperTypes().add(this.getGLevelOfDetailRuleTrigger());
-      gVisibilityRuleEClass.getESuperTypes().add(this.getGLevelOfDetailRule());
-      gCssStyleRuleEClass.getESuperTypes().add(this.getGLevelOfDetailRule());
-      gCssClassRuleEClass.getESuperTypes().add(this.getGLevelOfDetailRule());
-      gScaleRuleEClass.getESuperTypes().add(this.getGLevelOfDetailRule());
-      gLayoutRuleEClass.getESuperTypes().add(this.getGLayouting());
-      gLayoutRuleEClass.getESuperTypes().add(this.getGLevelOfDetailServerRule());
-      gLayoutRuleEClass.getESuperTypes().add(this.getGLevelOfDetailClientRule());
-      gLevelOfDetailServerRuleEClass.getESuperTypes().add(this.getGLevelOfDetailRule());
-      gLevelOfDetailClientRuleEClass.getESuperTypes().add(this.getGLevelOfDetailRule());
 
       // Initialize classes, features, and operations; add parameters
       initEClass(gModelElementEClass, GModelElement.class, "GModelElement", IS_ABSTRACT, IS_INTERFACE,
@@ -1644,101 +1221,11 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
          Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
          IS_ORDERED);
 
-      initEClass(gLevelOfDetailEClass, GLevelOfDetail.class, "GLevelOfDetail", !IS_ABSTRACT, !IS_INTERFACE,
-         IS_GENERATED_INSTANCE_CLASS);
-      initEReference(getGLevelOfDetail_LevelOfDetailRules(), this.getGLevelOfDetailRule(), null, "levelOfDetailRules",
-         null, 0, -1, GLevelOfDetail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-         IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-      initEClass(gLevelOfDetailRuleEClass, GLevelOfDetailRule.class, "GLevelOfDetailRule", IS_ABSTRACT, IS_INTERFACE,
-         IS_GENERATED_INSTANCE_CLASS);
-      initEReference(getGLevelOfDetailRule_Trigger(), this.getGLevelOfDetailRuleTrigger(), null, "trigger", null, 1, 1,
-         GLevelOfDetailRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-      initEAttribute(getGLevelOfDetailRule_Type(), ecorePackage.getEString(), "type", null, 1, 1,
-         GLevelOfDetailRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-         !IS_DERIVED, IS_ORDERED);
-
-      initEClass(gLevelOfDetailRuleTriggerEClass, GLevelOfDetailRuleTrigger.class, "GLevelOfDetailRuleTrigger",
-         IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-      initEAttribute(getGLevelOfDetailRuleTrigger_Type(), ecorePackage.getEString(), "type", null, 0, 1,
-         GLevelOfDetailRuleTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-         !IS_DERIVED, IS_ORDERED);
-
-      EOperation op = initEOperation(getGLevelOfDetailRuleTrigger__IsTriggered__double(), ecorePackage.getEBoolean(),
-         "isTriggered", 1, 1, IS_UNIQUE, IS_ORDERED);
-      addEParameter(op, ecorePackage.getEDouble(), "continuousLevelOfDetail", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-      initEClass(gLevelOfDetailRuleTriggerContinuousEClass, GLevelOfDetailRuleTriggerContinuous.class,
-         "GLevelOfDetailRuleTriggerContinuous", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-      initEAttribute(getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelFrom(), ecorePackage.getEDouble(),
-         "triggerContinuousLevelFrom", null, 1, 1, GLevelOfDetailRuleTriggerContinuous.class, !IS_TRANSIENT,
-         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-      initEAttribute(getGLevelOfDetailRuleTriggerContinuous_TriggerContinuousLevelTo(), ecorePackage.getEDouble(),
-         "triggerContinuousLevelTo", null, 1, 1, GLevelOfDetailRuleTriggerContinuous.class, !IS_TRANSIENT, !IS_VOLATILE,
-         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-      initEClass(gLevelOfDetailRuleTriggerDiscreteEClass, GLevelOfDetailRuleTriggerDiscrete.class,
-         "GLevelOfDetailRuleTriggerDiscrete", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-      initEAttribute(getGLevelOfDetailRuleTriggerDiscrete_TriggerDiscreteLevel(), this.getGDiscreteLevelOfDetail(),
-         "triggerDiscreteLevel", null, 1, -1, GLevelOfDetailRuleTriggerDiscrete.class, !IS_TRANSIENT, !IS_VOLATILE,
-         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-      initEClass(gVisibilityRuleEClass, GVisibilityRule.class, "GVisibilityRule", !IS_ABSTRACT, !IS_INTERFACE,
-         IS_GENERATED_INSTANCE_CLASS);
-      initEAttribute(getGVisibilityRule_SetVisibility(), ecorePackage.getEBoolean(), "setVisibility", null, 1, 1,
-         GVisibilityRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-         !IS_DERIVED, IS_ORDERED);
-
-      initEClass(gCssStyleRuleEClass, GCssStyleRule.class, "GCssStyleRule", !IS_ABSTRACT, !IS_INTERFACE,
-         IS_GENERATED_INSTANCE_CLASS);
-      initEReference(getGCssStyleRule_Styles(), this.getStringToObjectMapEntry(), null, "styles", null, 1, -1,
-         GCssStyleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-      initEClass(gCssClassRuleEClass, GCssClassRule.class, "GCssClassRule", !IS_ABSTRACT, !IS_INTERFACE,
-         IS_GENERATED_INSTANCE_CLASS);
-      initEAttribute(getGCssClassRule_Classes(), ecorePackage.getEString(), "classes", null, 1, -1, GCssClassRule.class,
-         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-      initEClass(gScaleRuleEClass, GScaleRule.class, "GScaleRule", !IS_ABSTRACT, !IS_INTERFACE,
-         IS_GENERATED_INSTANCE_CLASS);
-      initEAttribute(getGScaleRule_Scale(), ecorePackage.getEDouble(), "scale", null, 1, 1, GScaleRule.class,
-         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-      initEAttribute(getGScaleRule_MultiplyWithCLevel(), ecorePackage.getEBoolean(), "multiplyWithCLevel", null, 1, 1,
-         GScaleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-         IS_ORDERED);
-      initEAttribute(getGScaleRule_SumWithCLevel(), ecorePackage.getEBoolean(), "sumWithCLevel", null, 1, 1,
-         GScaleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-         IS_ORDERED);
-
-      initEClass(gLayoutRuleEClass, GLayoutRule.class, "GLayoutRule", !IS_ABSTRACT, !IS_INTERFACE,
-         IS_GENERATED_INSTANCE_CLASS);
-
-      initEClass(gLevelOfDetailServerRuleEClass, GLevelOfDetailServerRule.class, "GLevelOfDetailServerRule",
-         IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-      initEAttribute(getGLevelOfDetailServerRule_HandleAlways(), ecorePackage.getEBoolean(), "handleAlways", null, 1, 1,
-         GLevelOfDetailServerRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-         !IS_DERIVED, IS_ORDERED);
-
-      op = initEOperation(getGLevelOfDetailServerRule__Handle__GModelElement(), this.getGModelElement(), "handle", 1, 1,
-         IS_UNIQUE, IS_ORDERED);
-      addEParameter(op, this.getGModelElement(), "element", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-      initEClass(gLevelOfDetailClientRuleEClass, GLevelOfDetailClientRule.class, "GLevelOfDetailClientRule",
-         IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
       // Initialize enums and add enum literals
       initEEnum(gSeverityEEnum, GSeverity.class, "GSeverity");
       addEEnumLiteral(gSeverityEEnum, GSeverity.ERROR);
       addEEnumLiteral(gSeverityEEnum, GSeverity.WARNING);
       addEEnumLiteral(gSeverityEEnum, GSeverity.INFO);
-
-      initEEnum(gDiscreteLevelOfDetailEEnum, GDiscreteLevelOfDetail.class, "GDiscreteLevelOfDetail");
-      addEEnumLiteral(gDiscreteLevelOfDetailEEnum, GDiscreteLevelOfDetail.DETAIL2);
-      addEEnumLiteral(gDiscreteLevelOfDetailEEnum, GDiscreteLevelOfDetail.DETAIL);
-      addEEnumLiteral(gDiscreteLevelOfDetailEEnum, GDiscreteLevelOfDetail.INTERMEDIATE);
-      addEEnumLiteral(gDiscreteLevelOfDetailEEnum, GDiscreteLevelOfDetail.OVERVIEW);
 
       // Create resource
       createResource(eNS_URI);

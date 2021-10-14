@@ -13,24 +13,24 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-package org.eclipse.glsp.server.feature.levelofdetail;
+package org.eclipse.glsp.server.features.levelofdetail.rules;
 
-public enum DiscreteLevelOfDetailEnum {
-   OVERVIEW(1.25, null),
-   INTERMEDIATE(0.5, 1.25),
-   INTERMEDIATE_DETAIL(0.25, 0.5),
-   DETAIL(null, 0.25);
+import java.util.HashMap;
+import java.util.Map;
 
-   private final Double from;
+import org.eclipse.glsp.server.features.levelofdetail.LevelOfDetailRule;
 
-   private final Double to;
+public class CssStyleRule extends LevelOfDetailRule {
+   private static final String TYPE = "lod:rule-cssstyle";
 
-   DiscreteLevelOfDetailEnum(final Double from, final Double to) {
-      this.from = from;
-      this.to = to;
+   private final Map<String, String> styles = new HashMap<>();
+
+   public CssStyleRule() {
+      super(TYPE);
    }
 
-   public Double getFrom() { return from; }
-
-   public Double getTo() { return to; }
+   public CssStyleRule addStyle(final String styleName, final String styleValue) {
+      this.styles.put(styleName, styleValue);
+      return this;
+   }
 }

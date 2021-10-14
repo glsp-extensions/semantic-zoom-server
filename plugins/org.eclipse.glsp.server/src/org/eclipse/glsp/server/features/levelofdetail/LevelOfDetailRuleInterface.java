@@ -13,26 +13,14 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-package org.eclipse.glsp.graph.builder;
+package org.eclipse.glsp.server.features.levelofdetail;
 
-import org.eclipse.glsp.graph.GLevelOfDetailServerRule;
+import java.util.ArrayList;
 
-public abstract class AbstractGLevelOfDetailServerRuleBuilder<T extends GLevelOfDetailServerRule, E extends AbstractGLevelOfDetailServerRuleBuilder<T, E>>
-   extends AbstractGLevelOfDetailRuleBuilder<T, E> {
-   protected boolean handleAlways = false;
+public interface LevelOfDetailRuleInterface {
+   ArrayList<LevelOfDetailRuleTrigger> getLevelOfDetailRuleTrigger();
 
-   public AbstractGLevelOfDetailServerRuleBuilder(final String type) {
-      super(type);
-   }
+   LevelOfDetailRule setLevelOfDetailRuleTrigger(final ArrayList<LevelOfDetailRuleTrigger> levelOfDetailRuleTrigger);
 
-   public E setHandleAlways(final boolean handleAlways) {
-      this.handleAlways = handleAlways;
-      return self();
-   }
-
-   @Override
-   protected void setProperties(final T element) {
-      super.setProperties(element);
-      element.setHandleAlways(this.handleAlways);
-   }
+   LevelOfDetailRule addLevelOfDetailRuleTrigger(final LevelOfDetailRuleTrigger levelOfDetailRuleTrigger);
 }

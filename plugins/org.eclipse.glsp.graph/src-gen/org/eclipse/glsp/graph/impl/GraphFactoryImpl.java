@@ -110,22 +110,6 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
             return createGPreRenderedElement();
          case GraphPackage.STRING_TO_OBJECT_MAP_ENTRY:
             return (EObject) createStringToObjectMapEntry();
-         case GraphPackage.GLEVEL_OF_DETAIL:
-            return createGLevelOfDetail();
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_CONTINUOUS:
-            return createGLevelOfDetailRuleTriggerContinuous();
-         case GraphPackage.GLEVEL_OF_DETAIL_RULE_TRIGGER_DISCRETE:
-            return createGLevelOfDetailRuleTriggerDiscrete();
-         case GraphPackage.GVISIBILITY_RULE:
-            return createGVisibilityRule();
-         case GraphPackage.GCSS_STYLE_RULE:
-            return createGCssStyleRule();
-         case GraphPackage.GCSS_CLASS_RULE:
-            return createGCssClassRule();
-         case GraphPackage.GSCALE_RULE:
-            return createGScaleRule();
-         case GraphPackage.GLAYOUT_RULE:
-            return createGLayoutRule();
          default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
       }
@@ -141,8 +125,6 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
       switch (eDataType.getClassifierID()) {
          case GraphPackage.GSEVERITY:
             return createGSeverityFromString(eDataType, initialValue);
-         case GraphPackage.GDISCRETE_LEVEL_OF_DETAIL:
-            return createGDiscreteLevelOfDetailFromString(eDataType, initialValue);
          default:
             throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
       }
@@ -158,8 +140,6 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
       switch (eDataType.getClassifierID()) {
          case GraphPackage.GSEVERITY:
             return convertGSeverityToString(eDataType, instanceValue);
-         case GraphPackage.GDISCRETE_LEVEL_OF_DETAIL:
-            return convertGDiscreteLevelOfDetailToString(eDataType, instanceValue);
          default:
             throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
       }
@@ -378,94 +358,6 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
     * <!-- end-user-doc -->
     * @generated
     */
-   @Override
-   public GLevelOfDetail createGLevelOfDetail() {
-      GLevelOfDetailImpl gLevelOfDetail = new GLevelOfDetailImpl();
-      return gLevelOfDetail;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public GLevelOfDetailRuleTriggerContinuous createGLevelOfDetailRuleTriggerContinuous() {
-      GLevelOfDetailRuleTriggerContinuousImpl gLevelOfDetailRuleTriggerContinuous = new GLevelOfDetailRuleTriggerContinuousImpl();
-      return gLevelOfDetailRuleTriggerContinuous;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public GLevelOfDetailRuleTriggerDiscrete createGLevelOfDetailRuleTriggerDiscrete() {
-      GLevelOfDetailRuleTriggerDiscreteImpl gLevelOfDetailRuleTriggerDiscrete = new GLevelOfDetailRuleTriggerDiscreteImpl();
-      return gLevelOfDetailRuleTriggerDiscrete;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public GVisibilityRule createGVisibilityRule() {
-      GVisibilityRuleImpl gVisibilityRule = new GVisibilityRuleImpl();
-      return gVisibilityRule;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public GCssStyleRule createGCssStyleRule() {
-      GCssStyleRuleImpl gCssStyleRule = new GCssStyleRuleImpl();
-      return gCssStyleRule;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public GCssClassRule createGCssClassRule() {
-      GCssClassRuleImpl gCssClassRule = new GCssClassRuleImpl();
-      return gCssClassRule;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public GScaleRule createGScaleRule() {
-      GScaleRuleImpl gScaleRule = new GScaleRuleImpl();
-      return gScaleRule;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public GLayoutRule createGLayoutRule() {
-      GLayoutRuleImpl gLayoutRule = new GLayoutRuleImpl();
-      return gLayoutRule;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
    public GSeverity createGSeverityFromString(EDataType eDataType, String initialValue) {
       GSeverity result = GSeverity.get(initialValue);
       if (result == null)
@@ -480,28 +372,6 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
     * @generated
     */
    public String convertGSeverityToString(EDataType eDataType, Object instanceValue) {
-      return instanceValue == null ? null : instanceValue.toString();
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   public GDiscreteLevelOfDetail createGDiscreteLevelOfDetailFromString(EDataType eDataType, String initialValue) {
-      GDiscreteLevelOfDetail result = GDiscreteLevelOfDetail.get(initialValue);
-      if (result == null)
-         throw new IllegalArgumentException(
-            "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-      return result;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   public String convertGDiscreteLevelOfDetailToString(EDataType eDataType, Object instanceValue) {
       return instanceValue == null ? null : instanceValue.toString();
    }
 

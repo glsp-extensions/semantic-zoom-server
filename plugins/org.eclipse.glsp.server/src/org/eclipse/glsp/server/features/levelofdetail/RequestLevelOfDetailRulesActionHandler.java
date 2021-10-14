@@ -13,48 +13,53 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-package org.eclipse.glsp.server.feature.levelofdetail;
+package org.eclipse.glsp.server.features.levelofdetail;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import org.apache.log4j.Logger;
 import org.eclipse.glsp.server.actions.Action;
 import org.eclipse.glsp.server.actions.BasicActionHandler;
+import org.eclipse.glsp.server.features.levelofdetail.SetLevelOfDetailRulesAction.LevelOfDetailRuleAssignment;
 import org.eclipse.glsp.server.gson.GraphGsonConfigurationFactory;
 import org.eclipse.glsp.server.model.GModelState;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.google.inject.Inject;
 
-public class RequestDiscreteLevelOfDetailActionHandler extends BasicActionHandler<RequestDiscreteLevelOfDetailAction> {
+public class RequestLevelOfDetailRulesActionHandler extends BasicActionHandler<RequestLevelOfDetailRulesAction> {
+   private static Logger LOG = Logger.getLogger(RequestLevelOfDetailRulesActionHandler.class);
+
+   @Inject
+   LevelOfDetailRuleRegistry levelOfDetailRuleRegistry;
 
    protected final Gson gson;
 
    @Inject
-   public RequestDiscreteLevelOfDetailActionHandler(final GraphGsonConfigurationFactory gsonConfigurator) {
+   public RequestLevelOfDetailRulesActionHandler(final GraphGsonConfigurationFactory gsonConfigurator) {
       GsonBuilder builder = gsonConfigurator.configureGson();
       gson = builder.create();
    }
 
    @Override
-   protected List<Action> executeAction(final RequestDiscreteLevelOfDetailAction actualAction,
+   protected List<Action> executeAction(final RequestLevelOfDetailRulesAction actualAction,
       final GModelState modelState) {
 
-      JsonArray jsonArray = new JsonArray();
+      LOG.debug("RequestLevelOfDetailRulesActionHandler");
 
-      Arrays.stream(DiscreteLevelOfDetailEnum.values())
-         .map((final DiscreteLevelOfDetailEnum level) -> {
-            JsonObject obj = new JsonObject();
-            obj.addProperty("name", level.name());
-            obj.addProperty("from", level.getFrom());
-            obj.addProperty("to", level.getTo());
-            return obj;
-         })
-         .forEach(jsonArray::add);
+      List<LevelOfDetailRuleAssignment> list = new ArrayList<>();
 
-      return listOf(new SetDiscreteLevelOfDetailAction(jsonArray));
+      this.levelOfDetailRuleRegistry.keys().stream()
+         .forEach(key -> {
+            list.add(new LevelOfDetailRuleAssignment(key, this.levelOfDetailRuleRegistry.get(key).stream()
+               .filter(rule -> !(rule instanceof LevelOfDetailServerRule))
+               .collect(Collectors.toList())));
+         });
+
+      return listOf(new SetLevelOfDetailRulesAction(list));
    }
+
 }

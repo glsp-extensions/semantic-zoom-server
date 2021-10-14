@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import org.eclipse.glsp.graph.GLevelOfDetailRule;
 import org.eclipse.glsp.graph.GModelElement;
 
 public abstract class GModelElementBuilder<T extends GModelElement, E extends GModelElementBuilder<T, E>>
@@ -30,7 +29,6 @@ public abstract class GModelElementBuilder<T extends GModelElement, E extends GM
    protected String trace;
    protected List<String> cssClasses = new ArrayList<>();
    protected List<GModelElement> children = new ArrayList<>();
-   protected List<GLevelOfDetailRule> rules = new ArrayList<>();
 
    public GModelElementBuilder(final String type) {
       this.type = type;
@@ -71,16 +69,6 @@ public abstract class GModelElementBuilder<T extends GModelElement, E extends GM
       return self();
    }
 
-   public E addLevelOfDetailRule(final GLevelOfDetailRule rule) {
-      this.rules.add(rule);
-      return self();
-   }
-
-   public E addLevelOfDetailRules(final List<GLevelOfDetailRule> rules) {
-      this.rules.addAll(rules);
-      return self();
-   }
-
    @Override
    protected abstract T instantiate();
 
@@ -105,10 +93,6 @@ public abstract class GModelElementBuilder<T extends GModelElement, E extends GM
       }
       if (children != null) {
          element.getChildren().addAll(children);
-      }
-
-      if (rules != null) {
-         element.getLevelOfDetailRules().addAll(rules);
       }
    }
 

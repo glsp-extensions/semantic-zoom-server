@@ -13,23 +13,15 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-package org.eclipse.glsp.server.feature.levelofdetail;
+package org.eclipse.glsp.server.features.levelofdetail;
 
-import org.eclipse.glsp.server.actions.ResponseAction;
+import org.eclipse.glsp.server.actions.RequestAction;
 
-import com.google.gson.JsonArray;
+public class RequestDiscreteLevelOfDetailAction extends RequestAction<SetDiscreteLevelOfDetailAction> {
 
-public class SetDiscreteLevelOfDetailAction extends ResponseAction {
+   public static final String ID = "requestDiscreteLevelOfDetail";
 
-   public static final String ID = "setDiscreteLevelOfDetail";
-   private JsonArray discreteLevels;
-
-   public SetDiscreteLevelOfDetailAction() {
+   public RequestDiscreteLevelOfDetailAction() {
       super(ID);
-   }
-
-   public SetDiscreteLevelOfDetailAction(final JsonArray jsonArray) {
-      this();
-      this.discreteLevels = jsonArray;
    }
 }

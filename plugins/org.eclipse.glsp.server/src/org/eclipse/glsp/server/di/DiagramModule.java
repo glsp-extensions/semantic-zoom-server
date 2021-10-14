@@ -42,8 +42,6 @@ import org.eclipse.glsp.server.diagram.DiagramConfiguration;
 import org.eclipse.glsp.server.diagram.RequestTypeHintsActionHandler;
 import org.eclipse.glsp.server.diagram.ServerConfigurationContribution;
 import org.eclipse.glsp.server.diagram.SetTypeHintsAction;
-import org.eclipse.glsp.server.feature.levelofdetail.RequestDiscreteLevelOfDetailActionHandler;
-import org.eclipse.glsp.server.feature.levelofdetail.SetDiscreteLevelOfDetailAction;
 import org.eclipse.glsp.server.features.clipboard.SetClipboardDataAction;
 import org.eclipse.glsp.server.features.commandpalette.CommandPaletteActionProvider;
 import org.eclipse.glsp.server.features.contextactions.ContextActionsProvider;
@@ -63,6 +61,14 @@ import org.eclipse.glsp.server.features.directediting.ContextEditValidatorRegist
 import org.eclipse.glsp.server.features.directediting.LabelEditValidator;
 import org.eclipse.glsp.server.features.directediting.RequestEditValidationHandler;
 import org.eclipse.glsp.server.features.directediting.SetEditValidationResultAction;
+import org.eclipse.glsp.server.features.levelofdetail.DefaultLevelOfDetailHandler;
+import org.eclipse.glsp.server.features.levelofdetail.DefaultLevelOfDetailRuleRegistry;
+import org.eclipse.glsp.server.features.levelofdetail.LevelOfDetailHandler;
+import org.eclipse.glsp.server.features.levelofdetail.LevelOfDetailRuleRegistry;
+import org.eclipse.glsp.server.features.levelofdetail.RequestDiscreteLevelOfDetailActionHandler;
+import org.eclipse.glsp.server.features.levelofdetail.RequestLevelOfDetailRulesActionHandler;
+import org.eclipse.glsp.server.features.levelofdetail.SetDiscreteLevelOfDetailAction;
+import org.eclipse.glsp.server.features.levelofdetail.SetLevelOfDetailRulesAction;
 import org.eclipse.glsp.server.features.modelsourcewatcher.ModelSourceChangedAction;
 import org.eclipse.glsp.server.features.modelsourcewatcher.ModelSourceWatcher;
 import org.eclipse.glsp.server.features.navigation.NavigateToExternalTargetAction;
@@ -207,6 +213,11 @@ public abstract class DiagramModule extends GLSPModule {
       bindOptionally(PopupModelFactory.class, bindPopupModelFactory());
       bindOptionally(LayoutEngine.class, bindLayoutEngine());
       bindOptionally(GraphExtension.class, bindGraphExtension());
+
+      // Level of Detail
+      bindOptionally(LevelOfDetailHandler.class, bindLevelOfDetailHandler());
+      bind(LevelOfDetailRuleRegistry.class).to(bindLevelOfDetailRuleRegistry()).in(Singleton.class);
+
    }
 
    protected void bindDiagramType() {
@@ -303,6 +314,7 @@ public abstract class DiagramModule extends GLSPModule {
       binding.add(TriggerEdgeCreationAction.class);
       binding.add(UpdateModelAction.class);
       binding.add(SetDiscreteLevelOfDetailAction.class);
+      binding.add(SetLevelOfDetailRulesAction.class);
    }
 
    protected void configureActionHandlers(final MultiBinding<ActionHandler> binding) {
@@ -318,6 +330,7 @@ public abstract class DiagramModule extends GLSPModule {
       binding.add(RequestMarkersHandler.class);
       binding.add(SetEditModeActionHandler.class);
       binding.add(RequestDiscreteLevelOfDetailActionHandler.class);
+      binding.add(RequestLevelOfDetailRulesActionHandler.class);
    }
 
    protected Class<? extends ActionHandlerRegistry> bindActionHandlerRegistry() {
@@ -347,6 +360,14 @@ public abstract class DiagramModule extends GLSPModule {
 
    protected Class<? extends ContextEditValidatorRegistry> bindContextEditValidatorRegistry() {
       return DefaultContextEditValidatorRegistry.class;
+   }
+
+   protected Class<? extends LevelOfDetailHandler> bindLevelOfDetailHandler() {
+      return DefaultLevelOfDetailHandler.class;
+   }
+
+   protected Class<? extends LevelOfDetailRuleRegistry> bindLevelOfDetailRuleRegistry() {
+      return DefaultLevelOfDetailRuleRegistry.class;
    }
 
    protected Class<? extends PopupModelFactory> bindPopupModelFactory() {

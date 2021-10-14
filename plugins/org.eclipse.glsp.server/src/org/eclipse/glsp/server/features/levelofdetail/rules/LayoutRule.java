@@ -13,31 +13,19 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-package org.eclipse.glsp.graph.builder;
+package org.eclipse.glsp.server.features.levelofdetail.rules;
 
-import org.eclipse.glsp.graph.GLevelOfDetailRule;
-import org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger;
+import org.eclipse.glsp.graph.builder.impl.GLayoutOptions;
+import org.eclipse.glsp.server.features.levelofdetail.LevelOfDetailRule;
 
-public abstract class AbstractGLevelOfDetailRuleBuilder<T extends GLevelOfDetailRule, E extends AbstractGLevelOfDetailRuleBuilder<T, E>>
-   extends GBuilder<T> {
+public class LayoutRule extends LevelOfDetailRule {
+   private static final String TYPE = "lod:rule-layout";
 
-   protected String type;
-   protected GLevelOfDetailRuleTrigger trigger;
+   protected final GLayoutOptions layoutOptions;
 
-   public AbstractGLevelOfDetailRuleBuilder(final String type) {
-      this.type = type;
+   public LayoutRule(final GLayoutOptions layoutOptions) {
+      super(TYPE);
+      this.layoutOptions = layoutOptions;
    }
 
-   protected abstract E self();
-
-   public E setLevelOfDetailRuleTrigger(final GLevelOfDetailRuleTrigger trigger) {
-      this.trigger = trigger;
-      return self();
-   }
-
-   @Override
-   protected void setProperties(final T element) {
-      element.setTrigger(trigger);
-      element.setType(type);
-   }
 }

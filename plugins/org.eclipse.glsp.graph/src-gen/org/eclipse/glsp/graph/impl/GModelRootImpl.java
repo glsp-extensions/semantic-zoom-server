@@ -28,13 +28,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.glsp.graph.GBounds;
-import org.eclipse.glsp.graph.GLevelOfDetail;
-import org.eclipse.glsp.graph.GLevelOfDetailRule;
 import org.eclipse.glsp.graph.GModelElement;
 import org.eclipse.glsp.graph.GModelRoot;
 import org.eclipse.glsp.graph.GraphPackage;
@@ -47,7 +44,6 @@ import org.eclipse.glsp.graph.GraphPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.glsp.graph.impl.GModelRootImpl#getLevelOfDetailRules <em>Level Of Detail Rules</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GModelRootImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GModelRootImpl#getCssClasses <em>Css Classes</em>}</li>
  *   <li>{@link org.eclipse.glsp.graph.impl.GModelRootImpl#getChildren <em>Children</em>}</li>
@@ -61,16 +57,6 @@ import org.eclipse.glsp.graph.GraphPackage;
  * @generated
  */
 public class GModelRootImpl extends GArgumentableImpl implements GModelRoot {
-   /**
-    * The cached value of the '{@link #getLevelOfDetailRules() <em>Level Of Detail Rules</em>}' reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #getLevelOfDetailRules()
-    * @generated
-    * @ordered
-    */
-   protected EList<GLevelOfDetailRule> levelOfDetailRules;
-
    /**
     * The default value of the '{@link #getId() <em>Id</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -198,20 +184,6 @@ public class GModelRootImpl extends GArgumentableImpl implements GModelRoot {
    @Override
    protected EClass eStaticClass() {
       return GraphPackage.Literals.GMODEL_ROOT;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EList<GLevelOfDetailRule> getLevelOfDetailRules() {
-      if (levelOfDetailRules == null) {
-         levelOfDetailRules = new EObjectResolvingEList<GLevelOfDetailRule>(GLevelOfDetailRule.class, this,
-            GraphPackage.GMODEL_ROOT__LEVEL_OF_DETAIL_RULES);
-      }
-      return levelOfDetailRules;
    }
 
    /**
@@ -482,8 +454,6 @@ public class GModelRootImpl extends GArgumentableImpl implements GModelRoot {
    @Override
    public Object eGet(int featureID, boolean resolve, boolean coreType) {
       switch (featureID) {
-         case GraphPackage.GMODEL_ROOT__LEVEL_OF_DETAIL_RULES:
-            return getLevelOfDetailRules();
          case GraphPackage.GMODEL_ROOT__ID:
             return getId();
          case GraphPackage.GMODEL_ROOT__CSS_CLASSES:
@@ -513,10 +483,6 @@ public class GModelRootImpl extends GArgumentableImpl implements GModelRoot {
    @Override
    public void eSet(int featureID, Object newValue) {
       switch (featureID) {
-         case GraphPackage.GMODEL_ROOT__LEVEL_OF_DETAIL_RULES:
-            getLevelOfDetailRules().clear();
-            getLevelOfDetailRules().addAll((Collection<? extends GLevelOfDetailRule>) newValue);
-            return;
          case GraphPackage.GMODEL_ROOT__ID:
             setId((String) newValue);
             return;
@@ -555,9 +521,6 @@ public class GModelRootImpl extends GArgumentableImpl implements GModelRoot {
    @Override
    public void eUnset(int featureID) {
       switch (featureID) {
-         case GraphPackage.GMODEL_ROOT__LEVEL_OF_DETAIL_RULES:
-            getLevelOfDetailRules().clear();
-            return;
          case GraphPackage.GMODEL_ROOT__ID:
             setId(ID_EDEFAULT);
             return;
@@ -594,8 +557,6 @@ public class GModelRootImpl extends GArgumentableImpl implements GModelRoot {
    @Override
    public boolean eIsSet(int featureID) {
       switch (featureID) {
-         case GraphPackage.GMODEL_ROOT__LEVEL_OF_DETAIL_RULES:
-            return levelOfDetailRules != null && !levelOfDetailRules.isEmpty();
          case GraphPackage.GMODEL_ROOT__ID:
             return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
          case GraphPackage.GMODEL_ROOT__CSS_CLASSES:
@@ -614,42 +575,6 @@ public class GModelRootImpl extends GArgumentableImpl implements GModelRoot {
             return revision != REVISION_EDEFAULT;
       }
       return super.eIsSet(featureID);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-      if (baseClass == GLevelOfDetail.class) {
-         switch (derivedFeatureID) {
-            case GraphPackage.GMODEL_ROOT__LEVEL_OF_DETAIL_RULES:
-               return GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES;
-            default:
-               return -1;
-         }
-      }
-      return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-   	 * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-      if (baseClass == GLevelOfDetail.class) {
-         switch (baseFeatureID) {
-            case GraphPackage.GLEVEL_OF_DETAIL__LEVEL_OF_DETAIL_RULES:
-               return GraphPackage.GMODEL_ROOT__LEVEL_OF_DETAIL_RULES;
-            default:
-               return -1;
-         }
-      }
-      return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
    }
 
    /**

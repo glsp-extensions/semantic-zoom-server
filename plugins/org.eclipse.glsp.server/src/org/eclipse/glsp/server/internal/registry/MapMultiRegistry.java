@@ -17,9 +17,11 @@ package org.eclipse.glsp.server.internal.registry;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.eclipse.glsp.server.registry.MultiRegistry;
@@ -62,6 +64,11 @@ public abstract class MapMultiRegistry<K, V> implements MultiRegistry<K, V> {
    @Override
    public List<V> getAll() {
       return elements.values().stream().flatMap(Collection::stream).collect(Collectors.toList());
+   }
+
+   @Override
+   public Set<K> keys() {
+      return new HashSet<>(elements.keySet());
    }
 
    protected GLSPServerException missing(final K key) {

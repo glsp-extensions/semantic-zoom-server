@@ -13,23 +13,23 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-package org.eclipse.glsp.graph.builder;
+package org.eclipse.glsp.server.features.levelofdetail;
 
-import org.eclipse.glsp.graph.GLevelOfDetailRuleTrigger;
+import org.eclipse.glsp.server.actions.ResponseAction;
 
-public abstract class AbstractGLevelOfDetailRuleTriggerBuilder<T extends GLevelOfDetailRuleTrigger, E extends AbstractGLevelOfDetailRuleTriggerBuilder<T, E>>
-   extends GBuilder<T> {
+import com.google.gson.JsonArray;
 
-   protected String type;
+public class SetDiscreteLevelOfDetailAction extends ResponseAction {
 
-   public AbstractGLevelOfDetailRuleTriggerBuilder(final String type) {
-      this.type = type;
+   public static final String ID = "setDiscreteLevelOfDetail";
+   private JsonArray discreteLevels;
+
+   public SetDiscreteLevelOfDetailAction() {
+      super(ID);
    }
 
-   protected abstract E self();
-
-   @Override
-   protected void setProperties(final T element) {
-      element.setType(type);
+   public SetDiscreteLevelOfDetailAction(final JsonArray jsonArray) {
+      this();
+      this.discreteLevels = jsonArray;
    }
 }

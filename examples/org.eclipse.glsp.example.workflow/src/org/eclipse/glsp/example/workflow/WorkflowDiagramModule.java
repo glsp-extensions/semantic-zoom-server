@@ -51,6 +51,7 @@ import org.eclipse.glsp.server.features.core.model.JsonFileGModelLoader;
 import org.eclipse.glsp.server.features.core.model.ModelSourceLoader;
 import org.eclipse.glsp.server.features.directediting.ContextEditValidator;
 import org.eclipse.glsp.server.features.directediting.LabelEditValidator;
+import org.eclipse.glsp.server.features.levelofdetail.LevelOfDetailRuleRegistry;
 import org.eclipse.glsp.server.features.modelsourcewatcher.FileWatcher;
 import org.eclipse.glsp.server.features.modelsourcewatcher.ModelSourceWatcher;
 import org.eclipse.glsp.server.features.navigation.NavigationTargetProvider;
@@ -161,5 +162,10 @@ public class WorkflowDiagramModule extends GModelJsonDiagramModule {
 
    @Override
    public String getDiagramType() { return "workflow-diagram"; }
+
+   @Override
+   protected Class<? extends LevelOfDetailRuleRegistry> bindLevelOfDetailRuleRegistry() {
+      return WorkflowLevelOfDetailRuleRegistry.class;
+   }
 
 }

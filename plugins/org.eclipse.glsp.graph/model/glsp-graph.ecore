@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graph" nsURI="http://www.eclipse.org/glsp/graph" nsPrefix="graph">
   <eClassifiers xsi:type="ecore:EClass" name="GModelElement" abstract="true" interface="true"
-      eSuperTypes="#//GArgumentable #//GLevelOfDetail">
+      eSuperTypes="#//GArgumentable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cssClasses" upperBound="-1"
@@ -127,68 +127,4 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GLevelOfDetail">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="levelOfDetailRules" upperBound="-1"
-        eType="#//GLevelOfDetailRule"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GLevelOfDetailRule" abstract="true"
-      interface="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" lowerBound="1"
-        eType="#//GLevelOfDetailRuleTrigger"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="GDiscreteLevelOfDetail">
-    <eLiterals name="Detail2"/>
-    <eLiterals name="Detail" value="1"/>
-    <eLiterals name="Intermediate" value="2"/>
-    <eLiterals name="Overview" value="3"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GLevelOfDetailRuleTrigger" abstract="true"
-      interface="true">
-    <eOperations name="isTriggered" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="continuousLevelOfDetail" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GLevelOfDetailRuleTriggerContinuous"
-      eSuperTypes="#//GLevelOfDetailRuleTrigger">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="triggerContinuousLevelFrom"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="triggerContinuousLevelTo"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GLevelOfDetailRuleTriggerDiscrete" eSuperTypes="#//GLevelOfDetailRuleTrigger">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="triggerDiscreteLevel" lowerBound="1"
-        upperBound="-1" eType="#//GDiscreteLevelOfDetail"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GVisibilityRule" eSuperTypes="#//GLevelOfDetailRule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="setVisibility" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GCssStyleRule" eSuperTypes="#//GLevelOfDetailRule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="styles" lowerBound="1"
-        upperBound="-1" eType="#//StringToObjectMapEntry" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GCssClassRule" eSuperTypes="#//GLevelOfDetailRule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classes" lowerBound="1"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GScaleRule" eSuperTypes="#//GLevelOfDetailRule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scale" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplyWithCLevel" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sumWithCLevel" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GLayoutRule" eSuperTypes="#//GLayouting #//GLevelOfDetailServerRule #//GLevelOfDetailClientRule"/>
-  <eClassifiers xsi:type="ecore:EClass" name="GLevelOfDetailServerRule" abstract="true"
-      interface="true" eSuperTypes="#//GLevelOfDetailRule">
-    <eOperations name="handle" lowerBound="1" eType="#//GModelElement">
-      <eParameters name="element" lowerBound="1" eType="#//GModelElement"/>
-    </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="handleAlways" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GLevelOfDetailClientRule" abstract="true"
-      interface="true" eSuperTypes="#//GLevelOfDetailRule"/>
 </ecore:EPackage>
