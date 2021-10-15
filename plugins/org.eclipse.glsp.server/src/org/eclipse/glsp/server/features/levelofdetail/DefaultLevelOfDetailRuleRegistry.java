@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.eclipse.glsp.graph.GModelElement;
+import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailRule;
+import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailServerRule;
 import org.eclipse.glsp.server.internal.registry.MapMultiRegistry;
 
 public class DefaultLevelOfDetailRuleRegistry extends MapMultiRegistry<String, LevelOfDetailRule>

@@ -13,28 +13,24 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-package org.eclipse.glsp.server.features.levelofdetail;
+package org.eclipse.glsp.server.features.levelofdetail.rules.impl;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-public class LevelOfDetailRuleTriggerDiscrete extends LevelOfDetailRuleTrigger {
-   private final static String TYPE = "lod:rule-trigger-discrete";
+import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailRule;
 
-   private final List<DiscreteLevelOfDetailEnum> triggerDiscreteLevel = new ArrayList<>();
+public class CssStyleRule extends LevelOfDetailRule {
+   private static final String TYPE = "lod:rule-cssstyle";
 
-   public LevelOfDetailRuleTriggerDiscrete() {
+   private final Map<String, String> styles = new HashMap<>();
+
+   public CssStyleRule() {
       super(TYPE);
    }
 
-   public LevelOfDetailRuleTriggerDiscrete addDiscreteLevelOfDetail(final DiscreteLevelOfDetailEnum discreteLevel) {
-      this.triggerDiscreteLevel.add(discreteLevel);
+   public CssStyleRule addStyle(final String styleName, final String styleValue) {
+      this.styles.put(styleName, styleValue);
       return this;
-   }
-
-   @Override
-   public boolean isTriggered(final double cLevel) {
-      DiscreteLevelOfDetailEnum dLevel = DiscreteLevelOfDetailEnum.getDiscreteLevelForContinuousLevel(cLevel);
-      return this.triggerDiscreteLevel.stream().anyMatch(level -> level == dLevel);
    }
 }

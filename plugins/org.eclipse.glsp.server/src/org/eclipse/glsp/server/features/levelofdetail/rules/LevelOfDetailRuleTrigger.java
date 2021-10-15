@@ -15,17 +15,17 @@
  ********************************************************************************/
 package org.eclipse.glsp.server.features.levelofdetail.rules;
 
-import org.eclipse.glsp.graph.builder.impl.GLayoutOptions;
-import org.eclipse.glsp.server.features.levelofdetail.LevelOfDetailRule;
+public abstract class LevelOfDetailRuleTrigger {
+   private String type;
 
-public class LayoutRule extends LevelOfDetailRule {
-   private static final String TYPE = "lod:rule-layout";
-
-   protected final GLayoutOptions layoutOptions;
-
-   public LayoutRule(final GLayoutOptions layoutOptions) {
-      super(TYPE);
-      this.layoutOptions = layoutOptions;
+   public LevelOfDetailRuleTrigger(final String type) {
+      super();
+      this.type = type;
    }
 
+   public abstract boolean isTriggered(double cLevel);
+
+   public String getType() { return type; }
+
+   public void setType(final String type) { this.type = type; }
 }

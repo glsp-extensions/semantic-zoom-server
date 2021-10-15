@@ -15,22 +15,32 @@
  ********************************************************************************/
 package org.eclipse.glsp.server.features.levelofdetail.rules;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 
-import org.eclipse.glsp.server.features.levelofdetail.LevelOfDetailRule;
+public abstract class LevelOfDetailRule implements LevelOfDetailRuleInterface {
+   private final String type;
+   private ArrayList<LevelOfDetailRuleTrigger> trigger = new ArrayList<>();
 
-public class CssStyleRule extends LevelOfDetailRule {
-   private static final String TYPE = "lod:rule-cssstyle";
-
-   private final Map<String, String> styles = new HashMap<>();
-
-   public CssStyleRule() {
-      super(TYPE);
+   public LevelOfDetailRule(final String type) {
+      super();
+      this.type = type;
    }
 
-   public CssStyleRule addStyle(final String styleName, final String styleValue) {
-      this.styles.put(styleName, styleValue);
+   public String getType() { return type; }
+
+   @Override
+   public ArrayList<LevelOfDetailRuleTrigger> getLevelOfDetailRuleTrigger() { return trigger; }
+
+   @Override
+   public LevelOfDetailRule setLevelOfDetailRuleTrigger(
+      final ArrayList<LevelOfDetailRuleTrigger> levelOfDetailRuleTrigger) {
+      this.trigger = levelOfDetailRuleTrigger;
+      return this;
+   }
+
+   @Override
+   public LevelOfDetailRule addLevelOfDetailRuleTrigger(final LevelOfDetailRuleTrigger levelOfDetailRuleTrigger) {
+      this.trigger.add(levelOfDetailRuleTrigger);
       return this;
    }
 }

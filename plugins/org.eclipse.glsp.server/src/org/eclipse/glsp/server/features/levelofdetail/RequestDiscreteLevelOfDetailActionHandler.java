@@ -20,6 +20,7 @@ import java.util.List;
 
 import org.eclipse.glsp.server.actions.Action;
 import org.eclipse.glsp.server.actions.BasicActionHandler;
+import org.eclipse.glsp.server.features.levelofdetail.rules.DiscreteLevelOfDetailEnum;
 import org.eclipse.glsp.server.gson.GraphGsonConfigurationFactory;
 import org.eclipse.glsp.server.model.GModelState;
 

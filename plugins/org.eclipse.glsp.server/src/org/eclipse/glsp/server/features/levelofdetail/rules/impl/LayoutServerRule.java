@@ -13,12 +13,12 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-package org.eclipse.glsp.server.features.levelofdetail.rules;
+package org.eclipse.glsp.server.features.levelofdetail.rules.impl;
 
 import org.eclipse.glsp.graph.GBoundsAware;
 import org.eclipse.glsp.graph.GModelElement;
 import org.eclipse.glsp.graph.builder.impl.GLayoutOptions;
-import org.eclipse.glsp.server.features.levelofdetail.LevelOfDetailServerRule;
+import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailServerRule;
 
 public class LayoutServerRule extends LayoutRule implements LevelOfDetailServerRule {
 

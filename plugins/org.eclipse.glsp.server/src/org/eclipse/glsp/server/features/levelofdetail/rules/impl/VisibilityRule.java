@@ -13,35 +13,21 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-package org.eclipse.glsp.server.features.levelofdetail;
+package org.eclipse.glsp.server.features.levelofdetail.rules.impl;
 
-import java.util.List;
-
-import org.eclipse.glsp.server.actions.ResponseAction;
 import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailRule;
 
-public class SetLevelOfDetailRulesAction extends ResponseAction {
-   public static final String ID = "setLevelOfDetailRules";
-   // private JsonArray rules;
-   private List<LevelOfDetailRuleAssignment> ruleAssignments;
+public class VisibilityRule extends LevelOfDetailRule {
+   private static final String TYPE = "lod:rule-visibility";
 
-   public SetLevelOfDetailRulesAction() {
-      super(ID);
+   private boolean setVisibility;
+
+   public VisibilityRule() {
+      super(TYPE);
    }
 
-   public SetLevelOfDetailRulesAction(final List<LevelOfDetailRuleAssignment> ruleAssignments) {
-      this();
-      this.ruleAssignments = ruleAssignments;
-   }
-
-   public static class LevelOfDetailRuleAssignment {
-      private final String element;
-      private final List<LevelOfDetailRule> rules;
-
-      public LevelOfDetailRuleAssignment(final String element, final List<LevelOfDetailRule> rules) {
-         super();
-         this.element = element;
-         this.rules = rules;
-      }
+   public VisibilityRule setSetVisibility(final boolean setVisiblity) {
+      this.setVisibility = setVisiblity;
+      return this;
    }
 }

@@ -13,19 +13,14 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-package org.eclipse.glsp.server.features.levelofdetail;
+package org.eclipse.glsp.server.features.levelofdetail.rules;
 
-public abstract class LevelOfDetailRuleTrigger {
-   private String type;
+import java.util.ArrayList;
 
-   public LevelOfDetailRuleTrigger(final String type) {
-      super();
-      this.type = type;
-   }
+public interface LevelOfDetailRuleInterface {
+   ArrayList<LevelOfDetailRuleTrigger> getLevelOfDetailRuleTrigger();
 
-   public abstract boolean isTriggered(double cLevel);
+   LevelOfDetailRule setLevelOfDetailRuleTrigger(final ArrayList<LevelOfDetailRuleTrigger> levelOfDetailRuleTrigger);
 
-   public String getType() { return type; }
-
-   public void setType(final String type) { this.type = type; }
+   LevelOfDetailRule addLevelOfDetailRuleTrigger(final LevelOfDetailRuleTrigger levelOfDetailRuleTrigger);
 }

@@ -13,23 +13,28 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-package org.eclipse.glsp.server.features.levelofdetail;
+package org.eclipse.glsp.server.features.levelofdetail.rules;
 
-public class LevelOfDetailRuleTriggerContinuous extends LevelOfDetailRuleTrigger {
-   private final static String TYPE = "lod:rule-trigger-continuous";
+import java.util.ArrayList;
+import java.util.List;
 
-   private final double triggerFrom;
-   private final double triggerTo;
+public class LevelOfDetailRuleTriggerDiscrete extends LevelOfDetailRuleTrigger {
+   private final static String TYPE = "lod:rule-trigger-discrete";
 
-   public LevelOfDetailRuleTriggerContinuous(final double triggerFrom, final double triggerTo) {
+   private final List<DiscreteLevelOfDetailEnum> triggerDiscreteLevel = new ArrayList<>();
+
+   public LevelOfDetailRuleTriggerDiscrete() {
       super(TYPE);
-      this.triggerFrom = triggerFrom;
-      this.triggerTo = triggerTo;
+   }
+
+   public LevelOfDetailRuleTriggerDiscrete addDiscreteLevelOfDetail(final DiscreteLevelOfDetailEnum discreteLevel) {
+      this.triggerDiscreteLevel.add(discreteLevel);
+      return this;
    }
 
    @Override
    public boolean isTriggered(final double cLevel) {
-      return cLevel < this.triggerTo && cLevel >= this.triggerFrom;
+      DiscreteLevelOfDetailEnum dLevel = DiscreteLevelOfDetailEnum.getDiscreteLevelForContinuousLevel(cLevel);
+      return this.triggerDiscreteLevel.stream().anyMatch(level -> level == dLevel);
    }
-
 }

@@ -19,13 +19,13 @@ import org.apache.log4j.Logger;
 import org.eclipse.glsp.example.workflow.utils.ModelTypes;
 import org.eclipse.glsp.graph.builder.impl.GLayoutOptions;
 import org.eclipse.glsp.server.features.levelofdetail.DefaultLevelOfDetailRuleRegistry;
-import org.eclipse.glsp.server.features.levelofdetail.DiscreteLevelOfDetailEnum;
-import org.eclipse.glsp.server.features.levelofdetail.LevelOfDetailRuleTriggerContinuous;
-import org.eclipse.glsp.server.features.levelofdetail.LevelOfDetailRuleTriggerDiscrete;
-import org.eclipse.glsp.server.features.levelofdetail.rules.CssStyleRule;
-import org.eclipse.glsp.server.features.levelofdetail.rules.LayoutRule;
-import org.eclipse.glsp.server.features.levelofdetail.rules.LayoutServerRule;
-import org.eclipse.glsp.server.features.levelofdetail.rules.VisibilityRule;
+import org.eclipse.glsp.server.features.levelofdetail.rules.DiscreteLevelOfDetailEnum;
+import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailRuleTriggerContinuous;
+import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailRuleTriggerDiscrete;
+import org.eclipse.glsp.server.features.levelofdetail.rules.impl.CssStyleRule;
+import org.eclipse.glsp.server.features.levelofdetail.rules.impl.LayoutRule;
+import org.eclipse.glsp.server.features.levelofdetail.rules.impl.LayoutServerRule;
+import org.eclipse.glsp.server.features.levelofdetail.rules.impl.VisibilityRule;
 
 public class WorkflowLevelOfDetailRuleRegistry extends DefaultLevelOfDetailRuleRegistry {
    private static Logger LOG = Logger.getLogger(WorkflowLevelOfDetailRuleRegistry.class);

@@ -13,21 +13,19 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-package org.eclipse.glsp.server.features.levelofdetail.rules;
+package org.eclipse.glsp.server.features.levelofdetail.rules.impl;
 
-import org.eclipse.glsp.server.features.levelofdetail.LevelOfDetailRule;
+import org.eclipse.glsp.graph.builder.impl.GLayoutOptions;
+import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailRule;
 
-public class VisibilityRule extends LevelOfDetailRule {
-   private static final String TYPE = "lod:rule-visibility";
+public class LayoutRule extends LevelOfDetailRule {
+   private static final String TYPE = "lod:rule-layout";
 
-   private boolean setVisibility;
+   protected final GLayoutOptions layoutOptions;
 
-   public VisibilityRule() {
+   public LayoutRule(final GLayoutOptions layoutOptions) {
       super(TYPE);
+      this.layoutOptions = layoutOptions;
    }
 
-   public VisibilityRule setSetVisibility(final boolean setVisiblity) {
-      this.setVisibility = setVisiblity;
-      return this;
-   }
 }

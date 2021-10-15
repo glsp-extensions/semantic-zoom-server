@@ -23,6 +23,8 @@ import org.apache.log4j.Logger;
 import org.eclipse.glsp.server.actions.Action;
 import org.eclipse.glsp.server.actions.BasicActionHandler;
 import org.eclipse.glsp.server.features.levelofdetail.SetLevelOfDetailRulesAction.LevelOfDetailRuleAssignment;
+import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailServerRule;
+import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailServerRuleTransfer;
 import org.eclipse.glsp.server.gson.GraphGsonConfigurationFactory;
 import org.eclipse.glsp.server.model.GModelState;
 
@@ -55,7 +57,7 @@ public class RequestLevelOfDetailRulesActionHandler extends BasicActionHandler<R
       this.levelOfDetailRuleRegistry.keys().stream()
          .forEach(key -> {
             list.add(new LevelOfDetailRuleAssignment(key, this.levelOfDetailRuleRegistry.get(key).stream()
-               .filter(rule -> !(rule instanceof LevelOfDetailServerRule))
+               .map(rule -> rule instanceof LevelOfDetailServerRule ? new LevelOfDetailServerRuleTransfer(rule) : rule)
                .collect(Collectors.toList())));
          });
 

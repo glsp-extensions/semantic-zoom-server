@@ -13,17 +13,23 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-package org.eclipse.glsp.server.features.levelofdetail;
+package org.eclipse.glsp.server.features.levelofdetail.rules;
 
-import java.util.List;
+public class LevelOfDetailRuleTriggerContinuous extends LevelOfDetailRuleTrigger {
+   private final static String TYPE = "lod:rule-trigger-continuous";
 
-import org.eclipse.glsp.graph.GModelElement;
-import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailRule;
-import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailServerRule;
-import org.eclipse.glsp.server.registry.MultiRegistry;
+   private final double triggerFrom;
+   private final double triggerTo;
 
-public interface LevelOfDetailRuleRegistry extends MultiRegistry<String, LevelOfDetailRule> {
-   LevelOfDetailServerRule[] getServerRulesForElement(GModelElement element);
+   public LevelOfDetailRuleTriggerContinuous(final double triggerFrom, final double triggerTo) {
+      super(TYPE);
+      this.triggerFrom = triggerFrom;
+      this.triggerTo = triggerTo;
+   }
 
-   List<LevelOfDetailServerRule> getServerRules();
+   @Override
+   public boolean isTriggered(final double cLevel) {
+      return cLevel < this.triggerTo && cLevel >= this.triggerFrom;
+   }
+
 }

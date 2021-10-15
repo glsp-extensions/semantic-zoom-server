@@ -18,6 +18,7 @@ package org.eclipse.glsp.server.features.levelofdetail;
 import org.apache.log4j.Logger;
 import org.eclipse.glsp.graph.GModelElement;
 import org.eclipse.glsp.graph.GModelRoot;
+import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailServerRule;
 
 import com.google.inject.Inject;
 
