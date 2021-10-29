@@ -47,9 +47,4 @@ public class LayoutServerRule extends LayoutRule implements LevelOfDetailServerR
    public boolean handleAlways() {
       return true;
    }
-
-   @Override
-   public boolean sendToClient() {
-      return true;
-   }
 }

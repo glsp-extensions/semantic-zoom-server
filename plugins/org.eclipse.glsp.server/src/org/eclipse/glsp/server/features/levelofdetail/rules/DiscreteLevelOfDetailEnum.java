@@ -15,20 +15,14 @@
  ********************************************************************************/
 package org.eclipse.glsp.server.features.levelofdetail.rules;
 
-import com.google.gson.annotations.SerializedName;
-
 public enum DiscreteLevelOfDetailEnum {
 
-   @SerializedName("OVERVIEW")
    OVERVIEW(1.25, null),
 
-   @SerializedName("INTERMEDIATE")
    INTERMEDIATE(0.5, 1.25),
 
-   @SerializedName(value = "live", alternate = { "LIVE" })
    INTERMEDIATE_DETAIL(0.25, 0.5),
 
-   @SerializedName(value = "live", alternate = { "LIVE" })
    DETAIL(null, 0.25);
 
    private final Double from;

@@ -21,7 +21,5 @@ public interface LevelOfDetailServerRule extends LevelOfDetailRuleInterface {
 
    boolean handleAlways();
 
-   boolean sendToClient();
-
    GModelElement handle(GModelElement element);
 }

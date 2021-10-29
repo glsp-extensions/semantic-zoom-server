@@ -109,17 +109,7 @@ public class ModelSubmissionHandler {
          if (!diagramConfiguration.needsClientLayout()) {
             result.add(new SetDirtyStateAction(modelState.isDirty(), reason));
          }
-         // not the most ideal solution: set revision to 1 so that future computedBoundsActions result in an updateModel
-         // instead of a setModel. This is important because the client resets the stage when a setModel is received
-         // This would initially happen every time the level of detail is changed
-         // not needed anymore when requestModelActions are used instead but:
-         // TODO: model revision is increased with every level of detail change, even though the model has not been
-         // changed
-         /*
-          * if (gModel.getRevision() == 0) {
-          * gModel.setRevision(1);
-          * }
-          */
+
          return result;
       }
    }
