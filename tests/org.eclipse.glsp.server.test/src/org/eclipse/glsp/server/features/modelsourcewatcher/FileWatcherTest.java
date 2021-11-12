@@ -76,13 +76,13 @@ class FileWatcherTest {
       final File file = createFile("test.txt");
       final GModelState modelState = modelState("1", fileUri(file));
 
-      final FileWatcher fileWatcher = new FileWatcher(sessionManager, actionDispatcher);
+      final FileWatcher fileWatcher = new FileWatcher(sessionManager, actionDispatcher, modelState);
       fileWatcher.setDebounceDelay(0);
-      fileWatcher.startWatching(modelState);
+      fileWatcher.startWatching();
       sleep();
       changeFile(file);
       sleep();
-      fileWatcher.stopWatching(modelState);
+      fileWatcher.stopWatching();
 
       assertNotifications(1);
    }
@@ -93,13 +93,13 @@ class FileWatcherTest {
       final File file = createFile("test.txt");
       final GModelState modelState = modelState("1", fileUri(file));
 
-      final FileWatcher fileWatcher = new FileWatcher(sessionManager, actionDispatcher);
+      final FileWatcher fileWatcher = new FileWatcher(sessionManager, actionDispatcher, modelState);
       fileWatcher.setDebounceDelay(0);
-      fileWatcher.startWatching(modelState);
+      fileWatcher.startWatching();
       sleep();
       deleteFile(file);
       sleep();
-      fileWatcher.stopWatching(modelState);
+      fileWatcher.stopWatching();
 
       assertNotifications(1);
    }
@@ -110,15 +110,15 @@ class FileWatcherTest {
       final File file = createFile("test.txt");
       final GModelState modelState = modelState("1", fileUri(file));
 
-      final FileWatcher fileWatcher = new FileWatcher(sessionManager, actionDispatcher);
+      final FileWatcher fileWatcher = new FileWatcher(sessionManager, actionDispatcher, modelState);
       fileWatcher.setDebounceDelay(0);
-      fileWatcher.startWatching(modelState);
+      fileWatcher.startWatching();
       sleep();
-      fileWatcher.pauseWatching(modelState);
+      fileWatcher.pauseWatching();
       sleep();
       changeFile(file);
       sleep();
-      fileWatcher.stopWatching(modelState);
+      fileWatcher.stopWatching();
 
       assertNoNotification();
    }
@@ -129,17 +129,17 @@ class FileWatcherTest {
       final File file = createFile("test.txt");
       final GModelState modelState = modelState("1", fileUri(file));
 
-      final FileWatcher fileWatcher = new FileWatcher(sessionManager, actionDispatcher);
+      final FileWatcher fileWatcher = new FileWatcher(sessionManager, actionDispatcher, modelState);
       fileWatcher.setDebounceDelay(0);
-      fileWatcher.startWatching(modelState);
+      fileWatcher.startWatching();
       sleep();
-      fileWatcher.pauseWatching(modelState);
+      fileWatcher.pauseWatching();
       sleep();
-      fileWatcher.continueWatching(modelState);
+      fileWatcher.continueWatching();
       sleep();
       changeFile(file);
       sleep();
-      fileWatcher.stopWatching(modelState);
+      fileWatcher.stopWatching();
 
       assertNotifications(1);
    }
@@ -201,6 +201,9 @@ class FileWatcherTest {
          dispatchedActions.add(action);
          return CompletableFuture.completedFuture(null);
       }
+
+      @Override
+      public void dispatchAfterNextUpdate(final Action... actions) {}
    }
 
    class MockClientSessionManager implements ClientSessionManager {
@@ -212,8 +215,8 @@ class FileWatcherTest {
       public boolean isDisposed() { return false; }
 
       @Override
-      public Optional<ClientSession> createClientSession(final String clientSessionId, final String diagramType) {
-         return Optional.empty();
+      public ClientSession getOrCreateClientSession(final String clientSessionId, final String diagramType) {
+         return null;
       }
 
       @Override

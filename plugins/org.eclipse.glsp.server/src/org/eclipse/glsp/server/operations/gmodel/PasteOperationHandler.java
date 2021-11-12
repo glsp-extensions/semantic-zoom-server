@@ -16,7 +16,7 @@
 package org.eclipse.glsp.server.operations.gmodel;
 
 import static org.eclipse.glsp.server.utils.GModelUtil.filterByType;
-import static org.eclipse.glsp.server.utils.GModelUtil.shift;
+import static org.eclipse.glsp.server.utils.GeometryUtil.shift;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,16 +34,19 @@ import org.eclipse.glsp.graph.GPoint;
 import org.eclipse.glsp.graph.impl.GPointImpl;
 import org.eclipse.glsp.server.gson.GraphGsonConfigurationFactory;
 import org.eclipse.glsp.server.model.GModelState;
-import org.eclipse.glsp.server.operations.BasicOperationHandler;
+import org.eclipse.glsp.server.operations.AbstractOperationHandler;
 import org.eclipse.glsp.server.operations.PasteOperation;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.inject.Inject;
 
-public class PasteOperationHandler extends BasicOperationHandler<PasteOperation> {
+public class PasteOperationHandler extends AbstractOperationHandler<PasteOperation> {
 
    private static final int DEFAULT_OFFSET = 20;
+
+   @Inject
+   protected GModelState modelState;
 
    protected final Gson gson;
 
@@ -54,7 +57,7 @@ public class PasteOperationHandler extends BasicOperationHandler<PasteOperation>
    }
 
    @Override
-   public void executeOperation(final PasteOperation operation, final GModelState modelState) {
+   public void executeOperation(final PasteOperation operation) {
       List<GModelElement> elements = getCopiedElements(operation.getClipboardData().get("application/json"));
 
       shift(elements, computeOffset(elements, operation.getEditorContext().getLastMousePosition()));

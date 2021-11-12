@@ -20,23 +20,13 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 import org.eclipse.glsp.server.disposable.IDisposable;
+import org.eclipse.glsp.server.features.core.model.UpdateModelAction;
 
 public interface ActionDispatcher extends IDisposable {
 
    /**
-    * @see ActionDispatcher#dispatch(Action)
-    *
-    * @param message ActionMessage received from the client
-    * @return
-    *         A {@link CompletableFuture} indicating when the action processing is complete
-    */
-   default CompletableFuture<Void> dispatch(final ActionMessage message) {
-      return dispatch(message.getAction());
-   }
-
-   /**
     * <p>
-    * Processes the given action, received from the specified clientId, by dispatching it to all registered handlers.
+    * Processes the given action by dispatching it to all registered handlers.
     * </p>
     *
     * @param action The action that should be dispatched.
@@ -47,7 +37,7 @@ public interface ActionDispatcher extends IDisposable {
 
    /**
     * <p>
-    * Processes all given actions, received from the specified clientId, by dispatching to the corresponding handlers.
+    * Processes all given actions by dispatching to the corresponding handlers.
     * </p>
     *
     * @param actions Actions to dispatch
@@ -56,4 +46,13 @@ public interface ActionDispatcher extends IDisposable {
    default List<CompletableFuture<Void>> dispatchAll(final List<Action> actions) {
       return actions.stream().map(action -> dispatch(action)).collect(Collectors.toList());
    }
+
+   /**
+    * Processes all given actions, by dispatching them to the corresponding handlers, after the next model update.
+    * The given actions are queued until the next model update cycle has been completed i.e. an
+    * {@link UpdateModelAction} has been dispatched and processed by this action dispatcher.
+    *
+    * @param actions The actions that should be dispatched after the next model update
+    */
+   void dispatchAfterNextUpdate(Action... actions);
 }
