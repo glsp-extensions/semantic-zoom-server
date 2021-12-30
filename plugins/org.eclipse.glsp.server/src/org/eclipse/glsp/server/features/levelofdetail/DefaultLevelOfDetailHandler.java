@@ -25,12 +25,19 @@ import com.google.inject.Inject;
 public class DefaultLevelOfDetailHandler implements LevelOfDetailHandler {
    private static Logger LOG = Logger.getLogger(DefaultLevelOfDetailHandler.class);
 
+   private double currentLevelOfDetail = 1;
+
    @Inject
    LevelOfDetailRuleRegistry levelOfDetailRuleRegistry;
 
    @Override
    public void applyLevelOfDetailRules(final GModelRoot root, final double continuousLevelOfDetail) {
       this.applyToChildren(root, continuousLevelOfDetail);
+   }
+
+   @Override
+   public void applyLevelOfDetailRules(final GModelRoot root) {
+      this.applyToChildren(root, this.getCurrentLevelOfDetail());
    }
 
    private void applyToChildren(final GModelElement element, final double continuousLevelOfDetail) {
@@ -44,4 +51,10 @@ public class DefaultLevelOfDetailHandler implements LevelOfDetailHandler {
          this.applyToChildren(child, continuousLevelOfDetail);
       }
    }
+
+   @Override
+   public void setCurrentLevelOfDetail(final double level) { this.currentLevelOfDetail = level; }
+
+   @Override
+   public double getCurrentLevelOfDetail() { return this.currentLevelOfDetail; }
 }

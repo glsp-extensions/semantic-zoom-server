@@ -45,7 +45,7 @@ public class RequestModelActionHandler extends AbstractActionHandler<RequestMode
 
    @Inject
    protected Optional<LevelOfDetailHandler> levelOfDetailHandler;
-   
+
    @Inject
    protected GModelState modelState;
 
@@ -54,19 +54,21 @@ public class RequestModelActionHandler extends AbstractActionHandler<RequestMode
       if (action.getOptions().containsKey("sourceUri") || modelState.getRoot() == null) {
          modelState.setClientOptions(action.getOptions());
 
-      notifyStartLoading();
-      sourceModelLoader.loadSourceModel(action);
-      notifyFinishedLoading();
+         notifyStartLoading();
+         sourceModelLoader.loadSourceModel(action);
+         notifyFinishedLoading();
 
-      modelSourceWatcher.ifPresent(watcher -> watcher.startWatching());
+         modelSourceWatcher.ifPresent(watcher -> watcher.startWatching());
       }
 
       final double continuousLevelOfDetail = action.getOptions().containsKey("levelOfDetail")
          ? Double.parseDouble(action.getOptions().get("levelOfDetail"))
          : 1;
+
       this.levelOfDetailHandler
-         .ifPresent(handler -> handler.applyLevelOfDetailRules(modelState.getRoot(), continuousLevelOfDetail));
-      // LevelOfDetailUtil.applyLevelOfDetailRules(modelState.getRoot(), continuousLevelOfDetail);
+         .ifPresent(handler -> handler.setCurrentLevelOfDetail(continuousLevelOfDetail));
+
+      System.out.println(this.levelOfDetailHandler.get());
 
       return modelSubmissionHandler.submitModel();
    }

@@ -26,6 +26,7 @@ import org.eclipse.glsp.server.actions.ActionDispatcher;
 import org.eclipse.glsp.server.actions.ActionHandler;
 import org.eclipse.glsp.server.actions.SetDirtyStateAction;
 import org.eclipse.glsp.server.diagram.DiagramConfiguration;
+import org.eclipse.glsp.server.features.levelofdetail.LevelOfDetailHandler;
 import org.eclipse.glsp.server.layout.LayoutEngine;
 import org.eclipse.glsp.server.layout.ServerLayoutKind;
 import org.eclipse.glsp.server.model.GModelState;
@@ -48,6 +49,9 @@ public class ModelSubmissionHandler {
    @Inject
    protected GModelState modelState;
 
+   @Inject
+   protected Optional<LevelOfDetailHandler> levelOfDetailHandler;
+
    private final Object modelLock = new Object();
 
    /**
@@ -62,6 +66,11 @@ public class ModelSubmissionHandler {
     * @return A list of actions to be processed in order to submit the model.
     */
    public List<Action> submitModel(final String reason) {
+
+      // apply level of detail rules
+      this.levelOfDetailHandler
+         .ifPresent(handler -> handler.applyLevelOfDetailRules(modelState.getRoot()));
+
       modelFactory.createGModel(modelState);
       modelState.getRoot().setRevision(modelState.getRoot().getRevision() + 1);
       boolean needsClientLayout = diagramConfiguration.needsClientLayout();

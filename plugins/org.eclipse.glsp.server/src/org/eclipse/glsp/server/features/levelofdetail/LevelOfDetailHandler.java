@@ -18,5 +18,11 @@ package org.eclipse.glsp.server.features.levelofdetail;
 import org.eclipse.glsp.graph.GModelRoot;
 
 public interface LevelOfDetailHandler {
+   void setCurrentLevelOfDetail(double level);
+
+   double getCurrentLevelOfDetail();
+
    void applyLevelOfDetailRules(final GModelRoot root, final double continuousLevelOfDetail);
+
+   void applyLevelOfDetailRules(final GModelRoot root);
 }

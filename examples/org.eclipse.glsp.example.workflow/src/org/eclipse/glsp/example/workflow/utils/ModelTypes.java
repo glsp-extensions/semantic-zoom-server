@@ -22,7 +22,6 @@ public final class ModelTypes {
    public static final String LABEL_TEXT = "label:text";
    public static final String LABEL_TYPE_TEXT = "label:type-text";
    public static final String COMP_HEADER = "comp:header";
-   public static final String COMP_COMP = "comp:comp";
    public static final String LABEL_ICON = "label:icon";
    public static final String WEIGHTED_EDGE = "edge:weighted";
    public static final String ICON = "icon";

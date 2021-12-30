@@ -215,7 +215,8 @@ public abstract class DiagramModule extends GLSPModule {
       bindOptionally(GraphExtension.class, bindGraphExtension());
 
       // Level of Detail
-      bindOptionally(LevelOfDetailHandler.class, bindLevelOfDetailHandler());
+      bindOptionally(LevelOfDetailHandler.class, bindLevelOfDetailHandler())
+         .ifPresent(binder -> binder.in(Singleton.class));
       bind(LevelOfDetailRuleRegistry.class).to(bindLevelOfDetailRuleRegistry()).in(Singleton.class);
 
    }
