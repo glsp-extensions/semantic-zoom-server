@@ -18,8 +18,5 @@ package org.eclipse.glsp.server.features.levelofdetail.rules;
 import org.eclipse.glsp.graph.GModelElement;
 
 public interface LevelOfDetailServerRule extends LevelOfDetailRuleInterface {
-
-   boolean handleAlways();
-
    GModelElement handle(GModelElement element);
 }

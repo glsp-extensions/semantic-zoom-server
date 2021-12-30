@@ -15,7 +15,11 @@
  ********************************************************************************/
 package org.eclipse.glsp.server.features.levelofdetail.rules.impl;
 
+import java.util.Map.Entry;
+
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.glsp.graph.GBoundsAware;
+import org.eclipse.glsp.graph.GLayouting;
 import org.eclipse.glsp.graph.GModelElement;
 import org.eclipse.glsp.graph.builder.impl.GLayoutOptions;
 import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailServerRule;
@@ -33,18 +37,23 @@ public class LayoutServerRule extends LayoutRule implements LevelOfDetailServerR
 
    @Override
    public GModelElement handle(final GModelElement element) {
+
       if (element instanceof GBoundsAware) {
          GBoundsAware bae = (GBoundsAware) element;
-         if (this.layoutOptions.get("resizeContainer") != null && (boolean) this.layoutOptions.get("resizeContainer")) {
-            bae.setSize(null);
+         GLayouting gl = (GLayouting) element;
+         EMap<String, Object> options = gl.getLayoutOptions();
+
+         // replace options
+         for (Entry<String, Object> elementEntry : options) {
+            if (this.layoutOptions.get(elementEntry.getKey()) != null) {
+               elementEntry.setValue(this.layoutOptions.get(elementEntry.getKey()));
+            }
          }
+
+         // remove old size so that it will be recalculated
+         bae.setSize(null);
       }
 
       return element;
-   }
-
-   @Override
-   public boolean handleAlways() {
-      return true;
    }
 }

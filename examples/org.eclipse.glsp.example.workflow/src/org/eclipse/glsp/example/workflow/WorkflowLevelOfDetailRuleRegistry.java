@@ -110,13 +110,22 @@ public class WorkflowLevelOfDetailRuleRegistry extends DefaultLevelOfDetailRuleR
                new LevelOfDetailRuleTriggerDiscrete()
                   .addDiscreteLevelOfDetail(DiscreteLevelOfDetailEnum.OVERVIEW)));
 
+      // server rule to set resizeContainer to true and recalculate bounds when icon is removed
       LayoutRule iconLayoutRule = new LayoutRule(new GLayoutOptions().resizeContainer(true));
       iconLayoutRule.addLevelOfDetailRuleTrigger(
          new LevelOfDetailRuleTriggerDiscrete()
             .addDiscreteLevelOfDetail(DiscreteLevelOfDetailEnum.OVERVIEW));
 
-      registerRule(ModelTypes.ICON, iconLayoutRule);
       registerRule(ModelTypes.ICON, new LayoutServerRule(iconLayoutRule));
 
+      // server rule to set resizeContainer back to false when icon is added again
+      LayoutRule iconLayoutRule2 = new LayoutRule(new GLayoutOptions().resizeContainer(false));
+      iconLayoutRule2.addLevelOfDetailRuleTrigger(
+         new LevelOfDetailRuleTriggerDiscrete()
+            .addDiscreteLevelOfDetail(DiscreteLevelOfDetailEnum.INTERMEDIATE)
+            .addDiscreteLevelOfDetail(DiscreteLevelOfDetailEnum.INTERMEDIATE_DETAIL)
+            .addDiscreteLevelOfDetail(DiscreteLevelOfDetailEnum.DETAIL));
+
+      registerRule(ModelTypes.ICON, new LayoutServerRule(iconLayoutRule2));
    }
 }

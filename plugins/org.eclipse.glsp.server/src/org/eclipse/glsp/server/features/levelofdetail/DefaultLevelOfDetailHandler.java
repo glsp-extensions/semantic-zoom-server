@@ -36,7 +36,7 @@ public class DefaultLevelOfDetailHandler implements LevelOfDetailHandler {
    private void applyToChildren(final GModelElement element, final double continuousLevelOfDetail) {
       for (GModelElement child : element.getChildren()) {
          for (LevelOfDetailServerRule serverRule : this.levelOfDetailRuleRegistry.getServerRulesForElement(child)) {
-            if (serverRule.handleAlways() || serverRule.getLevelOfDetailRuleTrigger().stream()
+            if (serverRule.getLevelOfDetailRuleTrigger().stream()
                .anyMatch(trigger -> trigger.isTriggered(continuousLevelOfDetail))) {
                serverRule.handle(child);
             }
