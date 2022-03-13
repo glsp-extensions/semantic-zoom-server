@@ -1,5 +1,5 @@
 /********************************************************************************
- * Copyright (c) 2019-2021 EclipseSource and others.
+ * Copyright (c) 2019-2022 EclipseSource and others.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0 which is available at
@@ -31,9 +31,7 @@ import org.eclipse.glsp.graph.builder.AbstractGEdgeBuilder;
 import org.eclipse.glsp.graph.builder.AbstractGNodeBuilder;
 import org.eclipse.glsp.graph.builder.impl.GCompartmentBuilder;
 import org.eclipse.glsp.graph.builder.impl.GLabelBuilder;
-import org.eclipse.glsp.graph.builder.impl.GLayoutOptions;
 import org.eclipse.glsp.graph.util.GConstants;
-import org.eclipse.glsp.graph.util.GConstants.HAlign;
 
 public final class WorkflowBuilder {
 
@@ -123,29 +121,28 @@ public final class WorkflowBuilder {
       @Override
       public void setProperties(final TaskNode taskNode) {
          super.setProperties(taskNode);
+
          taskNode.setName(name);
          taskNode.setTaskType(taskType);
          taskNode.setDuration(duration);
-         taskNode.setLayout(GConstants.Layout.VBOX);
-         taskNode.getChildren().add(createCompartment(taskNode));
+         taskNode.setLayout(GConstants.Layout.HBOX);
+
+         GCompartment compartment = new GCompartmentBuilder(ModelTypes.COMP_HEADER) //
+            .id(taskNode.getId() + "_comp") //
+            .layout(GConstants.Layout.VBOX) //
+            .layoutOptions(layoutOptions) //
+            .add(createCompartmentHeader(taskNode))
+            .add(createCompartmentType(taskNode))
+            .add(createCompartmentDuration(taskNode))
+            .build();
+
+         // taskNode.getLayoutOptions().put("paddingRight", 10);
+         taskNode.getChildren().add(createCompartmentIcon(taskNode));
+         taskNode.getChildren().add(compartment);
       }
 
-      private GCompartment createCompartment(final TaskNode taskNode) {
-         Map<String, Object> layoutOptions = new HashMap<>();
-
-         return new GCompartmentBuilder(ModelTypes.COMP_HEADER) //
-            .id(taskNode.getId() + "_header") //
-            .layout(GConstants.Layout.HBOX) //
-            .layoutOptions(layoutOptions) //
-            .add(createCompartmentIcon(taskNode)) //
-            .add(new GCompartmentBuilder(ModelTypes.COMP_HEADER)
-               .id(taskNode.getId() + "_header_compartment")
-               .layout(GConstants.Layout.VBOX)
-               .add(createCompartmentHeader(taskNode))
-               .add(createCompartmentDuration(taskNode))
-               .add(createCompartmentType(taskNode))
-               .build())
-            .build();
+      private Icon createCompartmentIcon(final TaskNode taskNode) {
+         return new IconBuilder().id(taskNode.getId() + "_icon").build();
       }
 
       private GLabel createCompartmentHeader(final TaskNode taskNode) {
@@ -166,23 +163,6 @@ public final class WorkflowBuilder {
          return new GLabelBuilder(ModelTypes.LABEL_TYPE_TEXT) //
             .id(taskNode.getId() + "_type") //
             .text("Type: " + taskNode.getTaskType()) //
-            .build();
-      }
-
-      private Icon createCompartmentIcon(final TaskNode taskNode) {
-         return new IconBuilder() //
-            .id(taskNode.getId() + "_icon") //
-            .layout(GConstants.Layout.STACK) //
-            .layoutOptions(new GLayoutOptions() //
-               .hAlign(HAlign.CENTER) //
-               .resizeContainer(false)) //
-            .add(createCompartmentIconLabel(taskNode)).build();
-      }
-
-      private GLabel createCompartmentIconLabel(final TaskNode taskNode) {
-         return new GLabelBuilder(ModelTypes.LABEL_ICON) //
-            .id(taskNode.getId() + "_ticon") //
-            .text("" + taskNode.getTaskType().toUpperCase().charAt(0)) //
             .build();
       }
 

@@ -66,12 +66,11 @@ public class ModelSubmissionHandler {
     * @return A list of actions to be processed in order to submit the model.
     */
    public List<Action> submitModel(final String reason) {
-
       // apply level of detail rules
       this.levelOfDetailHandler
          .ifPresent(handler -> handler.applyLevelOfDetailRules(modelState.getRoot()));
 
-      modelFactory.createGModel(modelState);
+      modelFactory.createGModel();
       modelState.getRoot().setRevision(modelState.getRoot().getRevision() + 1);
       boolean needsClientLayout = diagramConfiguration.needsClientLayout();
       if (needsClientLayout) {

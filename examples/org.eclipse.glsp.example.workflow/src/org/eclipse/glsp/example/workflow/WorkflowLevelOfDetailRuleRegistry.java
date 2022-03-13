@@ -20,7 +20,6 @@ import org.eclipse.glsp.example.workflow.utils.ModelTypes;
 import org.eclipse.glsp.graph.builder.impl.GLayoutOptions;
 import org.eclipse.glsp.server.features.levelofdetail.DefaultLevelOfDetailRuleRegistry;
 import org.eclipse.glsp.server.features.levelofdetail.rules.DiscreteLevelOfDetailEnum;
-import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailRuleTriggerContinuous;
 import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailRuleTriggerDiscrete;
 import org.eclipse.glsp.server.features.levelofdetail.rules.impl.CssStyleRule;
 import org.eclipse.glsp.server.features.levelofdetail.rules.impl.LayoutRule;
@@ -31,8 +30,7 @@ public class WorkflowLevelOfDetailRuleRegistry extends DefaultLevelOfDetailRuleR
    private static Logger LOG = Logger.getLogger(WorkflowLevelOfDetailRuleRegistry.class);
 
    public WorkflowLevelOfDetailRuleRegistry() {
-      String task_child_text = ModelTypes.COMP_HEADER + " > " + ModelTypes.LABEL_TEXT + "," +
-         ModelTypes.LABEL_TYPE_TEXT;
+      String task_child_text = ModelTypes.LABEL_TEXT + "," + ModelTypes.LABEL_TYPE_TEXT;
 
       registerRule(
          ModelTypes.AUTOMATED_TASK + "," + ModelTypes.MANUAL_TASK,
@@ -46,7 +44,7 @@ public class WorkflowLevelOfDetailRuleRegistry extends DefaultLevelOfDetailRuleR
       registerRule(
          ModelTypes.LABEL_HEADING,
          new CssStyleRule()
-            .addStyle("font-size", "50%")
+            .addStyle("font-size", "40%")
             .addLevelOfDetailRuleTrigger(
                new LevelOfDetailRuleTriggerDiscrete()
                   .addDiscreteLevelOfDetail(DiscreteLevelOfDetailEnum.INTERMEDIATE_DETAIL)));
@@ -60,7 +58,7 @@ public class WorkflowLevelOfDetailRuleRegistry extends DefaultLevelOfDetailRuleR
       registerRule(
          ModelTypes.LABEL_HEADING,
          new CssStyleRule()
-            .addStyle("font-size", "150%")
+            .addStyle("font-size", "120%")
             .addLevelOfDetailRuleTrigger(
                new LevelOfDetailRuleTriggerDiscrete()
                   .addDiscreteLevelOfDetail(DiscreteLevelOfDetailEnum.OVERVIEW)));
@@ -77,17 +75,15 @@ public class WorkflowLevelOfDetailRuleRegistry extends DefaultLevelOfDetailRuleR
       registerRule(
          task_child_text,
          new CssStyleRule()
-            .addStyle("font-size", "50%")
+            .addStyle("font-size", "30%")
             .addLevelOfDetailRuleTrigger(
-               new LevelOfDetailRuleTriggerContinuous(0.25, 0.5)));
-      // .addLevelOfDetailRuleTrigger(
-      // new LevelOfDetailRuleTriggerDiscrete()
-      // .addDiscreteLevelOfDetail(DiscreteLevelOfDetailEnum.INTERMEDIATE_DETAIL)));
+               new LevelOfDetailRuleTriggerDiscrete()
+                  .addDiscreteLevelOfDetail(DiscreteLevelOfDetailEnum.INTERMEDIATE_DETAIL)));
 
       registerRule(
          task_child_text,
          new CssStyleRule()
-            .addStyle("font-size", "33%")
+            .addStyle("font-size", "20%")
             .addLevelOfDetailRuleTrigger(
                new LevelOfDetailRuleTriggerDiscrete()
                   .addDiscreteLevelOfDetail(DiscreteLevelOfDetailEnum.DETAIL)));
