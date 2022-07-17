@@ -1,4 +1,16 @@
-# Eclipse GLSP Server [![build-status](https://img.shields.io/jenkins/build?jobUrl=https%3A%2F%2Fci.eclipse.org%2Fglsp%2Fjob%2Feclipse-glsp%2Fjob%2Fglsp-server%2Fjob%2Fmaster%2F)](https://ci.eclipse.org/glsp/job/eclipse-glsp/job/glsp-server/job/master/)
+# Semantic Zooming in GLSP (Server)
+
+This is a prototype that demonstrates semantic zooming in GLSP
+
+Prerequisites: 
+
+-   Java 11 or higher
+-   Maven
+
+It is based on a fork of the original GLSP server on https://github.com/eclipse-glsp/glsp-server. \
+To build the project, follow the original instructions below.
+
+# Eclipse GLSP Server 
 
 Contains the code for the Java-based framework to create [GLSP](https://github.com/eclipse-glsp/glsp) server components.
 
