@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2019-2021 EclipseSource and others.
+ * Copyright (c) 2019-2022 EclipseSource and others.
  * 
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0 which is available at
@@ -41,6 +41,7 @@ import org.eclipse.glsp.graph.GHtmlRoot;
 import org.eclipse.glsp.graph.GIssue;
 import org.eclipse.glsp.graph.GIssueMarker;
 import org.eclipse.glsp.graph.GLabel;
+import org.eclipse.glsp.graph.GLayoutable;
 import org.eclipse.glsp.graph.GLayouting;
 import org.eclipse.glsp.graph.GModelElement;
 import org.eclipse.glsp.graph.GModelRoot;
@@ -50,6 +51,7 @@ import org.eclipse.glsp.graph.GPort;
 import org.eclipse.glsp.graph.GPreRenderedElement;
 import org.eclipse.glsp.graph.GSeverity;
 import org.eclipse.glsp.graph.GShapeElement;
+import org.eclipse.glsp.graph.GShapePreRenderedElement;
 import org.eclipse.glsp.graph.GraphFactory;
 import org.eclipse.glsp.graph.GraphPackage;
 
@@ -226,7 +228,21 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
     * <!-- end-user-doc -->
     * @generated
     */
+   private EClass gShapePreRenderedElementEClass = null;
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
    private EClass stringToObjectMapEntryEClass = null;
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   private EClass gLayoutableEClass = null;
 
    /**
     * <!-- begin-user-doc -->
@@ -380,14 +396,6 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
     */
    @Override
    public EClass getGGraph() { return gGraphEClass; }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public EReference getGGraph_LayoutOptions() { return (EReference) gGraphEClass.getEStructuralFeatures().get(0); }
 
    /**
     * <!-- begin-user-doc -->
@@ -707,16 +715,6 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
     * @generated
     */
    @Override
-   public EReference getGLayouting_LayoutOptions() {
-      return (EReference) gLayoutingEClass.getEStructuralFeatures().get(1);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
    public EClass getGBounds() { return gBoundsEClass; }
 
    /**
@@ -849,6 +847,14 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
     * @generated
     */
    @Override
+   public EClass getGShapePreRenderedElement() { return gShapePreRenderedElementEClass; }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
    public EClass getStringToObjectMapEntry() { return stringToObjectMapEntryEClass; }
 
    /**
@@ -869,6 +875,24 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
    @Override
    public EAttribute getStringToObjectMapEntry_Value() {
       return (EAttribute) stringToObjectMapEntryEClass.getEStructuralFeatures().get(1);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EClass getGLayoutable() { return gLayoutableEClass; }
+
+   /**
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public EReference getGLayoutable_LayoutOptions() {
+      return (EReference) gLayoutableEClass.getEStructuralFeatures().get(0);
    }
 
    /**
@@ -918,7 +942,6 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
       gShapeElementEClass = createEClass(GSHAPE_ELEMENT);
 
       gGraphEClass = createEClass(GGRAPH);
-      createEReference(gGraphEClass, GGRAPH__LAYOUT_OPTIONS);
 
       gModelRootEClass = createEClass(GMODEL_ROOT);
       createEReference(gModelRootEClass, GMODEL_ROOT__CANVAS_BOUNDS);
@@ -970,7 +993,6 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
 
       gLayoutingEClass = createEClass(GLAYOUTING);
       createEAttribute(gLayoutingEClass, GLAYOUTING__LAYOUT);
-      createEReference(gLayoutingEClass, GLAYOUTING__LAYOUT_OPTIONS);
 
       gBoundsEClass = createEClass(GBOUNDS);
       createEAttribute(gBoundsEClass, GBOUNDS__X);
@@ -994,9 +1016,14 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
       gPreRenderedElementEClass = createEClass(GPRE_RENDERED_ELEMENT);
       createEAttribute(gPreRenderedElementEClass, GPRE_RENDERED_ELEMENT__CODE);
 
+      gShapePreRenderedElementEClass = createEClass(GSHAPE_PRE_RENDERED_ELEMENT);
+
       stringToObjectMapEntryEClass = createEClass(STRING_TO_OBJECT_MAP_ENTRY);
       createEAttribute(stringToObjectMapEntryEClass, STRING_TO_OBJECT_MAP_ENTRY__KEY);
       createEAttribute(stringToObjectMapEntryEClass, STRING_TO_OBJECT_MAP_ENTRY__VALUE);
+
+      gLayoutableEClass = createEClass(GLAYOUTABLE);
+      createEReference(gLayoutableEClass, GLAYOUTABLE__LAYOUT_OPTIONS);
 
       // Create enums
       gSeverityEEnum = createEEnum(GSEVERITY);
@@ -1034,8 +1061,10 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
       gModelElementEClass.getESuperTypes().add(this.getGArgumentable());
       gShapeElementEClass.getESuperTypes().add(this.getGModelElement());
       gShapeElementEClass.getESuperTypes().add(this.getGBoundsAware());
+      gShapeElementEClass.getESuperTypes().add(this.getGLayoutable());
       gGraphEClass.getESuperTypes().add(this.getGModelRoot());
       gGraphEClass.getESuperTypes().add(this.getGBoundsAware());
+      gGraphEClass.getESuperTypes().add(this.getGLayoutable());
       gModelRootEClass.getESuperTypes().add(this.getGModelElement());
       gNodeEClass.getESuperTypes().add(this.getGShapeElement());
       gNodeEClass.getESuperTypes().add(this.getGEdgeLayoutable());
@@ -1049,8 +1078,11 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
       gIssueMarkerEClass.getESuperTypes().add(this.getGShapeElement());
       gPortEClass.getESuperTypes().add(this.getGShapeElement());
       gButtonEClass.getESuperTypes().add(this.getGShapeElement());
+      gLayoutingEClass.getESuperTypes().add(this.getGLayoutable());
       gHtmlRootEClass.getESuperTypes().add(this.getGModelRoot());
       gPreRenderedElementEClass.getESuperTypes().add(this.getGModelElement());
+      gShapePreRenderedElementEClass.getESuperTypes().add(this.getGPreRenderedElement());
+      gShapePreRenderedElementEClass.getESuperTypes().add(this.getGBoundsAware());
 
       // Initialize classes, features, and operations; add parameters
       initEClass(gModelElementEClass, GModelElement.class, "GModelElement", IS_ABSTRACT, IS_INTERFACE,
@@ -1075,9 +1107,6 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
          IS_GENERATED_INSTANCE_CLASS);
 
       initEClass(gGraphEClass, GGraph.class, "GGraph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-      initEReference(getGGraph_LayoutOptions(), this.getStringToObjectMapEntry(), null, "layoutOptions", null, 0, -1,
-         GGraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
       initEClass(gModelRootEClass, GModelRoot.class, "GModelRoot", !IS_ABSTRACT, !IS_INTERFACE,
          IS_GENERATED_INSTANCE_CLASS);
@@ -1170,9 +1199,6 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
          IS_GENERATED_INSTANCE_CLASS);
       initEAttribute(getGLayouting_Layout(), ecorePackage.getEString(), "layout", null, 0, 1, GLayouting.class,
          !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-      initEReference(getGLayouting_LayoutOptions(), this.getStringToObjectMapEntry(), null, "layoutOptions", null, 0,
-         -1, GLayouting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
       initEClass(gBoundsEClass, GBounds.class, "GBounds", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
       initEAttribute(getGBounds_X(), ecorePackage.getEDouble(), "x", "0", 1, 1, GBounds.class, !IS_TRANSIENT,
@@ -1213,6 +1239,9 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
          GPreRenderedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
          !IS_DERIVED, IS_ORDERED);
 
+      initEClass(gShapePreRenderedElementEClass, GShapePreRenderedElement.class, "GShapePreRenderedElement",
+         !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
       initEClass(stringToObjectMapEntryEClass, Map.Entry.class, "StringToObjectMapEntry", !IS_ABSTRACT, !IS_INTERFACE,
          !IS_GENERATED_INSTANCE_CLASS);
       initEAttribute(getStringToObjectMapEntry_Key(), ecorePackage.getEString(), "key", null, 1, 1, Map.Entry.class,
@@ -1220,6 +1249,12 @@ public class GraphPackageImpl extends EPackageImpl implements GraphPackage {
       initEAttribute(getStringToObjectMapEntry_Value(), ecorePackage.getEJavaObject(), "value", null, 0, 1,
          Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
          IS_ORDERED);
+
+      initEClass(gLayoutableEClass, GLayoutable.class, "GLayoutable", !IS_ABSTRACT, !IS_INTERFACE,
+         IS_GENERATED_INSTANCE_CLASS);
+      initEReference(getGLayoutable_LayoutOptions(), this.getStringToObjectMapEntry(), null, "layoutOptions", null, 0,
+         -1, GLayoutable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
       // Initialize enums and add enum literals
       initEEnum(gSeverityEEnum, GSeverity.class, "GSeverity");

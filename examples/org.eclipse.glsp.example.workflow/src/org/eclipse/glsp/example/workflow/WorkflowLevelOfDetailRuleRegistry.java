@@ -15,7 +15,6 @@
  ********************************************************************************/
 package org.eclipse.glsp.example.workflow;
 
-import org.apache.log4j.Logger;
 import org.eclipse.glsp.example.workflow.utils.ModelTypes;
 import org.eclipse.glsp.graph.builder.impl.GLayoutOptions;
 import org.eclipse.glsp.server.features.levelofdetail.DefaultLevelOfDetailRuleRegistry;
@@ -27,7 +26,6 @@ import org.eclipse.glsp.server.features.levelofdetail.rules.impl.LayoutServerRul
 import org.eclipse.glsp.server.features.levelofdetail.rules.impl.VisibilityRule;
 
 public class WorkflowLevelOfDetailRuleRegistry extends DefaultLevelOfDetailRuleRegistry {
-   private static Logger LOG = Logger.getLogger(WorkflowLevelOfDetailRuleRegistry.class);
 
    public WorkflowLevelOfDetailRuleRegistry() {
       String task_child_text = ModelTypes.LABEL_TEXT + "," + ModelTypes.LABEL_TYPE_TEXT;

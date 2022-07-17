@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2019-2021 EclipseSource and others.
+ * Copyright (c) 2019-2022 EclipseSource and others.
  * 
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0 which is available at
@@ -108,8 +108,12 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
             return createGHtmlRoot();
          case GraphPackage.GPRE_RENDERED_ELEMENT:
             return createGPreRenderedElement();
+         case GraphPackage.GSHAPE_PRE_RENDERED_ELEMENT:
+            return createGShapePreRenderedElement();
          case GraphPackage.STRING_TO_OBJECT_MAP_ENTRY:
             return (EObject) createStringToObjectMapEntry();
+         case GraphPackage.GLAYOUTABLE:
+            return createGLayoutable();
          default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
       }
@@ -348,9 +352,31 @@ public class GraphFactoryImpl extends EFactoryImpl implements GraphFactory {
     * <!-- end-user-doc -->
     * @generated
     */
+   @Override
+   public GShapePreRenderedElement createGShapePreRenderedElement() {
+      GShapePreRenderedElementImpl gShapePreRenderedElement = new GShapePreRenderedElementImpl();
+      return gShapePreRenderedElement;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
    public Map.Entry<String, Object> createStringToObjectMapEntry() {
       StringToObjectMapEntryImpl stringToObjectMapEntry = new StringToObjectMapEntryImpl();
       return stringToObjectMapEntry;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public GLayoutable createGLayoutable() {
+      GLayoutableImpl gLayoutable = new GLayoutableImpl();
+      return gLayoutable;
    }
 
    /**

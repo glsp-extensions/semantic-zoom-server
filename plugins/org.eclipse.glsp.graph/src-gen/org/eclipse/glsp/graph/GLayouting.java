@@ -16,10 +16,6 @@
  */
 package org.eclipse.glsp.graph;
 
-import org.eclipse.emf.common.util.EMap;
-
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>GLayouting</b></em>'.
@@ -30,14 +26,13 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.glsp.graph.GLayouting#getLayout <em>Layout</em>}</li>
- *   <li>{@link org.eclipse.glsp.graph.GLayouting#getLayoutOptions <em>Layout Options</em>}</li>
  * </ul>
  *
  * @see org.eclipse.glsp.graph.GraphPackage#getGLayouting()
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface GLayouting extends EObject {
+public interface GLayouting extends GLayoutable {
    /**
     * Returns the value of the '<em><b>Layout</b></em>' attribute.
     * <!-- begin-user-doc -->
@@ -59,18 +54,5 @@ public interface GLayouting extends EObject {
     * @generated
     */
    void setLayout(String value);
-
-   /**
-    * Returns the value of the '<em><b>Layout Options</b></em>' map.
-    * The key is of type {@link java.lang.String},
-    * and the value is of type {@link java.lang.Object},
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @return the value of the '<em>Layout Options</em>' map.
-    * @see org.eclipse.glsp.graph.GraphPackage#getGLayouting_LayoutOptions()
-    * @model mapType="org.eclipse.glsp.graph.StringToObjectMapEntry&lt;org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EJavaObject&gt;"
-    * @generated
-    */
-   EMap<String, Object> getLayoutOptions();
 
 } // GLayouting

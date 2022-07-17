@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.glsp.feature"
       label="GLSP SDK"
-      version="0.10.0.qualifier"
+      version="1.1.0.qualifier"
       provider-name="Eclipse GLSP">
 
    <description url="http://www.example.com/description">
@@ -11,7 +11,7 @@
 
    <copyright url="http://www.example.com/copyright">
       /********************************************************************************
- * Copyright (c) 2019-2021 EclipseSource and others.
+ * Copyright (c) 2019-2022 EclipseSource and others.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0 which is available at
@@ -312,7 +312,6 @@ version(s), and exceptions or additional permissions here}.&quot;
    </url>
 
    <requires>
-      <import plugin="org.apache.commons.io" version="2.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.change" version="2.13.0" match="greaterOrEqual"/>
       <import plugin="com.google.gson" version="2.8.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.lsp4j" version="0.9.0" match="greaterOrEqual"/>
@@ -320,14 +319,14 @@ version(s), and exceptions or additional permissions here}.&quot;
       <import plugin="org.apache.commons.cli" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="com.google.inject" version="5.0.1" match="greaterOrEqual"/>
       <import plugin="javax.websocket" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.glsp.graph" version="0.10.0" match="compatible"/>
+      <import plugin="org.eclipse.glsp.graph" version="1.0.0" match="compatible"/>
       <import plugin="javax.inject" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.apache.log4j"/>
       <import plugin="org.junit"/>
       <import plugin="org.junit.jupiter.api"/>
       <import plugin="org.eclipse.emf.common" version="2.15.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore" version="2.15.0" match="greaterOrEqual"/>
       <import plugin="com.google.guava" version="30.1.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.logging.log4j"/>
    </requires>
 
    <plugin

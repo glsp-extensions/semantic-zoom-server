@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2019-2021 EclipseSource and others.
+ * Copyright (c) 2019-2022 EclipseSource and others.
  * 
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0 which is available at
@@ -291,13 +291,22 @@ public interface GraphPackage extends EPackage {
    int GSHAPE_ELEMENT__SIZE = GMODEL_ELEMENT_FEATURE_COUNT + 1;
 
    /**
+    * The feature id for the '<em><b>Layout Options</b></em>' map.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSHAPE_ELEMENT__LAYOUT_OPTIONS = GMODEL_ELEMENT_FEATURE_COUNT + 2;
+
+   /**
     * The number of structural features of the '<em>GShape Element</em>' class.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int GSHAPE_ELEMENT_FEATURE_COUNT = GMODEL_ELEMENT_FEATURE_COUNT + 2;
+   int GSHAPE_ELEMENT_FEATURE_COUNT = GMODEL_ELEMENT_FEATURE_COUNT + 3;
 
    /**
     * The number of operations of the '<em>GShape Element</em>' class.
@@ -645,6 +654,15 @@ public interface GraphPackage extends EPackage {
    int GNODE__SIZE = GSHAPE_ELEMENT__SIZE;
 
    /**
+    * The feature id for the '<em><b>Layout Options</b></em>' map.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GNODE__LAYOUT_OPTIONS = GSHAPE_ELEMENT__LAYOUT_OPTIONS;
+
+   /**
     * The feature id for the '<em><b>Edge Placement</b></em>' containment reference.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -663,22 +681,13 @@ public interface GraphPackage extends EPackage {
    int GNODE__LAYOUT = GSHAPE_ELEMENT_FEATURE_COUNT + 1;
 
    /**
-    * The feature id for the '<em><b>Layout Options</b></em>' map.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GNODE__LAYOUT_OPTIONS = GSHAPE_ELEMENT_FEATURE_COUNT + 2;
-
-   /**
     * The number of structural features of the '<em>GNode</em>' class.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int GNODE_FEATURE_COUNT = GSHAPE_ELEMENT_FEATURE_COUNT + 3;
+   int GNODE_FEATURE_COUNT = GSHAPE_ELEMENT_FEATURE_COUNT + 2;
 
    /**
     * The number of operations of the '<em>GNode</em>' class.
@@ -926,6 +935,15 @@ public interface GraphPackage extends EPackage {
    int GCOMPARTMENT__SIZE = GSHAPE_ELEMENT__SIZE;
 
    /**
+    * The feature id for the '<em><b>Layout Options</b></em>' map.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GCOMPARTMENT__LAYOUT_OPTIONS = GSHAPE_ELEMENT__LAYOUT_OPTIONS;
+
+   /**
     * The feature id for the '<em><b>Layout</b></em>' attribute.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -935,22 +953,13 @@ public interface GraphPackage extends EPackage {
    int GCOMPARTMENT__LAYOUT = GSHAPE_ELEMENT_FEATURE_COUNT + 0;
 
    /**
-    * The feature id for the '<em><b>Layout Options</b></em>' map.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GCOMPARTMENT__LAYOUT_OPTIONS = GSHAPE_ELEMENT_FEATURE_COUNT + 1;
-
-   /**
     * The number of structural features of the '<em>GCompartment</em>' class.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int GCOMPARTMENT_FEATURE_COUNT = GSHAPE_ELEMENT_FEATURE_COUNT + 2;
+   int GCOMPARTMENT_FEATURE_COUNT = GSHAPE_ELEMENT_FEATURE_COUNT + 1;
 
    /**
     * The number of operations of the '<em>GCompartment</em>' class.
@@ -1108,13 +1117,22 @@ public interface GraphPackage extends EPackage {
    int GLABEL__SIZE = GALIGNABLE_FEATURE_COUNT + 9;
 
    /**
+    * The feature id for the '<em><b>Layout Options</b></em>' map.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLABEL__LAYOUT_OPTIONS = GALIGNABLE_FEATURE_COUNT + 10;
+
+   /**
     * The feature id for the '<em><b>Text</b></em>' attribute.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int GLABEL__TEXT = GALIGNABLE_FEATURE_COUNT + 10;
+   int GLABEL__TEXT = GALIGNABLE_FEATURE_COUNT + 11;
 
    /**
     * The number of structural features of the '<em>GLabel</em>' class.
@@ -1123,7 +1141,7 @@ public interface GraphPackage extends EPackage {
     * @generated
     * @ordered
     */
-   int GLABEL_FEATURE_COUNT = GALIGNABLE_FEATURE_COUNT + 11;
+   int GLABEL_FEATURE_COUNT = GALIGNABLE_FEATURE_COUNT + 12;
 
    /**
     * The number of operations of the '<em>GLabel</em>' class.
@@ -1224,6 +1242,15 @@ public interface GraphPackage extends EPackage {
     * @ordered
     */
    int GISSUE_MARKER__SIZE = GSHAPE_ELEMENT__SIZE;
+
+   /**
+    * The feature id for the '<em><b>Layout Options</b></em>' map.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GISSUE_MARKER__LAYOUT_OPTIONS = GSHAPE_ELEMENT__LAYOUT_OPTIONS;
 
    /**
     * The feature id for the '<em><b>Issues</b></em>' containment reference list.
@@ -1344,6 +1371,15 @@ public interface GraphPackage extends EPackage {
    int GPORT__SIZE = GSHAPE_ELEMENT__SIZE;
 
    /**
+    * The feature id for the '<em><b>Layout Options</b></em>' map.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GPORT__LAYOUT_OPTIONS = GSHAPE_ELEMENT__LAYOUT_OPTIONS;
+
+   /**
     * The number of structural features of the '<em>GPort</em>' class.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -1451,6 +1487,15 @@ public interface GraphPackage extends EPackage {
     * @ordered
     */
    int GBUTTON__SIZE = GSHAPE_ELEMENT__SIZE;
+
+   /**
+    * The feature id for the '<em><b>Layout Options</b></em>' map.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GBUTTON__LAYOUT_OPTIONS = GSHAPE_ELEMENT__LAYOUT_OPTIONS;
 
    /**
     * The feature id for the '<em><b>Enabled</b></em>' attribute.
@@ -1719,6 +1764,43 @@ public interface GraphPackage extends EPackage {
    int GEDGE_PLACEMENT_OPERATION_COUNT = 0;
 
    /**
+    * The meta object id for the '{@link org.eclipse.glsp.graph.impl.GLayoutableImpl <em>GLayoutable</em>}' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.eclipse.glsp.graph.impl.GLayoutableImpl
+    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLayoutable()
+    * @generated
+    */
+   int GLAYOUTABLE = 25;
+
+   /**
+    * The feature id for the '<em><b>Layout Options</b></em>' map.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLAYOUTABLE__LAYOUT_OPTIONS = 0;
+
+   /**
+    * The number of structural features of the '<em>GLayoutable</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLAYOUTABLE_FEATURE_COUNT = 1;
+
+   /**
+    * The number of operations of the '<em>GLayoutable</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLAYOUTABLE_OPERATION_COUNT = 0;
+
+   /**
     * The meta object id for the '{@link org.eclipse.glsp.graph.GLayouting <em>GLayouting</em>}' class.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -1729,22 +1811,22 @@ public interface GraphPackage extends EPackage {
    int GLAYOUTING = 16;
 
    /**
-    * The feature id for the '<em><b>Layout</b></em>' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int GLAYOUTING__LAYOUT = 0;
-
-   /**
     * The feature id for the '<em><b>Layout Options</b></em>' map.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int GLAYOUTING__LAYOUT_OPTIONS = 1;
+   int GLAYOUTING__LAYOUT_OPTIONS = GLAYOUTABLE__LAYOUT_OPTIONS;
+
+   /**
+    * The feature id for the '<em><b>Layout</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GLAYOUTING__LAYOUT = GLAYOUTABLE_FEATURE_COUNT + 0;
 
    /**
     * The number of structural features of the '<em>GLayouting</em>' class.
@@ -1753,7 +1835,7 @@ public interface GraphPackage extends EPackage {
     * @generated
     * @ordered
     */
-   int GLAYOUTING_FEATURE_COUNT = 2;
+   int GLAYOUTING_FEATURE_COUNT = GLAYOUTABLE_FEATURE_COUNT + 1;
 
    /**
     * The number of operations of the '<em>GLayouting</em>' class.
@@ -1762,7 +1844,7 @@ public interface GraphPackage extends EPackage {
     * @generated
     * @ordered
     */
-   int GLAYOUTING_OPERATION_COUNT = 0;
+   int GLAYOUTING_OPERATION_COUNT = GLAYOUTABLE_OPERATION_COUNT + 0;
 
    /**
     * The meta object id for the '{@link org.eclipse.glsp.graph.impl.GBoundsImpl <em>GBounds</em>}' class.
@@ -2093,6 +2175,124 @@ public interface GraphPackage extends EPackage {
    int GPRE_RENDERED_ELEMENT_OPERATION_COUNT = GMODEL_ELEMENT_OPERATION_COUNT + 0;
 
    /**
+    * The meta object id for the '{@link org.eclipse.glsp.graph.impl.GShapePreRenderedElementImpl <em>GShape Pre Rendered Element</em>}' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.eclipse.glsp.graph.impl.GShapePreRenderedElementImpl
+    * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGShapePreRenderedElement()
+    * @generated
+    */
+   int GSHAPE_PRE_RENDERED_ELEMENT = 23;
+
+   /**
+    * The feature id for the '<em><b>Args</b></em>' map.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSHAPE_PRE_RENDERED_ELEMENT__ARGS = GPRE_RENDERED_ELEMENT__ARGS;
+
+   /**
+    * The feature id for the '<em><b>Id</b></em>' attribute.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSHAPE_PRE_RENDERED_ELEMENT__ID = GPRE_RENDERED_ELEMENT__ID;
+
+   /**
+    * The feature id for the '<em><b>Css Classes</b></em>' attribute list.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSHAPE_PRE_RENDERED_ELEMENT__CSS_CLASSES = GPRE_RENDERED_ELEMENT__CSS_CLASSES;
+
+   /**
+    * The feature id for the '<em><b>Children</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSHAPE_PRE_RENDERED_ELEMENT__CHILDREN = GPRE_RENDERED_ELEMENT__CHILDREN;
+
+   /**
+    * The feature id for the '<em><b>Parent</b></em>' container reference.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSHAPE_PRE_RENDERED_ELEMENT__PARENT = GPRE_RENDERED_ELEMENT__PARENT;
+
+   /**
+    * The feature id for the '<em><b>Trace</b></em>' attribute.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSHAPE_PRE_RENDERED_ELEMENT__TRACE = GPRE_RENDERED_ELEMENT__TRACE;
+
+   /**
+    * The feature id for the '<em><b>Type</b></em>' attribute.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSHAPE_PRE_RENDERED_ELEMENT__TYPE = GPRE_RENDERED_ELEMENT__TYPE;
+
+   /**
+    * The feature id for the '<em><b>Code</b></em>' attribute.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSHAPE_PRE_RENDERED_ELEMENT__CODE = GPRE_RENDERED_ELEMENT__CODE;
+
+   /**
+    * The feature id for the '<em><b>Position</b></em>' containment reference.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSHAPE_PRE_RENDERED_ELEMENT__POSITION = GPRE_RENDERED_ELEMENT_FEATURE_COUNT + 0;
+
+   /**
+    * The feature id for the '<em><b>Size</b></em>' containment reference.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSHAPE_PRE_RENDERED_ELEMENT__SIZE = GPRE_RENDERED_ELEMENT_FEATURE_COUNT + 1;
+
+   /**
+    * The number of structural features of the '<em>GShape Pre Rendered Element</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSHAPE_PRE_RENDERED_ELEMENT_FEATURE_COUNT = GPRE_RENDERED_ELEMENT_FEATURE_COUNT + 2;
+
+   /**
+    * The number of operations of the '<em>GShape Pre Rendered Element</em>' class.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int GSHAPE_PRE_RENDERED_ELEMENT_OPERATION_COUNT = GPRE_RENDERED_ELEMENT_OPERATION_COUNT + 0;
+
+   /**
     * The meta object id for the '{@link org.eclipse.glsp.graph.impl.StringToObjectMapEntryImpl <em>String To Object Map Entry</em>}' class.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -2100,7 +2300,7 @@ public interface GraphPackage extends EPackage {
     * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getStringToObjectMapEntry()
     * @generated
     */
-   int STRING_TO_OBJECT_MAP_ENTRY = 23;
+   int STRING_TO_OBJECT_MAP_ENTRY = 24;
 
    /**
     * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -2146,7 +2346,7 @@ public interface GraphPackage extends EPackage {
     * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGSeverity()
     * @generated
     */
-   int GSEVERITY = 24;
+   int GSEVERITY = 26;
 
    /**
     * Returns the meta object for class '{@link org.eclipse.glsp.graph.GModelElement <em>GModel Element</em>}'.
@@ -2243,17 +2443,6 @@ public interface GraphPackage extends EPackage {
     * @generated
     */
    EClass getGGraph();
-
-   /**
-    * Returns the meta object for the map '{@link org.eclipse.glsp.graph.GGraph#getLayoutOptions <em>Layout Options</em>}'.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @return the meta object for the map '<em>Layout Options</em>'.
-    * @see org.eclipse.glsp.graph.GGraph#getLayoutOptions()
-    * @see #getGGraph()
-    * @generated
-    */
-   EReference getGGraph_LayoutOptions();
 
    /**
     * Returns the meta object for class '{@link org.eclipse.glsp.graph.GModelRoot <em>GModel Root</em>}'.
@@ -2649,17 +2838,6 @@ public interface GraphPackage extends EPackage {
    EAttribute getGLayouting_Layout();
 
    /**
-    * Returns the meta object for the map '{@link org.eclipse.glsp.graph.GLayouting#getLayoutOptions <em>Layout Options</em>}'.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @return the meta object for the map '<em>Layout Options</em>'.
-    * @see org.eclipse.glsp.graph.GLayouting#getLayoutOptions()
-    * @see #getGLayouting()
-    * @generated
-    */
-   EReference getGLayouting_LayoutOptions();
-
-   /**
     * Returns the meta object for class '{@link org.eclipse.glsp.graph.GBounds <em>GBounds</em>}'.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -2830,6 +3008,16 @@ public interface GraphPackage extends EPackage {
    EAttribute getGPreRenderedElement_Code();
 
    /**
+    * Returns the meta object for class '{@link org.eclipse.glsp.graph.GShapePreRenderedElement <em>GShape Pre Rendered Element</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for class '<em>GShape Pre Rendered Element</em>'.
+    * @see org.eclipse.glsp.graph.GShapePreRenderedElement
+    * @generated
+    */
+   EClass getGShapePreRenderedElement();
+
+   /**
     * Returns the meta object for class '{@link java.util.Map.Entry <em>String To Object Map Entry</em>}'.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -2862,6 +3050,27 @@ public interface GraphPackage extends EPackage {
     * @generated
     */
    EAttribute getStringToObjectMapEntry_Value();
+
+   /**
+    * Returns the meta object for class '{@link org.eclipse.glsp.graph.GLayoutable <em>GLayoutable</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for class '<em>GLayoutable</em>'.
+    * @see org.eclipse.glsp.graph.GLayoutable
+    * @generated
+    */
+   EClass getGLayoutable();
+
+   /**
+    * Returns the meta object for the map '{@link org.eclipse.glsp.graph.GLayoutable#getLayoutOptions <em>Layout Options</em>}'.
+    * <!-- begin-user-doc -->
+   	 * <!-- end-user-doc -->
+    * @return the meta object for the map '<em>Layout Options</em>'.
+    * @see org.eclipse.glsp.graph.GLayoutable#getLayoutOptions()
+    * @see #getGLayoutable()
+    * @generated
+    */
+   EReference getGLayoutable_LayoutOptions();
 
    /**
     * Returns the meta object for enum '{@link org.eclipse.glsp.graph.GSeverity <em>GSeverity</em>}'.
@@ -2973,14 +3182,6 @@ public interface GraphPackage extends EPackage {
        * @generated
        */
       EClass GGRAPH = eINSTANCE.getGGraph();
-
-      /**
-       * The meta object literal for the '<em><b>Layout Options</b></em>' map feature.
-       * <!-- begin-user-doc -->
-       * <!-- end-user-doc -->
-       * @generated
-       */
-      EReference GGRAPH__LAYOUT_OPTIONS = eINSTANCE.getGGraph_LayoutOptions();
 
       /**
        * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.GModelRootImpl <em>GModel Root</em>}' class.
@@ -3307,14 +3508,6 @@ public interface GraphPackage extends EPackage {
       EAttribute GLAYOUTING__LAYOUT = eINSTANCE.getGLayouting_Layout();
 
       /**
-       * The meta object literal for the '<em><b>Layout Options</b></em>' map feature.
-       * <!-- begin-user-doc -->
-       * <!-- end-user-doc -->
-       * @generated
-       */
-      EReference GLAYOUTING__LAYOUT_OPTIONS = eINSTANCE.getGLayouting_LayoutOptions();
-
-      /**
        * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.GBoundsImpl <em>GBounds</em>}' class.
        * <!-- begin-user-doc -->
        * <!-- end-user-doc -->
@@ -3455,6 +3648,16 @@ public interface GraphPackage extends EPackage {
       EAttribute GPRE_RENDERED_ELEMENT__CODE = eINSTANCE.getGPreRenderedElement_Code();
 
       /**
+       * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.GShapePreRenderedElementImpl <em>GShape Pre Rendered Element</em>}' class.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @see org.eclipse.glsp.graph.impl.GShapePreRenderedElementImpl
+       * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGShapePreRenderedElement()
+       * @generated
+       */
+      EClass GSHAPE_PRE_RENDERED_ELEMENT = eINSTANCE.getGShapePreRenderedElement();
+
+      /**
        * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.StringToObjectMapEntryImpl <em>String To Object Map Entry</em>}' class.
        * <!-- begin-user-doc -->
        * <!-- end-user-doc -->
@@ -3479,6 +3682,24 @@ public interface GraphPackage extends EPackage {
        * @generated
        */
       EAttribute STRING_TO_OBJECT_MAP_ENTRY__VALUE = eINSTANCE.getStringToObjectMapEntry_Value();
+
+      /**
+       * The meta object literal for the '{@link org.eclipse.glsp.graph.impl.GLayoutableImpl <em>GLayoutable</em>}' class.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @see org.eclipse.glsp.graph.impl.GLayoutableImpl
+       * @see org.eclipse.glsp.graph.impl.GraphPackageImpl#getGLayoutable()
+       * @generated
+       */
+      EClass GLAYOUTABLE = eINSTANCE.getGLayoutable();
+
+      /**
+       * The meta object literal for the '<em><b>Layout Options</b></em>' map feature.
+       * <!-- begin-user-doc -->
+      	 * <!-- end-user-doc -->
+       * @generated
+       */
+      EReference GLAYOUTABLE__LAYOUT_OPTIONS = eINSTANCE.getGLayoutable_LayoutOptions();
 
       /**
        * The meta object literal for the '{@link org.eclipse.glsp.graph.GSeverity <em>GSeverity</em>}' enum.

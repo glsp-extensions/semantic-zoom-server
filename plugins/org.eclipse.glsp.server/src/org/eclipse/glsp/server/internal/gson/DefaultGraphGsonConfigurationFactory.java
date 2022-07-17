@@ -23,7 +23,7 @@ import com.google.inject.Inject;
 
 public class DefaultGraphGsonConfigurationFactory implements GraphGsonConfigurationFactory {
 
-   @Inject()
+   @Inject
    protected DiagramConfiguration diagramConfiguration;
 
    @Override

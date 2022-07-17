@@ -1,5 +1,5 @@
 /********************************************************************************
- * Copyright (c) 2021 EclipseSource and others.
+ * Copyright (c) 2021-2022 EclipseSource and others.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0 which is available at
@@ -26,6 +26,7 @@ import org.eclipse.glsp.server.actions.CenterAction;
 import org.eclipse.glsp.server.actions.ClientActionHandler;
 import org.eclipse.glsp.server.actions.ExportSVGAction;
 import org.eclipse.glsp.server.actions.FitToScreenAction;
+import org.eclipse.glsp.server.actions.SaveModelActionHandler;
 import org.eclipse.glsp.server.actions.SelectAction;
 import org.eclipse.glsp.server.actions.SelectAllAction;
 import org.eclipse.glsp.server.actions.ServerMessageAction;
@@ -49,12 +50,13 @@ import org.eclipse.glsp.server.features.contextactions.ContextActionsProviderReg
 import org.eclipse.glsp.server.features.contextactions.RequestContextActionsHandler;
 import org.eclipse.glsp.server.features.contextactions.SetContextActions;
 import org.eclipse.glsp.server.features.contextmenu.ContextMenuItemProvider;
+import org.eclipse.glsp.server.features.core.model.ComputedBoundsActionHandler;
 import org.eclipse.glsp.server.features.core.model.GModelFactory;
-import org.eclipse.glsp.server.features.core.model.ModelSourceLoader;
 import org.eclipse.glsp.server.features.core.model.RequestBoundsAction;
 import org.eclipse.glsp.server.features.core.model.RequestModelActionHandler;
 import org.eclipse.glsp.server.features.core.model.SetBoundsAction;
 import org.eclipse.glsp.server.features.core.model.SetModelAction;
+import org.eclipse.glsp.server.features.core.model.SourceModelStorage;
 import org.eclipse.glsp.server.features.core.model.UpdateModelAction;
 import org.eclipse.glsp.server.features.directediting.ContextEditValidator;
 import org.eclipse.glsp.server.features.directediting.ContextEditValidatorRegistry;
@@ -69,8 +71,6 @@ import org.eclipse.glsp.server.features.levelofdetail.RequestDiscreteLevelOfDeta
 import org.eclipse.glsp.server.features.levelofdetail.RequestLevelOfDetailRulesActionHandler;
 import org.eclipse.glsp.server.features.levelofdetail.SetDiscreteLevelOfDetailAction;
 import org.eclipse.glsp.server.features.levelofdetail.SetLevelOfDetailRulesAction;
-import org.eclipse.glsp.server.features.modelsourcewatcher.ModelSourceChangedAction;
-import org.eclipse.glsp.server.features.modelsourcewatcher.ModelSourceWatcher;
 import org.eclipse.glsp.server.features.navigation.NavigateToExternalTargetAction;
 import org.eclipse.glsp.server.features.navigation.NavigateToTargetAction;
 import org.eclipse.glsp.server.features.navigation.NavigationTargetProvider;
@@ -83,7 +83,10 @@ import org.eclipse.glsp.server.features.navigation.SetResolvedNavigationTargetAc
 import org.eclipse.glsp.server.features.popup.PopupModelFactory;
 import org.eclipse.glsp.server.features.popup.RequestPopupModelActionHandler;
 import org.eclipse.glsp.server.features.popup.SetPopupModelAction;
+import org.eclipse.glsp.server.features.sourcemodelwatcher.SourceModelChangedAction;
+import org.eclipse.glsp.server.features.sourcemodelwatcher.SourceModelWatcher;
 import org.eclipse.glsp.server.features.toolpalette.ToolPaletteItemProvider;
+import org.eclipse.glsp.server.features.undoredo.UndoRedoActionHandler;
 import org.eclipse.glsp.server.features.validation.DeleteMarkersAction;
 import org.eclipse.glsp.server.features.validation.ModelValidator;
 import org.eclipse.glsp.server.features.validation.RequestMarkersHandler;
@@ -91,7 +94,7 @@ import org.eclipse.glsp.server.features.validation.SetMarkersAction;
 import org.eclipse.glsp.server.gson.GraphGsonConfigurationFactory;
 import org.eclipse.glsp.server.internal.actions.DefaultActionDispatcher;
 import org.eclipse.glsp.server.internal.actions.DefaultActionHandlerRegistry;
-import org.eclipse.glsp.server.internal.digram.DefaultServerConfigurationContribution;
+import org.eclipse.glsp.server.internal.diagram.DefaultServerConfigurationContribution;
 import org.eclipse.glsp.server.internal.featues.directediting.DefaultContextEditValidatorRegistry;
 import org.eclipse.glsp.server.internal.featues.navigation.DefaultNavigationTargetProviderRegistry;
 import org.eclipse.glsp.server.internal.features.contextactions.DefaultContextActionsProviderRegistry;
@@ -101,11 +104,12 @@ import org.eclipse.glsp.server.internal.toolpalette.DefaultToolPaletteItemProvid
 import org.eclipse.glsp.server.layout.LayoutEngine;
 import org.eclipse.glsp.server.model.DefaultGModelState;
 import org.eclipse.glsp.server.model.GModelState;
+import org.eclipse.glsp.server.operations.CompoundOperationHandler;
+import org.eclipse.glsp.server.operations.CutOperationHandler;
+import org.eclipse.glsp.server.operations.LayoutOperationHandler;
 import org.eclipse.glsp.server.operations.OperationActionHandler;
 import org.eclipse.glsp.server.operations.OperationHandler;
 import org.eclipse.glsp.server.operations.OperationHandlerRegistry;
-import org.eclipse.glsp.server.operations.gmodel.CompoundOperationHandler;
-import org.eclipse.glsp.server.operations.gmodel.LayoutOperationHandler;
 import org.eclipse.glsp.server.protocol.GLSPServer;
 
 import com.google.inject.Singleton;
@@ -129,9 +133,9 @@ import com.google.inject.multibindings.Multibinder;
  * <li>{@link DiagramConfiguration}
  * <li>{@link ServerConfigurationContribution}
  * <li>{@link GModelState}
- * <li>{@link ModelSourceLoader}
+ * <li>{@link SourceModelStorage}
  * <li>{@link GModelFactory}
- * <li>{@link ModelSourceWatcher} as {@link Optional}
+ * <li>{@link SourceModelWatcher} as {@link Optional}
  * <li>{@link GraphGsonConfigurationFactory}
  * <li>{@link ModelValidator} as {@link Optional}
  * <li>{@link LabelEditValidator} as {@link Optional}
@@ -175,9 +179,9 @@ public abstract class DiagramModule extends GLSPModule {
       bind(ServerConfigurationContribution.class).to(bindServerConfigurationContribution()).in(Singleton.class);
       // Model-related bindings
       configureGModelState(bindGModelState());
-      bind(ModelSourceLoader.class).to(bindSourceModelLoader());
+      bind(SourceModelStorage.class).to(bindSourceModelStorage());
       bind(GModelFactory.class).to(bindGModelFactory());
-      bindOptionally(ModelSourceWatcher.class, bindModelSourceWatcher())
+      bindOptionally(SourceModelWatcher.class, bindSourceModelWatcher())
          .ifPresent(binder -> binder.in(Singleton.class));
       bind(GraphGsonConfigurationFactory.class).to(bindGraphGsonConfiguratorFactory()).in(Singleton.class);
 
@@ -248,11 +252,11 @@ public abstract class DiagramModule extends GLSPModule {
       return DefaultGModelState.class;
    }
 
-   protected abstract Class<? extends ModelSourceLoader> bindSourceModelLoader();
+   protected abstract Class<? extends SourceModelStorage> bindSourceModelStorage();
 
    protected abstract Class<? extends GModelFactory> bindGModelFactory();
 
-   protected Class<? extends ModelSourceWatcher> bindModelSourceWatcher() {
+   protected Class<? extends SourceModelWatcher> bindSourceModelWatcher() {
       return null;
    }
 
@@ -295,7 +299,7 @@ public abstract class DiagramModule extends GLSPModule {
       binding.add(ExportSVGAction.class);
       binding.add(DeleteMarkersAction.class);
       binding.add(FitToScreenAction.class);
-      binding.add(ModelSourceChangedAction.class);
+      binding.add(SourceModelChangedAction.class);
       binding.add(NavigateToTargetAction.class);
       binding.add(NavigateToExternalTargetAction.class);
       binding.add(RequestBoundsAction.class);
@@ -325,6 +329,7 @@ public abstract class DiagramModule extends GLSPModule {
 
    protected void configureActionHandlers(final MultiBinding<ActionHandler> binding) {
       binding.add(ClientActionHandler.class);
+      binding.add(DefaultActionDispatcher.class);
       binding.add(OperationActionHandler.class);
       binding.add(RequestModelActionHandler.class);
       binding.add(RequestPopupModelActionHandler.class);
@@ -337,6 +342,9 @@ public abstract class DiagramModule extends GLSPModule {
       binding.add(SetEditModeActionHandler.class);
       binding.add(RequestDiscreteLevelOfDetailActionHandler.class);
       binding.add(RequestLevelOfDetailRulesActionHandler.class);
+      binding.add(ComputedBoundsActionHandler.class);
+      binding.add(SaveModelActionHandler.class);
+      binding.add(UndoRedoActionHandler.class);
    }
 
    protected Class<? extends ActionHandlerRegistry> bindActionHandlerRegistry() {
@@ -346,6 +354,7 @@ public abstract class DiagramModule extends GLSPModule {
    protected void configureOperationHandlers(final MultiBinding<OperationHandler> binding) {
       binding.add(CompoundOperationHandler.class);
       binding.add(LayoutOperationHandler.class);
+      binding.add(CutOperationHandler.class);
    }
 
    protected Class<? extends OperationHandlerRegistry> bindOperationHandlerRegistry() {

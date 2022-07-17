@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2019-2021 EclipseSource and others.
+ * Copyright (c) 2019-2022 EclipseSource and others.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0 which is available at
@@ -17,6 +17,9 @@ package org.eclipse.glsp.server.actions;
 
 import org.eclipse.glsp.server.internal.util.GenericsUtil;
 
+/**
+ * The response to a {@link RequestAction}.
+ */
 public class ResponseAction extends Action {
    private String responseId;
 
@@ -37,10 +40,8 @@ public class ResponseAction extends Action {
     */
    public static Action respond(final Action request, final Action response) {
       if (request instanceof RequestAction<?>) {
-         Class<?> responseType = GenericsUtil.getGenericTypeParameterClass(request.getClass(), RequestAction.class);
-         if (responseType.isInstance(response)) {
-            ((ResponseAction) response).setResponseId(((RequestAction<?>) request).getRequestId());
-         }
+         GenericsUtil.asActualTypeArgument(request.getClass(), ResponseAction.class, response)
+            .ifPresent(matchingResponse -> matchingResponse.setResponseId(((RequestAction<?>) request).getRequestId()));
       }
       return response;
    }

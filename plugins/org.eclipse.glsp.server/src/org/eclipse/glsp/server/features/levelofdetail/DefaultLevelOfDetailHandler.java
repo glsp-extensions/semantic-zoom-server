@@ -15,7 +15,6 @@
  ********************************************************************************/
 package org.eclipse.glsp.server.features.levelofdetail;
 
-import org.apache.log4j.Logger;
 import org.eclipse.glsp.graph.GModelElement;
 import org.eclipse.glsp.graph.GModelRoot;
 import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailServerRule;
@@ -23,7 +22,6 @@ import org.eclipse.glsp.server.features.levelofdetail.rules.LevelOfDetailServerR
 import com.google.inject.Inject;
 
 public class DefaultLevelOfDetailHandler implements LevelOfDetailHandler {
-   private static Logger LOG = Logger.getLogger(DefaultLevelOfDetailHandler.class);
 
    private double currentLevelOfDetail = 1;
 

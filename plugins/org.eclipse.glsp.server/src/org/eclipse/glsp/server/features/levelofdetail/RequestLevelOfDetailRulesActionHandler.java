@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.apache.log4j.Logger;
 import org.eclipse.glsp.server.actions.Action;
 import org.eclipse.glsp.server.actions.BasicActionHandler;
 import org.eclipse.glsp.server.features.levelofdetail.SetLevelOfDetailRulesAction.LevelOfDetailRuleAssignment;
@@ -33,7 +32,6 @@ import com.google.gson.GsonBuilder;
 import com.google.inject.Inject;
 
 public class RequestLevelOfDetailRulesActionHandler extends BasicActionHandler<RequestLevelOfDetailRulesAction> {
-   private static Logger LOG = Logger.getLogger(RequestLevelOfDetailRulesActionHandler.class);
 
    @Inject
    LevelOfDetailRuleRegistry levelOfDetailRuleRegistry;
@@ -49,8 +47,6 @@ public class RequestLevelOfDetailRulesActionHandler extends BasicActionHandler<R
    @Override
    protected List<Action> executeAction(final RequestLevelOfDetailRulesAction actualAction,
       final GModelState modelState) {
-
-      LOG.debug("RequestLevelOfDetailRulesActionHandler");
 
       List<LevelOfDetailRuleAssignment> list = new ArrayList<>();
 

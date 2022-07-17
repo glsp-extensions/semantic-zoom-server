@@ -32,7 +32,7 @@ interface ModelState<T> {
 
    T getRoot();
 
-   void setRoot(T newRoot);
+   void updateRoot(T newRoot);
 
    boolean canUndo();
 
