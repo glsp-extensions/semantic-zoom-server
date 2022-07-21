@@ -3,13 +3,26 @@
 This is a prototype that demonstrates semantic zooming in GLSP. \
 It is based on a fork of the original GLSP server on https://github.com/eclipse-glsp/glsp-server.
 
-### Prerequisites: 
+## Running the project with docker:
+
+Prerequisites:
+
+- Docker 17.05 or higher
+- docker-compose
+
+In the root of this repository, run
+```bash
+docker-compose up
+```
+This may take a while. Once the container has finished building, the server should be listening on ```ws://localhost:8081/workflow```. \
+Now you can start the client which is available here: https://github.com/glsp-extensions/semantic-zoom-client.
+
+## Running the project locally:
+
+Prerequisites:
 
 -   Java 11 or higher
 -   Maven
-
-
-### Running the project:
 
 In the root of this repository, run
 
